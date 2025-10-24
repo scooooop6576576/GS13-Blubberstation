@@ -20,6 +20,7 @@
 #define TRAIT_MICROPHILE		"microphile" //likes the small
 #define TRAIT_APATHETIC			"apathetic" //doesn't care
 
+#define TRAIT_ROUNDED			"rounded"
 #define TRAIT_FATTER			"fatter"
 #define TRAIT_VERYFAT			"veryfat"
 #define TRAIT_OBESE				"obese"

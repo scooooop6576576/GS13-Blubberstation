@@ -954,10 +954,6 @@
 /obj/structure/cable,
 /turf/open/floor/iron/dark/small,
 /area/station/security/evidence)
-"agL" = (
-/obj/machinery/bluespace_vendor/directional/south,
-/turf/open/floor/iron/dark/side,
-/area/station/commons/dorms)
 "agR" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
@@ -5123,7 +5119,6 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
-/obj/machinery/bluespace_vendor/directional/north,
 /turf/open/floor/iron/dark/side{
 	dir = 1
 	},
@@ -6708,7 +6703,6 @@
 	dir = 4
 	},
 /obj/structure/closet/wardrobe/grey,
-/obj/effect/landmark/start/hangover/closet,
 /obj/effect/spawner/random/clothing/kittyears_or_rabbitears,
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
@@ -9291,7 +9285,6 @@
 /turf/open/floor/iron/small,
 /area/station/hallway/secondary/entry)
 "aNe" = (
-/obj/machinery/bluespace_vendor/directional/north,
 /obj/effect/turf_decal/trimline/yellow/corner{
 	dir = 4
 	},
@@ -10262,7 +10255,6 @@
 /turf/open/floor/iron,
 /area/station/commons/locker)
 "aQO" = (
-/obj/effect/landmark/start/hangover/closet,
 /obj/structure/closet/wardrobe/white,
 /obj/effect/turf_decal/tile/neutral/opposingcorners{
 	dir = 1
@@ -11221,7 +11213,6 @@
 /turf/open/floor/catwalk_floor,
 /area/station/maintenance/port)
 "aTw" = (
-/obj/effect/landmark/start/hangover/closet,
 /obj/structure/closet/wardrobe/green,
 /obj/machinery/light/directional/west,
 /obj/effect/turf_decal/tile/neutral{
@@ -12112,7 +12103,6 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
 	},
-/obj/effect/landmark/start/hangover/closet,
 /turf/open/floor/iron/dark/side{
 	dir = 10
 	},
@@ -18232,15 +18222,6 @@
 	},
 /turf/open/floor/iron/textured_edge,
 /area/station/cargo/sorting)
-"bnN" = (
-/obj/machinery/bluespace_vendor/directional/east,
-/obj/effect/turf_decal/trimline/green/corner{
-	dir = 4
-	},
-/turf/open/floor/iron/edge{
-	dir = 4
-	},
-/area/station/hallway/primary/central)
 "bnO" = (
 /obj/machinery/newscaster/directional/north,
 /obj/structure/filingcabinet/chestdrawer,
@@ -23161,6 +23142,7 @@
 /obj/machinery/airalarm/directional/west,
 /obj/item/clothing/under/plasmaman/paramedic,
 /obj/item/clothing/head/helmet/space/plasmaman/paramedic,
+/obj/item/defibrillator/loaded,
 /turf/open/floor/iron/dark,
 /area/station/medical/storage)
 "bBL" = (
@@ -28485,14 +28467,6 @@
 	},
 /turf/open/floor/engine,
 /area/station/engineering/atmos)
-"bUP" = (
-/obj/machinery/light/directional/west,
-/obj/effect/turf_decal/stripes/line{
-	dir = 8
-	},
-/obj/machinery/atmospherics/components/unary/bluespace_sender,
-/turf/open/floor/engine,
-/area/station/engineering/atmos)
 "bUQ" = (
 /obj/machinery/door/firedoor/heavy,
 /obj/effect/turf_decal/delivery,
@@ -32087,7 +32061,6 @@
 	dir = 4
 	},
 /obj/effect/spawner/random/clothing/beret_or_rabbitears,
-/obj/effect/landmark/start/hangover/closet,
 /obj/structure/closet/wardrobe/mixed,
 /obj/structure/extinguisher_cabinet/directional/north,
 /obj/machinery/light/directional/north,
@@ -37750,7 +37723,6 @@
 /area/station/engineering/engine_smes)
 "cTe" = (
 /obj/item/vending_refill/donksoft,
-/obj/item/circuitboard/machine/vending/donksofttoyvendor,
 /obj/item/stack/cable_coil/five,
 /obj/effect/spawner/random/contraband/prison,
 /turf/open/floor/plating,
@@ -38384,8 +38356,11 @@
 /obj/structure/table/optable,
 /obj/structure/cable,
 /obj/machinery/light/directional/north,
-/obj/machinery/defibrillator_mount/directional/north,
 /obj/effect/turf_decal/tile/blue/full,
+/obj/machinery/defibrillator_mount/loaded{
+	pixel_x = 0;
+	pixel_y = 27
+	},
 /turf/open/floor/iron/large,
 /area/station/medical/surgery/fore)
 "diU" = (
@@ -40483,9 +40458,34 @@
 /obj/structure/table,
 /obj/machinery/firealarm/directional/north,
 /obj/machinery/light/directional/north,
-/obj/item/stack/medical/mesh,
-/obj/item/stack/medical/gauze,
-/obj/item/stack/medical/suture,
+/obj/item/stack/medical/mesh{
+	pixel_x = 11;
+	pixel_y = 3
+	},
+/obj/item/stack/medical/gauze{
+	pixel_x = -4;
+	pixel_y = -1
+	},
+/obj/item/stack/medical/suture{
+	pixel_x = 9;
+	pixel_y = -4
+	},
+/obj/item/holosign_creator/hardlight_wheelchair{
+	pixel_x = -6;
+	pixel_y = 9
+	},
+/obj/item/holosign_creator/hardlight_wheelchair{
+	pixel_x = -6;
+	pixel_y = 9
+	},
+/obj/item/holosign_creator/hardlight_wheelchair{
+	pixel_x = -6;
+	pixel_y = 9
+	},
+/obj/item/holosign_creator/hardlight_wheelchair{
+	pixel_x = -6;
+	pixel_y = 9
+	},
 /turf/open/floor/iron/dark/smooth_large,
 /area/station/medical/medbay/lobby)
 "efn" = (
@@ -41076,7 +41076,6 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 4
 	},
-/obj/effect/landmark/start/hangover/closet,
 /obj/structure/closet/wardrobe/black,
 /turf/open/floor/iron/dark/side{
 	dir = 5
@@ -42916,7 +42915,6 @@
 	c_tag = "Fitness Room South"
 	},
 /obj/structure/closet/boxinggloves,
-/obj/effect/landmark/start/hangover/closet,
 /turf/open/floor/iron/dark,
 /area/station/commons/fitness)
 "fmC" = (
@@ -44673,7 +44671,6 @@
 /turf/open/floor/iron/small,
 /area/station/hallway/secondary/entry)
 "gfw" = (
-/obj/effect/landmark/start/hangover/closet,
 /obj/structure/closet/emcloset,
 /obj/effect/turf_decal/tile/red,
 /obj/structure/sign/gatofull_2{
@@ -46742,7 +46739,6 @@
 /obj/effect/turf_decal/tile/red{
 	dir = 8
 	},
-/obj/effect/landmark/start/hangover/closet,
 /obj/structure/closet/firecloset,
 /obj/structure/sign/gatofull_1{
 	pixel_y = -32
@@ -49070,7 +49066,6 @@
 	},
 /area/station/science/research)
 "ikq" = (
-/obj/machinery/bluespace_vendor/directional/north,
 /obj/effect/turf_decal/trimline/brown/arrow_cw{
 	dir = 1
 	},
@@ -56555,7 +56550,6 @@
 /area/station/service/hydroponics/garden/abandoned)
 "lxv" = (
 /obj/effect/spawner/random/medical/surgery_tool_alien,
-/obj/item/ammo_box/a357,
 /obj/effect/spawner/random/exotic/antag_gear_weak,
 /obj/effect/spawner/random/exotic/antag_gear_weak,
 /obj/structure/safe/vault,
@@ -58964,9 +58958,9 @@
 /turf/open/floor/iron/smooth_large,
 /area/station/engineering/main)
 "mCo" = (
-/obj/item/clothing/neck/stethoscope,
 /obj/effect/turf_decal/tile/blue/full,
 /obj/structure/table/glass,
+/obj/item/defibrillator/loaded,
 /turf/open/floor/iron/dark/smooth_large,
 /area/station/medical/treatment_center)
 "mCs" = (
@@ -63619,9 +63613,8 @@
 /turf/open/floor/plating,
 /area/station/maintenance/starboard/fore)
 "oHk" = (
-/obj/effect/landmark/start/hangover,
 /obj/machinery/light/directional/north,
-/obj/item/kirbyplants/organic/plant1,
+/obj/machinery/vending/hotdog,
 /turf/open/floor/iron/edge{
 	dir = 1
 	},
@@ -70610,6 +70603,7 @@
 /obj/item/clothing/head/helmet/space/plasmaman/medical,
 /obj/machinery/light/directional/west,
 /obj/machinery/firealarm/directional/west,
+/obj/item/defibrillator/loaded,
 /turf/open/floor/iron/dark,
 /area/station/medical/storage)
 "rMl" = (
@@ -72091,7 +72085,6 @@
 /area/station/maintenance/starboard/fore)
 "ssc" = (
 /obj/structure/closet/masks,
-/obj/effect/landmark/start/hangover/closet,
 /turf/open/floor/iron/dark,
 /area/station/commons/fitness)
 "ssR" = (
@@ -76711,7 +76704,6 @@
 /turf/open/space/basic,
 /area/space/nearstation)
 "uyn" = (
-/obj/machinery/bluespace_vendor/directional/south,
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
 	},
@@ -77913,12 +77905,11 @@
 /turf/open/floor/iron/dark,
 /area/station/maintenance/port/aft)
 "vaa" = (
-/obj/structure/closet/emcloset,
-/obj/effect/landmark/start/hangover/closet,
 /obj/effect/turf_decal/tile/red,
 /obj/structure/sign/gatofull_3{
 	pixel_y = -32
 	},
+/obj/machinery/vending/hotdog,
 /turf/open/floor/iron/dark,
 /area/station/hallway/secondary/exit)
 "vad" = (
@@ -79822,7 +79813,6 @@
 	dir = 1
 	},
 /obj/structure/closet/crate/bin,
-/obj/effect/landmark/start/hangover/closet,
 /obj/structure/sign/gatofull_2{
 	pixel_y = 32
 	},
@@ -81736,8 +81726,11 @@
 /obj/structure/table/optable,
 /obj/structure/cable,
 /obj/machinery/light/directional/north,
-/obj/machinery/defibrillator_mount/directional/north,
 /obj/effect/turf_decal/tile/blue/full,
+/obj/machinery/defibrillator_mount/loaded{
+	pixel_x = 0;
+	pixel_y = 27
+	},
 /turf/open/floor/iron/large,
 /area/station/medical/surgery)
 "wKH" = (
@@ -84273,7 +84266,6 @@
 /area/station/maintenance/port)
 "xOy" = (
 /obj/machinery/light/directional/north,
-/obj/machinery/bluespace_vendor/directional/north,
 /obj/effect/turf_decal/trimline/blue/line{
 	dir = 1
 	},
@@ -110472,7 +110464,7 @@ bid
 wGY
 aHn
 kOK
-bnN
+wGY
 boY
 bqw
 ovZ
@@ -118471,7 +118463,7 @@ dtr
 bXS
 bZI
 rbH
-bUP
+bVW
 cbB
 lNr
 mAx
@@ -124060,7 +124052,7 @@ veE
 auU
 uqS
 cgg
-agL
+avp
 arf
 fag
 aoo

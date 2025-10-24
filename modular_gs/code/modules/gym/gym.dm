@@ -129,3 +129,17 @@
 	build_path = /obj/item/conveyor_construct/treadmill
 	category = list("initial", "Construction")
 */
+
+/obj/structure/punching_bag/attack_hand(mob/living/user, list/modifiers)
+	. = ..()
+
+	if (iscarbon(user))
+		var/mob/living/carbon/puncher = user
+		puncher.adjust_fatness(-5, FATTENING_TYPE_WEIGHT_LOSS)
+
+/obj/structure/weightmachine/perform_workout(mob/living/user)
+	..()
+
+	if (iscarbon(user))
+		var/mob/living/carbon/puncher = user
+		puncher.adjust_fatness(-30, FATTENING_TYPE_WEIGHT_LOSS)

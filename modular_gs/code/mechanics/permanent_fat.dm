@@ -1,14 +1,16 @@
-/mob/living/carbon/human/become_uncliented()
-	if (isnull(canon_client))
+/mob/living/carbon/human/ghostize(can_reenter_corpse)
+	if (isnull(client))
 		return ..()
 	
-	if (isnull(canon_client.prefs))
+	if (isnull(client.prefs))
 		return ..()
+	
+	var/datum/preferences/prefs = client.prefs
 
-	// we know we have a client and they have prefs
-	if (canon_client.prefs.read_preference(/datum/preference/toggle/weight_gain_persistent))
-		canon_client.prefs.write_preference(GLOB.preference_entries[/datum/preference/numeric/starting_fatness], fatness_real)
+	if (prefs.read_preference(/datum/preference/toggle/weight_gain_persistent))
+		prefs.write_preference(GLOB.preference_entries[/datum/preference/numeric/starting_fatness], fatness_real)
 
-	canon_client.prefs.write_preference(GLOB.preference_entries[/datum/preference/numeric/perma_fat_value], fatness_perma)
+	prefs.write_preference(GLOB.preference_entries[/datum/preference/numeric/perma_fat_value], fatness_perma)
 
 	. = ..()
+

@@ -7,9 +7,11 @@
 	taste_description = "lard"
 	color = "#e2e1b1"
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
+	process_flags = REAGENT_ORGANIC | REAGENT_SYNTHETIC | REAGENT_PROTEAN // Allow all kinds of humanoids to process the chem
+	var/fat_to_add = 15
 
 /datum/reagent/consumable/lipoifier/on_mob_life(mob/living/carbon/M)
-	M.adjust_fatness(15, FATTENING_TYPE_CHEM)
+	M.adjust_fatness(fat_to_add, FATTENING_TYPE_CHEM)
 	return ..()
 
 /datum/reagent/consumable/lipoifier/on_mob_metabolize(mob/living/affected_mob)
@@ -97,3 +99,7 @@
 	L.remove_movespeed_modifier(/datum/movespeed_modifier/reagent/stimulants)
 	..()
 
+/datum/reagent/consumable/lipoifier/weak
+	name = "Weak lipoifier"
+	description = "A weaker variant of lipoifier. Causes those that ingest it to build up fat cells."
+	fat_to_add = 6

@@ -169,7 +169,7 @@
 	/// three percent chance for a pizza box to be the pizza bomb box
 	var/bomb_pizza_chance = 3
 	/// 1 in 3 pizza bombs spawned will be a dud
-	var/bomb_dud_chance = 33
+	var/bomb_dud_chance = 80 //GS13 tweak
 
 	/// list of pizza that can randomly go inside of a crate, weighted by how disruptive it would be
 	var/list/pizza_types = list(

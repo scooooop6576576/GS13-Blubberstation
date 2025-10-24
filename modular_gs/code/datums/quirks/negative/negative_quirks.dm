@@ -12,10 +12,10 @@
 
 /datum/quirk/helplessness/immobile
 	name = "Very Weak legs"
-	desc = "Your legs can't carry the heaviest of weights. At a certain BFI you will become unable to move. WARNING! PICKING THIS QUIRK WILL MAKE YOU IMMOBILE REGARDLESS OF YOUR IMMOBILITY PREFERENCE!"
+	desc = "Your legs can't carry the heaviest of weights. At 2540 BFI you will become unable to move. WARNING! PICKING THIS QUIRK WILL MAKE YOU IMMOBILE REGARDLESS OF YOUR IMMOBILITY PREFERENCE!"
 	icon = "fa-weight-scale"
 	medical_record_text = "Patients legs cannot carry heavy weights at all."
-	value = -8
+	value = -6
 	gain_text = span_notice("You feel your legs tremble under your weight")
 	lose_text = span_notice("Your legs seem to have gotten stronger")
 	quirk_flags = 0
@@ -24,10 +24,10 @@
 
 /datum/quirk/helplessness/clumsy
 	name = "Sausage fingers"
-	desc = "Weight seems to rob you of your dexterity. WARNING! PICKING THIS QUIRK WILL MAKE YOU CLUMSY REGARDLESS OF YOUR CLUMSINESS PREFERENCE!"
+	desc = "Weight seems to rob you of your dexterity. At 1840 BFI you will become clumsy. WARNING! PICKING THIS QUIRK WILL MAKE YOU CLUMSY REGARDLESS OF YOUR CLUMSINESS PREFERENCE!"
 	icon = "fa-scale-unbalanced"
 	medical_record_text = "Patient seems to lose their hands dexterity at higher weights."
-	value = -7
+	value = -5
 	gain_text = span_notice("Your fingers become susceptible to weight")
 	lose_text = span_notice("Your fingers seem to regain their dexterity")
 	quirk_flags = 0
@@ -36,10 +36,10 @@
 
 /datum/quirk/helplessness/big_cheeks
 	name = "Big cheeks"
-	desc = "Your cheeks seem to bloat up exceptionally with weight, reducing your visibility. WARNING! PICKING THIS QUIRK WILL MAKE YOU NEARSIGHTED AND HIDE YOUR FACE REGARDLESS OF YOUR NEARSIGHTEDNESS/HIDDEN FACE PREFERENCE!"
+	desc = "Your cheeks seem to bloat up exceptionally with weight, reducing your visibility. At 3440 BFI you will become nearsighted and your face will be hidden. WARNING! PICKING THIS QUIRK WILL MAKE YOU NEARSIGHTED AND HIDE YOUR FACE REGARDLESS OF YOUR NEARSIGHTEDNESS/HIDDEN FACE PREFERENCE!"
 	icon = "fa-glasses"
 	medical_record_text = "Patients cheeks seem to accumulate significant amount of adipose, leading to worse eyesight at higher weights."
-	value = -5
+	value = -4
 	gain_text = span_notice("Your cheeks seem to intrude on your vision")
 	lose_text = span_notice("Your cheeks no longer decrease your vision")
 	quirk_flags = 0
@@ -48,10 +48,10 @@
 
 /datum/quirk/helplessness/mute
 	name = "Many chins"
-	desc = "Your chins seem to bloat up exceptionally with weight, making it hard for you to speak. WARNING! PICKING THIS QUIRK WILL MAKE YOU MUTE REGARDLESS OF YOUR MUTENESS PREFERENCE!"
+	desc = "Your chins seem to bloat up exceptionally with weight, making it hard for you to speak. At 3440 BFI you will become unable to speak. WARNING! PICKING THIS QUIRK WILL MAKE YOU MUTE REGARDLESS OF YOUR MUTENESS PREFERENCE!"
 	icon = "fa-volume-xmark"
 	medical_record_text = "Patients chin seems to accumulate significant amount of adipose, leading to inability to speak at higher weights."
-	value = -3
+	value = -2
 	gain_text = span_notice("You feel your chins making it hard to open your mouth")
 	lose_text = span_notice("Your chins no longer impede your speech")
 	quirk_flags = 0
@@ -60,10 +60,10 @@
 
 /datum/quirk/helplessness/immobile_arms
 	name = "Weak arms"
-	desc = "Your arms can't carry the heaviest of weights. At a certain BFI you will become unable to use them. WARNING! PICKING THIS QUIRK WILL MAKE YOUR ARMS IMMOBILE REGARDLESS OF YOUR ARMS IMMOBILITY PREFERENCE!"
+	desc = "Your arms can't carry the heaviest of weights. At 3440 BFI you will become unable to use them. WARNING! PICKING THIS QUIRK WILL MAKE YOUR ARMS IMMOBILE REGARDLESS OF YOUR ARMS IMMOBILITY PREFERENCE!"
 	icon = "fa-dumbbell"
 	medical_record_text = "Patients arms cannot carry heavy weights well."
-	value = -8
+	value = -6
 	gain_text = span_notice("You feel your arms growing weaker")
 	lose_text = span_notice("Your arms seem to have gotten stronger")
 	quirk_flags = 0
@@ -72,10 +72,10 @@
 
 /datum/quirk/helplessness/clothing
 	name = "Tight clothes"
-	desc = "Your clothing never seems to fit you right. At higher weight, your clothing will burst. WARNING! PICKING THIS QUIRK WILL MAKE YOU BURST OUT OF CLOTHES REGARDLESS OF YOUR CLOTHES BURSTING PREFERENCE!"
+	desc = "Your clothing never seems to fit you right. At 1840, your clothing will start to burst. WARNING! PICKING THIS QUIRK WILL MAKE YOU BURST OUT OF CLOTHES REGARDLESS OF YOUR CLOTHES BURSTING PREFERENCE!"
 	icon = "fa-shirt"
 	medical_record_text = "Patients size seems to make it easy for them to burst out of clothes."
-	value = -8
+	value = -6
 	gain_text = span_notice("Your clothes creak quietly")
 	lose_text = span_notice("Your clothes feel more comfortable")
 	quirk_flags = 0
@@ -84,10 +84,10 @@
 
 /datum/quirk/helplessness/belts
 	name = "Wide waist"
-	desc = "Any belt you wear seems to give up under the advancing tide of your stomach. Expanding your waistline too much will make you unable to wear belts. WARNING! PICKING THIS QUIRK WILL MAKE YOU UNABLE TO WEAR BELTS REGARDLESS OF YOUR BELT BREAKING PREFERENCE!"
+	desc = "Any belt you wear seems to give up under the advancing tide of your stomach. Expanding your waistline above 1240 BFI will make you unable to wear belts. WARNING! PICKING THIS QUIRK WILL MAKE YOU UNABLE TO WEAR BELTS REGARDLESS OF YOUR BELT BREAKING PREFERENCE!"
 	icon = "fa-circle-notch"
 	medical_record_text = "Patients waistline seems to make it hard for them to wear belts."
-	value = -5
+	value = -4
 	gain_text = span_notice("You feel your belt dig into your stomach")
 	lose_text = span_notice("Your belt no longer digs into your stomach")
 	quirk_flags = 0
@@ -96,10 +96,10 @@
 
 /datum/quirk/helplessness/clothing_back
 	name = "Rolls-back"
-	desc = "Your back seems to accumulate a lot of adipose. At a certain BFI you will become unable to wear anything on your back. WARNING! PICKING THIS QUIRK WILL MAKE YOU UNABLE TO WEAR BACKPACKS REGARDLESS OF YOUR CLOTHING BACK PREFERENCE!"
+	desc = "Your back seems to accumulate a lot of adipose. At 2540 BFI you will become unable to wear anything on your back. WARNING! PICKING THIS QUIRK WILL MAKE YOU UNABLE TO WEAR BACKPACKS REGARDLESS OF YOUR CLOTHING BACK PREFERENCE!"
 	icon = "fa-suitcase"
 	medical_record_text = "Patient back seems to accumulate excessive amounts of adipose."
-	value = -8
+	value = -6
 	gain_text = span_notice("Your backpack rests uncomfortably on your back")
 	lose_text = span_notice("Your backpack is no longer uncomfortable")
 	quirk_flags = 0
@@ -108,7 +108,7 @@
 
 /datum/quirk/helplessness/no_buckle
 	name = "Seatbelts destroyer"
-	desc = "Your exceptional rotundness makes you unable to wear seatbelts. At higher weights you won't be able to be buckled to chairs. WARNING! PICKING THIS QUIRK WILL MAKE YOU UNABLE TO BUCKLE REGARDLESS OF YOUR NO BUCKLING PREFERENCE!"
+	desc = "Your exceptional rotundness makes you unable to wear seatbelts. At 1240 BFI you won't be able to be buckled to chairs. WARNING! PICKING THIS QUIRK WILL MAKE YOU UNABLE TO BUCKLE REGARDLESS OF YOUR NO BUCKLING PREFERENCE!"
 	icon = "fa-bag-shopping"
 	medical_record_text = "Patient seems to struggle with buckling their seatbelts."
 	value = -1
@@ -118,10 +118,10 @@
 
 /datum/quirk/helplessness/chair_breakage
 	name = "Chair destroyer"
-	desc = "Chairs tremble when your belly gurgles. At higher weights, attempting to sit on chairs will destroy them. WARNING! PICKING THIS QUIRK WILL MAKE YOU BREAK CHAIRS REGARDLESS OF YOUR CHAIR BREAKAGE PREFERENCE!"
+	desc = "Chairs tremble when your belly gurgles. At 1840 BFI, attempting to sit on chairs will destroy them. WARNING! PICKING THIS QUIRK WILL MAKE YOU BREAK CHAIRS REGARDLESS OF YOUR CHAIR BREAKAGE PREFERENCE!"
 	icon = "fa-couch"
 	medical_record_text = "Patients weight seems to cause them to destroy any furniture they sit on."
-	value = -3
+	value = -2
 	gain_text = span_notice("You feel your chair groan under you")
 	lose_text = span_notice("Your chair no longer groans under your weight")
 	quirk_flags = 0
@@ -130,12 +130,12 @@
 
 /datum/quirk/helplessness/stuckage
 	name = "Heavy load"
-	desc = "You dread passing through airlocks. At higher weights you will have a chance to get stuck in them. WARNING! PICKING THIS QUIRK WILL MAKE YOU GET STUCK IN AIRLOCKS REGARDLESS OF YOUR STUCKAGE PREFERENCE!"
+	desc = "You dread passing through airlocks. At 1240 BFI you will have a chance to get stuck in them. WARNING! PICKING THIS QUIRK WILL MAKE YOU GET STUCK IN AIRLOCKS REGARDLESS OF YOUR STUCKAGE PREFERENCE!"
 	icon = "fa-door-closed"
 	medical_record_text = "Patient seems to struggle with passing airlocks."
-	value = -6
+	value = -5
 	gain_text = span_notice("You feel a chill on your back when you think of passing through any airlock")
 	lose_text = span_notice("You no longer dread going through airlocks")
 	quirk_flags = 0
 	erp_quirk = FALSE		// this is a lie, however we do it because we want it always on
-	mob_trait = TRAIT_HELPLESS_CHAIR_DESTROYER
+	mob_trait = TRAIT_HELPLESS_STUCKAGE

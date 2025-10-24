@@ -120,6 +120,11 @@
 	armor_type = /datum/armor/clothing_under/rank_security
 	flags_1 = 0		// make it non-recolorable
 
+/obj/item/clothing/under/color/dual_tone/security/red
+	name = "Red Security officer's dual tone jumpsuit (Modular)"
+	desc = "Dual tone, red tactical jumpsuit reminding you of the good old days. Comes with plating meant for pretection against melee attacks."
+	greyscale_colors = "#C12D30#545350"
+
 /obj/item/clothing/under/color/dual_tone/security/medic
 	name = "Security medic dual tone jumpsuit (Modular)"
 	desc = "Dual tone, deep red and white jumpsuit worn by the security medic."

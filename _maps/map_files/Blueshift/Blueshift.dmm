@@ -5717,11 +5717,11 @@
 /turf/open/floor/iron/dark/side,
 /area/station/common/wrestling/arena)
 "bgw" = (
-/obj/item/kirbyplants/random,
 /obj/machinery/camera/directional/west{
 	c_tag = "Arrivals - Lounge 2";
 	name = "arrivals camera"
 	},
+/obj/machinery/vending/clothing,
 /turf/open/floor/iron/dark/side{
 	dir = 8
 	},
@@ -15900,8 +15900,8 @@
 /turf/open/floor/iron/dark/small,
 /area/station/medical/morgue)
 "cWG" = (
-/obj/item/kirbyplants/random,
 /obj/effect/turf_decal/tile/neutral,
+/obj/machinery/vending/clothing,
 /turf/open/floor/iron,
 /area/station/hallway/primary/central/fore)
 "cWI" = (
@@ -27784,8 +27784,8 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
 	},
-/obj/machinery/vending/gato,
 /obj/machinery/airalarm/directional/south,
+/obj/machinery/vending/clothing,
 /turf/open/floor/iron,
 /area/station/commons/dorms)
 "fih" = (
@@ -31476,6 +31476,10 @@
 /area/station/security/prison/visit)
 "fVT" = (
 /obj/structure/window/reinforced/spawner/directional/south,
+/obj/machinery/conveyor{
+	dir = 8;
+	id = "QMLoad2"
+	},
 /turf/open/floor/iron/smooth,
 /area/station/cargo/storage)
 "fVV" = (
@@ -32684,6 +32688,7 @@
 	dir = 8
 	},
 /obj/machinery/light/small/directional/east,
+/obj/item/defibrillator/loaded,
 /turf/open/floor/iron,
 /area/station/medical/break_room)
 "ghm" = (
@@ -44463,6 +44468,7 @@
 	dir = 8
 	},
 /obj/machinery/firealarm/directional/east,
+/obj/item/defibrillator/loaded,
 /turf/open/floor/iron,
 /area/station/medical/break_room)
 "ivx" = (
@@ -45825,7 +45831,6 @@
 /area/station/security/execution/transfer)
 "iIf" = (
 /obj/effect/turf_decal/bot,
-/obj/machinery/vending/cigarette,
 /obj/effect/turf_decal/tile/neutral,
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
@@ -45834,6 +45839,7 @@
 /obj/structure/sign/gatofull_2{
 	pixel_y = 32
 	},
+/obj/machinery/vending/clothing,
 /turf/open/floor/iron/dark/side{
 	dir = 1
 	},
@@ -57239,6 +57245,7 @@
 /obj/effect/turf_decal/trimline/blue/filled/line{
 	dir = 1
 	},
+/obj/machinery/defibrillator_mount/directional/north,
 /turf/open/floor/iron/white,
 /area/station/security/checkpoint/medical)
 "kOo" = (
@@ -73527,9 +73534,12 @@
 	},
 /area/station/hallway/primary/central)
 "nWC" = (
-/obj/machinery/defibrillator_mount/directional/south,
 /obj/machinery/light/directional/south,
 /obj/structure/table/optable,
+/obj/machinery/defibrillator_mount/loaded{
+	pixel_x = 0;
+	pixel_y = -33
+	},
 /turf/open/floor/iron,
 /area/station/medical/surgery)
 "nWD" = (
@@ -81152,7 +81162,6 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 1
 	},
-/obj/machinery/bluespace_vendor/directional/south,
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
@@ -114647,9 +114656,12 @@
 /turf/open/floor/engine/o2,
 /area/station/engineering/atmos)
 "vGH" = (
-/obj/machinery/defibrillator_mount/directional/north,
 /obj/machinery/light/directional/north,
 /obj/structure/table/optable,
+/obj/machinery/defibrillator_mount/loaded{
+	pixel_x = 0;
+	pixel_y = 27
+	},
 /turf/open/floor/iron,
 /area/station/medical/surgery)
 "vGI" = (
@@ -122621,6 +122633,7 @@
 /obj/effect/turf_decal/siding/thinplating_new{
 	dir = 8
 	},
+/obj/item/defibrillator/loaded,
 /turf/open/floor/iron,
 /area/station/medical/break_room)
 "xgi" = (
@@ -122955,10 +122968,6 @@
 /obj/structure/filingcabinet/chestdrawer/wheeled,
 /turf/open/floor/wood,
 /area/station/command/heads_quarters/rd)
-"xjE" = (
-/obj/structure/shipping_container/gato2,
-/turf/open/floor/iron/dark/small,
-/area/station/cargo/miningdock)
 "xjF" = (
 /obj/machinery/door/airlock/maintenance_hatch{
 	name = "Cargo Maintenance"
@@ -169860,8 +169869,8 @@ ilS
 bld
 lVQ
 ktY
+djJ
 bDS
-xjE
 ktY
 djJ
 djJ

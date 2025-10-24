@@ -60,7 +60,7 @@
 	last_fatty = . // Set new fatty and run new code
 	highest_recorded_weight = highest_weight
 
-	if (last_fatty.fatness < FATNESS_LEVEL_FAT)
+	if (last_fatty.fatness < FATNESS_LEVEL_FATTER)
 		TIMER_COOLDOWN_START(quirk_holder, FAT_AFFINITY_COOLDOWN, 15 SECONDS)
 		return
 

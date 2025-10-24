@@ -460,7 +460,7 @@
 	if(HAS_TRAIT(H, TRAIT_FATTER))
 		handle_fatness_trait(
 			TRAIT_FATTER,
-			TRAIT_FAT,
+			TRAIT_ROUNDED,
 			TRAIT_VERYFAT,
 			FATNESS_LEVEL_FATTER,
 			FATNESS_LEVEL_VERYFAT,
@@ -468,9 +468,9 @@
 			span_danger("Your clothes creak quietly!"),
 			2)
 		return
-	if(HAS_TRAIT(H, TRAIT_FAT))
+	if(HAS_TRAIT(H, TRAIT_ROUNDED))
 		handle_fatness_trait(
-			TRAIT_FAT,
+			TRAIT_ROUNDED,
 			null,
 			TRAIT_FATTER,
 			FATNESS_LEVEL_FAT,
@@ -482,7 +482,7 @@
 		handle_fatness_trait(
 			null,
 			null,
-			TRAIT_FAT,
+			TRAIT_ROUNDED,
 			0,
 			FATNESS_LEVEL_FAT,
 			null,

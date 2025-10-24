@@ -1,8 +1,25 @@
 
 /obj/machinery/vending/wardrobe/sec_wardrobe
-	gs_products = list(
-		/obj/item/clothing/under/color/grey/security = 3,
-		/obj/item/clothing/under/color/dual_tone/security = 3,
+	// gs_products = list(
+	// 	/obj/item/clothing/under/color/grey/security = 3,
+	// 	/obj/item/clothing/under/color/dual_tone/security = 3,
+	// )
+	gs_product_categories = list(
+		list(
+			"name" = "Blue",
+			"icon" = "shield-halved",
+			"products" = list(
+				/obj/item/clothing/under/color/grey/security = 3,
+				/obj/item/clothing/under/color/dual_tone/security = 3,
+				),
+			),
+		list(
+			"name" = "Red",
+			"icon" = "shield",
+			"products" = list(
+				/obj/item/clothing/under/color/dual_tone/security/red = 3,
+				),
+			),
 	)
 
 /obj/machinery/vending/wardrobe/medi_wardrobe
