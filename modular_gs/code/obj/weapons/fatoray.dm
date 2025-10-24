@@ -30,7 +30,7 @@
 	light_range = 2
 	light_color = LIGHT_COLOR_ORANGE
 	///How much fat is added to the target mob?
-	var/fat_added = 200
+	fat_added = 200
 
 
 
