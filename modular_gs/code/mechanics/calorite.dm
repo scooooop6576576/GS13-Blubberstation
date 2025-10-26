@@ -95,7 +95,7 @@ GLOBAL_LIST_INIT(calorite_recipes, list ( \
 	new/datum/stack_recipe("calorite tile", /obj/item/stack/tile/mineral/calorite, 1, 4, 20, crafting_flags = NONE, category = CAT_TILES), \
 	/*new/datum/stack_recipe("Calorite Ingots", /obj/item/ingot/calorite, time = 30), \*/
 	new/datum/stack_recipe("Fatty statue", /obj/structure/statue/calorite/fatty, 5, time = 10 SECONDS, crafting_flags = CRAFT_CHECK_DENSITY | CRAFT_ON_SOLID_GROUND | CRAFT_ONE_PER_TURF),\
-	/*new/datum/stack_recipe("Calorite doors", /obj/structure/mineral_door/calorite, 5, time = 5 SECONDS, crafting_flags = CRAFT_CHECK_DENSITY | CRAFT_ONE_PER_TURF | CRAFT_ON_SOLID_GROUND | CRAFT_APPLIES_MATS, category = CAT_DOORS),\*/
+	new/datum/stack_recipe("Calorite doors", /obj/structure/mineral_door/calorite, 5, time = 5 SECONDS, crafting_flags = CRAFT_CHECK_DENSITY | CRAFT_ONE_PER_TURF | CRAFT_ON_SOLID_GROUND | CRAFT_APPLIES_MATS, category = CAT_DOORS),\
 	))
 
 /obj/item/stack/sheet/mineral/calorite/get_main_recipes()
@@ -104,6 +104,13 @@ GLOBAL_LIST_INIT(calorite_recipes, list ( \
 
 /obj/item/ingot/calorite
 	custom_materials = list(/datum/material/calorite=1500)
+
+GLOBAL_LIST_INIT(calorite_glass_recipes, list ( \
+	new/datum/stack_recipe("directional window", /obj/structure/window/calorite/unanchored, time = 0.5 SECONDS, crafting_flags = CRAFT_CHECK_DENSITY | CRAFT_ON_SOLID_GROUND | CRAFT_CHECK_DIRECTION, category = CAT_WINDOWS), \
+	new/datum/stack_recipe("fulltile window", /obj/structure/window/calorite/fulltile/unanchored, 2, time =  1 SECONDS, crafting_flags = CRAFT_CHECK_DENSITY | CRAFT_ON_SOLID_GROUND | CRAFT_IS_FULLTILE, category = CAT_WINDOWS), \
+	new/datum/stack_recipe("calorite glass shard", /obj/item/shard/calorite_glass, time = 0, crafting_flags = CRAFT_CHECK_DENSITY | CRAFT_ON_SOLID_GROUND, category = CAT_MISC), \
+	/*new/datum/stack_recipe("calorite glass tile", /obj/item/stack/tile/glass, 1, 4, 20, category = CAT_TILES) */\
+))
 
 /obj/item/stack/sheet/calorite_glass
 	name = "calorite glass"
@@ -148,7 +155,11 @@ GLOBAL_LIST_INIT(calorite_recipes, list ( \
 	desc = "A nasty looking shard of calorite glass."
 	force = 4
 	throwforce = 9
-	// icon_state = "caloritelarge"
+	icon = 'modular_gs/icons/obj/debris.dmi'
+	icon_state = "calorite_large"
+	inhand_icon_state = "shard-calorite"
+	lefthand_file = 'modular_gs/icons/mob/inhands/melee_lefthand.dmi'
+	righthand_file = 'modular_gs/icons/mob/inhands/melee_righthand.dmi'
 	// inhand_icon_state = "shard-calorite"
 	custom_materials = list(/datum/material/alloy/calorite_glass = SHEET_MATERIAL_AMOUNT)
 	// icon_prefix = "calorite"

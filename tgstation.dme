@@ -6916,6 +6916,7 @@
 #include "modular_gs\code\game\objects\items\stacks\sheets\sheet_types.dm"
 #include "modular_gs\code\game\objects\items\stacks\tiles\tile_types.dm"
 #include "modular_gs\code\game\objects\items\storage\garment.dm"
+#include "modular_gs\code\game\objects\structures\calorite_window.dm"
 #include "modular_gs\code\game\objects\structures\dresser.dm"
 #include "modular_gs\code\game\objects\structures\false_walls.dm"
 #include "modular_gs\code\game\objects\structures\sofa.dm"
