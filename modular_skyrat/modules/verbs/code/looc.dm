@@ -81,9 +81,10 @@
 			admin_seen[hearing_client] = TRUE
 			// dont continue here, still need to show runechat
 
-
-		if (isobserver(hearing) && !is_holder)
-			continue //ghosts dont hear looc, apparantly
+		// GS13 EDIT - allows ghosts to see LOOC chat
+		// if (isobserver(hearing))
+			// continue //ghosts dont hear looc, apparantly
+		// GS13 END EDIT
 
 		// do the runetext here so admins can still get the runetext
 		if(mob.runechat_prefs_check(hearing) && hearing.client?.prefs.read_preference(/datum/preference/toggle/enable_looc_runechat))

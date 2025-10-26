@@ -23,13 +23,13 @@
 /obj/item/reagent_containers/cup/beaker/galbanic
 	list_reagents = list(/datum/reagent/fermi_fat = 50)
 
-/*
-/obj/item/reagent_containers/glass/beaker/cornoil
-	list_reagents = list(/datum/reagent/consumable/cornoil = 50)
+
+///obj/item/reagent_containers/glass/beaker/cornoil
+	//list_reagents = list(/datum/reagent/consumable/cornoil = 50)
 
 /obj/item/reagent_containers/glass/beaker/blueberry_juice
 	list_reagents = list(/datum/reagent/blueberry_juice = 50)
-
+/*
 /obj/item/reagent_containers/glass/beaker/fizulphite
 	list_reagents = list(/datum/reagent/consumable/fizulphite = 50)
 
@@ -53,6 +53,7 @@
 	bitesize = 100 // Always eat it in one bite
 	list_reagents = list(/datum/reagent/fermi_fat = 120, /datum/reagent/consumable/lipoifier = 70, /datum/reagent/consumable/cornoil = 70)
 	tastes = list("imminent immobility" = 10)
+*/
 
 //blueberry gum snack
 
@@ -61,12 +62,12 @@
 	icon = 'modular_gs/icons/obj/gum.dmi'
 	icon_state = "gum_wrapped"
 	desc = "Doesn't cause anything more than some discoloration... probably."
-	trash = /obj/item/trash/blueberry_gum
-	list_reagents = list(/datum/reagent/blueberry_juice = 50)
-	bitesize = 5
-	filling_color = "#001aff"
+	trash_type = /obj/item/trash/blueberry_gum
+	food_reagents = list(/datum/reagent/blueberry_juice = 50)
+	bite_consumption = 5
+	//filling_colors = "#001aff"
 	tastes = list("blueberry gum" = 1)
-	foodtype = FRUIT
+	foodtypes = FRUIT
 
 //blueberry gum trash
 
@@ -74,7 +75,7 @@
 	name = "chewed gum"
 	icon = 'modular_gs/icons/obj/gum.dmi'
 	icon_state = "gum_chewed"
-
+/*
 // nutriment pump turbo
 
 /obj/item/autosurgeon/nutripump_turbo

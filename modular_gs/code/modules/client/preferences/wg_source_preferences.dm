@@ -69,3 +69,12 @@
 
 /datum/preference/toggle/weight_gain_atmos/apply_to_human(mob/living/carbon/human/target, value, datum/preferences/preferences)
 	return
+
+/datum/preference/toggle/blueberry_inflation
+	category = WG_PREFERENCES
+	savefile_identifier = PREFERENCE_CHARACTER
+	savefile_key = "blueberry_inflation"
+	default_value = FALSE
+
+/datum/preference/toggle/blueberry_inflation/apply_to_human(mob/living/carbon/human/target, value, datum/preferences/preferences)
+	return

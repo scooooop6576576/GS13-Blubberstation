@@ -63,7 +63,7 @@
 		return FALSE
 
 	var/datum/preferences/preferences = fatty.client.prefs
-	if(!HAS_TRAIT(fatty, TRAIT_UNIVERSAL_GAINER) && HAS_TRAIT(fatty, TRAIT_NO_HELPLESSNESS))
+	if(HAS_TRAIT(fatty, TRAIT_NO_HELPLESSNESS))
 		return FALSE
 
 	var/immobility_BFI = preferences.read_preference(/datum/preference/numeric/helplessness/no_movement)

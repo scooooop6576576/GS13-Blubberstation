@@ -16,7 +16,7 @@
 	tradable = TRUE
 	tradable_base_quantity = MATERIAL_QUANTITY_RARE
 	beauty_modifier = 0.05
-	armor_modifiers = list(MELEE = 1.1, BULLET = 1.1, LASER = 1.15, ENERGY = 1.15, BOMB = 1, BIO = 1, RAD = 1, FIRE = 0.7, ACID = 1.1) // Same armor as gold.
+	armor_modifiers = list(MELEE = 1.1, BULLET = 1.1, LASER = 1.15, ENERGY = 1.15, BOMB = 1, BIO = 1, FIRE = 0.7, ACID = 1.1) // Same armor as gold.
 	mineral_rarity = MATERIAL_RARITY_PRECIOUS
 	points_per_unit = 40 / SHEET_MATERIAL_AMOUNT
 	fish_weight_modifier = 1.5 // fishing values copied from gold
@@ -77,6 +77,9 @@
 		source_obj.damtype = initial(source_obj.damtype)
 		return ..()
 
+/datum/export/material/market/calorite
+	material_id = /datum/material/calorite
+	message = "cm3 of calorite"
 
 /turf/closed/mineral/calorite //GS13
 	mineralType = /obj/item/stack/ore/calorite

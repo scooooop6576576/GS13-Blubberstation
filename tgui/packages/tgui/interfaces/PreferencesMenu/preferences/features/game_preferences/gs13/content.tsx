@@ -48,6 +48,12 @@ export const weight_gain_atmos: FeatureToggle = {
   component: CheckboxInput,
 };
 
+export const blueberry_inflation: FeatureToggle = {
+  name: 'Allow blueberry juice to affect you',
+  category: 'WG Sources',
+  component: CheckboxInput,
+};
+
 export const weight_size_scaling: FeatureToggle = {
   name: 'Scale sprite size with weight',
   category: 'Size',

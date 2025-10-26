@@ -139,3 +139,20 @@
 	quirk_flags = 0
 	erp_quirk = FALSE		// this is a lie, however we do it because we want it always on
 	mob_trait = TRAIT_HELPLESS_STUCKAGE
+
+/datum/quirk/permaberry
+	name = "Permaberry"
+	desc = "For whichever reason, your body began producing blueberry juice and has not ever stopped. You produce juice over time and produce even more the longer you stay around."
+	icon = "fa-circle-notch"
+	medical_record_text = "Patient constantely produces blueberry juice."
+	value = 0
+	gain_text = span_notice("You feel juice sloshing inside of you...")
+	lose_text = span_notice("The sloshing feeling is gone!")
+	erp_quirk = FALSE		// this is a lie, however we do it because we want it always on
+	quirk_flags = QUIRK_PROCESSES
+	maximum_process_stat = DEAD
+	var/time_passed = 0
+
+/datum/quirk/permaberry/process(seconds_per_tick)
+		quirk_holder.reagents.add_reagent(/datum/reagent/blueberry_juice, 0.2 + min(1.8, (time_passed / 1200)))
+		time_passed += seconds_per_tick

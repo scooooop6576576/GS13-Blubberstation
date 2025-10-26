@@ -1,7 +1,7 @@
 /// Maximum an Hemophage will drain, they will drain less if they hit their cap.
-#define HEMOPHAGE_DRAIN_AMOUNT 50
+#define HEMOPHAGE_DRAIN_AMOUNT_GS 50
 /// The multiplier for blood received by Hemophages out of humans with ckeys.
-#define BLOOD_DRAIN_MULTIPLIER_CKEY 1.15
+#define BLOOD_DRAIN_MULTIPLIER_CKEY_GS 1.15
 
 /datum/status_effect/blood_thirst_satiated
 	var/times_fed = 0
@@ -29,7 +29,7 @@
 			var/datum/status_effect/blood_thirst_satiated/bts = status
 			bts.times_fed += 1
 
-			var/client_mult = BLOOD_DRAIN_MULTIPLIER_CKEY
+			var/client_mult = BLOOD_DRAIN_MULTIPLIER_CKEY_GS
 			if(!victim.client)
 				client_mult = 1.0
 
@@ -69,9 +69,9 @@
 		hemophage.balloon_alert(hemophage, "stopped feeding")
 		return
 
-	var/drained_blood = min(victim.blood_volume, HEMOPHAGE_DRAIN_AMOUNT, blood_volume_difference)
+	var/drained_blood = min(victim.blood_volume, HEMOPHAGE_DRAIN_AMOUNT_GS, blood_volume_difference)
 	// if you drained from a human with a client, congrats
-	var/drained_multiplier = (is_target_human_with_client ? BLOOD_DRAIN_MULTIPLIER_CKEY : 1)
+	var/drained_multiplier = (is_target_human_with_client ? BLOOD_DRAIN_MULTIPLIER_CKEY_GS : 1)
 
 	var/obj/item/organ/stomach/hemophage/stomach_reference = hemophage.get_organ_slot(ORGAN_SLOT_STOMACH)
 	if(isnull(stomach_reference))
@@ -96,7 +96,7 @@
 	playsound(hemophage, 'sound/items/drink.ogg', 30, TRUE, -2)
 
 	// just let the hemophage know they're capped out on blood if they're trying to go for an exsanguinate and wondering why it isn't working
-	if(drained_blood != HEMOPHAGE_DRAIN_AMOUNT && hemophage.blood_volume >= (BLOOD_VOLUME_MAXIMUM - HEMOPHAGE_DRAIN_AMOUNT))
+	if(drained_blood != HEMOPHAGE_DRAIN_AMOUNT_GS && hemophage.blood_volume >= (BLOOD_VOLUME_MAXIMUM - HEMOPHAGE_DRAIN_AMOUNT_GS))
 		to_chat(hemophage, span_boldnotice("Your thirst is temporarily slaked, and you can digest no more new blood for the moment."))
 
 	if(victim.blood_volume <= BLOOD_VOLUME_OKAY)
@@ -116,5 +116,5 @@
 	// for this to ever occur, the hemophage actually has to be decently hungry, otherwise they'll cap their own blood reserves and be unable to pull it off.
 	if(!victim.blood_volume || victim.blood_volume <= BLOOD_VOLUME_SURVIVE)
 		to_chat(hemophage, span_boldwarning("A final sputter of blood trickles from [victim]'s collapsing veins as your terrible hunger drains them almost completely dry."))
-	else if ((victim.blood_volume + HEMOPHAGE_DRAIN_AMOUNT) <= BLOOD_VOLUME_SURVIVE)
+	else if ((victim.blood_volume + HEMOPHAGE_DRAIN_AMOUNT_GS) <= BLOOD_VOLUME_SURVIVE)
 		to_chat(hemophage, span_warning("A sense of hesitation gnaws: you know for certain that taking much more blood from [victim] WILL kill them. <b>...but another part of you sees only opportunity.</b>"))
