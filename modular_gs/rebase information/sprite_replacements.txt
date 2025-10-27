@@ -1,0 +1,1 @@
+- CentCom_skyra_z2.dmm was edited for GATOfication of status display

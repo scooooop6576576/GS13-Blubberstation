@@ -72373,9 +72373,7 @@
 /area/station/maintenance/aft)
 "sAD" = (
 /obj/effect/turf_decal/trimline/white/line,
-/obj/machinery/computer/order_console/cook{
-	dir = 4
-	},
+/obj/item/kirbyplants/random/fullysynthetic,
 /turf/open/floor/wood/parquet,
 /area/station/hallway/secondary/service)
 "sAN" = (

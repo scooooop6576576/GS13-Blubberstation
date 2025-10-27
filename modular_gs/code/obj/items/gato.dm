@@ -155,3 +155,6 @@
 	icon = 'modular_gs/icons/obj/structure/billboard.dmi'
 	desc = "A billboard advertising GATO. Someone's sprayed a message onto it: Fuck Corpo Pigs."
 	icon_state = "billboard_fuck_corps_gt"
+
+/obj/machinery/status_display
+	icon = 'modular_gs/icons/obj/machines/status_display.dmi'
