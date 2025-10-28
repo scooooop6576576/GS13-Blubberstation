@@ -85,4 +85,7 @@
 	desc = "If he was green, he would die."
 	icon_state = "sam"
 
-
+/obj/item/toy/plush/gs13/flint
+	name = "Flimbus plushie"
+	desc = "Fill him with oil and throw him at a wall!"
+	icon_state = "flint"
