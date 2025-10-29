@@ -302,3 +302,24 @@
 	var/fat_to_add = ((amount * CONFIG_GET(number/damage_multiplier)) * PERMA_FAT_DAMAGE_TO_FATNESS)
 	adjust_perma(fat_to_add, FATTENING_TYPE_WEAPON)
 	return fat_to_add
+
+/mob/living/carbon/apply_damage(
+	damage = 0,
+	damagetype = BRUTE,
+	def_zone = null,
+	blocked = 0,
+	forced = FALSE,
+	spread_damage = FALSE,
+	wound_bonus = 0,
+	exposed_wound_bonus = 0,
+	sharpness = NONE,
+	attack_direction = null,
+	attacking_item,
+	wound_clothing = TRUE,
+)
+	if (damagetype == FAT)
+		applyFatnessDamage(damage)
+	if (damagetype == PERMA_FAT)
+		applyPermaFatnessDamage(damage)
+	
+	. = ..()
