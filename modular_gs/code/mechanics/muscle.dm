@@ -1,8 +1,9 @@
 /mob/living/carbon
+	// PLEASE NOTE - If you add more muscle variables and you want them to show on scales, please add them to `modular_gs\code\modules\mob\living\carbon\weight_helpers.dm`!
 	/// How much total muscle mass does our mob have?
 	var/muscle = 0
 	/// How much real muscle mass does our mob have?
-	var/real_muscle = 0
+	var/muscle_real = 0
 	/// How fast do we lose muscle?
 	var/muscle_gain_rate = 1
 	/// How fast do we gain muscle?
@@ -21,10 +22,10 @@
 		else
 			muscle_to_change *= muscle_loss_rate
 
-	real_muscle += amount
-	real_muscle = max(real_muscle, 0)
+	muscle_real += amount
+	muscle_real = max(muscle_real, 0)
 
-	muscle = real_muscle
+	muscle = muscle_real
 	// here is where fake muscle would go if we had it.
 	return TRUE
 
