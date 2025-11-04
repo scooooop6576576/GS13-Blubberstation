@@ -1,7 +1,7 @@
 /obj/machinery/cryopod/tele //lore-friendly cryo thing
 	name = "Long-range Central Command teleporter"
-	desc = "A special mobility sleeper for storing agents in a disclosed location."
-	icon = 'modular_gs/icons/obj/Cryogenic2.dmi'
+	desc = "A special teleporter for sending employees back to Central Command for reassignments, adjustments or simply to end their shift."
+	icon = 'modular_gs/icons/obj/machinery/cryogenics.dmi'
 	icon_state = "telepod-open"
 	on_store_message = "has teleported back to Central Command."
 	on_store_name = "Teleporter Oversight"
@@ -17,5 +17,5 @@
 /obj/machinery/cryopod
 	/// Do we want to inform comms when someone cryos?
 	var/alert_comms = TRUE
-	var/on_store_message = "has entered long-term storage."
-	var/on_store_name = "Cryogenic Oversight"
+	var/on_store_message = "has entered the centcomm teleportation pod."
+	var/on_store_name = "Telepod Oversight"
