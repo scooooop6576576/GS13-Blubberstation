@@ -357,10 +357,10 @@
 	if(!do_after(user, 10 SECONDS, target = target))
 		return
 	var/mob/living/carbon/human/human_target = target
-	if(human_target.weight_gain_rate < 5.0)
-		human_target.weight_gain_rate = min(human_target.weight_gain_rate + 0.5, 5.0)
-	if(human_target.weight_loss_rate < 5.0)
-		human_target.weight_loss_rate = min(human_target.weight_loss_rate + 0.5, 5.0)
+	if(human_target.get_weight_gain_modifier("calorite_slime") < 5.0)
+		human_target.add_weight_gain_modifier("calorite_slime", 0.5)
+	if(human_target.get_weight_loss_modifier("calorite_slime") < 5.0)
+		human_target.add_weight_loss_modifier("calorite_slime", 0.5)
 	qdel(src)
 
 //Self-sustaining crossbreed

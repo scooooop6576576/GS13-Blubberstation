@@ -75,7 +75,7 @@
 	inhand_icon_state = "sheet-calorite"
 	singular_name = "calorite sheet"
 	// novariants = FALSE
-	grind_results = list(/datum/reagent/consumable/lipoifier = 2)
+	grind_results = list(/datum/reagent/consumable/lipoifier = 2, /datum/reagent/micro_calorite = 0.5)
 	// point_value = 40
 	// custom_materials = list(/datum/material/calorite=MINERAL_MATERIAL_AMOUNT)
 	mats_per_unit = list(/datum/material/calorite = SHEET_MATERIAL_AMOUNT)
