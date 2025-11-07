@@ -43,5 +43,9 @@
 	item_path = /obj/item/toy/plush/gs13/protogen
 
 /datum/loadout_item/toys/yeen_plush
-	name = "Yeen Plush"
+	name = "Grumpy hyena Plush"
 	item_path = /obj/item/toy/plush/gs13/yeen
+
+/datum/loadout_item/toys/noms_plush
+	name = "Strange blue creature Plush"
+	item_path = /obj/item/toy/plush/gs13/noms
