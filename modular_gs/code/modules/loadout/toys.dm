@@ -22,6 +22,10 @@
 	item_path = /obj/item/toy/plush/gs13/chloe
 	ckeywhitelist = list("alphas0")
 
+/datum/loadout_item/toys/kot
+	name = "Illiterate Demon Plushie"
+	item_path = /obj/item/toy/plush/gs13/kot
+
 /datum/loadout_item/toys/gatito
 	name = "Gatito Plushie"
 	item_path = /obj/item/toy/plush/gs13/gatito
