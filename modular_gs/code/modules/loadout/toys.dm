@@ -49,3 +49,7 @@
 /datum/loadout_item/toys/noms_plush
 	name = "Strange blue creature Plush"
 	item_path = /obj/item/toy/plush/gs13/noms
+
+/datum/loadout_item/toys/fala_plush
+	name = "Fala'squee Plush"
+	item_path = /obj/item/toy/plush/gs13/fala

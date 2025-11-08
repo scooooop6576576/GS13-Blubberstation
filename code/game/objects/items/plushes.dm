@@ -129,6 +129,10 @@
 		to_chat(user, span_notice("You try to pet [src], but it has no stuffing. Aww..."))
 
 /obj/item/toy/plush/attackby(obj/item/I, mob/living/user, list/modifiers, list/attack_modifiers)
+	// GS13 EDIT START
+	if(attempt_to_feed(I, user))
+		return
+	// GS13 EDIT END
 	if(I.get_sharpness())
 		if(!grenade)
 			if(!stuffed)
