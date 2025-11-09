@@ -1,5 +1,9 @@
-///proc/playsound_prefed(atom/source, soundin, pref, vol as num, vary, extrarange as num, falloff_exponent = SOUND_FALLOFF_EXPONENT, frequency = null, channel = 0, pressure_affected = TRUE, ignore_walls = TRUE,
-/proc/playsound_prefed(atom/source, soundin, pref,vol as num, vary, extrarange as num, falloff_exponent = SOUND_FALLOFF_EXPONENT, frequency = null, channel = 0, pressure_affected = TRUE, ignore_walls = TRUE, falloff_distance = SOUND_DEFAULT_FALLOFF_DISTANCE, use_reverb = TRUE, datum/preference/numeric/volume/volume_preference = null)
+/**
+ * An implementation of playsound that checks for users' prefs before playing a sound
+ * Used instead of conditional_pref_sound because that excludes ghosts
+ * 'pref' is a /datum/preference/toggle
+ */
+/proc/playsound_prefed(atom/source, soundin, pref, vol as num, vary, extrarange as num, falloff_exponent = SOUND_FALLOFF_EXPONENT, frequency = null, channel = 0, pressure_affected = TRUE, ignore_walls = TRUE, falloff_distance = SOUND_DEFAULT_FALLOFF_DISTANCE, use_reverb = TRUE, datum/preference/numeric/volume/volume_preference = null)
 	if(isarea(source))
 		CRASH("playsound(): source is an area")
 
