@@ -625,10 +625,10 @@
 	dir = 1
 	},
 /obj/structure/cable,
-/obj/machinery/portable_atmospherics/canister/oxygen,
 /obj/machinery/light/small/directional/west,
 /obj/machinery/power/apc/auto_name/directional/north,
 /obj/effect/turf_decal/tile/neutral/fourcorners,
+/obj/structure/reagent_dispensers/watertank,
 /turf/open/floor/iron/dark,
 /area/station/engineering/engine_smes)
 "akN" = (
@@ -3057,6 +3057,9 @@
 	dir = 5
 	},
 /obj/structure/cable,
+/obj/machinery/power/terminal{
+	dir = 1
+	},
 /turf/open/floor/iron,
 /area/station/engineering/engine_smes)
 "aPk" = (
@@ -5004,7 +5007,7 @@
 /obj/structure/cable,
 /obj/structure/sign/warning/electric_shock/directional/north,
 /obj/effect/turf_decal/tile/neutral/fourcorners,
-/obj/machinery/power/smes/super,
+/obj/machinery/power/smes/super/full_engineering,
 /turf/open/floor/iron/dark/textured,
 /area/station/engineering/engine_smes)
 "bpm" = (
@@ -21381,11 +21384,14 @@
 /turf/open/floor/plating/snowed/icemoon,
 /area/mine/eva/lower)
 "fNr" = (
-/obj/effect/turf_decal/delivery,
 /obj/structure/sign/warning/no_smoking/directional/north,
 /obj/machinery/light/directional/north,
 /obj/machinery/camera/directional/north{
 	c_tag = "Engineering SMES"
+	},
+/obj/machinery/power/port_gen/pacman,
+/obj/effect/turf_decal/bot{
+	dir = 1
 	},
 /turf/open/floor/iron/dark/smooth_half{
 	dir = 1
@@ -31094,13 +31100,12 @@
 /turf/open/floor/sepia,
 /area/station/security/prison/rec)
 "ixG" = (
-/obj/effect/turf_decal/bot{
-	dir = 1
-	},
 /obj/structure/extinguisher_cabinet/directional/north,
-/obj/structure/reagent_dispensers/watertank,
 /obj/effect/turf_decal/tile/neutral/fourcorners,
 /obj/machinery/light/small/directional/east,
+/obj/effect/turf_decal/delivery,
+/obj/structure/cable,
+/obj/machinery/power/smes/super/full_engineering,
 /turf/open/floor/iron/dark,
 /area/station/engineering/engine_smes)
 "ixZ" = (
@@ -42480,7 +42485,7 @@
 /obj/effect/turf_decal/delivery,
 /obj/structure/cable,
 /obj/effect/turf_decal/tile/neutral/fourcorners,
-/obj/machinery/power/smes/super,
+/obj/machinery/power/smes/super/full_engineering,
 /turf/open/floor/iron/dark/textured,
 /area/station/engineering/engine_smes)
 "lEE" = (
@@ -71472,8 +71477,8 @@
 /obj/effect/turf_decal/bot{
 	dir = 1
 	},
-/obj/machinery/power/port_gen/pacman,
 /obj/effect/turf_decal/tile/neutral/fourcorners,
+/obj/machinery/portable_atmospherics/canister/oxygen,
 /turf/open/floor/iron/dark,
 /area/station/engineering/engine_smes)
 "tCj" = (

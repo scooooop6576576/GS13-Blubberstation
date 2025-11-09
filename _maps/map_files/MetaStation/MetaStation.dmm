@@ -111,7 +111,7 @@
 "acs" = (
 /obj/structure/cable,
 /obj/effect/turf_decal/tile/neutral/fourcorners,
-/obj/machinery/power/smes/full,
+/obj/machinery/power/smes/super/full_engineering,
 /turf/open/floor/iron/dark,
 /area/station/engineering/main)
 "acB" = (
@@ -41325,7 +41325,7 @@
 /obj/machinery/light_switch/directional/west,
 /obj/structure/cable,
 /obj/effect/turf_decal/tile/neutral/fourcorners,
-/obj/machinery/power/smes/full,
+/obj/machinery/power/smes/super/full_engineering,
 /turf/open/floor/iron/dark,
 /area/station/engineering/main)
 "ofQ" = (

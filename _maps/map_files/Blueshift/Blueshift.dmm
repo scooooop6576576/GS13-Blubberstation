@@ -21009,7 +21009,7 @@
 /obj/structure/cable,
 /obj/machinery/light/small/directional/west,
 /obj/machinery/camera/autoname/engineering/directional/west,
-/obj/machinery/power/smes/full,
+/obj/machinery/power/smes/super/full_engineering,
 /turf/open/floor/iron/dark,
 /area/station/engineering/engine_smes)
 "dVq" = (
@@ -34788,7 +34788,7 @@
 /obj/structure/railing{
 	dir = 5
 	},
-/obj/machinery/power/smes/full,
+/obj/machinery/power/smes/super/full_engineering,
 /turf/open/floor/iron/dark,
 /area/station/engineering/engine_smes)
 "gBc" = (
@@ -76606,7 +76606,7 @@
 "oyw" = (
 /obj/machinery/status_display/ai/directional/west,
 /obj/structure/cable,
-/obj/machinery/power/smes/full,
+/obj/machinery/power/smes/super/full_engineering,
 /turf/open/floor/iron/dark,
 /area/station/engineering/engine_smes)
 "oyz" = (
@@ -77522,7 +77522,7 @@
 "oHS" = (
 /obj/machinery/status_display/evac/directional/west,
 /obj/structure/cable,
-/obj/machinery/power/smes/full,
+/obj/machinery/power/smes/super/full_engineering,
 /turf/open/floor/iron/dark,
 /area/station/engineering/engine_smes)
 "oHU" = (
@@ -105104,7 +105104,7 @@
 /obj/structure/railing{
 	dir = 4
 	},
-/obj/machinery/power/smes/full,
+/obj/machinery/power/smes/super/full_engineering,
 /turf/open/floor/iron/dark,
 /area/station/engineering/engine_smes)
 "tQM" = (

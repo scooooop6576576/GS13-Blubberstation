@@ -50581,9 +50581,9 @@
 /turf/open/floor/iron,
 /area/station/maintenance/port/greater)
 "ovN" = (
-/obj/machinery/power/smes/engineering,
 /obj/structure/sign/warning/electric_shock/directional/north,
 /obj/structure/cable,
+/obj/machinery/power/smes/super/full_engineering,
 /turf/open/floor/iron/dark/textured,
 /area/station/engineering/engine_smes)
 "ovQ" = (
@@ -76325,8 +76325,8 @@
 /turf/open/floor/wood,
 /area/station/service/chapel)
 "vUm" = (
-/obj/machinery/power/smes/engineering,
 /obj/structure/cable,
+/obj/machinery/power/smes/super/full_engineering,
 /turf/open/floor/iron/dark/textured,
 /area/station/engineering/engine_smes)
 "vUQ" = (

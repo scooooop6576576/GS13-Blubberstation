@@ -31753,13 +31753,13 @@
 /obj/effect/turf_decal/delivery,
 /obj/structure/cable,
 /obj/structure/sign/warning/electric_shock/directional/north,
-/obj/machinery/power/smes/full,
+/obj/machinery/power/smes/super/full_engineering,
 /turf/open/floor/iron/smooth_large,
 /area/station/engineering/engine_smes)
 "cid" = (
 /obj/effect/turf_decal/delivery,
 /obj/structure/cable,
-/obj/machinery/power/smes/full,
+/obj/machinery/power/smes/super/full_engineering,
 /turf/open/floor/iron/smooth_large,
 /area/station/engineering/engine_smes)
 "cie" = (
