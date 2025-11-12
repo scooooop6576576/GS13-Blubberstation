@@ -21799,7 +21799,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/turf/open/floor/wood,
+/turf/open/floor/plating,
 /area/station/security/courtroom)
 "gjW" = (
 /obj/effect/decal/cleanable/food/tomato_smudge,
@@ -27910,10 +27910,6 @@
 /obj/structure/railing,
 /turf/open/floor/grass,
 /area/station/science/zoo)
-"hWw" = (
-/obj/effect/spawner/structure/window,
-/turf/open/floor/wood,
-/area/station/security/courtroom)
 "hWA" = (
 /obj/effect/turf_decal/trimline/dark_blue/warning{
 	dir = 1
@@ -39791,6 +39787,7 @@
 /obj/effect/turf_decal/siding/thinplating_new/dark,
 /obj/machinery/power/apc/auto_name/directional/south,
 /obj/structure/cable,
+/obj/machinery/jukebox/no_access,
 /turf/open/floor/iron/dark/smooth_large,
 /area/station/commons/lounge)
 "lmL" = (
@@ -53406,7 +53403,7 @@
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/turf/open/floor/wood,
+/turf/open/floor/plating,
 /area/station/security/courtroom)
 "peO" = (
 /obj/effect/turf_decal/siding/wood{
@@ -113635,7 +113632,7 @@ lIM
 peF
 lIM
 lIM
-hWw
+nDA
 fbC
 nWD
 frB

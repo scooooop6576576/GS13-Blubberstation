@@ -5831,6 +5831,7 @@
 /obj/effect/turf_decal/tile/neutral/half/contrasted{
 	dir = 4
 	},
+/obj/item/airlock_painter/decal,
 /turf/open/floor/iron/dark,
 /area/station/commons/storage/primary)
 "byH" = (
@@ -38763,6 +38764,7 @@
 /obj/effect/turf_decal/tile/yellow/half/contrasted{
 	dir = 1
 	},
+/obj/item/airlock_painter/decal,
 /turf/open/floor/iron,
 /area/station/commons/storage/tools)
 "kFx" = (
@@ -39418,6 +39420,8 @@
 /obj/effect/turf_decal/box/white/corners{
 	dir = 4
 	},
+/obj/item/stack/sheet/mineral/stone/five,
+/obj/item/stack/sheet/mineral/stone/five,
 /turf/open/floor/iron/dark,
 /area/station/service/bar)
 "kOM" = (
@@ -53815,14 +53819,6 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /turf/open/floor/iron/textured_large,
 /area/station/hallway/primary/starboard)
-"oIj" = (
-/obj/effect/turf_decal/siding/wood/end{
-	dir = 1
-	},
-/mob/living/carbon/human/species/monkey/punpun,
-/obj/item/kirbyplants/organic/plant11,
-/turf/open/floor/stone,
-/area/station/service/bar/atrium)
 "oIr" = (
 /turf/open/floor/glass/reinforced,
 /area/station/engineering/storage/tech)
@@ -70202,7 +70198,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
 	},
-/obj/item/kirbyplants/organic/plant2,
+/obj/machinery/jukebox/no_access,
 /turf/open/floor/stone,
 /area/station/service/bar/atrium)
 "tis" = (
@@ -256842,7 +256838,7 @@ kKL
 ndv
 uXd
 iiE
-oIj
+ymf
 quS
 jNo
 hvQ
