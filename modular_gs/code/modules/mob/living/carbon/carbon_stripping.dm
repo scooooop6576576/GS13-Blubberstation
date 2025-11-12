@@ -11,9 +11,8 @@
 	if (!iscarbon(source))
 		return
 
-	var/mob/living/carbon/carbon_source = source
 	if (istype(item, /obj/item/bluespace_belt) && !istype(item, /obj/item/bluespace_belt/primitive))
-		return "bluespace_belt_adjustment"
+		return list("bluespace_belt_adjustment")
 
 /proc/strippable_alternate_action_bluespace_belt(obj/item/item, atom/source, mob/user)
 	if (!istype(item, /obj/item/bluespace_belt))
@@ -39,19 +38,4 @@
 	if(!do_after(user, 1 SECONDS, carbon_source))
 		return
 
-	bluespace_belt.ui_interact(user, null)
-
-	if (carbon_source.internal == item)
-		carbon_source.close_internals()
-	// This isn't meant to be FALSE, it correlates to the item's name.
-	else if (!QDELETED(item))
-		if(!carbon_source.try_open_internals(item))
-			return
-
-	carbon_source.visible_message(
-		span_danger("[user] [isnull(carbon_source.internal) ? "closes": "opens"] the valve on [source]'s [item.name]."),
-		span_userdanger("[user] [isnull(carbon_source.internal) ? "closes": "opens"] the valve on your [item.name]."),
-		ignored_mobs = user,
-	)
-
-	to_chat(user, span_notice("You [isnull(carbon_source.internal) ? "close" : "open"] the valve on [source]'s [item.name]."))
+	bluespace_belt.ui_interact_on_other(user)

@@ -62,6 +62,18 @@
 	if(!ui)
 		ui = new(user, src, "BluespaceBelt", src)
 		ui.open()
+	var/dist = get_dist(user, src)
+	if (dist >= 2)
+		ui.set_state(GLOB.default_state)
+
+/obj/item/bluespace_belt/proc/ui_interact_on_other(mob/user)
+	var/datum/tgui/ui = null
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "BluespaceBelt", src)
+		ui.set_state(GLOB.always_state)
+		ui.open()
+
 
 /obj/item/bluespace_belt/ui_act(action, list/params, datum/tgui/ui, datum/ui_state/state)
 	. = ..()
