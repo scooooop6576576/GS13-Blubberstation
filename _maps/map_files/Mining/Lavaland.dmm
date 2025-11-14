@@ -5371,9 +5371,6 @@
 	dir = 1
 	},
 /area/mine/living_quarters)
-"CK" = (
-/turf/open/floor/plating,
-/area/mine/maintenance/production)
 "CM" = (
 /obj/effect/turf_decal/stripes/line,
 /turf/open/floor/iron/dark/textured_large,
@@ -45438,7 +45435,7 @@ pU
 nm
 FX
 FX
-CK
+FX
 nm
 iY
 nm
