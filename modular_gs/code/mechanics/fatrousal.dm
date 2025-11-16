@@ -1,6 +1,7 @@
 /datum/quirk/fatrousal
 	name = "Adiposexual Response"
 	desc = "Your adipose tissue develops and shrinks depending on your arousal."
+	icon = "fa-heart"
 	value = 0 //ERP quirk
 	gain_text = "<span class='notice'>Your body feels like it could grow at any moment.</span>"
 	lose_text = "<span class='notice'>The feeling of impending growth is gone...</span>"

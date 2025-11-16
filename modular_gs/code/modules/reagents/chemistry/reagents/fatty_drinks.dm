@@ -160,7 +160,7 @@
 	name = "vanilla milkshake"
 	desc = "Guess they fixed the milkshake machine after all, huh?"
 	icon = 'modular_gs/icons/obj/drinks.dmi'
-	icon_state = "vanilla_milkshake"
+	icon_state = "milkshake_vanilla"
 
 /datum/reagent/consumable/milkshake_chocolate
 	name = "Chocolate Milkshake"

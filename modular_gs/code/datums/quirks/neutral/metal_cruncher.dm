@@ -49,8 +49,10 @@
 	crunch_value = 10
 /obj/item/stack/sheet/plastic
 	crunch_value = 2
+/*
 /obj/item/stack/sheet/micro_bricks
 	crunch_value = 1
+*/
 /obj/item/stack/sheet/cardboard
 	crunch_value = 1
 /obj/item/stack/sheet/mineral/calorite
