@@ -5,6 +5,7 @@
 	value = 0 //ERP quirk
 	gain_text = "<span class='notice'>Your body feels like it could grow at any moment.</span>"
 	lose_text = "<span class='notice'>The feeling of impending growth is gone...</span>"
+	medical_record_text = "Patient's body grows when aroused."
 	mob_trait = TRAIT_FATROUSAL
 
 /datum/quirk/fatrousal/add()

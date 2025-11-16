@@ -4,6 +4,7 @@
 	value = 0 //ERP quirk
 	gain_text = "<span class='notice'>You find yourself able to weave webs.</span>"
 	lose_text = "<span class='notice'>You are no longer able to weave webs.</span>"
+	// HEY NERD, PUT IN MEDICAL TEXT IF YOU ADD THIS BACK!
 	mob_trait = TRAIT_WEB_WEAVER
 	///What action is linked with this quirk?
 	var/datum/action/innate/wrap_target/linked_action1
