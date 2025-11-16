@@ -7,7 +7,7 @@
 	icon = 'modular_gs/icons/obj/clothing/bluespace_belt.dmi'
 	worn_icon = 'modular_gs/icons/mob/clothing/bsbelts.dmi'
 	icon_state = "bluespace_belt"
-	inhand_icon_state = "bluespace_belt"
+	//inhand_icon_state = "bluespace_belt"
 	slot_flags = ITEM_SLOT_BELT
 	equip_sound = 'modular_gs/sound/items/equip/toolbelt_equip.ogg'
 	drop_sound = 'modular_gs/sound/items/handling/toolbelt_drop.ogg'
@@ -95,7 +95,7 @@
 	desc = "A primitive belt made using bluespace technology. The power of space and time, used to hide the fact you are fat. This one requires cells to continue operating, and may suffer from random failures."
 	icon = 'modular_gs/icons/obj/clothing/bluespace_belt.dmi'
 	icon_state = "primitive_belt"
-	inhand_icon_state = "primitive_belt"
+	//inhand_icon_state = "primitive_belt"
 
 	var/cell_type = /obj/item/stock_parts/power_store/cell/high
 	var/obj/item/stock_parts/power_store/cell/cell

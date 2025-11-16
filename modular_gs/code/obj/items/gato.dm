@@ -26,7 +26,6 @@
 	grind_results = list(/datum/reagent/consumable/berryjuice = 10, /datum/reagent/lye = 10)
 	icon = 'modular_gs/icons/obj/items_and_weapons.dmi'
 	icon_state = "soapgt"
-	inhand_icon_state = "soapgt"
 	worn_icon_state = "soapgt"
 	cleanspeed = 2.8 SECONDS
 	uses = 300

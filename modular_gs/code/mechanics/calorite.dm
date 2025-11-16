@@ -58,7 +58,7 @@
 	singular_name = "calorite ore chunk"
 	icon = 'modular_gs/icons/obj/mining.dmi'
 	icon_state = "calorite ore"
-	inhand_icon_state = "calorite ore"
+	//inhand_icon_state = "calorite ore"
 	singular_name = "Calorite ore chunk"
 	points = 40
 	// custom_materials = list(/datum/material/calorite=MINERAL_MATERIAL_AMOUNT)
@@ -72,7 +72,7 @@
 	name = "calorite"
 	icon = 'modular_gs/icons/obj/stack_objects.dmi'
 	icon_state = "sheet-calorite"
-	inhand_icon_state = "sheet-calorite"
+	//inhand_icon_state = "sheet-calorite"
 	singular_name = "calorite sheet"
 	// novariants = FALSE
 	grind_results = list(/datum/reagent/consumable/lipoifier = 2, /datum/reagent/micro_calorite = 0.5)
