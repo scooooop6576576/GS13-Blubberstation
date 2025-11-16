@@ -5,6 +5,7 @@
 	value = 0
 	gain_text = "<span class='notice'>You feel like you could eat steel.</span>"
 	lose_text = "<span class='notice'>Your teeth hurt too much...</span>"
+	medical_record_text = "Patient is able to devour metal."
 	mob_trait = TRAIT_METAL_CRUNCHER
 
 /obj/item/stack
