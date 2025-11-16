@@ -894,6 +894,7 @@
 /area/station/engineering/lobby)
 "aog" = (
 /obj/machinery/light/floor,
+/obj/effect/landmark/start/bridge_assistant,
 /turf/open/floor/iron,
 /area/station/command/bridge)
 "aol" = (
