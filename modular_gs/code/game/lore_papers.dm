@@ -551,6 +551,7 @@
 				"}
 
 
+/*
 	//GS13 SOP Manuals Begin
 /obj/item/book/manual/science_SOP
 	name = "GATO Research and Development Standard Operating Procedure"
@@ -951,6 +952,7 @@
 		</body></html>"}
 
 //GS13 SOP Manuals end
+*/
 
 //gs13 snack attack shuttle loan
 

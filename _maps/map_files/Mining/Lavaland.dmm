@@ -1301,9 +1301,7 @@
 /obj/machinery/door/airlock/external/glass{
 	name = "Mining External Airlock"
 	},
-/obj/effect/mapping_helpers/airlock/cyclelink_helper{
-	dir = 8
-	},
+/obj/structure/fans/tiny,
 /turf/open/floor/plating/lavaland_atmos,
 /area/mine/lounge)
 "gW" = (
