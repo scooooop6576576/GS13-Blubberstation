@@ -80,18 +80,18 @@
 		if(ishumanbasic(C))
 			playsound(C, pick('hyperstation/sound/voice/emotes/bat_c1.ogg', 'hyperstation/sound/voice/emotes/bat_c2.ogg', 'hyperstation/sound/voice/emotes/bat_c3.ogg',\
 			'hyperstation/sound/voice/emotes/bat_c4.ogg', 'hyperstation/sound/voice/emotes/bat_c5.ogg',\
-			 'hyperstation/sound/voice/emotes/bat_c6.ogg', 'hyperstation/sound/voice/emotes/bat_c7.ogg', 'hyperstation/sound/voice/emotes/bat_c8.ogg',\
-			 'hyperstation/sound/voice/emotes/bat_c9.ogg'), 50, 1)
+				'hyperstation/sound/voice/emotes/bat_c6.ogg', 'hyperstation/sound/voice/emotes/bat_c7.ogg', 'hyperstation/sound/voice/emotes/bat_c8.ogg',\
+				'hyperstation/sound/voice/emotes/bat_c9.ogg'), 50, 1)
 		if(is_species(user, /datum/species/mammal))
 			playsound(C, pick('hyperstation/sound/voice/emotes/bat_c1.ogg', 'hyperstation/sound/voice/emotes/bat_c2.ogg', 'hyperstation/sound/voice/emotes/bat_c3.ogg',\
 			'hyperstation/sound/voice/emotes/bat_c4.ogg', 'hyperstation/sound/voice/emotes/bat_c5.ogg',\
-			 'hyperstation/sound/voice/emotes/bat_c6.ogg', 'hyperstation/sound/voice/emotes/bat_c7.ogg', 'hyperstation/sound/voice/emotes/bat_c8.ogg',\
-			 'hyperstation/sound/voice/emotes/bat_c9.ogg'), 50, 1)
+				'hyperstation/sound/voice/emotes/bat_c6.ogg', 'hyperstation/sound/voice/emotes/bat_c7.ogg', 'hyperstation/sound/voice/emotes/bat_c8.ogg',\
+				'hyperstation/sound/voice/emotes/bat_c9.ogg'), 50, 1)
 		if(is_species(user, /datum/species/avian))//this and mammal should be considered the same AAAAAAAAAAAA
 			playsound(C, pick('hyperstation/sound/voice/emotes/bat_c1.ogg', 'hyperstation/sound/voice/emotes/bat_c2.ogg', 'hyperstation/sound/voice/emotes/bat_c3.ogg',\
 			'hyperstation/sound/voice/emotes/bat_c4.ogg', 'hyperstation/sound/voice/emotes/bat_c5.ogg',\
-			 'hyperstation/sound/voice/emotes/bat_c6.ogg', 'hyperstation/sound/voice/emotes/bat_c7.ogg', 'hyperstation/sound/voice/emotes/bat_c8.ogg',\
-			 'hyperstation/sound/voice/emotes/bat_c9.ogg'), 50, 1)
+				'hyperstation/sound/voice/emotes/bat_c6.ogg', 'hyperstation/sound/voice/emotes/bat_c7.ogg', 'hyperstation/sound/voice/emotes/bat_c8.ogg',\
+				'hyperstation/sound/voice/emotes/bat_c9.ogg'), 50, 1)
 */
 //End of the random emotes I found in mob/living
 

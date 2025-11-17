@@ -1,9 +1,11 @@
 /datum/quirk/fatrousal
 	name = "Adiposexual Response"
 	desc = "Your adipose tissue develops and shrinks depending on your arousal."
+	icon = "fa-heart"
 	value = 0 //ERP quirk
 	gain_text = "<span class='notice'>Your body feels like it could grow at any moment.</span>"
 	lose_text = "<span class='notice'>The feeling of impending growth is gone...</span>"
+	medical_record_text = "Patient's body grows when aroused."
 	mob_trait = TRAIT_FATROUSAL
 
 /datum/quirk/fatrousal/add()
@@ -17,7 +19,7 @@
 		C.hider_remove(src)
 
 
-/datum/quirk/fatrousal/proc/fat_hide(var/mob/living/carbon/human/user)
+/datum/quirk/fatrousal/proc/fat_hide(mob/living/carbon/human/user)
 	var/mob/living/carbon/human/aroused_human = quirk_holder
 	if(!istype(aroused_human))
 		return FALSE

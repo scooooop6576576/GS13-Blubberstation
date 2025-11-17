@@ -36,11 +36,11 @@
 	var/capacitor_rating = 0
 	var/manipulator_rating = 0
 
-	for(var/obj/item/stock_parts/capacitor/capacitor in component_parts)
+	for(var/datum/stock_part/capacitor/capacitor in component_parts)
 		capacitor_rating += capacitor.rating
 	maximum_net_drain_percentage = capacitor_rating * DRAIN_MODIFIER
 
-	for(var/obj/item/stock_parts/manipulator/manipulator in component_parts)
+	for(var/datum/stock_part/servo/manipulator in component_parts)
 		manipulator_rating += manipulator.rating
 	credit_conversion_rate = manipulator_rating * CREDIT_CONVERSION_EFFICIENCY
 
@@ -205,7 +205,7 @@
 	needs_anchored = FALSE
 	req_components = list(
 		/obj/item/stock_parts/capacitor = 4,
-		/obj/item/stock_parts/manipulator = 2)
+		/obj/item/stock_parts/servo = 2)
 
 
 #undef DRAIN_MODIFIER

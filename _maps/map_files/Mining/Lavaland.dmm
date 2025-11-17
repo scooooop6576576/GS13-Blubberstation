@@ -1301,9 +1301,7 @@
 /obj/machinery/door/airlock/external/glass{
 	name = "Mining External Airlock"
 	},
-/obj/effect/mapping_helpers/airlock/cyclelink_helper{
-	dir = 8
-	},
+/obj/structure/fans/tiny,
 /turf/open/floor/plating/lavaland_atmos,
 /area/mine/lounge)
 "gW" = (
@@ -5396,10 +5394,6 @@
 /obj/effect/mapping_helpers/airlock/access/any/engineering/maintenance,
 /turf/open/floor/plating,
 /area/mine/maintenance/public/north)
-"CT" = (
-/obj/structure/lattice/catwalk/mining,
-/turf/closed/wall,
-/area/lavaland/surface/outdoors)
 "CU" = (
 /obj/structure/toilet{
 	dir = 8;
@@ -9272,10 +9266,6 @@
 "YJ" = (
 /turf/open/floor/plating,
 /area/mine/maintenance/labor)
-"YL" = (
-/obj/structure/lattice/catwalk/mining,
-/turf/closed/wall,
-/area/mine/lounge)
 "YM" = (
 /obj/structure/barricade/wooden,
 /turf/open/misc/asteroid/basalt/lava_land_surface,
@@ -42877,7 +42867,7 @@ iu
 iu
 Gx
 oy
-YL
+Zq
 Wg
 Zq
 gp
@@ -43391,7 +43381,7 @@ iu
 ws
 Gx
 gy
-YL
+Zq
 gV
 Zq
 kK
@@ -43643,7 +43633,7 @@ iu
 XV
 kC
 iu
-CT
+FH
 FH
 pU
 pU

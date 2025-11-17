@@ -6,8 +6,8 @@
 	var/power_efficiency = 1
 	var/power_usage = 50
 	var/panel_open = FALSE
-	var/list/required_parts = list(/obj/item/stock_parts/manipulator,
-							/obj/item/stock_parts/manipulator,
+	var/list/required_parts = list(/obj/item/stock_parts/servo,
+							/obj/item/stock_parts/servo,
 							/obj/item/stock_parts/capacitor)
 	var/obj/item/stock_parts/cell/power_cell
 
@@ -17,9 +17,9 @@
 
 /obj/vehicle/ridden/grocery_cart/motorized/proc/refresh_parts()
 	speed = 1 // Should never be under 1
-	for(var/obj/item/stock_parts/manipulator/M in contents)
+	for(var/datum/stock_part/servo/M in contents)
 		speed += M.rating
-	for(var/obj/item/stock_parts/capacitor/C in contents)
+	for(var/datum/stock_part/capacitor/C in contents)
 		power_efficiency = C.rating
 	var/datum/component/riding/D = GetComponent(/datum/component/riding)
 	D.vehicle_move_delay = round(CONFIG_GET(number/movedelay/run_delay) * delay_multiplier) / speed

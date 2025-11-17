@@ -5375,7 +5375,6 @@
 /obj/item/flashlight/lantern{
 	anchored = 1;
 	icon_state = "lantern-on";
-	on = 1;
 	pixel_x = -11;
 	pixel_y = 0
 	},
@@ -6265,7 +6264,6 @@
 /obj/item/flashlight/lantern{
 	anchored = 1;
 	icon_state = "lantern-on";
-	on = 1;
 	pixel_x = 10;
 	pixel_y = 0
 	},
@@ -6336,7 +6334,6 @@
 /obj/item/flashlight/lantern{
 	anchored = 1;
 	icon_state = "lantern-on";
-	on = 1;
 	pixel_x = -11;
 	pixel_y = 0
 	},
@@ -8875,7 +8872,6 @@
 /obj/item/flashlight/lantern{
 	anchored = 1;
 	icon_state = "lantern-on";
-	on = 1;
 	pixel_x = 10;
 	pixel_y = 0
 	},
@@ -11686,7 +11682,6 @@
 /obj/item/flashlight/lantern{
 	anchored = 1;
 	icon_state = "lantern-on";
-	on = 1;
 	pixel_x = 10;
 	pixel_y = 0
 	},
@@ -13536,7 +13531,6 @@
 /obj/item/flashlight/lantern{
 	anchored = 1;
 	icon_state = "lantern-on";
-	on = 1;
 	pixel_x = -11;
 	pixel_y = 0
 	},
@@ -13866,10 +13860,6 @@
 /obj/structure/chair/stool/bar/directional/west,
 /turf/open/indestructible/hotelwood,
 /area/centcom/holding/cafe)
-"nht" = (
-/turf/open/space/basic,
-/area/space,
-/area/space)
 "nhZ" = (
 /obj/structure/chair/sofa/corp/left{
 	dir = 8
@@ -14266,7 +14256,6 @@
 /area/centcom/holding/cafe)
 "nFi" = (
 /obj/machinery/shower/directional/north,
-/obj/structure/window/spawner/directional/west,
 /obj/structure/window/spawner/directional/west,
 /obj/effect/turf_decal/siding/white{
 	dir = 8
@@ -61279,7 +61268,7 @@ aaa
 aaa
 aaa
 aaa
-nht
+aaa
 ajj
 ajj
 lxl

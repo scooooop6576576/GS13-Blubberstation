@@ -1,3 +1,4 @@
+
 /obj/item/reagent_containers/cup/glass/bottle/orangejuice
 	name = "orange juice"
 	icon = 'modular_gs/icons/obj/cit_drinks.dmi'
@@ -5,6 +6,7 @@
 	isGlass = FALSE
 	list_reagents = list(/datum/reagent/consumable/orangejuice = 100)
 
+/*
 /obj/item/reagent_containers/cup/glass/bottle/bio_carton
 	name = "small carton box"
 	desc = "A small biodegradable carton box made from plant biomatter."
@@ -60,3 +62,5 @@
 	icon = 'modular_gs/icons/obj/cit_drinks.dmi'
 	isGlass = FALSE
 	list_reagents = list(/datum/reagent/consumable/menthol = 100)
+
+*/

@@ -10,7 +10,7 @@
 	for(var/i = 1, i <= leng, i += length(rawchar))
 		rawchar = newletter = phrase[i]
 		if(rand(1,100)<=strength * 0.5)
-			var/lowerletter = lowertext(newletter)
+			var/lowerletter = LOWER_TEXT(newletter)
 			if(lowerletter == "o")
 				newletter = "+BURRP+"
 			else if(lowerletter == "s")

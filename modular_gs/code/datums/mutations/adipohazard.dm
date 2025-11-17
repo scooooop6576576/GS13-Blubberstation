@@ -160,9 +160,6 @@
 	if(on_fire)
 		return
 
-	if(SEND_SIGNAL(src, COMSIG_CARBON_PRE_MISC_HELP, helper) & COMPONENT_BLOCK_MISC_HELP)
-		return
-
 	if(helper == src)
 		return
 
@@ -187,7 +184,7 @@
 			touching_mutation.fatten(src, 3)
 		if(touched_chem)
 			touched_chem.fatten(src, 3)
-			
+
 	else if(helper.zone_selected == BODY_ZONE_PRECISE_MOUTH) //BOOP
 		if(HAS_TRAIT(src, TRAIT_QUICKREFLEXES) && (src.stat != UNCONSCIOUS) && !INCAPACITATED_IGNORING(src, INCAPABLE_RESTRAINTS) && !(HAS_TRAIT(src, TRAIT_SENSITIVESNOUT)))
 			return
@@ -197,7 +194,7 @@
 			touching_mutation.fatten(src)
 		if(touched_chem)
 			touched_chem.fatten(src)
-			
+
 	else if(check_zone(helper.zone_selected) == BODY_ZONE_HEAD && get_bodypart(BODY_ZONE_HEAD)) //HEADPAT
 		if(HAS_TRAIT(src, TRAIT_OVERSIZED) && !HAS_TRAIT(helper, TRAIT_OVERSIZED))
 			return
@@ -218,7 +215,7 @@
 				touching_mutation.fatten(src, 5)
 			if(touched_chem)
 				touched_chem.fatten(src, 5)
-				
+
 		else
 			if (HAS_TRAIT(src, TRAIT_QUICKREFLEXES) && (src.stat != UNCONSCIOUS) && !INCAPACITATED_IGNORING(src, INCAPABLE_RESTRAINTS)) //HUG
 				return

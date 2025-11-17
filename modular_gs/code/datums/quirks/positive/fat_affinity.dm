@@ -6,6 +6,7 @@
 	quirk_flags = QUIRK_HIDE_FROM_SCAN | QUIRK_PROCESSES | QUIRK_MOODLET_BASED
 	erp_quirk = FALSE // Disables on ERP config.
 	mob_trait = TRAIT_FAT_GOOD
+	medical_record_text = "Patient seems to take a liking towards those at higher weights, including themselves"
 	var/mob/living/carbon/last_fatty
 	var/highest_recorded_weight = 0
 

@@ -26,7 +26,7 @@ GLOBAL_LIST_EMPTY(adipoelectric_transformer)
 
 /obj/machinery/adipoelectric_transformer/RefreshParts()
 	recharge_speed = 0
-	for(var/obj/item/stock_parts/capacitor/C in component_parts)
+	for(var/datum/stock_part/capacitor/C in component_parts)
 		recharge_speed += C.rating
 
 /obj/machinery/adipoelectric_transformer/process()

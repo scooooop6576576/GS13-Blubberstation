@@ -8,6 +8,7 @@
 	lefthand_file = 'modular_gs/icons/mob/inhands/guns_lefthand.dmi'
 	righthand_file = 'modular_gs/icons/mob/inhands/guns_righthand.dmi'
 	icon_state = "fatoray"
+	inhand_icon_state = "fatoray"
 	pin = /obj/item/firing_pin
 	fire_sound = 'sound/items/weapons/plasma_cutter.ogg'
 	ammo_type = list(/obj/item/ammo_casing/energy/fattening)

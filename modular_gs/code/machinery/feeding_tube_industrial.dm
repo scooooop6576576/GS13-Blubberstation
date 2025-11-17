@@ -60,7 +60,7 @@
 /obj/structure/disposaloutlet/industrial_feeding_tube/CheckParts(list/parts_list)
 	..()
 	pump_limit = 0
-	for(var/obj/item/stock_parts/matter_bin/mb in contents)
+	for(var/datum/stock_part/matter_bin/mb in contents)
 		if(mb in pump_stuff) //stuff we're going to pump are not being used to build us.
 			continue
 		pump_limit += mb.rating * 2.5 // ~20 items per pump with 2 bluespace bins
@@ -138,7 +138,7 @@
 		return
 
 /// Attaches the tube to the target. dest defaults to the target, if dest isnt defined
-/obj/structure/disposaloutlet/industrial_feeding_tube/proc/attach_tube(var/mob/living/target, var/dest = null, var/loud = TRUE)
+/obj/structure/disposaloutlet/industrial_feeding_tube/proc/attach_tube(mob/living/target, dest = null, loud = TRUE)
 	if(!target)
 		return FALSE
 	if(dest)
@@ -157,7 +157,7 @@
 	update_icon()
 	face_atom(target)
 
-/obj/structure/disposaloutlet/industrial_feeding_tube/proc/detach_tube(var/loud = TRUE)
+/obj/structure/disposaloutlet/industrial_feeding_tube/proc/detach_tube(loud = TRUE)
 	UnregisterSignal(attached, COMSIG_MOVABLE_MOVED)
 	if(loud)
 		attached.visible_message("<span class='warning'>[attached] is detached from [src].</span>")
@@ -483,7 +483,7 @@
 	clogged = FALSE
 	update_icon()
 
-/obj/structure/disposaloutlet/industrial_feeding_tube/proc/spew(var/list/spew_stuff, playsound = FALSE)
+/obj/structure/disposaloutlet/industrial_feeding_tube/proc/spew(list/spew_stuff, playsound = FALSE)
 	var/turf/T = get_turf(src)
 
 	if(playsound)

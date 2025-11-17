@@ -10,6 +10,10 @@
 	erp_quirk = FALSE
 	mob_trait = TRAIT_WEAKLEGS
 
+/datum/quirk/helplessness
+	icon = "fa-weight-scale"
+	medical_record_text = "You shouldn't be seeing this."
+
 /datum/quirk/helplessness/immobile
 	name = "Very Weak legs"
 	desc = "Your legs can't carry the heaviest of weights. At 2540 BFI you will become unable to move. WARNING! PICKING THIS QUIRK WILL MAKE YOU IMMOBILE REGARDLESS OF YOUR IMMOBILITY PREFERENCE!"

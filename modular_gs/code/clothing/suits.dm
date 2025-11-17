@@ -30,7 +30,7 @@
 
 /obj/item/clothing/suit/armor/vest/capcarapace/moka
 	name = "Hellcat Overcoat"
-	desc = "Badass. Seems to be specifically made for some CentComm Commander."
+	desc = "Badass. Seems to be specifically made for some CentCom Commander."
 	icon = 'modular_gs/icons/mob/suits.dmi'
 	mob_overlay_icon = 'modular_gs/icons/mob/suits.dmi'
 	icon_state = "hellcat_overcoat"

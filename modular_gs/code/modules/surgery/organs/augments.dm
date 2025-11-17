@@ -18,9 +18,9 @@
 
 /obj/item/organ/cyberimp/chest/mobility/Insert(mob/living/carbon/M, special = 0, drop_if_replaced = TRUE)
 	..()
-	ADD_TRAIT(M, TRAIT_NO_FAT_SLOWDOWN, src)
+	ADD_TRAIT(M, TRAIT_NO_FAT_SLOWDOWN, REF(src))
 
 /obj/item/organ/cyberimp/chest/mobility/Remove(special = FALSE)
 	var/mob/living/carbon/human/M = owner
-	REMOVE_TRAIT(M, TRAIT_NO_FAT_SLOWDOWN, src)
+	REMOVE_TRAIT(M, TRAIT_NO_FAT_SLOWDOWN, REF(src))
 	..()

@@ -15,12 +15,12 @@
 
 	user.set_machine(src)
 	var/dat = "<TT><B>Fatness Infrared Laser</B></TT>"
-	dat += "<BR><B>Status</B>: [on ? "<A href='?src=[REF(src)];state=0'>On</A>" : "<A href='?src=[REF(src)];state=1'>Off</A>"]"
-	dat += "<BR><B>Visibility</B>: [visible ? "<A href='?src=[REF(src)];visible=0'>Visible</A>" : "<A href='?src=[REF(src)];visible=1'>Invisible</A>"]"
-	dat += "<BR><B>Fatness level to trigger:</B><A href='?src=[REF(src)];fatness_to_trigger=1'>[get_fatness_level_name(fatness_to_trigger)]</A>"
-	dat += "<BR><B>Trigger above or below the target fatness level:</B><A href='?src=[REF(src)];trigger_below=1'>[trigger_below ? "Below" : "Above"]</A>"
-	dat += "<BR><BR><A href='?src=[REF(src)];refresh=1'>Refresh</A>"
-	dat += "<BR><BR><A href='?src=[REF(src)];close=1'>Close</A>"
+	dat += "<BR><B>Status</B>: [on ? "<a href='byond://?src=[REF(src)];state=0'>On</A>" : "<a href='byond://?src=[REF(src)];state=1'>Off</A>"]"
+	dat += "<BR><B>Visibility</B>: [visible ? "<a href='byond://?src=[REF(src)];visible=0'>Visible</A>" : "<a href='byond://?src=[REF(src)];visible=1'>Invisible</A>"]"
+	dat += "<BR><B>Fatness level to trigger:</B><a href='byond://?src=[REF(src)];fatness_to_trigger=1'>[get_fatness_level_name(fatness_to_trigger)]</A>"
+	dat += "<BR><B>Trigger above or below the target fatness level:</B><a href='byond://?src=[REF(src)];trigger_below=1'>[trigger_below ? "Below" : "Above"]</A>"
+	dat += "<BR><BR><a href='byond://?src=[REF(src)];refresh=1'>Refresh</A>"
+	dat += "<BR><BR><a href='byond://?src=[REF(src)];close=1'>Close</A>"
 	user << browse(dat, "window=infra")
 	onclose(user, "infra")
 	return
@@ -37,14 +37,14 @@
 			src, "None") as null|anything in list(
 			"None", "Fat", "Fatter", "Very Fat", "Obese", "Morbidly Obese", "Extremely Obese", "Barely Mobile", "Immobile", "Blob")
 		if(!fatness_type)
-			return		
+			return
 
-		var/fatness_amount = 0	
+		var/fatness_amount = 0
 		switch(fatness_type)
 			if("Fat")
 				fatness_amount = FATNESS_LEVEL_FAT
 			if("Fatter")
-				fatness_amount = FATNESS_LEVEL_FATTER 
+				fatness_amount = FATNESS_LEVEL_FATTER
 			if("Very Fat")
 				fatness_amount = FATNESS_LEVEL_VERYFAT
 			if("Obese")
@@ -59,8 +59,8 @@
 				fatness_amount = FATNESS_LEVEL_IMMOBILE
 			if("Blob")
 				fatness_amount = FATNESS_LEVEL_BLOB
-			
-		fatness_to_trigger = fatness_amount	
+
+		fatness_to_trigger = fatness_amount
 		update_icon()
 		refreshBeam()
 

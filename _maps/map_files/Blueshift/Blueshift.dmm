@@ -4978,6 +4978,10 @@
 /obj/effect/decal/cleanable/blood/oil/slippery,
 /turf/open/floor/plating,
 /area/station/maintenance/department/science/lower)
+"aZc" = (
+/obj/effect/landmark/start/bridge_assistant,
+/turf/open/floor/iron,
+/area/station/command/bridge)
 "aZe" = (
 /obj/structure/table/wood,
 /obj/item/lipstick/random{
@@ -225296,7 +225300,7 @@ soz
 rBP
 qyf
 rOc
-tVq
+aZc
 llN
 tYB
 gjF

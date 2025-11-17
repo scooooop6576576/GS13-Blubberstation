@@ -33,7 +33,7 @@
 		return
 
 	for(var/trait in traits_list)
-		ADD_TRAIT(target, trait, src)
+		ADD_TRAIT(target, trait, REF(src))
 
 	target_human.nutri_mult += 1
 	return TRUE
@@ -48,7 +48,7 @@
 		return
 
 	for(var/trait in traits_list)
-		REMOVE_TRAIT(target_human, trait, src)
+		REMOVE_TRAIT(target_human, trait, REF(src))
 
 	target_human.nutri_mult -= 1
 	return TRUE

@@ -5,6 +5,7 @@
 	value = 0
 	gain_text = "<span class='notice'>You feel like you could eat steel.</span>"
 	lose_text = "<span class='notice'>Your teeth hurt too much...</span>"
+	medical_record_text = "Patient is able to devour metal."
 	mob_trait = TRAIT_METAL_CRUNCHER
 
 /obj/item/stack
@@ -49,8 +50,10 @@
 	crunch_value = 10
 /obj/item/stack/sheet/plastic
 	crunch_value = 2
+/*
 /obj/item/stack/sheet/micro_bricks
 	crunch_value = 1
+*/
 /obj/item/stack/sheet/cardboard
 	crunch_value = 1
 /obj/item/stack/sheet/mineral/calorite
@@ -81,12 +84,14 @@
 	crunch_value = 4
 /obj/item/stack/sheet/mineral/bamboo
 	crunch_value = 10
+/*
 /obj/item/stack/sheet/mineral/shadoww
 	crunch_value = 15
 /obj/item/stack/sheet/mineral/gmushroom
 	crunch_value = 15
 /obj/item/stack/sheet/mineral/plaswood
 	crunch_value = 15
+*/
 /obj/item/stack/sheet/mineral/diamond
 	crunch_value = 25
 
