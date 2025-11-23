@@ -148,7 +148,7 @@
 
 /obj/item/toy/plush/gs13/isaac
 	name = "Plump dragon plush"
-	desc = "If he were were green, he too would die.."
+	desc = "If he were green, he too would die.."
 	icon_state = "isaac"
 	stuffed_icon_state = "isaac_stuffed"
 	can_eat_food = TRUE
