@@ -154,3 +154,13 @@
 	can_eat_food = TRUE
 	pred_plush = TRUE
 	prey_plush = TRUE
+
+/obj/item/toy/plush/gs13/kiki
+	name = "Trashy racc plush"
+	desc = "It has such a smug face for such a small plushie."
+	icon_state = "kiki"
+	stuffed_icon_state = "kiki_stuffed"
+	can_eat_food = TRUE
+	pred_plush = TRUE
+	prey_plush = TRUE
+
