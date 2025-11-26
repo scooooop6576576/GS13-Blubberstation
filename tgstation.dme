@@ -6980,6 +6980,7 @@
 #include "modular_gs\code\modules\client\preferences\noise_preferences.dm"
 #include "modular_gs\code\modules\client\preferences\size.dm"
 #include "modular_gs\code\modules\client\preferences\wg_source_preferences.dm"
+#include "modular_gs\code\modules\clothing\under\dual_tone_jumpsuit.dm"
 #include "modular_gs\code\modules\clothing\under\jobs\modular_items.dm"
 #include "modular_gs\code\modules\clothing\under\jobs\modular_clothing\dual_tone.dm"
 #include "modular_gs\code\modules\customization\modules\mob\living\carbon\human\species\hemophage\hemophage_status_effects.dm"

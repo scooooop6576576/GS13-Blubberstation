@@ -89,7 +89,7 @@
 /obj/item/clothing/under/color/dual_tone/cargo
 	name = "Cargo technicians dual tone jumpsuit (Modular)"
 	desc = "Dual tone, yellow-gray jumpsuit worn by cargo techs. Comfy and with big pockets!"
-	greyscale_colors = "#D6B328#C0C0C0"
+	greyscale_colors = "#7a4400#303030"
 	flags_1 = 0		// make it non-recolorable
 
 /obj/item/clothing/under/color/dual_tone/cargo/quartermaster
