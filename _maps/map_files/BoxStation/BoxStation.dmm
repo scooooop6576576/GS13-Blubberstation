@@ -26353,13 +26353,6 @@
 /obj/structure/lattice,
 /turf/open/space/basic,
 /area/space/nearstation)
-"bLt" = (
-/obj/machinery/atmospherics/components/unary/passive_vent{
-	dir = 1
-	},
-/obj/structure/lattice/catwalk,
-/turf/open/space/basic,
-/area/space)
 "bLu" = (
 /obj/structure/rack,
 /obj/effect/spawner/random/maintenance,
@@ -73116,12 +73109,6 @@
 /obj/structure/sign/gato,
 /turf/closed/wall,
 /area/station/hallway/secondary/exit)
-"sRY" = (
-/obj/structure/lattice,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/turf/open/space/basic,
-/area/space,
-/area/space/nearstation)
 "sSp" = (
 /obj/effect/turf_decal/trimline/blue/arrow_cw{
 	alpha = 200
@@ -83270,7 +83257,7 @@
 "xqs" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/visible,
 /turf/closed/wall/r_wall,
-/area/space/nearstation)
+/area/station/maintenance/disposal/incinerator)
 "xqv" = (
 /obj/machinery/air_sensor/plasma_tank,
 /turf/open/floor/engine/plasma,
@@ -122584,7 +122571,7 @@ cjr
 cqt
 dIF
 xqs
-bLt
+aHP
 xzh
 xzh
 xzh
@@ -123101,7 +123088,7 @@ bJS
 krb
 cmd
 xzh
-sRY
+sPq
 xzh
 xzh
 xzh
