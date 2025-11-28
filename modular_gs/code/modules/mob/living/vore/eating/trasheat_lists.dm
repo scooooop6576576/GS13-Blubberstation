@@ -2,7 +2,7 @@
 // path for a global lists file when there's code/_global_vars/lists as a directory. Im just putting this here for now. -Reo
 
 //Blacklist to exclude items from object ingestion. Digestion blacklist located in digest_act_vr.dm
-var/global/list/item_vore_blacklist = list(
+GLOBAL_LIST_INIT(item_vore_blacklist, list(
 		/obj/item/hand_tele,
 		//obj/item/weapon/card/id/gold/captain/spare, //Hugbox
 		/obj/item/gun,
@@ -13,8 +13,10 @@ var/global/list/item_vore_blacklist = list(
 		/obj/item/disk/nuclear
 		//obj/item/clothing/suit/storage/hooded/wintercoat/roiz //You fluff decrease
 		)
+)
 
-var/global/list/edible_trash = list(
+// Remember kids, some trash is okay to eat!
+GLOBAL_LIST_INIT(edible_trash, list(
 				///obj/item/broken_device,				//Doesnt exist
 				/obj/item/clothing/neck/petcollar,
 				///obj/item/device/communicator,		// Doesnt exist
@@ -92,3 +94,4 @@ var/global/list/edible_trash = list(
 				/obj/item/coin,
 				/obj/item/clothing/ears
 				)
+)

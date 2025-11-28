@@ -1,7 +1,7 @@
 /obj/structure/table/plaswood
 	name = "plaswood table"
 	desc = "An strong and grey wooden table."
-	icon = 'modular_gs/icons/obj/smooth_structures/plaswoodpoker_table.dmi'
+	icon = 'modular_gs/icons/obj/smooth_structures/plaswood_table.dmi'
 	icon_state = "plaswood_table"
 	resistance_flags = FLAMMABLE
 	max_integrity = 200

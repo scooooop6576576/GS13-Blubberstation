@@ -513,8 +513,8 @@
 				</ol>
 				<p>
 				<hr>
-                <h1><u>Chapter 1</u></h1>
-                <h2>What is GATO? </h2>
+				<h1><u>Chapter 1</u></h1>
+				<h2>What is GATO? </h2>
 				<p>
 				GATO Industrial Concern is a corporation that operates in every sector known to all sapients. Agriculture, luxurious goods, R&D, pharmaceuticals- if it exists, we make it! Your current employment is upon a....: <p>
 				GENERAL STATION
@@ -530,19 +530,19 @@
 				, thought otherwise! So, GatoMart was founded, and we were instantly known for our creativity. Cute designs and friendly service built us the profit and recognition we needed to expand! And expand we did, taking on more and more corporations under our wing until we became the way we are today. Now, you can find Gato products all across the galaxy, ranging from simple things like cheese slices to more complex heavy artillery platforms! Isn't it grand to participate in maintaining such an awesome corporation like ours?
 				<p>
 				<hr>
-                <h1><u>Chapter 3</u></h1>
-                <h2>The current state of Gato</h2>
+				<h1><u>Chapter 3</u></h1>
+				<h2>The current state of Gato</h2>
 				<p>
 				Many people have begun to circulate bad rumors that Gato is beginning to decline. Dear employees, as honest, loving, and trustworthy employers, we must deny those claims! The Syndicate does not pose much of a threat, and we have continued to profit despite the odds! So do not fear, neither your wages nor your employment are currently at risk. We would never think of doing something that would cause such anguish to the members of our beloved company! Perhaps it is time to go onto a more pleasant topic... how the corporate hierarchy works! At the bottom, we have common workers, above that are your Department Heads, and above that is your Captain! And your Captain answers to our Central Command teams, who are subordinate to the Head of Central Command, who reports to the Branch Manager, who answers to the Executive Officers, who answer to the CEO(Chief Executive Officer!), who answers to the Board of Directors. The Board of Directors equally listens to the input of our most trusted shareholders, and the Head of the Board!
 				<p>
-                <h1><u>Chapter 4</u></h1>
-                <h2>GS13: Current development projects</h2>
+				<h1><u>Chapter 4</u></h1>
+				<h2>GS13: Current development projects</h2>
 				<p>
 				(GS13 SECTOR PRINT EXCLUSIVE SECTION) As an employee of our thirteenth General Station, you've chosen (or have been chosen) to become a pioneer in some of our R&D projects! GS13 has been located in a relatively peaceful area of one of the rim-systems, home to immensely rare mineral known as "Calorite", exclusive to this sector! You'll get a chance to make your name in history by helping us furthen our knowledge of this strange material. Additionally, please be aware of employee shortages: GS13's location makes it a challenge to properly deliver supplies, but GATO assures you - you have nothing to worry about!
 				<p>
 				Got it? Good! Now you understand all that you might need to know about Gato Industrial Concern!
 				<p>
-                <hr>
+				<hr>
 
 
 
@@ -551,6 +551,7 @@
 				"}
 
 
+/*
 	//GS13 SOP Manuals Begin
 /obj/item/book/manual/science_SOP
 	name = "GATO Research and Development Standard Operating Procedure"
@@ -663,7 +664,7 @@
 		<p style= "text-align:left;font-family:Fauna One;font-size: 90%">5. You are required to act as an impartial judge whenever a court case arises.<p>
 		<p style= "text-align:left;font-family:Fauna One;font-size: 90%">6. You are expected to teach new and existing service personnel as needed or requested.<p>
 		<p style= "text-align:left;font-family:Fauna One;font-size: 90%">7. You must protect Ian from theft, injury, and defamation.<p>
-    	</body></html>"}
+		</body></html>"}
 
 /obj/item/book/manual/supply_SOP
 	name = "GATO Delivery Service Operating Procedure"
@@ -694,7 +695,7 @@
 		<p style= "text-align:left;font-family:Dhurjati;font-size: 130%;margin: 0px 50px">a. As a member of command, you are not permitted to leave the station except for extreme circumstances, and hence you are not able to fulfill the duties of a Shaft Miner. You are, however, still expected to be familiar with Shaft Miner SOP.<p>
 		<p style= "text-align:left;font-family:Dhurjati;font-size: 130%">3. In the absence of a Shaft Miner, you may request and recruit assistance from other members of the crew regardless of department.<p>
 		<p style= "text-align:left;font-family:Dhurjati;font-size: 130%; margin: 0px 50px">a. Ideally, those recruited to assist in material acquisition in the absence of a shaft miner should source their ores from the Xenoarchaeology area to avoid the hazards of lavaland proper.<p>
-    	</body></html>"}
+		</body></html>"}
 
 /obj/item/book/manual/engi_SOP
 	name = "GATO Corps of Engineers OSHA Handbook"
@@ -732,7 +733,7 @@
 		<p style= "text-align:left;font-family:Quantico;">4. You are expected to have broad knowledge of <b>every role listed above</b> and to be able to fulfill SOP for each one as needed.<p>
 		<p style= "text-align:left;font-family:Quantico;">5. You are expected to teach new and existing engineering personnel as needed and requested.<p>
 		<p style= "text-align:left;font-family:Quantico;">6. Refer to <b>Command SOP</b> for a broader list of duties as a member of command.<p>
-        </body>
+		</body>
 		</html>"}
 
 /obj/item/book/manual/med_SOP
@@ -780,7 +781,7 @@
 		<p style= "text-align:left;font-family:Roboto Flex;font-size: 100%">3. You are expected to have broad knowledge of <b>every role listed above</b> and to be able to fulfill SOP for each one as needed.<p>
 		<p style= "text-align:left;font-family:Roboto Flex;font-size: 100%">4. You are expected to teach new and existing medical personnel as needed and requested.<p>
 		<p style= "text-align:left;font-family:Roboto Flex;font-size: 100%">5. Refer to <b>Command SOP</b> for a broader list of duties as a member of command.<p>
-        </body></html>"}
+		</body></html>"}
 
 /obj/item/book/manual/sec_SOP
 	name = "GATO Security Force Code of Conduct"
@@ -878,7 +879,7 @@
 		<p style= "text-align:Center; color: darkslategrey;font-family:Michroma; font-size: 175%"><b>Code Epsilon</b><p>
 		<p style= "text-align:center;font-family:Genos;font-size: 120%;margin: 0px 50px"><em>Coming Soon</em><p>
 		<hr style="color: gray">
-        </body></html>"}
+		</body></html>"}
 
 /obj/item/book/manual/command_SOP
 	name = "The GATO Command Officer's Handbook"
@@ -911,7 +912,7 @@
 		<p style= "text-align:center; color: goldenrod;font-family:Castoro Titling; font-size: 200%">Succession<p>
 		<p style= "text-align:center;color: gainsboro;font-family:Nanum Myeongjo;font-size: 125%">In the event of an emergency situation where the Captain is unavailable, rendered unable to act, or deposed, the following line of succession should be followed:<p>
 		<p style= "text-align:center;color: gainsboro;font-family:Nanum Myeongjo;font-size: 125%;margin: 0px 50px">Captain > Head of Personnel > Research Director > Chief Medical Officer > Chief Engineer > Quartermaster > Head of Security<p>
-        </body>
+		</body>
 		</html>"}
 
 /obj/item/book/manual/prisoner_SOP
@@ -951,6 +952,7 @@
 		</body></html>"}
 
 //GS13 SOP Manuals end
+*/
 
 //gs13 snack attack shuttle loan
 

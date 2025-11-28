@@ -7,10 +7,17 @@
 	proximity_monitor = new(src, 0, FALSE)
 	proximity_monitor.set_host(src, src)
 
+/obj/machinery/door/airlock/Destroy()
+	if(proximity_monitor)
+		qdel(proximity_monitor)
+		proximity_monitor = null
+
+	return ..()
+
 /obj/machinery/door/airlock/HasProximity(atom/movable/proximity_check_mob)
 	if (!istype(proximity_check_mob, /mob/living/carbon))
 		return
-	
+
 	var/mob/living/carbon/fatty = proximity_check_mob
 
 	if (isnull(fatty.client))
@@ -86,7 +93,7 @@
 /obj/structure/mineral_door/HasProximity(atom/movable/proximity_check_mob)
 	if (!istype(proximity_check_mob, /mob/living/carbon))
 		return
-	
+
 	var/mob/living/carbon/fatty = proximity_check_mob
 
 	if (isnull(fatty.client))

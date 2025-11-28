@@ -174,7 +174,7 @@
 					// /obj/item/stock_parts/cell/bluespace,
 					// /obj/item/stock_parts/cell/bluespace,
 					// /obj/item/stock_parts/cell/bluespace)
-				
+
 // /datum/supply_pack/science/Bluespace_RPED
 // 	name = "Bluespace RPED crate"
 // 	desc = "Need to rebuild the ORM but science got annihilated after a bomb test? Buy this for the most advanced parts GT can give you." //GS13 - NT to GT

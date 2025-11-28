@@ -14,7 +14,7 @@
 	name = "Natural insulation"
 	desc = "All that heft you carry around keeps you nice and warm! You are less affected by temperatures depending on your weight."
 	icon = "fa-weight-hanging"
-	// medical_record_text = "Patients legs cannot carry heavy weights well."
+	medical_record_text = "Patient's adipose appears to make them more resistant to lower temperatures."
 	value = 2
 	// gain_text = span_notice("You feel your legs tremble under your weight")
 	// lose_text = span_notice("Your legs seem to have gotten stronger")
@@ -123,6 +123,7 @@
 	name = "Naturally padded"
 	desc = "All that bulk you're carrying around is great at softening blows. You are slightly more resistant to damage depending on your weight."
 	icon = "fa-shield"
+	medical_record_text = "Patient's excess adipose makes them more resistant to brute damage."
 	value = 5
 	gain_text = span_notice("You feel like a tank!")
 	lose_text = span_notice("Your no longer feel like a 60 ton armored behemoth.")
@@ -152,8 +153,9 @@
 
 /datum/quirk/slime_eater
 	name = "Slime eater"
-	desc = "Slimes make your mouth water! You can safely metabolize slime jelly for nutrition and can gobble up a xenobiology slime you are aggressively grabbing!"
+	desc = "Slimes make your mouth water! You can safely metabolize slime jelly for nutrition and can gobble up a xenobiology slime you are aggressively grabbing with Ctrl + LMB!"
 	icon = "fa-shield"
+	medical_record_text = "Patient's digestive system is able to process slime jelly."
 	value = 1
 	gain_text = span_notice("You are hungry for slime! Yummy!")
 	lose_text = span_notice("You no longer feel hungry for slimes. Yuck...")

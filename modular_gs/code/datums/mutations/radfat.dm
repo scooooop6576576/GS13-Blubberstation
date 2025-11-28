@@ -19,13 +19,13 @@
 	. = ..()
 	if(!.)
 		return
-	ADD_TRAIT(owner, TRAIT_RAD_RESISTANCE, src)
+	ADD_TRAIT(owner, TRAIT_RAD_RESISTANCE, REF(src))
 
 /datum/mutation/radfat/on_losing(mob/living/carbon/human/owner)
 	. = ..()
 	if(!.)
 		return
-	REMOVE_TRAIT(owner, TRAIT_RAD_RESISTANCE, src)
+	REMOVE_TRAIT(owner, TRAIT_RAD_RESISTANCE, REF(src))
 
 /obj/item/dnainjector/antiradfat
 	name = "\improper DNA injector (Anti-Radiotrophic Metabolism)"

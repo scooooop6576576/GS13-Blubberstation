@@ -42,12 +42,12 @@
 
 
 /obj/item/clothing/suit/space/hardsuit/engine/haydee/equipped(mob/user, slot) //whenever the clothes are in someone's inventory the clothes keep track of who that user is
-    ..()
-    U = user
+	..()
+	U = user
 
 /obj/item/clothing/suit/space/hardsuit/engine/haydee/dropped() //whenever the clothes leave a person's inventory, they forget who held them
-    ..()
-    U = null
+	..()
+	U = null
 
 /obj/item/clothing/suit/space/hardsuit/engine/haydee/worn_overlays(isinhands = FALSE)
 	if(U)

@@ -3,7 +3,7 @@
 	desc = "You shouldn't have this."
 	icon = 'modular_gs/code/xenoarch/fossil_and_artifact.dmi'
 
-/obj/item/ancientartifact/Initialize()
+/obj/item/ancientartifact/Initialize(mapload)
 	..()
 
 //
@@ -24,7 +24,7 @@
 	name = "nonfunctional artifact"
 	desc = "This artifact is nonfunctional... perhaps it can be researched or sold."
 
-/obj/item/ancientartifact/useless/Initialize()
+/obj/item/ancientartifact/useless/Initialize(mapload)
 	icon_state = pick(list("urn","statuette","instrument","unknown1","unknown2","unknown3"))
 	..()
 
@@ -41,7 +41,7 @@
 	name = "fauna fossil"
 	desc = "This is a fossil of an animal... seems dead."
 
-/obj/item/ancientartifact/faunafossil/Initialize()
+/obj/item/ancientartifact/faunafossil/Initialize(mapload)
 	icon_state = pick(list("bone1","bone2","bone3","bone4","bone5","bone6"))
 	..()
 
@@ -58,7 +58,7 @@
 	name = "flora fossil"
 	desc = "This is a fossil of a plant... seems dead."
 
-/obj/item/ancientartifact/florafossil/Initialize()
+/obj/item/ancientartifact/florafossil/Initialize(mapload)
 	icon_state = pick(list("plant1","plant2","plant3","plant4","plant5","plant6"))
 	..()
 

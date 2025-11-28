@@ -13,7 +13,7 @@
 
 	var/tryagain = null
 
-/obj/item/strangerock/Initialize()
+/obj/item/strangerock/Initialize(mapload)
 	icon_state = pick("strange","strange0","strange1","strange2","strange3")
 	var/randomnumber = rand(1,100)
 	switch(randomnumber)

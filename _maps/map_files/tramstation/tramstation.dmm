@@ -56808,6 +56808,7 @@
 /obj/effect/turf_decal/tile/neutral/half/contrasted{
 	dir = 1
 	},
+/obj/effect/landmark/start/bridge_assistant,
 /turf/open/floor/iron/dark,
 /area/station/command/bridge)
 "sTJ" = (

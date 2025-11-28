@@ -9,14 +9,14 @@
 	relevent_layers = list(BODY_FRONT_LAYER)
 
 /datum/sprite_accessory/genital/butt/none
-    icon_state = "none"
-    name = SPRITE_ACCESSORY_NONE
-    factual = FALSE
-    color_src = null
+	icon_state = "none"
+	name = SPRITE_ACCESSORY_NONE
+	factual = FALSE
+	color_src = null
 
 /datum/sprite_accessory/genital/butt/pair
-    icon_state = "pair"
-    name = "Pair" //a pair of buns i guess
+	icon_state = "pair"
+	name = "Pair" //a pair of buns i guess
 
 /datum/sprite_accessory/genital/belly
 	icon = 'modular_gs/icons/mob/human/genitals/belly.dmi'

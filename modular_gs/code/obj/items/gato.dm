@@ -26,7 +26,6 @@
 	grind_results = list(/datum/reagent/consumable/berryjuice = 10, /datum/reagent/lye = 10)
 	icon = 'modular_gs/icons/obj/items_and_weapons.dmi'
 	icon_state = "soapgt"
-	inhand_icon_state = "soapgt"
 	worn_icon_state = "soapgt"
 	cleanspeed = 2.8 SECONDS
 	uses = 300
@@ -109,7 +108,7 @@
 	name = "elite environmental protection bag"
 	desc = "A folded, heavily reinforced, and insulated bag, capable of fully isolating its contents from external factors."
 	icon = 'modular_gs/icons/obj/medical.dmi'
-	icon_state = "ntenvirobag_folded"
+	icon_state = "gtenvirobag_folded"
 	unfoldedbag_path = /obj/structure/closet/body_bag/environmental/gato
 	resistance_flags = ACID_PROOF | FIRE_PROOF | FREEZE_PROOF | LAVA_PROOF
 

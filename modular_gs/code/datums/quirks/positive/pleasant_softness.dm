@@ -3,6 +3,7 @@
 	desc = "Your curves are nice and soft. People just can't get enough of them."
 	icon = "fa-mattress-pillow"
 	value = 2
+	medical_record_text = "Patient is exceptionally jolly." // Santa joke.
 	quirk_flags = QUIRK_HIDE_FROM_SCAN | QUIRK_PROCESSES
 	erp_quirk = FALSE
 	mob_trait = TRAIT_PLEASANTLY_SOFT

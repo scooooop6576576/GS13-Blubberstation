@@ -4,6 +4,7 @@
 	value = 0 //ERP quirk
 	gain_text = "<span class='notice'>You feel absorbant.</span>"
 	lose_text = "<span class='notice'>You don't feel absorbant anymore.</span>"
+	// HEY NERD, PUT IN MEDICAL TEXT IF YOU ADD THIS BACK!
 	mob_trait = TRAIT_WATER_SPONGE
 
 /datum/reagent/water

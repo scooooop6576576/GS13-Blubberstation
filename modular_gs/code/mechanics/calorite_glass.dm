@@ -13,7 +13,7 @@ GLOBAL_LIST_INIT(calorite_glass_recipes, list ( \
 	name = "calorite glass"
 	icon = 'modular_gs/icons/obj/stack_objects.dmi'
 	icon_state = "sheet-calorite_glass"
-	inhand_icon_state = "sheet-calorite"
+	//inhand_icon_state = "sheet-calorite"
 	singular_name = "calorite glass sheet"
 	resistance_flags = ACID_PROOF
 	armor_type = /datum/armor/sheet_glass

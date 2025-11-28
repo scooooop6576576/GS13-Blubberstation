@@ -1,6 +1,7 @@
 /datum/quirk/fat_aversion
 	name = "Fat aversion"
 	desc = "You dislike fat people. You are more bothered when fat, and having fat people around you will make you annoyed!"
+	medical_record_text = "Patient seems to dislike themselves and others being at higher weights."
 	icon = "fa-face-frown"
 	value = -2
 	// gain_text = span_notice("You feel like making someone your pet.")

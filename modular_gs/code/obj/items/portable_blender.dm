@@ -23,8 +23,7 @@
 
 /obj/item/portable_blender/Destroy()
 	if(loaded_reagent_container)
-		loaded_reagent_container.forceMove(get_turf(src))
-		loaded_reagent_container = FALSE
+		QDEL_NULL(loaded_reagent_container)
 
 	return ..()
 
@@ -68,13 +67,13 @@
 	playsound(src, 'sound/machines/blender.ogg', 50, TRUE)
 	Shake(pixelshiftx = 1, pixelshifty = 0, duration = grind_time)
 	if(!ignore_distance && !do_after(user, grind_time))
-		to_chat(user, span_warning("Blending interrupted!"))
+		to_chat(user, span_warning("blending interrupted!"))
 		return FALSE
 
 	if(!food_reagents.trans_to(loaded_reagent_container, food_reagents.total_volume))
 		return FALSE
 
-	balloon_alert(user, "Blending complete!")
+	balloon_alert(user, "blending complete!")
 	playsound(src.loc, 'sound/machines/ping.ogg', 50, FALSE)
 	qdel(inserted_food)
 	return TRUE
@@ -84,7 +83,7 @@
 	var/obj/item/reagent_containers/new_container = attacking_item
 	if(istype(new_container) && !loaded_reagent_container)
 		if(user.transferItemToLoc(new_container, src))
-			balloon_alert(user, "Container inserted!")
+			balloon_alert(user, "container inserted!")
 			loaded_reagent_container = new_container
 			update_appearance(UPDATE_OVERLAYS)
 
@@ -104,5 +103,5 @@
 	user.put_in_hands(loaded_reagent_container)
 	loaded_reagent_container = null
 	update_appearance(UPDATE_OVERLAYS)
-	balloon_alert(user, "Container removed!")
+	balloon_alert(user, "container removed!")
 

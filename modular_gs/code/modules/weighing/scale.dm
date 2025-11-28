@@ -59,7 +59,7 @@
 	else
 		to_chat(fatty, "<span class='notice'>[src.lastreading]Lbs.</span>")
 
-/obj/structure/scale/proc/weighperson(datum/source, var/mob/living/carbon/fatty)
+/obj/structure/scale/proc/weighperson(datum/source, mob/living/carbon/fatty)
 	SIGNAL_HANDLER
 	if(!istype(fatty) || (fatty.movement_type & FLYING))
 		return FALSE

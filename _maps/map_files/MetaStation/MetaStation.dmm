@@ -37285,6 +37285,10 @@
 /obj/machinery/atmospherics/pipe/layer_manifold/cyan/hidden,
 /turf/open/floor/plating,
 /area/station/maintenance/port)
+"mIN" = (
+/obj/effect/landmark/start/bridge_assistant,
+/turf/open/floor/iron/dark,
+/area/station/command/bridge)
 "mJa" = (
 /obj/machinery/atmospherics/pipe/smart/manifold/scrubbers/visible{
 	dir = 4
@@ -98842,7 +98846,7 @@ oAm
 dsQ
 mXj
 dUj
-gGy
+mIN
 cwX
 gGy
 nEC

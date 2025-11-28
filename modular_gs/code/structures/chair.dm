@@ -43,7 +43,7 @@
 	. = ..()
 	update_armrest()
 
-/obj/structure/chair/sofachair/Initialize()
+/obj/structure/chair/sofachair/Initialize(mapload)
 
 	armrest = GetArmrest()
 	armrest.layer = ABOVE_MOB_LAYER

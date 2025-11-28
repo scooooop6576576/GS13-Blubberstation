@@ -1,5 +1,3 @@
-var/charges = 3
-
 /datum/species/golem/calorite //golems that heal people around them, and cook groovy food. essentially the support class of golems
 	name = "Calorite Golem"
 	id = "calorite golem"
@@ -17,6 +15,7 @@ var/charges = 3
 	var/datum/action/innate/bless/boost
 	var/datum/action/innate/unburden/speed
 	var/datum/action/innate/recharge/power
+	var/charges = 3
 
 /datum/species/golem/calorite/on_species_gain(mob/living/carbon/C, datum/species/old_species)
 	..()

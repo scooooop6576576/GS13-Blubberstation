@@ -29,15 +29,15 @@
 	dat += "<b>Transfer credits in exchange for supplies:</b><br>"
 	for(var/goodie in subtypesof(/datum/feeders_den_goodie))
 		var/datum/feeders_den_goodie/temp_goodie = new goodie()
-		dat += "<a href='?src=[REF(src)];dispense=[goodie]'>[temp_goodie.name] (Cost: [temp_goodie.credit_cost])</A><br>"
+		dat += "<a href='byond://?src=[REF(src)];dispense=[goodie]'>[temp_goodie.name] (Cost: [temp_goodie.credit_cost])</A><br>"
 		qdel(temp_goodie)
 
 	if(pad)
 		dat += "<span class='bad'>Emergency Teleporter System.</span>"
 		dat += "<span class='bad'>Consider using primary observation console first.</span>"
-		dat += "<a href='?src=[REF(src)];teleporter_send=1'>Activate Teleporter</A><br>"
+		dat += "<a href='byond://?src=[REF(src)];teleporter_send=1'>Activate Teleporter</A><br>"
 		if(gizmo && gizmo.marked)
-			dat += "<a href='?src=[REF(src)];teleporter_retrieve=1'>Retrieve Mark</A><br>"
+			dat += "<a href='byond://?src=[REF(src)];teleporter_retrieve=1'>Retrieve Mark</A><br>"
 		else
 			dat += "<span class='linkOff'>Retrieve Mark</span><br>"
 	else

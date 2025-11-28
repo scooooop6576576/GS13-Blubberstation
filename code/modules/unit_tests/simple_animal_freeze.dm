@@ -128,6 +128,13 @@
 		/mob/living/simple_animal/hostile/vox/ranged/space,
 		/mob/living/simple_animal/hostile/vox/ranged/space/laser,
 
+		// GS13 EDIT: I'm sure this will be looked at later. I'm 100% sure it won't happen until something breaks. totally.
+		/mob/living/simple_animal/hostile/feed,
+		/mob/living/simple_animal/hostile/feed/chocolate_slime,
+		/mob/living/simple_animal/hostile/feed/chocolate_slime/creambeast,
+		/mob/living/simple_animal/hostile/fatten,
+		/mob/living/simple_animal/hostile/fatten/magehand,
+
 		// DO NOT ADD NEW ENTRIES TO THIS LIST
 		// READ THE COMMENT ABOVE
 	)

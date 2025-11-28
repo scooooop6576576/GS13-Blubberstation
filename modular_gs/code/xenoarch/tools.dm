@@ -3,7 +3,7 @@
 	desc = "Debug. Parent Clean"
 	icon = 'modular_gs/code/xenoarch/tools.dmi'
 
-/obj/item/xenoarch/Initialize()
+/obj/item/xenoarch/Initialize(mapload)
 	..()
 
 /obj/item/xenoarch/clean/hammer

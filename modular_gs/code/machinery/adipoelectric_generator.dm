@@ -25,9 +25,9 @@
 /obj/machinery/power/adipoelectric_generator/RefreshParts()
 	laser_modifier = 0
 	max_fat = 0
-	for(var/obj/item/stock_parts/micro_laser/C in component_parts)
+	for(var/datum/stock_part/micro_laser/C in component_parts)
 		laser_modifier += C.rating
-	for(var/obj/item/stock_parts/matter_bin/C in component_parts)
+	for(var/datum/stock_part/matter_bin/C in component_parts)
 		max_fat += C.rating * 2
 
 /obj/machinery/power/adipoelectric_generator/process()

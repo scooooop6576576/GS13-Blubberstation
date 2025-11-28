@@ -6,7 +6,7 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	weapon_weight = WEAPON_MEDIUM
 
-/obj/item/gun/medbeam/fattening/on_beam_tick(var/mob/living/target)
+/obj/item/gun/medbeam/fattening/on_beam_tick(mob/living/target)
 	if(!target?.client?.prefs?.read_preference(/datum/preference/toggle/weight_gain_weapons))
 		return
 

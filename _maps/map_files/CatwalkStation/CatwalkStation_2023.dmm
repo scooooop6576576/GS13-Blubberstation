@@ -8803,16 +8803,15 @@
 /area/station/maintenance/hallway/abandoned_recreation)
 "cyV" = (
 /obj/machinery/light/floor,
-/obj/machinery/door/window/right/directional/east{
-	name = "Theater Stage";
-	req_access = list("theatre");
-	dir = 8
-	},
 /obj/effect/turf_decal/siding/wideplating/dark{
 	dir = 8
 	},
 /obj/effect/turf_decal/siding/wideplating/dark{
 	dir = 1
+	},
+/obj/machinery/door/window/right/directional/west{
+	req_access = list("theatre");
+	name = "Theater Stage"
 	},
 /turf/open/floor/carpet/black,
 /area/station/service/theater)
@@ -21861,7 +21860,6 @@
 	},
 /obj/effect/landmark/start/medical_doctor,
 /obj/machinery/iv_drip,
-/obj/machinery/iv_drip,
 /turf/open/floor/iron/white/textured_large,
 /area/station/medical/medbay/central)
 "gif" = (
@@ -25678,11 +25676,8 @@
 /area/station/maintenance/starboard/fore)
 "hmT" = (
 /obj/structure/chair/sofa/middle/brown,
-/obj/machinery/computer/security/telescreen/entertainment/directional/east{
-	pixel_x = 0;
-	pixel_y = 31
-	},
 /obj/machinery/light/directional/north,
+/obj/machinery/computer/security/telescreen/entertainment/directional/north,
 /turf/open/floor/carpet,
 /area/station/commons/dorms)
 "hmX" = (

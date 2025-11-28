@@ -154,7 +154,7 @@
 	return TRUE
 
 // For containers
-/obj/item/clothing/neck/petcollar/locked/bluespace_collar_transmitter/proc/transpose_container(var/datum/reagents/reagents , fraction, mob/M, mob/user)
+/obj/item/clothing/neck/petcollar/locked/bluespace_collar_transmitter/proc/transpose_container(datum/reagents/reagents , fraction, mob/M, mob/user)
 	if (!islinked())
 		return FALSE
 
@@ -179,7 +179,7 @@
 	return TRUE
 
 // For feeding tube
-/obj/item/clothing/neck/petcollar/locked/bluespace_collar_transmitter/proc/transpose_feeding(transfer_amount, var/obj/item/reagent_containers/beaker, mob/living/original_eater)
+/obj/item/clothing/neck/petcollar/locked/bluespace_collar_transmitter/proc/transpose_feeding(transfer_amount, obj/item/reagent_containers/beaker, mob/living/original_eater)
 	if (!islinked())
 		return FALSE
 	var/mob/living/carbon/human/eater = linked_receiver.victim

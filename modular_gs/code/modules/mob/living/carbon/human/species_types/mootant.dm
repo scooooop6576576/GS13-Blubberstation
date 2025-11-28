@@ -9,7 +9,7 @@
 	inherent_traits = list(TRAIT_CHUNKYFINGERS, TRAIT_VORACIOUS, TRAIT_LIPOLICIDE_TOLERANCE, TRAIT_PACIFISM, TRAIT_MILKY, TRAIT_HEAT) //chunky fingers because hooves!
 	inherent_biotypes = MOB_ORGANIC|MOB_HUMANOID|MOB_BEAST
 	mutant_bodyparts = list("mcolor" = "FFFFFF","mcolor2" = "FFFFFF","mcolor3" = "FFFFFF", "mam_snouts" = "Mootant ALT (Tertiary)", "mam_tail" = "Mootant", "mam_ears" = "Mootant ALT (Tertiary)", "deco_wings" = "None",
-						 "mam_body_markings" = list(), "taur" = "None", "horns" = "None", "legs" = "Plantigrade", "meat_type" = "Mammalian")
+							"mam_body_markings" = list(), "taur" = "None", "horns" = "None", "legs" = "Plantigrade", "meat_type" = "Mammalian")
 	attack_verb = "claw"
 	attack_sound = 'sound/weapons/slash.ogg'
 	miss_sound = 'sound/weapons/slashmiss.ogg'

@@ -51,23 +51,23 @@
 	mob_to_register.real_name = parent_atom.name
 	mob_to_register.name = parent_atom.name
 
-	ADD_TRAIT(mob_to_register, TRAIT_TRANSFORMED, src)
-	ADD_TRAIT(mob_to_register, TRAIT_RESISTCOLD, src)
-	ADD_TRAIT(mob_to_register, TRAIT_RESISTLOWPRESSURE, src)
-	ADD_TRAIT(mob_to_register, TRAIT_LOWPRESSURECOOLING, src)
-	ADD_TRAIT(mob_to_register, TRAIT_NOBREATH, src)
+	ADD_TRAIT(mob_to_register, TRAIT_TRANSFORMED, REF(src))
+	ADD_TRAIT(mob_to_register, TRAIT_RESISTCOLD, REF(src))
+	ADD_TRAIT(mob_to_register, TRAIT_RESISTLOWPRESSURE, REF(src))
+	ADD_TRAIT(mob_to_register, TRAIT_LOWPRESSURECOOLING, REF(src))
+	ADD_TRAIT(mob_to_register, TRAIT_NOBREATH, REF(src))
 
 	if(!able_to_speak)
-		ADD_TRAIT(mob_to_register, TRAIT_MUTE, src)
+		ADD_TRAIT(mob_to_register, TRAIT_MUTE, REF(src))
 
 	if(!able_to_emote)
-		ADD_TRAIT(mob_to_register, TRAIT_EMOTEMUTE, src)
+		ADD_TRAIT(mob_to_register, TRAIT_EMOTEMUTE, REF(src))
 
 	// need to stop them from using radio headsets.
 	var/mob/living/carbon/human/human_mob = mob_to_register
 	if(istype(human_mob))
-		ADD_TRAIT(mob_to_register, TRAIT_PARALYSIS_L_ARM, src)
-		ADD_TRAIT(mob_to_register, TRAIT_PARALYSIS_R_ARM, src)
+		ADD_TRAIT(mob_to_register, TRAIT_PARALYSIS_L_ARM, REF(src))
+		ADD_TRAIT(mob_to_register, TRAIT_PARALYSIS_R_ARM, REF(src))
 		human_mob.update_disabled_bodyparts()
 
 	mob_to_register.forceMove(parent_atom)
@@ -87,21 +87,21 @@
 	transformed_mob.name = stored_name
 
 	if(!able_to_speak)
-		REMOVE_TRAIT(transformed_mob, TRAIT_MUTE, src)
+		REMOVE_TRAIT(transformed_mob, TRAIT_MUTE, REF(src))
 
 	if(!able_to_emote)
-		REMOVE_TRAIT(transformed_mob, TRAIT_EMOTEMUTE, src)
+		REMOVE_TRAIT(transformed_mob, TRAIT_EMOTEMUTE, REF(src))
 
-	REMOVE_TRAIT(transformed_mob, TRAIT_TRANSFORMED, src)
-	REMOVE_TRAIT(transformed_mob, TRAIT_RESISTCOLD, src)
-	REMOVE_TRAIT(transformed_mob, TRAIT_RESISTLOWPRESSURE, src)
-	REMOVE_TRAIT(transformed_mob, TRAIT_LOWPRESSURECOOLING, src)
-	REMOVE_TRAIT(transformed_mob, TRAIT_NOBREATH, src)
+	REMOVE_TRAIT(transformed_mob, TRAIT_TRANSFORMED, REF(src))
+	REMOVE_TRAIT(transformed_mob, TRAIT_RESISTCOLD, REF(src))
+	REMOVE_TRAIT(transformed_mob, TRAIT_RESISTLOWPRESSURE, REF(src))
+	REMOVE_TRAIT(transformed_mob, TRAIT_LOWPRESSURECOOLING, REF(src))
+	REMOVE_TRAIT(transformed_mob, TRAIT_NOBREATH, REF(src))
 
 	var/mob/living/carbon/human/human_mob = transformed_mob
 	if(istype(human_mob))
-		REMOVE_TRAIT(human_mob, TRAIT_PARALYSIS_L_ARM, src)
-		REMOVE_TRAIT(human_mob, TRAIT_PARALYSIS_R_ARM, src)
+		REMOVE_TRAIT(human_mob, TRAIT_PARALYSIS_L_ARM, REF(src))
+		REMOVE_TRAIT(human_mob, TRAIT_PARALYSIS_R_ARM, REF(src))
 		human_mob.update_disabled_bodyparts()
 
 	var/atom/parent_atom = parent
@@ -112,4 +112,4 @@
 		parent_atom.transform = null
 
 	mob_removed = TRUE
-	qdel(src)
+	qdel(REF(src))

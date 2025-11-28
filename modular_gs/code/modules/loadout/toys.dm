@@ -61,3 +61,8 @@
 /datum/loadout_item/toys/isaac_plush
 	name = "Plump dragon Plush"
 	item_path = /obj/item/toy/plush/gs13/isaac
+
+/datum/loadout_item/toys/kiki_plush
+	name = "Trashy racc plush"
+	item_path = /obj/item/toy/plush/gs13/kiki
+

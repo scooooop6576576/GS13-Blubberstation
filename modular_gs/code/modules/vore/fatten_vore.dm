@@ -1,11 +1,12 @@
+// holy crap Lois, we really need to refactor this code later.
 
-/obj/belly/release_all_contents(var/include_absorbed = FALSE, var/silent = FALSE)
+/obj/belly/release_all_contents(include_absorbed = FALSE, silent = FALSE)
 	if(iscarbon(owner))
 		var/mob/living/carbon/predator = owner
 		predator.hider_remove(src)
 	. = ..()
 
-/obj/belly/release_specific_contents(var/atom/movable/M, var/silent = FALSE)
+/obj/belly/release_specific_contents(atom/movable/M, silent = FALSE)
 	if(iscarbon(owner))
 		var/mob/living/carbon/predator = owner
 		var/found = FALSE
@@ -18,7 +19,7 @@
 			predator.hider_remove(src)
 	. = ..()
 
-/obj/belly/process_belly(var/times_fired,var/wait)
+/obj/belly/process_belly(times_fired,wait)
 ////////////////////////// Vore Fatness /////////////////////////////
 	if(iscarbon(owner))
 		var/mob/living/carbon/predator = owner
@@ -44,7 +45,7 @@
 							predator.nutrition -= 3
 	. = ..()
 
-/obj/belly/proc/fat_hide(var/mob/living/carbon/user)
+/obj/belly/proc/fat_hide(mob/living/carbon/user)
 	var/preys_fatness = 0
 	for(var/prey in contents)
 		if(iscarbon(prey))

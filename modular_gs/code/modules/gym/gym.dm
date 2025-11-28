@@ -91,8 +91,8 @@
 
 /obj/machinery/treadmill/RefreshParts(obj/item/O, mob/user, params)
 	..()
-	for(var/obj/item/stock_parts/servo/servo in component_parts)
-		stamina_cost_divider += servo.rating * 1
+	for(var/datum/stock_part/servo/servo in component_parts)
+		stamina_cost_divider += servo.tier * 1
 
 /obj/machinery/treadmill/attackby(obj/item/item, mob/living/user, params)
 	if(default_deconstruction_screwdriver(user, "treadmill", "treadmill", item))
@@ -114,17 +114,20 @@
 /datum/design/treadmill
 	name = "Treadmill Board"
 	id = "treadmill"
-	build_type = AUTOLATHE | PROTOLATHE
-	materials = list(/datum/material/iron = 50, /datum/material/glass = 50)
+	build_type = AUTOLATHE | PROTOLATHE | AWAY_LATHE
+	materials = list(/datum/material/glass = SHEET_MATERIAL_AMOUNT)
 	build_path = /obj/item/circuitboard/machine/treadmill
-	category = list("inital", "Construction")
-	departmental_flags = DEPARTMENT_BITFLAG_ENGINEERING
+	departmental_flags = DEPARTMENT_BITFLAG_ENGINEERING | DEPARTMENT_BITFLAG_SERVICE
+	category = list(
+		RND_CATEGORY_INITIAL,
+		RND_CATEGORY_MACHINE + RND_SUBCATEGORY_MACHINE_SERVICE,
+	)
 
 /datum/design/dumbbell
 	name = "Dumbbell"
 	id = "dumbbell"
 	build_type = AUTOLATHE
-	materials = list(/datum/material/iron = 2000)
+	materials = list(/datum/material/iron = SHEET_MATERIAL_AMOUNT)
 	build_path = /obj/item/dumbbell
 	category = list("initial", "Tools")
 /*

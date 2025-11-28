@@ -18,8 +18,8 @@
 	var/mob/living/carbon/human/wearer = mod.wearer
 	wearer.add_fat_delay_modifier(modifier_name, amount)
 
-	if(!HAS_TRAIT_FROM(wearer, TRAIT_NO_HELPLESSNESS, src))
-		ADD_TRAIT(wearer, TRAIT_NO_HELPLESSNESS, src)
+	if(!HAS_TRAIT_FROM(wearer, TRAIT_NO_HELPLESSNESS, REF(src)))
+		ADD_TRAIT(wearer, TRAIT_NO_HELPLESSNESS, REF(src))
 
 	if(HAS_TRAIT_FROM(wearer, TRAIT_NO_MOVE, HELPLESSNESS_TRAIT))
 		REMOVE_TRAIT(wearer, TRAIT_NO_MOVE, HELPLESSNESS_TRAIT)
@@ -47,8 +47,8 @@
 /obj/item/mod/module/hydraulic_movement/on_part_deactivation(deleting = FALSE)
 	if(deleting)
 		return
-	if(HAS_TRAIT_FROM(mod.wearer, TRAIT_NO_HELPLESSNESS, src))
-		REMOVE_TRAIT(mod.wearer, TRAIT_NO_HELPLESSNESS, src)
+	if(HAS_TRAIT_FROM(mod.wearer, TRAIT_NO_HELPLESSNESS, REF(src)))
+		REMOVE_TRAIT(mod.wearer, TRAIT_NO_HELPLESSNESS, REF(src))
 	mod.wearer.remove_fat_delay_modifier(modifier_name)
 
 /datum/design/module/hydraulic_movement
