@@ -46173,6 +46173,8 @@
 /obj/machinery/firealarm/directional/west,
 /obj/effect/turf_decal/bot,
 /obj/machinery/light/directional/west,
+/obj/item/book/manual/blubbery_bartender,
+/obj/item/book/manual/blubbery_bartender,
 /turf/open/floor/wood/tile,
 /area/station/service/bar)
 "mWr" = (
@@ -56611,10 +56613,6 @@
 /obj/effect/turf_decal/trimline/dark/filled/warning{
 	dir = 1
 	},
-/obj/item/toy/plush/skyrat/duffmoth{
-	pixel_x = -11;
-	pixel_y = 6
-	},
 /turf/open/floor/iron/dark,
 /area/station/security/office)
 "pOz" = (
@@ -63009,12 +63007,12 @@
 /turf/open/floor/iron/dark/smooth_large,
 /area/station/cargo/storage)
 "rCr" = (
-/obj/structure/sign/painting/library_secure{
-	pixel_y = 32
-	},
 /obj/structure/extinguisher_cabinet/directional/east,
 /obj/structure/reagent_dispensers/water_cooler,
 /obj/effect/turf_decal/bot_white,
+/obj/structure/sign/painting/library{
+	pixel_y = 32
+	},
 /turf/open/floor/iron/grimy,
 /area/station/service/library)
 "rCu" = (
@@ -66138,10 +66136,10 @@
 /area/station/engineering/power_room)
 "sys" = (
 /obj/structure/rack/shelf,
-/obj/effect/spawner/random/techstorage/security_all,
 /obj/effect/turf_decal/stripes/end{
 	dir = 1
 	},
+/obj/effect/spawner/random/techstorage/medical_all,
 /turf/open/floor/pod/dark,
 /area/station/engineering/storage/tech)
 "syE" = (
@@ -67826,10 +67824,10 @@
 /area/station/maintenance/starboard/fore)
 "sSJ" = (
 /obj/machinery/photocopier/prebuilt,
-/obj/structure/sign/painting/large/library{
-	dir = 1
-	},
 /obj/effect/turf_decal/bot_white,
+/obj/structure/sign/painting/library{
+	pixel_y = 32
+	},
 /turf/open/floor/iron/grimy,
 /area/station/service/library)
 "sSK" = (
@@ -73342,6 +73340,9 @@
 "urN" = (
 /obj/machinery/bookbinder,
 /obj/effect/turf_decal/bot_white,
+/obj/structure/sign/painting/library{
+	pixel_y = 32
+	},
 /turf/open/floor/iron/grimy,
 /area/station/service/library)
 "urO" = (
@@ -75680,7 +75681,6 @@
 	},
 /obj/structure/sink/directional/south,
 /obj/structure/rack,
-/obj/item/toy/plush/skyrat/sechound,
 /turf/open/floor/iron/dark,
 /area/station/security/office)
 "uXf" = (

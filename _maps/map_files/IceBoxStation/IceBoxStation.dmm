@@ -26558,6 +26558,12 @@
 "hjE" = (
 /turf/closed/wall/r_wall,
 /area/station/science/explab)
+"hjG" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/turf/open/floor/wood,
+/area/station/command/heads_quarters/captain)
 "hjH" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/purple/visible,
 /turf/open/floor/plating,
@@ -27866,6 +27872,9 @@
 	pixel_y = 11
 	},
 /obj/item/melee/chainofcommand,
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
 /turf/open/floor/wood,
 /area/station/command/heads_quarters/captain)
 "hCY" = (
@@ -33353,6 +33362,9 @@
 /turf/open/floor/iron/dark,
 /area/station/science/robotics/lab)
 "jeC" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 5
+	},
 /turf/open/floor/carpet/royalblue,
 /area/station/command/heads_quarters/captain)
 "jeF" = (
@@ -36095,6 +36107,13 @@
 	},
 /turf/open/floor/iron,
 /area/station/hallway/primary/aft)
+"jRW" = (
+/obj/structure/cable,
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/turf/open/floor/wood,
+/area/station/command/heads_quarters/captain)
 "jRX" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced/spawner/directional/south,
@@ -38198,6 +38217,9 @@
 	},
 /obj/item/book/manual/wiki/security_space_law{
 	pixel_y = 5
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
 	},
 /turf/open/floor/wood,
 /area/station/command/heads_quarters/captain)
@@ -47737,6 +47759,9 @@
 /area/station/commons/dorms)
 "nfL" = (
 /obj/machinery/holopad/secure,
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
 /turf/open/floor/wood,
 /area/station/command/heads_quarters/captain)
 "nfS" = (
@@ -61152,6 +61177,12 @@
 "qIU" = (
 /turf/open/floor/iron,
 /area/station/commons/dorms)
+"qJa" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 6
+	},
+/turf/open/floor/carpet/royalblue,
+/area/station/command/heads_quarters/captain)
 "qJh" = (
 /obj/structure/disposalpipe/segment{
 	dir = 9
@@ -64401,6 +64432,9 @@
 /obj/machinery/light_switch/directional/north,
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
 /turf/open/floor/wood,
 /area/station/command/heads_quarters/captain)
 "rCE" = (
@@ -74760,6 +74794,12 @@
 	},
 /turf/open/floor/iron/white/smooth_large,
 /area/station/service/kitchen)
+"uuW" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/turf/open/floor/wood,
+/area/station/command/heads_quarters/captain)
 "uvk" = (
 /obj/structure/window/reinforced/plasma/spawner/directional/west,
 /obj/structure/cable,
@@ -75321,6 +75361,9 @@
 /obj/effect/landmark/start/captain,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/effect/turf_decal/siding/wood{
+	dir = 9
+	},
 /turf/open/floor/carpet/royalblue,
 /area/station/command/heads_quarters/captain)
 "uDc" = (
@@ -75784,6 +75827,12 @@
 "uJt" = (
 /turf/open/floor/carpet,
 /area/station/service/chapel)
+"uJE" = (
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 1
+	},
+/turf/open/floor/wood,
+/area/station/command/heads_quarters/captain)
 "uJH" = (
 /obj/structure/tank_holder/extinguisher,
 /obj/effect/turf_decal/tile/yellow/half/contrasted{
@@ -76238,6 +76287,9 @@
 /obj/item/stamp/head/captain,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 4
+	},
 /turf/open/floor/wood,
 /area/station/command/heads_quarters/captain)
 "uRi" = (
@@ -79263,6 +79315,8 @@
 /obj/machinery/light/small/directional/north,
 /obj/item/vending_refill/cigarette,
 /obj/machinery/light_switch/directional/north,
+/obj/item/book/manual/blubbery_bartender,
+/obj/item/book/manual/blubbery_bartender,
 /turf/open/floor/wood/parquet,
 /area/station/service/bar/backroom)
 "vJS" = (
@@ -79527,6 +79581,9 @@
 "vPF" = (
 /obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/cable,
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
 /turf/open/floor/wood,
 /area/station/command/heads_quarters/captain)
 "vPM" = (
@@ -80523,6 +80580,14 @@
 	},
 /turf/open/floor/iron,
 /area/station/maintenance/port/fore)
+"weM" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/turf/open/floor/wood,
+/area/station/command/heads_quarters/captain)
 "weR" = (
 /turf/open/floor/wood,
 /area/station/maintenance/space_hut/cabin)
@@ -86689,6 +86754,14 @@
 	},
 /turf/open/floor/iron/textured,
 /area/station/service/hydroponics)
+"xOS" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/effect/turf_decal/siding/wood{
+	dir = 10
+	},
+/turf/open/floor/carpet/royalblue,
+/area/station/command/heads_quarters/captain)
 "xPs" = (
 /obj/effect/mapping_helpers/airlock/access/all/science/general,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper,
@@ -250274,12 +250347,12 @@ iUT
 daw
 lpM
 rCD
-uEm
+uuW
 nfL
-mvc
+weM
 uQT
 uDa
-cPV
+xOS
 mvc
 lzb
 anu
@@ -250536,7 +250609,7 @@ iEV
 cPV
 hCV
 jeC
-jeC
+qJa
 mvc
 lpM
 oGQ
@@ -251048,7 +251121,7 @@ oii
 auU
 auU
 fgq
-heX
+jRW
 heX
 heX
 viQ
@@ -251302,10 +251375,10 @@ fVf
 epC
 lpM
 vPF
-uEm
-uEm
-uEm
-uEm
+hjG
+hjG
+hjG
+uJE
 cYm
 uEm
 eqU

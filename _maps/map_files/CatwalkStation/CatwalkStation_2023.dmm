@@ -37667,6 +37667,8 @@
 /obj/effect/turf_decal/tile/dark_green{
 	dir = 4
 	},
+/obj/item/book/manual/blubbery_bartender,
+/obj/item/book/manual/blubbery_bartender,
 /turf/open/floor/iron/checker,
 /area/station/service/bar/backroom)
 "kAZ" = (
