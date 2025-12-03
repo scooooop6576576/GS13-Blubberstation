@@ -138,7 +138,7 @@
 	..()
 	if (!iscarbon(affected_mob))
 		return
-	
+
 	var/mob/living/carbon/affected_carbon = affected_mob
 	affected_carbon.add_weight_gain_modifier("micro_calorite", 0.6)
 	affected_carbon.add_weight_loss_modifier("micro_calorite", -0.6)
@@ -146,6 +146,17 @@
 /datum/reagent/micro_calorite/overdose_process(mob/living/affected_mob, seconds_per_tick, times_fired)
 	if (!iscarbon(affected_mob))
 		return
-	
+
 	var/mob/living/carbon/affected_carbon = affected_mob
 	affected_carbon.adjust_fatness(5, FATTENING_TYPE_CHEM)
+
+
+/datum/reagent/consumable/nutriment/on_mob_metabolize(mob/living/affected_mob)
+	. = ..()
+	if(HAS_TRAIT(affected_mob, TRAIT_NUTRICIOUS_BOOST))
+		affected_mob.add_movespeed_modifier(/datum/movespeed_modifier/nutricious_boost/nutriment)
+
+/datum/reagent/consumable/nutriment/on_mob_end_metabolize(mob/living/affected_mob)
+	. = ..()
+	affected_mob.remove_movespeed_modifier(/datum/movespeed_modifier/nutricious_boost/nutriment)
+
