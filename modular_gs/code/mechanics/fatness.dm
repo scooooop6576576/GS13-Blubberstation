@@ -244,6 +244,10 @@
 	fullness_reduction -= 15
 	fullness_reduction = clamp(fullness_reduction, 0, max_fullness_reduction)
 
+/// adjusts the mob hunger - essentially just reduces fullness. Calling this is preferred to doint it manually since it adjusts for the default hunger reduction rate
+/mob/living/carbon/proc/adjust_hunger(amount)
+	fullness_reduction += 15 + amount
+
 /mob/living/carbon/fully_heal(admin_revive)
 	fatness = 0
 	fatness_real = 0

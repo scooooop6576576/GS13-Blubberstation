@@ -90,7 +90,7 @@
 /obj/item/storage/fancy/donut_box
 	name = "donut box"
 	desc = "Mmm. Donuts."
-	icon = 'icons/obj/food/donuts.dmi'
+	icon = 'modular_gs/icons/obj/food/containers.dmi'	// GS13 EDIT big fat obese massive soft belly gatoification from clumpert
 	icon_state = "donutbox_open" //composite image used for mapping
 	base_icon_state = "donutbox"
 	spawn_type = /obj/item/food/donut/plain
@@ -120,7 +120,7 @@
 		if (!istype(donut))
 			continue
 
-		var/image/donut_image = image(icon = initial(icon), icon_state = donut.in_box_sprite())
+		var/image/donut_image = image(icon = 'icons/obj/food/donuts.dmi', icon_state = donut.in_box_sprite())	// GS13 EDIT - gatoifies donut boxes. This used to use initial icon state but to not re-use the donut sprites, I just have it reference the original texture
 		donut_image.pixel_w = donuts * DONUT_INBOX_SPRITE_WIDTH
 		. += donut_image
 		donuts += 1

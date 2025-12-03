@@ -65,4 +65,4 @@
 	. = ..()
 	if(prob(10))
 		to_chat(person, "<span class='warning'>[pick("You feel a little ravenous...", "You could really go for a snack right now...", "The taste of food seems really enticing right now...", "Your belly groans, demanding food...")]</span>")
-	person.fullness_reduction += 30		// 15 fullness reduced per tick
+	person.adjust_hunger(15)

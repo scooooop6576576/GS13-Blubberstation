@@ -9,6 +9,7 @@
 	overdose_threshold = 50
 	addiction_types = list(/datum/addiction/fermi_fat = 4)
 	process_flags = REAGENT_ORGANIC | REAGENT_SYNTHETIC | REAGENT_PROTEAN // Allow all kinds of humanoids to process the chem
+	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
 
 //Reaction
@@ -79,8 +80,8 @@
 		var/add_text = pick("You feel pretty hungry.", "You think of [name].", "You look around for food.", "[name] wasn't so bad.")
 		to_chat(affected_carbon, "<span class='notice'>[add_text]</span>")
 	affected_carbon.adjust_fatness(1, FATTENING_TYPE_CHEM)
-	affected_carbon.fullness = max(0, affected_carbon.fullness-1)
-	affected_carbon.nutrition = max(0, affected_carbon.nutrition-1)
+	affected_carbon.adjust_hunger(1)
+	// affected_carbon.nutrition = max(0, affected_carbon.nutrition-1)
 	if(addiction_mults < 1)
 		// affected_carbon.nutri_mult += 0.5 commenting out since I can't be bothered for now
 		affected_carbon.add_weight_gain_modifier("galbanic", 0.25)
@@ -91,8 +92,8 @@
 		var/add_text = pick("You are very hungry.", "You need some [name]!", "Your stomach growls loudly!.", "Is there any [name] around?")
 		to_chat(affected_carbon, "<span class='notice'>[add_text]</span>")
 	affected_carbon.adjust_fatness(2, FATTENING_TYPE_CHEM)
-	affected_carbon.fullness = max(0, affected_carbon.fullness-2)
-	affected_carbon.nutrition = max(0, affected_carbon.nutrition-2)
+	affected_carbon.adjust_hunger(2)
+	// affected_carbon.nutrition = max(0, affected_carbon.nutrition-2)
 	if(addiction_mults < 2)
 		// affected_carbon.nutri_mult += 0.5
 		affected_carbon.add_weight_gain_modifier("galbanic", 0.25)
@@ -103,8 +104,8 @@
 		var/add_text = pick("You are ravenous!!", "You need [name] NOW!!", "You'd eat ANYTHING!!", "Where is the [name]?!", "Hungry, hungry, so HUNGRY!!", "More, you need more!!")
 		to_chat(affected_carbon, "<span class='boldannounce'>[add_text]</span>")
 	affected_carbon.adjust_fatness(4, FATTENING_TYPE_CHEM)
-	affected_carbon.fullness = max(0, affected_carbon.fullness-4)
-	affected_carbon.nutrition = max(0, affected_carbon.nutrition-4)
+	affected_carbon.adjust_hunger(4)
+	// affected_carbon.nutrition = max(0, affected_carbon.nutrition-4)
 	if(addiction_mults < 4)
 		// affected_carbon.nutri_mult += 0.5
 		affected_carbon.add_weight_gain_modifier("galbanic", 0.25)
@@ -127,6 +128,7 @@
 	metabolization_rate = REAGENTS_METABOLISM / 2
 	overdose_threshold = 50
 	process_flags = REAGENT_ORGANIC | REAGENT_SYNTHETIC | REAGENT_PROTEAN // Allow all kinds of humanoids to process the chem
+	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
 //Reaction
 /datum/chemical_reaction/fermi_slim

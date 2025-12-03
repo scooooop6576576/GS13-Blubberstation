@@ -48,6 +48,7 @@
 /obj/machinery/vending/wardrobe/cargo_wardrobe
 	gs_products = list(
 		/obj/item/clothing/under/color/grey/cargo = 3,
+		/obj/item/clothing/under/color/dual_tone/cargo = 3,
 	)
 	gs_premium = list(
 		/obj/item/clothing/under/color/dual_tone/cargo/bitrunner = 3,
