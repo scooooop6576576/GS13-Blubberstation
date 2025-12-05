@@ -1,6 +1,7 @@
 /datum/modular_persistence
 	var/real_fat = 0
 	var/perma_fat = 0
+	var/micro_calorite_poisoning = 0
 
 /mob/living/carbon/proc/save_persistent_fat(datum/modular_persistence/persistence)
 	if (isnull(client))
@@ -13,6 +14,8 @@
 	persistence.real_fat = fatness_real
 
 	persistence.perma_fat = fatness_perma
+
+	persistence.micro_calorite_poisoning = micro_calorite_poisoning
 
 /mob/living/carbon/proc/load_persistent_fat(datum/modular_persistence/persistence)
 	if (isnull(client))
@@ -28,4 +31,7 @@
 	
 	if (prefs.read_preference(/datum/preference/toggle/weight_gain_permanent))
 		fatness_perma = persistence.perma_fat
+	
+	if (prefs.read_preference(/datum/preference/toggle/severe_fatness_penalty))
+		micro_calorite_poisoning = persistence.micro_calorite_poisoning
 
