@@ -4,8 +4,8 @@
 
 /obj/item/gun/energy/laser/alter_ray
 	name = "alter-ray"
-	icon = 'icons/obj/weapons/guns/energy.dmi'
-	icon_state = "laser"
+	icon = 'modular_gs/icons/obj/weapons/alter_ray.dmi'
+	icon_state = "alter_ray"
 	desc = "This weapon is capable of altering one's body capabilities."
 	selfcharge = TRUE
 	charge_delay = 5
