@@ -179,7 +179,7 @@
 				stuffed_modifier = 2
 		size = size + stuffed_modifier
 		
-	size = max(size, 9)
+	size = min(size, 9)
 
 	return "[shape]_[size]"
 
