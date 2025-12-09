@@ -8722,20 +8722,6 @@
 	},
 /turf/open/floor/carpet/black,
 /area/centcom/central_command_areas/admin)
-"Ay" = (
-/obj/structure/curtain,
-/obj/structure/window/reinforced{
-	dir = 8
-	},
-/obj/machinery/shower{
-	pixel_y = 16
-	},
-/obj/item/soap/deluxe,
-/obj/effect/turf_decal/siding/white{
-	dir = 5
-	},
-/turf/open/floor/iron/large,
-/area/centcom/central_command_areas/admin)
 "Az" = (
 /obj/effect/turf_decal/tile/blue/half,
 /turf/open/floor/iron/white/smooth_large,
@@ -47388,12 +47374,12 @@ aa
 aa
 aa
 On
-Ay
+ZK
 or
 zq
 ZL
 On
-Ay
+ZK
 or
 zq
 ZL
