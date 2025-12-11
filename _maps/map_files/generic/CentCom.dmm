@@ -11696,7 +11696,7 @@
 /area/centcom/central_command_areas/admin)
 "JL" = (
 /obj/machinery/door/airlock/centcom{
-	name = "CentComm Gym";
+	name = "CentCom Gym";
 	opacity = 1
 	},
 /turf/open/floor/iron/large,
@@ -16858,7 +16858,7 @@
 "Zr" = (
 /obj/machinery/door/airlock{
 	dir = 4;
-	id_tag = "CCDormChemlight";
+	id_tag = "CCDorm2";
 	name = "Free Room"
 	},
 /turf/open/floor/iron/large,
