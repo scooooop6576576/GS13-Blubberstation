@@ -41,6 +41,9 @@
 	/// How many humanoid mobs have been digested by this mob?
 	var/carbons_digested = 0
 
+	// ever wondered what happens when someone gets REAL fat?
+	var/datum/proximity_monitor/advanced/gravity/gravity_field
+
 /**
 * Adjusts the fatness level of the parent mob.
 *

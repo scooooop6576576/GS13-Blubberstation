@@ -164,11 +164,12 @@
 /datum/reagent/fermi_slim/overdose_process(mob/living/living_mob)
 	if(!iscarbon(living_mob))
 		return ..()
+	
+	var/mob/living/carbon/fatty = living_mob
 		
 	if (HAS_TRAIT(fatty, TRAIT_MACERINIC_TOLERANCE))
 		return ..()
 	
-	var/mob/living/carbon/fatty = living_mob
 	fatty.fullness = max(0, fatty.fullness-5)
 	fatty.nutrition = max(0, fatty.nutrition-5)
 	fatty.weight_loss_rate = min(5, fatty.weight_loss_rate+0.01)
