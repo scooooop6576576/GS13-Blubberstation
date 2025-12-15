@@ -186,9 +186,10 @@
 /datum/quirk/fatty_gravity
 	name = "Planet sized"
 	desc = "So you know how the force of gravity increases with an object's mass? Yeah, about that..."
-	icon = "fa-grav"
+	icon = "fa-shield"
 	value = 5
 	quirk_flags = QUIRK_PROCESSES
+	medical_record_text = "Patient can generate their own gravity field when heavy enough."
 
 #define MILLION *1000000
 
