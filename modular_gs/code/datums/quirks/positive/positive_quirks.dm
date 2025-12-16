@@ -166,6 +166,7 @@
 	icon = "fa-shoe-prints"
 	value = 1
 	quirk_flags = QUIRK_HIDE_FROM_SCAN | QUIRK_PROCESSES
+	medical_record_text = "Patient is incapable of slipping at higher weights."
 
 /datum/quirk/large_surface_area/process(seconds_per_tick)
 	// make sure it has fatness
@@ -182,34 +183,3 @@
 		REMOVE_TRAIT(fatty, TRAIT_NO_SLIP_WATER, TRAIT_LARGE_SURFACE_AREA)
 		REMOVE_TRAIT(fatty, TRAIT_NO_SLIP_ICE, TRAIT_LARGE_SURFACE_AREA)
 		REMOVE_TRAIT(fatty, TRAIT_NO_SLIP_SLIDE, TRAIT_LARGE_SURFACE_AREA)
-
-/datum/quirk/fatty_gravity
-	name = "Planet sized"
-	desc = "So you know how the force of gravity increases with an object's mass? Yeah, about that..."
-	icon = "fa-shield"
-	value = 5
-	quirk_flags = QUIRK_PROCESSES
-	medical_record_text = "Patient can generate their own gravity field when heavy enough."
-
-#define MILLION *1000000
-
-/datum/quirk/fatty_gravity/process(seconds_per_tick)
-	// make sure it has fatness
-	if (!iscarbon(quirk_holder))
-		return
-
-	var/mob/living/carbon/fatty = quirk_holder
-
-	// so normally to get 1g at a distance of 1 meter you'd have to have like. 13 billion BFI. We're not doing that, but we are gonna respect the square falloff
-	if (fatty.fatness >= 16 MILLION)
-		fatty.gravity_field = new(src, range = 4, gravity = 1)
-	else if (fatty.fatness >= 9 MILLION)
-		fatty.gravity_field = new(src, range = 3, gravity = 1)
-	else if (fatty.fatness >= 4 MILLION)
-		fatty.gravity_field = new(src, range = 2, gravity = 1)
-	else if (fatty.fatness >= 1 MILLION)
-		fatty.gravity_field = new(src, range = 1, gravity = 1)
-	else
-		QDEL_NULL(fatty.gravity_field)
-
-#undef MILLION
