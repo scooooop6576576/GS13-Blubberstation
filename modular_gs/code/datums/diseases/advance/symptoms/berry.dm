@@ -22,6 +22,8 @@ GLOBAL_LIST_INIT(no_random_cure_symptoms, list(/datum/symptom/berry, /datum/symp
 		return
 	if(A.affected_mob?.client?.prefs?.read_preference(/datum/preference/toggle/blueberry_inflation))
 		A.affected_mob.reagents.add_reagent(infection_reagent, max(1, A.totalStageSpeed()) * 10)
+		// Start blueberry loop
+		A.affected_mob.blueberry_inflate_loop.start()
 	..()
 
 /datum/symptom/berry/Activate(datum/disease/advance/A)

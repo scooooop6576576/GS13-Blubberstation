@@ -53,11 +53,6 @@ GLOBAL_LIST_INIT(blueberry_growing_about_to_blow, list(
 			return
 		affected_mob.hider_add(src)
 
-		// Start blueberry loop
-		if(loopstarted == FALSE)
-			loopstarted = TRUE
-			affected_mob.blueberry_inflate_loop.start()
-
 		// Play generic gurgle sound every time juice gets added
 		playsound(L.loc, pick(GLOB.blueberry_growing), BLUEBERRY_INFLATION_VOLUME, 1, 1, 1.2, ignore_walls = FALSE)
 
@@ -70,7 +65,6 @@ GLOBAL_LIST_INIT(blueberry_growing_about_to_blow, list(
 		return
 	var/mob/living/carbon/C = L
 	C.hider_remove(src)
-	loopstarted = FALSE
 	C.blueberry_inflate_loop.stop()
 
 /datum/reagent/blueberry_juice/proc/fat_hide()
@@ -89,10 +83,13 @@ GLOBAL_LIST_INIT(blueberry_growing_about_to_blow, list(
 			if (prob(40))
 				playsound(M.loc, pick(GLOB.blueberry_growing_nearing_limit), BLUEBERRY_INFLATION_VOLUME, 1, 1, 1.2, ignore_walls = FALSE)
 
+	if((M.reagents.get_reagent_amount(/datum/reagent/blueberry_juice)/M?.client?.prefs?.read_preference(/datum/preference/numeric/helplessness/blueberry_max_before_burst)) > 1.1)
+		M.gib(DROP_ALL_REMAINS) // Change this alter to show popup
+
 /datum/looping_sound/blueberry_inflation
 	mid_sounds = list('modular_gs/sound/effects/inflation/berryloop.ogg')
 	mid_length = 8 SECONDS
-	volume = 15
+	volume = BLUEBERRY_INFLATION_VOLUME
 
 // /obj/item/food/meat/steak/troll
 // 	name = "Troll steak"
