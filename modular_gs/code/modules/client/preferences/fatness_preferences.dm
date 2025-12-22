@@ -82,6 +82,15 @@
 /datum/preference/toggle/severe_fatness_penalty/apply_to_human(mob/living/carbon/human/target, value, datum/preferences/preferences)
 	return
 
+/datum/preference/toggle/reform_after_bursting
+	category = WG_PREFERENCES
+	savefile_identifier = PREFERENCE_CHARACTER
+	savefile_key = "reform_after_bursting"
+	default_value = FALSE
+
+/datum/preference/toggle/reform_after_bursting/apply_to_human(mob/living/carbon/human/target, value, datum/preferences/preferences)
+	return
+
 // /datum/preference/numeric/perma_fat_value // this is a bit cancer but if it works it works
 // 	category = PREFERENCE_CATEGORY_MANUALLY_RENDERED
 // 	savefile_identifier = PREFERENCE_CHARACTER

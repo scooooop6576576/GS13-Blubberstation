@@ -41,18 +41,6 @@
 	/// How many humanoid mobs have been digested by this mob?
 	var/carbons_digested = 0
 
-	/// Inflation related
-	var/datum/looping_sound/blueberry_inflation/blueberry_inflate_loop
-
-
-/mob/living/carbon/Initialize(mapload)
-	. = ..()
-	blueberry_inflate_loop = new(src, FALSE)
-
-/mob/living/carbon/Destroy()
-	QDEL_NULL(blueberry_inflate_loop)
-	return ..()
-
 /**
 * Adjusts the fatness level of the parent mob.
 *

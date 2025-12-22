@@ -61,22 +61,6 @@ GLOBAL_LIST_INIT(no_random_cure_symptoms, list(/datum/symptom/berry, /datum/symp
 			to_chat(user, "<span class='warning'>You get some juice out of you...</span>")
 
 /*
-/obj/effect/decal/cleanable/juice
-	name = "berry juice"
-	desc = "It's blue and smells enticingly sweet."
-	icon = 'modular_gs/icons/turf/berry_decal.dmi'
-	icon_state = "floor1"
-	random_icon_states = list("floor1", "floor2", "floor3", "floor4", "floor5", "floor6", "floor7")
-	blood_state = BLOOD_STATE_JUICE
-	bloodiness = BLOOD_AMOUNT_PER_DECAL
-
-/obj/effect/decal/cleanable/juice/Initialize(mapload)
-	. = ..()
-	reagents.add_reagent(/datum/reagent/blueberry_juice = 5)
-
-/obj/effect/decal/cleanable/juice/streak
-	random_icon_states = list("streak1", "streak2", "streak3", "streak4", "streak5")
-
 /obj/effect/decal/cleanable/blood/update_icon()
 	color = blood_DNA_to_color()
 	if(blood_state == BLOOD_STATE_JUICE)
