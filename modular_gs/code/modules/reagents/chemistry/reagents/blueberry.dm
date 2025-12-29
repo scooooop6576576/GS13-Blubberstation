@@ -37,24 +37,28 @@ GLOBAL_LIST_INIT(blueberry_burst, list(
 
 GLOBAL_LIST_INIT(blueberry_growing_flavour, list(
 	"<span class='danger'>Oof... Your belly groans as you feel the juice slosh inside you!</span>",
-	"<span class='danger'>You feel like a juice filled balloon!</span>"
+	"<span class='danger'>You feel your distended gut slosh and churn!</span>",
+	"<span class='danger'>I feel so heavy...</span>"
 	))
 
 GLOBAL_LIST_INIT(blueberry_nearing_limit__flavour, list(
 	"<span class='danger'>The pressure is getting unbearable! Your body softly creaks as it's struggling to contain all the juice inside you!</span>",
-	"<span class='danger'>Your body creaks and stretches, as your tight body tries to find more space for the juice!</span>"
+	"<span class='danger'>Your body creaks and stretches, as your tight body tries to find more space for the juice!</span>",
+	"<span class='danger'>I feel like a juice filled balloon!</span>",
+	"<span class='danger'>I need to get juiced... and fast...</span>"
 	))
 
 GLOBAL_LIST_INIT(blueberry_limit_reached_flavour, list(
 	"<span class='danger'>Oh god... too big...</span>",
-	"<span class='danger'>It's too much! I'm gonna pop!</span>",
-	"<span class='danger'>I can't...</span>"
+	"<span class='danger'>It's too much...</span>",
+	"<span class='danger'>I can't...</span>",
+	"<span class='danger'>I need to get juiced... NOW!</span>"
 	))
 
 GLOBAL_LIST_INIT(blueberry_about_to_blow_flavour, list(
-	"<span class='danger'>Oh god... too big...</span>",
-	"<span class='danger'>It's too much! I'm gonna pop!</span>",
-	"<span class='danger'>I can't...</span>"
+	"<span class='danger'>I'm gonna...!</span>",
+	"<span class='danger'>Too much! I'm gonna pop!</span>",
+	"<span class='danger'>The juice... it's getting...</span>"
 	))
 
 /datum/reagent/blueberry_juice
@@ -124,11 +128,14 @@ GLOBAL_LIST_INIT(blueberry_about_to_blow_flavour, list(
 		return FALSE
 
 	switch((berry.reagents.get_reagent_amount(/datum/reagent/blueberry_juice)/max_before_burst))
-		if(0 to 0.7)
-			if (SPT_PROB(5, seconds_per_tick))
-				playsound(berry.loc, pick(GLOB.blueberry_growing), BLUEBERRY_INFLATION_VOLUME, 1, 1, 1.2, ignore_walls = FALSE)
-				berry.visible_message("<span class='warning'>[berry]'s belly let's out an audible groan as the juice sloshes inside them!</span>", pick(GLOB.blueberry_growing_flavour))
+		if(0 to 0.4)
+			if (SPT_PROB(0.5, seconds_per_tick))
+				berry.visible_message("<span class='warning'>[berry]'s belly let's out an audible groan!</span>", pick(GLOB.blueberry_growing_flavour))
+		if(0.4 to 0.7)
 			if (SPT_PROB(1, seconds_per_tick))
+				playsound(berry.loc, pick(GLOB.blueberry_growing), BLUEBERRY_INFLATION_VOLUME, 1, 1, 1.2, ignore_walls = FALSE)
+				berry.visible_message("<span class='warning'>[berry]'s belly let's out an audible groan as you can hear juice sloshing inside them!</span>", pick(GLOB.blueberry_growing_flavour))
+			if (SPT_PROB(0.5, seconds_per_tick))
 				splatter_juice(berry)
 		if(0.7 to 0.9)
 			if (SPT_PROB(10, seconds_per_tick))
@@ -138,7 +145,7 @@ GLOBAL_LIST_INIT(blueberry_about_to_blow_flavour, list(
 				splatter_juice(berry)
 		if(0.9 to INFINITY)
 			if (SPT_PROB(15, seconds_per_tick))
-				berry.visible_message("<span class='warning'>[berry]'s body softly creaks under the strain of being filled with juice!</span>", pick(GLOB.blueberry_about_to_blow_flavour))
+				berry.visible_message("<span class='warning'>[berry]'s body softly creaks under the strain of being filled with juice!</span>", pick(GLOB.blueberry_limit_reached_flavour))
 				playsound(berry.loc, pick(GLOB.blueberry_limit_reached_flavour), BLUEBERRY_INFLATION_VOLUME, 1, 1, 1.2, ignore_walls = TRUE)
 			if (SPT_PROB(35, seconds_per_tick))
 				splatter_juice(berry)
