@@ -1286,6 +1286,19 @@
 /obj/effect/mapping_helpers/airlock/access/all/security/brig,
 /turf/open/floor/stone,
 /area/station/maintenance/department/security/brig)
+"aue" = (
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "rnd";
+	name = "Research Lab Shutters"
+	},
+/obj/machinery/autolathe,
+/obj/machinery/door/firedoor,
+/obj/machinery/door/window/right/directional/north{
+	name = "Research and Development Desk";
+	req_access = list("science")
+	},
+/turf/open/floor/plating,
+/area/station/science/lab)
 "aut" = (
 /obj/structure/showcase/cyborg/old{
 	dir = 1
@@ -16883,10 +16896,6 @@
 /obj/structure/desk_bell{
 	pixel_x = 7
 	},
-/obj/machinery/door/window/right/directional/north{
-	name = "Research and Development Desk";
-	req_access = list("science")
-	},
 /obj/item/paper_bin{
 	pixel_x = -9;
 	pixel_y = 7
@@ -16900,6 +16909,10 @@
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "rnd";
 	name = "Research Lab Shutters"
+	},
+/obj/machinery/door/window/right/directional/north{
+	name = "Research and Development Desk";
+	req_access = list("science")
 	},
 /turf/open/floor/iron,
 /area/station/science/lab)
@@ -54400,6 +54413,19 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/iron,
 /area/station/security/prison/workout)
+"rCU" = (
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "rnd";
+	name = "Research Lab Shutters"
+	},
+/obj/structure/table/reinforced,
+/obj/machinery/door/firedoor,
+/obj/machinery/door/window/right/directional/north{
+	name = "Research and Development Desk";
+	req_access = list("science")
+	},
+/turf/open/floor/plating,
+/area/station/science/lab)
 "rCY" = (
 /obj/effect/spawner/structure/window/hollow,
 /turf/open/floor/plating,
@@ -176277,7 +176303,7 @@ sKo
 ssV
 big
 iAO
-qpK
+aue
 nSZ
 jzd
 nKM
@@ -176791,7 +176817,7 @@ kcS
 duh
 hHD
 uGP
-qpK
+rCU
 nSZ
 jzd
 nyC
