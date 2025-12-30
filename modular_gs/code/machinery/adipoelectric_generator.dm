@@ -153,7 +153,7 @@
 		. += "<span class='notice'><b>[src]'s display is currently offline.</b></span>"
 
 /obj/item/circuitboard/machine/power/adipoelectric_generator
-	name = "Adipoelectric Generator (Machine Board)"
+	name = "Adipoelectric Generator"
 	build_path = /obj/machinery/power/adipoelectric_generator
 	req_components = list(
 		/datum/stock_part/micro_laser = 5,
@@ -166,5 +166,7 @@
 	desc = "The circuit board for an Adipoelectric Generator."
 	id = "adipoelectric_generator"
 	build_path = /obj/item/circuitboard/machine/power/adipoelectric_generator
-	category = list("Engineering Machinery")
+	category = list(
+		RND_CATEGORY_MACHINE + RND_SUBCATEGORY_MACHINE_ENGINEERING
+	)
 	departmental_flags = DEPARTMENT_BITFLAG_ENGINEERING

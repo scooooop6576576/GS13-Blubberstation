@@ -154,7 +154,7 @@ GLOBAL_LIST_EMPTY(adipoelectric_transformer)
 		. += "<span class='notice'><b>[src]'s display is currently offline.</b></span>"
 
 /obj/item/circuitboard/machine/adipoelectric_transformer
-	name = "Adipoelectric Transformer (Machine Board)"
+	name = "Adipoelectric Transformer"
 	build_path = /obj/machinery/adipoelectric_transformer
 	req_components = list(
 		/datum/stock_part/capacitor = 5,
@@ -166,5 +166,7 @@ GLOBAL_LIST_EMPTY(adipoelectric_transformer)
 	desc = "The circuit board for an Adipoelectric Transformer."
 	id = "adipoelectric_transformer"
 	build_path = /obj/item/circuitboard/machine/adipoelectric_transformer
-	category = list("Research Machinery")
+	category = list(
+		RND_CATEGORY_MACHINE + RND_SUBCATEGORY_MACHINE_ENGINEERING
+	)
 	departmental_flags = DEPARTMENT_BITFLAG_ENGINEERING
