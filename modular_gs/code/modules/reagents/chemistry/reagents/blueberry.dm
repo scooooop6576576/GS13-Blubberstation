@@ -228,6 +228,7 @@ GLOBAL_LIST_INIT(blueberry_about_to_blow_flavour, list(
  */
 /mob/living/carbon/proc/trigger_burst()
 	ADD_TRAIT(src, ABOUT_TO_BURST_TRAIT, TRAUMA_TRAIT)
+	addtimer(TRAIT_CALLBACK_REMOVE(src, ABOUT_TO_BURST_TRAIT, TRAUMA_TRAIT), BURST_DELAY_SECONDS SECONDS)
 	var/list/buttons = list(BURST_DELAY, BURST_IMMEDIATELY)
 	var/burst_choice = tgui_alert(src, "Choose if you want to burst now, or if you want to delay. If you click on the burst now option, you will have 7 seconds before you burst. If you click on the delay option, nothing will happen and you will get the option to burst again in 5 minutes if you're still at your limit.", "You feel ready to pop!", buttons)
 	visible_message("<span class='warning'>[src]'s body wobbles violently, they look ready to burst!</span>", pick(GLOB.blueberry_about_to_blow_flavour))
@@ -244,7 +245,6 @@ GLOBAL_LIST_INIT(blueberry_about_to_blow_flavour, list(
 		else
 			burst()
 	if(!burst_choice || burst_choice == BURST_DELAY) // The about_to_burst quirk is self removing after 300 seconds. So if we delay, all we need to do is return.
-		addtimer(TRAIT_CALLBACK_REMOVE(src, ABOUT_TO_BURST_TRAIT, TRAUMA_TRAIT), BURST_DELAY_SECONDS SECONDS)
 		return
 
 /**
