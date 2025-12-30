@@ -1286,19 +1286,6 @@
 /obj/effect/mapping_helpers/airlock/access/all/security/brig,
 /turf/open/floor/stone,
 /area/station/maintenance/department/security/brig)
-"aue" = (
-/obj/machinery/door/poddoor/shutters/preopen{
-	id = "rnd";
-	name = "Research Lab Shutters"
-	},
-/obj/machinery/autolathe,
-/obj/machinery/door/firedoor,
-/obj/machinery/door/window/right/directional/north{
-	name = "Research and Development Desk";
-	req_access = list("science")
-	},
-/turf/open/floor/plating,
-/area/station/science/lab)
 "aut" = (
 /obj/structure/showcase/cyborg/old{
 	dir = 1
@@ -10751,6 +10738,19 @@
 /obj/structure/reagent_dispensers/fueltank,
 /turf/open/floor/plating,
 /area/station/maintenance/starboard/central)
+"dzU" = (
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "rnd";
+	name = "Research Lab Shutters"
+	},
+/obj/structure/table/reinforced,
+/obj/machinery/door/firedoor,
+/obj/machinery/door/window/right/directional/north{
+	name = "Research and Development Desk";
+	req_access = list("science")
+	},
+/turf/open/floor/plating,
+/area/station/science/lab)
 "dAd" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 5
@@ -12721,13 +12721,11 @@
 /turf/open/floor/grass,
 /area/station/service/hydroponics)
 "egJ" = (
-/obj/machinery/door/airlock/mining/glass{
-	name = "Cargo Bay"
-	},
 /obj/effect/mapping_helpers/airlock/access/all/supply/general,
 /obj/effect/turf_decal/siding/wood{
 	dir = 5
 	},
+/obj/machinery/door/firedoor,
 /turf/open/floor/wood/large,
 /area/station/cargo/office)
 "egZ" = (
@@ -32518,6 +32516,19 @@
 /obj/effect/spawner/random/maintenance/two,
 /turf/open/floor/plating,
 /area/station/maintenance/starboard/central)
+"kHJ" = (
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "rnd";
+	name = "Research Lab Shutters"
+	},
+/obj/machinery/autolathe,
+/obj/machinery/door/firedoor,
+/obj/machinery/door/window/right/directional/north{
+	name = "Research and Development Desk";
+	req_access = list("science")
+	},
+/turf/open/floor/plating,
+/area/station/science/lab)
 "kHL" = (
 /obj/structure/bookcase/random/reference,
 /obj/item/reagent_containers/cup/glass/mug/coco{
@@ -54413,19 +54424,6 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/iron,
 /area/station/security/prison/workout)
-"rCU" = (
-/obj/machinery/door/poddoor/shutters/preopen{
-	id = "rnd";
-	name = "Research Lab Shutters"
-	},
-/obj/structure/table/reinforced,
-/obj/machinery/door/firedoor,
-/obj/machinery/door/window/right/directional/north{
-	name = "Research and Development Desk";
-	req_access = list("science")
-	},
-/turf/open/floor/plating,
-/area/station/science/lab)
 "rCY" = (
 /obj/effect/spawner/structure/window/hollow,
 /turf/open/floor/plating,
@@ -176303,7 +176301,7 @@ sKo
 ssV
 big
 iAO
-aue
+kHJ
 nSZ
 jzd
 nKM
@@ -176817,7 +176815,7 @@ kcS
 duh
 hHD
 uGP
-rCU
+dzU
 nSZ
 jzd
 nyC

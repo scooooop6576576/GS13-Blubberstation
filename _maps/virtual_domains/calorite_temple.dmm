@@ -212,7 +212,6 @@
 /obj/effect/turf_decal/tile/brown/diagonal_centre,
 /obj/structure/fans/tiny/invisible,
 /obj/machinery/door/airlock/external/ruin{
-	color = ffcc00;
 	name = "Temple Airlock"
 	},
 /turf/open/floor/iron/diagonal,
@@ -444,9 +443,11 @@
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors/virtual_domain)
 "ie" = (
-/obj/structure/window/calorite/fulltile,
-/turf/open/floor/mineral/calorite/strong,
-/area/lavaland/surface/outdoors/virtual_domain)
+/obj/modular_map_root/safehouse{
+	key = "mine"
+	},
+/turf/template_noop,
+/area/virtual_domain/safehouse)
 "it" = (
 /obj/effect/turf_decal/siding/wideplating_new/terracotta{
 	dir = 1
@@ -719,7 +720,6 @@
 /obj/structure/fans/tiny/invisible,
 /obj/structure/trap/fattening,
 /obj/machinery/door/airlock/external/ruin{
-	color = ffcc00;
 	name = "Temple Airlock"
 	},
 /turf/open/floor/iron/diagonal,
@@ -1189,7 +1189,6 @@
 /obj/effect/turf_decal/tile/brown/diagonal_centre,
 /obj/structure/fans/tiny/invisible,
 /obj/machinery/door/airlock/external/ruin{
-	color = ffcc00;
 	name = "Temple Airlock"
 	},
 /turf/open/floor/iron/diagonal,
@@ -1219,11 +1218,15 @@
 /turf/open/floor/iron/diagonal,
 /area/lavaland/surface/outdoors/virtual_domain)
 "yz" = (
-/obj/modular_map_root/safehouse{
-	key = "mine"
+/obj/effect/turf_decal/siding/wideplating_new/terracotta,
+/obj/effect/turf_decal/tile/dark_red/diagonal_edge,
+/obj/effect/turf_decal/tile/brown/diagonal_centre,
+/obj/structure/fans/tiny/invisible,
+/obj/machinery/door/airlock/external/ruin{
+	name = "Temple Airlock"
 	},
-/turf/template_noop,
-/area/virtual_domain/safehouse)
+/turf/open/floor/iron/diagonal,
+/area/lavaland/surface/outdoors/virtual_domain)
 "yO" = (
 /turf/closed/wall/mineral/calorite,
 /area/lavaland/surface/outdoors/virtual_domain)
@@ -1728,6 +1731,9 @@
 /obj/effect/turf_decal/tile/dark_red/diagonal_edge,
 /turf/open/floor/iron/diagonal,
 /area/lavaland/surface/outdoors/virtual_domain)
+"KU" = (
+/turf/open/floor/mineral/calorite,
+/area/lavaland/surface/outdoors/virtual_domain)
 "KY" = (
 /obj/effect/turf_decal/siding/wideplating_new/terracotta/corner{
 	dir = 1
@@ -1945,7 +1951,6 @@
 /obj/effect/turf_decal/tile/brown/diagonal_centre,
 /obj/structure/fans/tiny/invisible,
 /obj/machinery/door/airlock/external/ruin{
-	color = ffcc00;
 	name = "Temple Airlock"
 	},
 /turf/open/floor/iron/diagonal,
@@ -2104,17 +2109,6 @@
 /obj/effect/turf_decal/tile/brown/diagonal_centre,
 /turf/open/floor/iron/diagonal,
 /area/lavaland/surface/outdoors/virtual_domain)
-"Sd" = (
-/obj/effect/turf_decal/siding/wideplating_new/terracotta,
-/obj/effect/turf_decal/tile/dark_red/diagonal_edge,
-/obj/effect/turf_decal/tile/brown/diagonal_centre,
-/obj/structure/fans/tiny/invisible,
-/obj/machinery/door/airlock/external/ruin{
-	color = ffcc00;
-	name = "Temple Airlock"
-	},
-/turf/open/floor/iron/diagonal,
-/area/lavaland/surface/outdoors/virtual_domain)
 "Sq" = (
 /obj/effect/turf_decal/siding/brown{
 	dir = 10
@@ -2156,21 +2150,21 @@
 /turf/open/floor/iron/diagonal,
 /area/lavaland/surface/outdoors/virtual_domain)
 "TR" = (
-/obj/effect/turf_decal/siding/wideplating_new/terracotta{
-	dir = 8
+/obj/item/gun/energy/recharge/kinetic_accelerator{
+	pixel_x = 0;
+	pixel_y = -3
 	},
-/obj/effect/turf_decal/siding/wideplating_new/terracotta{
-	dir = 4
+/obj/item/gun/energy/recharge/kinetic_accelerator{
+	pixel_x = 0;
+	pixel_y = 2
 	},
-/obj/effect/turf_decal/tile/dark_red/diagonal_edge,
-/obj/effect/turf_decal/tile/brown/diagonal_centre,
-/obj/structure/fans/tiny/invisible,
-/obj/machinery/door/airlock/external/ruin{
-	color = ffcc00;
-	name = "Temple Airlock"
+/obj/item/gun/energy/recharge/kinetic_accelerator{
+	pixel_x = 0;
+	pixel_y = 7
 	},
-/turf/open/floor/iron/diagonal,
-/area/lavaland/surface/outdoors/virtual_domain)
+/obj/structure/table/wood/fancy/orange,
+/turf/template_noop,
+/area/virtual_domain/safehouse)
 "TY" = (
 /obj/effect/turf_decal/siding/wideplating_new/terracotta{
 	dir = 10
@@ -2193,7 +2187,6 @@
 /obj/structure/fans/tiny/invisible,
 /obj/structure/trap/fattening,
 /obj/machinery/door/airlock/external/ruin{
-	color = ffcc00;
 	name = "Temple Airlock"
 	},
 /turf/open/floor/iron/diagonal,
@@ -2461,21 +2454,20 @@
 /turf/open/floor/iron/diagonal,
 /area/lavaland/surface/outdoors/virtual_domain)
 "Yh" = (
-/obj/item/gun/energy/recharge/kinetic_accelerator{
-	pixel_x = 0;
-	pixel_y = -3
+/obj/effect/turf_decal/siding/wideplating_new/terracotta{
+	dir = 8
 	},
-/obj/item/gun/energy/recharge/kinetic_accelerator{
-	pixel_x = 0;
-	pixel_y = 2
+/obj/effect/turf_decal/siding/wideplating_new/terracotta{
+	dir = 4
 	},
-/obj/item/gun/energy/recharge/kinetic_accelerator{
-	pixel_x = 0;
-	pixel_y = 7
+/obj/effect/turf_decal/tile/dark_red/diagonal_edge,
+/obj/effect/turf_decal/tile/brown/diagonal_centre,
+/obj/structure/fans/tiny/invisible,
+/obj/machinery/door/airlock/external/ruin{
+	name = "Temple Airlock"
 	},
-/obj/structure/table/wood/fancy/orange,
-/turf/template_noop,
-/area/virtual_domain/safehouse)
+/turf/open/floor/iron/diagonal,
+/area/lavaland/surface/outdoors/virtual_domain)
 "Yo" = (
 /obj/effect/turf_decal/siding/wideplating_new/terracotta/corner{
 	dir = 1
@@ -2555,7 +2547,6 @@
 /obj/effect/turf_decal/tile/brown/diagonal_centre,
 /obj/structure/fans/tiny/invisible,
 /obj/machinery/door/airlock/external/ruin{
-	color = ffcc00;
 	name = "Temple Airlock"
 	},
 /turf/open/floor/iron/diagonal,
@@ -2567,7 +2558,6 @@
 /obj/structure/fans/tiny/invisible,
 /obj/structure/trap/fattening,
 /obj/machinery/door/airlock/external/ruin{
-	color = ffcc00;
 	name = "Temple Airlock"
 	},
 /turf/open/floor/iron/diagonal,
@@ -3419,7 +3409,7 @@ ze
 ze
 NK
 si
-TR
+Yh
 kj
 RJ
 Ub
@@ -3622,9 +3612,9 @@ NV
 hw
 yO
 Qr
-ie
+ze
 dj
-Sd
+yz
 ze
 Qr
 yO
@@ -3799,7 +3789,7 @@ Ns
 Ns
 Ns
 Ns
-yz
+ie
 dF
 tu
 "}
@@ -3927,7 +3917,7 @@ QJ
 xm
 xm
 rg
-Gp
+KU
 QM
 vc
 yO
@@ -3952,7 +3942,7 @@ LW
 LW
 Ns
 Ns
-Yh
+TR
 OD
 Ns
 Ns
@@ -4248,7 +4238,7 @@ yO
 Qr
 ze
 Uo
-Sd
+yz
 ze
 Qr
 yO
@@ -4452,7 +4442,7 @@ Hf
 WV
 xm
 Ze
-TR
+Yh
 Yo
 BT
 ze
