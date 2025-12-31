@@ -13760,11 +13760,6 @@
 /obj/item/kirbyplants/fern,
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/bubbers/persistance/sec/interrogation)
-"Bc" = (
-/obj/machinery/duct,
-/obj/structure/cable,
-/turf/closed/wall/r_wall/plastitanium/syndicate/cruiser,
-/area/ruin/space/has_grav/bubbers/persistance/sec/prison)
 "Bd" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer2,
@@ -14203,6 +14198,7 @@
 	},
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer4,
+/obj/machinery/duct,
 /turf/open/floor/iron/dark/small,
 /area/ruin/space/has_grav/bubbers/persistance/sec/prison)
 "Ck" = (
@@ -25741,6 +25737,7 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer4,
 /obj/machinery/door/airlock/bathroom,
+/obj/machinery/duct,
 /turf/open/floor/catwalk_floor/iron_dark,
 /area/ruin/space/has_grav/bubbers/persistance/sec/prison)
 "Zr" = (
@@ -27051,7 +27048,7 @@ CL
 NJ
 uI
 vD
-Bc
+Lf
 mc
 Xa
 VL
