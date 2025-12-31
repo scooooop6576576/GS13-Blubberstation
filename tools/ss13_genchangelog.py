@@ -109,7 +109,7 @@ for fileName in glob.glob(os.path.join(args.ymlDir, "*.yml")):
     name, ext = os.path.splitext(os.path.basename(fileName))
     if name.startswith('.'): continue
     if name == 'example': continue
-    if "bubber" not in name: continue # BUBBER EDIT ADDITION: Changelog 2
+    if "gs13" not in name: continue # BUBBER EDIT ADDITION: Changelog 2 # GS13 EDIT changelog compilation
     fileName = os.path.abspath(fileName)
     formattedDate = today.strftime(fileDateFormat)
     monthFile = os.path.join(archiveDir, formattedDate + '.yml')
