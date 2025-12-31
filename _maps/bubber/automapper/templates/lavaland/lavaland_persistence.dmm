@@ -10376,7 +10376,6 @@
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/space/has_grav/bubbers/persistance/sci/robotics)
 "uI" = (
-/obj/machinery/duct,
 /obj/effect/turf_decal/siding{
 	dir = 10
 	},
@@ -10676,7 +10675,6 @@
 /obj/item/storage/box/drinkingglasses,
 /obj/item/kitchen/fork/plastic,
 /obj/item/kitchen/fork/plastic,
-/obj/item/kitchen/fork/plastic,
 /obj/item/reagent_containers/cup/bowl,
 /obj/item/reagent_containers/cup/bowl,
 /obj/item/reagent_containers/cup/bowl,
@@ -10694,7 +10692,6 @@
 /obj/effect/turf_decal/siding/dark{
 	dir = 9
 	},
-/obj/machinery/duct,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/bubbers/persistance/sec/prison)
 "vm" = (
@@ -10847,7 +10844,6 @@
 /turf/open/floor/wood/tile,
 /area/ruin/space/has_grav/bubbers/persistance/service/diner)
 "vD" = (
-/obj/machinery/duct,
 /obj/machinery/shower/directional/east,
 /obj/structure/drain,
 /turf/open/floor/noslip,
@@ -11008,7 +11004,6 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer4,
 /obj/structure/cable,
-/obj/machinery/duct,
 /obj/effect/turf_decal/stripes/red/line{
 	dir = 4
 	},
@@ -11994,7 +11989,6 @@
 /obj/effect/turf_decal/tile/yellow/diagonal_edge,
 /obj/structure/sink/kitchen/directional/west,
 /obj/structure/mirror/directional/east,
-/obj/machinery/duct,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
 	},
@@ -13847,7 +13841,6 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
 	},
-/obj/machinery/duct,
 /turf/open/floor/iron/dark/small,
 /area/ruin/space/has_grav/bubbers/persistance/sec/prison)
 "Bq" = (
@@ -20492,7 +20485,6 @@
 "Os" = (
 /obj/machinery/shower/directional/west,
 /obj/structure/drain,
-/obj/machinery/duct,
 /turf/open/floor/noslip,
 /area/ruin/space/has_grav/bubbers/persistance/sec/prison)
 "Ot" = (
