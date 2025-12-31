@@ -8905,13 +8905,11 @@
 /turf/open/floor/iron/dark/small,
 /area/xenoarch/lavaland/outside/caloriteresearch_powered)
 "jeW" = (
-/obj/machinery/computer/security/telescreen/entertainment{
-	pixel_x = -31
-	},
 /obj/item/storage/crayons{
 	pixel_x = -5;
 	pixel_y = -11
 	},
+/obj/machinery/computer/security/telescreen/entertainment/directional/west,
 /turf/open/floor/wood/tile,
 /area/xenoarch/lavaland/outside/donut_factory)
 "jfd" = (
@@ -13628,12 +13626,10 @@
 /turf/open/floor/iron/dark/smooth_large,
 /area/xenoarch/lavaland/public)
 "nOv" = (
-/obj/machinery/computer/security/telescreen/entertainment{
-	pixel_x = -31
-	},
 /obj/item/trash/boritos{
 	pixel_x = -6
 	},
+/obj/machinery/computer/security/telescreen/entertainment/directional/west,
 /turf/open/indestructible/hotelwood,
 /area/xenoarch/lavaland/maint_east)
 "nOW" = (
@@ -23889,10 +23885,8 @@
 	pixel_x = -9;
 	pixel_y = 4
 	},
-/obj/machinery/computer/security/telescreen/entertainment{
-	pixel_y = 32
-	},
 /obj/item/toy/plush/gs13/gatito,
+/obj/machinery/computer/security/telescreen/entertainment/directional/north,
 /turf/open/indestructible/hotelwood,
 /area/xenoarch/lavaland/maint_east)
 "yhb" = (
