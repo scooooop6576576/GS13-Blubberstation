@@ -71,6 +71,13 @@
 /mob/living/simple_animal/hostile/feed/chocolate_slime,
 /turf/open/floor/iron/diagonal,
 /area/lavaland/surface/outdoors/virtual_domain)
+"bq" = (
+/obj/effect/turf_decal/siding/wideplating_new/terracotta,
+/obj/effect/turf_decal/tile/dark_red/diagonal_edge,
+/obj/effect/turf_decal/tile/brown/diagonal_centre,
+/obj/effect/light_emitter/tendril,
+/turf/open/floor/iron/diagonal,
+/area/lavaland/surface/outdoors/virtual_domain)
 "bz" = (
 /obj/effect/turf_decal/siding/wideplating_new/terracotta{
 	dir = 10
@@ -182,6 +189,7 @@
 	dir = 4
 	},
 /obj/structure/table/wood/fancy/orange,
+/obj/structure/window/calorite/spawner/directional/east,
 /turf/open/floor/carpet/orange,
 /area/lavaland/surface/outdoors/virtual_domain)
 "db" = (
@@ -220,8 +228,9 @@
 /obj/effect/turf_decal/siding/wideplating_new/terracotta{
 	dir = 9
 	},
-/obj/structure/platform/gold,
 /obj/item/gavelhammer/permafattening,
+/obj/structure/window/calorite/spawner/directional/east,
+/obj/structure/table/wood/fancy/orange,
 /turf/open/floor/mineral/calorite/strong,
 /area/lavaland/surface/outdoors/virtual_domain)
 "dv" = (
@@ -307,16 +316,12 @@
 /turf/open/floor/iron/diagonal,
 /area/lavaland/surface/outdoors/virtual_domain)
 "fu" = (
-/obj/structure/window/calorite{
-	dir = 4
-	},
 /obj/structure/marker_beacon/bronze{
 	pixel_x = 0;
 	pixel_y = -8
 	},
-/obj/structure/window/calorite{
-	dir = 1
-	},
+/obj/structure/window/calorite/spawner/directional/east,
+/obj/structure/window/calorite/spawner/directional/north,
 /turf/open/floor/mineral/calorite/dance,
 /area/lavaland/surface/outdoors/virtual_domain)
 "fB" = (
@@ -359,30 +364,30 @@
 /area/lavaland/surface/outdoors/virtual_domain)
 "gl" = (
 /obj/structure/statue/calorite/fatty{
-	pixel_x = -16;
-	pixel_y = -5
+	pixel_x = -17;
+	pixel_y = -4
 	},
 /obj/structure/marker_beacon/bronze{
 	pixel_x = 0;
 	pixel_y = -6
 	},
-/obj/structure/window/calorite{
-	dir = 1
-	},
+/obj/structure/window/calorite/spawner/directional/north,
 /turf/open/floor/mineral/calorite/dance,
 /area/lavaland/surface/outdoors/virtual_domain)
+"gp" = (
+/obj/structure/window/calorite/spawner/directional/south,
+/obj/structure/window/calorite/spawner/directional/north,
+/obj/structure/marker_beacon/bronze,
+/turf/open/floor/mineral/calorite,
+/area/lavaland/surface/outdoors/virtual_domain)
 "gr" = (
-/obj/structure/window/calorite{
-	dir = 4
-	},
-/obj/structure/window/calorite,
+/obj/structure/window/calorite/spawner/directional/east,
+/obj/structure/window/calorite/spawner/directional/south,
 /turf/open/floor/mineral/calorite/strong,
 /area/lavaland/surface/outdoors/virtual_domain)
 "gB" = (
-/obj/structure/window/calorite{
-	dir = 4
-	},
 /mob/living/basic/skeleton,
+/obj/structure/window/calorite/spawner/directional/east,
 /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins,
 /area/lavaland/surface/outdoors/virtual_domain)
 "gK" = (
@@ -412,6 +417,7 @@
 /obj/effect/turf_decal/siding/wideplating_new/terracotta{
 	dir = 8
 	},
+/obj/structure/window/calorite/spawner/directional/west,
 /turf/open/floor/carpet/orange,
 /area/lavaland/surface/outdoors/virtual_domain)
 "hw" = (
@@ -504,31 +510,19 @@
 /turf/open/floor/iron/diagonal,
 /area/lavaland/surface/outdoors/virtual_domain)
 "iN" = (
-/obj/effect/turf_decal/siding/wideplating_new/terracotta{
-	dir = 1
-	},
-/obj/structure/window/calorite{
-	dir = 4
-	},
-/obj/structure/window/calorite{
-	dir = 8
-	},
-/obj/effect/light_emitter/tendril,
+/obj/structure/window/calorite/spawner/directional/west,
+/obj/structure/window/calorite/spawner/directional/east,
 /obj/structure/marker_beacon/bronze,
-/turf/open/floor/mineral/calorite/dance,
+/turf/open/floor/mineral/calorite,
 /area/lavaland/surface/outdoors/virtual_domain)
 "ja" = (
 /obj/effect/turf_decal/siding/wideplating_new/terracotta{
 	dir = 1
 	},
-/obj/structure/window/calorite{
-	dir = 8
-	},
-/obj/structure/window/calorite{
-	dir = 4
-	},
 /obj/effect/light_emitter/tendril,
 /obj/structure/marker_beacon/bronze,
+/obj/structure/window/calorite/spawner/directional/east,
+/obj/structure/window/calorite/spawner/directional/west,
 /turf/open/floor/mineral/calorite/dance,
 /area/lavaland/surface/outdoors/virtual_domain)
 "jb" = (
@@ -580,6 +574,7 @@
 	dir = 4
 	},
 /obj/structure/table/wood/fancy/orange,
+/obj/structure/window/calorite/spawner/directional/east,
 /turf/open/floor/carpet/orange,
 /area/lavaland/surface/outdoors/virtual_domain)
 "kK" = (
@@ -703,9 +698,7 @@
 	pixel_x = -16;
 	pixel_y = -32
 	},
-/obj/structure/window/calorite{
-	dir = 1
-	},
+/obj/structure/window/calorite/spawner/directional/north,
 /turf/open/floor/mineral/calorite/strong,
 /area/lavaland/surface/outdoors/virtual_domain)
 "oF" = (
@@ -749,6 +742,11 @@
 /obj/effect/turf_decal/tile/dark_red/diagonal_edge,
 /obj/effect/turf_decal/tile/brown/diagonal_centre,
 /turf/open/floor/iron/diagonal,
+/area/lavaland/surface/outdoors/virtual_domain)
+"pe" = (
+/obj/structure/marker_beacon/bronze,
+/obj/structure/window/calorite/spawner/directional/south,
+/turf/open/floor/mineral/calorite/dance,
 /area/lavaland/surface/outdoors/virtual_domain)
 "pf" = (
 /obj/effect/turf_decal/siding/wideplating_new/terracotta,
@@ -801,6 +799,15 @@
 /obj/effect/turf_decal/siding/wideplating_new/terracotta{
 	dir = 1
 	},
+/obj/item/food/burger/greaseburger,
+/obj/item/food/burger/greaseburger{
+	pixel_x = 16;
+	pixel_y = 1
+	},
+/obj/item/food/burger/greaseburger{
+	pixel_x = -16;
+	pixel_y = 0
+	},
 /turf/open/floor/carpet/orange,
 /area/lavaland/surface/outdoors/virtual_domain)
 "pE" = (
@@ -819,6 +826,10 @@
 /obj/effect/turf_decal/tile/dark_red/diagonal_edge,
 /mob/living/basic/slime/calorite,
 /turf/open/floor/iron/diagonal,
+/area/lavaland/surface/outdoors/virtual_domain)
+"pM" = (
+/obj/effect/light_emitter/tendril,
+/turf/open/indestructible/chocolate,
 /area/lavaland/surface/outdoors/virtual_domain)
 "pS" = (
 /obj/effect/turf_decal/siding/wideplating_new/terracotta/corner{
@@ -843,14 +854,10 @@
 /turf/open/floor/mineral/calorite/strong,
 /area/lavaland/surface/outdoors/virtual_domain)
 "qn" = (
-/obj/structure/window/calorite{
-	dir = 8
-	},
-/obj/structure/window/calorite{
-	dir = 4
-	},
 /obj/effect/light_emitter/tendril,
 /obj/structure/marker_beacon/bronze,
+/obj/structure/window/calorite/spawner/directional/east,
+/obj/structure/window/calorite/spawner/directional/west,
 /turf/open/floor/mineral/calorite/dance,
 /area/lavaland/surface/outdoors/virtual_domain)
 "qZ" = (
@@ -871,6 +878,18 @@
 	dir = 1
 	},
 /turf/open/floor/mineral/calorite/strong,
+/area/lavaland/surface/outdoors/virtual_domain)
+"rj" = (
+/obj/effect/turf_decal/siding/wideplating_new/terracotta,
+/obj/structure/table/wood/fancy/orange,
+/obj/effect/turf_decal/tile/dark_red/diagonal_edge,
+/obj/effect/turf_decal/tile/brown/diagonal_centre,
+/obj/item/food/pizza/sassysage,
+/obj/item/food/pizza/flatbread/nutty{
+	pixel_x = 15;
+	pixel_y = 13
+	},
+/turf/open/floor/iron/diagonal,
 /area/lavaland/surface/outdoors/virtual_domain)
 "rq" = (
 /obj/structure/barricade/wooden,
@@ -935,11 +954,15 @@
 /turf/open/floor/iron/diagonal,
 /area/lavaland/surface/outdoors/virtual_domain)
 "sm" = (
-/obj/structure/window/calorite{
-	dir = 1
-	},
 /obj/structure/marker_beacon/bronze,
+/obj/structure/window/calorite/spawner/directional/north,
 /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins,
+/area/lavaland/surface/outdoors/virtual_domain)
+"so" = (
+/obj/structure/window/calorite/spawner/directional/south,
+/obj/structure/window/calorite/spawner/directional/north,
+/obj/structure/window/calorite/spawner/directional/east,
+/turf/open/floor/mineral/calorite,
 /area/lavaland/surface/outdoors/virtual_domain)
 "sw" = (
 /obj/effect/turf_decal/siding/wideplating_new/terracotta{
@@ -1016,6 +1039,7 @@
 	dir = 8
 	},
 /mob/living/basic/skeleton,
+/obj/structure/window/calorite/spawner/directional/west,
 /turf/open/floor/mineral/calorite/strong,
 /area/lavaland/surface/outdoors/virtual_domain)
 "tV" = (
@@ -1040,11 +1064,9 @@
 /turf/open/floor/iron/diagonal,
 /area/lavaland/surface/outdoors/virtual_domain)
 "um" = (
-/obj/structure/window/calorite{
-	dir = 8
-	},
 /obj/structure/marker_beacon/bronze,
-/obj/structure/window/calorite,
+/obj/structure/window/calorite/spawner/directional/west,
+/obj/structure/window/calorite/spawner/directional/south,
 /turf/open/floor/mineral/calorite/dance,
 /area/lavaland/surface/outdoors/virtual_domain)
 "uu" = (
@@ -1130,14 +1152,10 @@
 /area/lavaland/surface/outdoors/virtual_domain)
 "xi" = (
 /obj/effect/turf_decal/siding/wideplating_new/terracotta,
-/obj/structure/window/calorite{
-	dir = 8
-	},
-/obj/structure/window/calorite{
-	dir = 4
-	},
 /obj/effect/light_emitter/tendril,
 /obj/structure/marker_beacon/bronze,
+/obj/structure/window/calorite/spawner/directional/east,
+/obj/structure/window/calorite/spawner/directional/west,
 /turf/open/floor/mineral/calorite/dance,
 /area/lavaland/surface/outdoors/virtual_domain)
 "xm" = (
@@ -1208,6 +1226,7 @@
 /obj/effect/turf_decal/siding/wideplating_new/terracotta{
 	dir = 8
 	},
+/obj/structure/window/calorite/spawner/directional/west,
 /turf/open/floor/carpet/orange,
 /area/lavaland/surface/outdoors/virtual_domain)
 "yo" = (
@@ -1243,10 +1262,12 @@
 /obj/effect/turf_decal/siding/brown{
 	dir = 8
 	},
+/obj/structure/window/calorite/spawner/directional/west,
 /turf/open/floor/mineral/calorite/strong,
 /area/lavaland/surface/outdoors/virtual_domain)
 "ze" = (
-/obj/structure/window/calorite/fulltile,
+/obj/structure/window/calorite/spawner/directional/north,
+/obj/structure/window/calorite/spawner/directional/south,
 /turf/open/floor/mineral/calorite,
 /area/lavaland/surface/outdoors/virtual_domain)
 "zw" = (
@@ -1269,7 +1290,7 @@
 /turf/open/floor/iron/diagonal,
 /area/lavaland/surface/outdoors/virtual_domain)
 "zZ" = (
-/obj/structure/window/calorite,
+/obj/structure/window/calorite/spawner/directional/south,
 /turf/open/floor/mineral/calorite/strong,
 /area/lavaland/surface/outdoors/virtual_domain)
 "Ao" = (
@@ -1334,6 +1355,7 @@
 	},
 /obj/effect/turf_decal/siding/wideplating_new/terracotta,
 /obj/effect/turf_decal/siding/brown,
+/obj/structure/window/calorite/spawner/directional/south,
 /turf/open/floor/mineral/calorite/strong,
 /area/lavaland/surface/outdoors/virtual_domain)
 "Ci" = (
@@ -1422,6 +1444,7 @@
 /obj/effect/turf_decal/siding/brown{
 	dir = 4
 	},
+/obj/structure/window/calorite/spawner/directional/east,
 /turf/open/floor/mineral/calorite/strong,
 /area/lavaland/surface/outdoors/virtual_domain)
 "Fb" = (
@@ -1440,8 +1463,9 @@
 /obj/effect/turf_decal/siding/wideplating_new/terracotta{
 	dir = 5
 	},
-/obj/structure/platform/gold,
 /obj/item/stack/sheet/mineral/calorite/fifty,
+/obj/structure/window/calorite/spawner/directional/west,
+/obj/structure/table/wood/fancy/orange,
 /turf/open/floor/mineral/calorite/strong,
 /area/lavaland/surface/outdoors/virtual_domain)
 "Fs" = (
@@ -1452,13 +1476,9 @@
 /turf/open/floor/iron/diagonal,
 /area/lavaland/surface/outdoors/virtual_domain)
 "Fy" = (
-/obj/structure/window/calorite{
-	dir = 8
-	},
-/obj/structure/window/calorite{
-	dir = 1
-	},
 /obj/structure/marker_beacon/bronze,
+/obj/structure/window/calorite/spawner/directional/west,
+/obj/structure/window/calorite/spawner/directional/north,
 /turf/open/floor/mineral/calorite/strong,
 /area/lavaland/surface/outdoors/virtual_domain)
 "FQ" = (
@@ -1492,6 +1512,7 @@
 /turf/open/floor/iron/diagonal,
 /area/lavaland/surface/outdoors/virtual_domain)
 "Gp" = (
+/obj/effect/light_emitter/tendril,
 /turf/open/floor/mineral/calorite/strong,
 /area/lavaland/surface/outdoors/virtual_domain)
 "GA" = (
@@ -1503,6 +1524,7 @@
 /obj/effect/turf_decal/siding/wideplating_new/terracotta{
 	dir = 8
 	},
+/obj/structure/window/calorite/spawner/directional/west,
 /turf/open/floor/carpet/orange,
 /area/lavaland/surface/outdoors/virtual_domain)
 "GE" = (
@@ -1521,6 +1543,7 @@
 /obj/structure/table/wood/fancy/orange,
 /obj/effect/turf_decal/tile/dark_red/diagonal_edge,
 /obj/effect/turf_decal/tile/brown/diagonal_centre,
+/obj/item/food/pizza/mushroom,
 /turf/open/floor/iron/diagonal,
 /area/lavaland/surface/outdoors/virtual_domain)
 "GO" = (
@@ -1559,6 +1582,18 @@
 /obj/structure/table/wood/fancy/orange,
 /obj/effect/turf_decal/tile/dark_red/diagonal_edge,
 /obj/effect/turf_decal/tile/brown/diagonal_centre,
+/obj/item/food/pizza/arnold,
+/obj/item/food/pizza/flatbread/fish{
+	pixel_x = 15;
+	pixel_y = 13
+	},
+/turf/open/floor/iron/diagonal,
+/area/lavaland/surface/outdoors/virtual_domain)
+"Hy" = (
+/mob/living/simple_animal/hostile/feed/chocolate_slime/creambeast,
+/obj/effect/turf_decal/tile/dark_red/diagonal_edge,
+/obj/effect/turf_decal/tile/brown/diagonal_centre,
+/obj/effect/light_emitter/tendril,
 /turf/open/floor/iron/diagonal,
 /area/lavaland/surface/outdoors/virtual_domain)
 "Hz" = (
@@ -1584,15 +1619,13 @@
 "HK" = (
 /obj/structure/statue/calorite/fatty{
 	pixel_x = 16;
-	pixel_y = -5
+	pixel_y = -3
 	},
 /obj/structure/marker_beacon/bronze{
 	pixel_x = 0;
 	pixel_y = -8
 	},
-/obj/structure/window/calorite{
-	dir = 1
-	},
+/obj/structure/window/calorite/spawner/directional/north,
 /turf/open/floor/mineral/calorite/dance,
 /area/lavaland/surface/outdoors/virtual_domain)
 "HN" = (
@@ -1605,6 +1638,18 @@
 /obj/effect/turf_decal/tile/dark_red/diagonal_edge,
 /obj/effect/turf_decal/tile/brown/diagonal_centre,
 /obj/structure/gs13_fluff/brokenhose/scraps3,
+/turf/open/floor/iron/diagonal,
+/area/lavaland/surface/outdoors/virtual_domain)
+"Ic" = (
+/obj/effect/turf_decal/siding/wideplating_new/terracotta,
+/obj/structure/table/wood/fancy/orange,
+/obj/effect/turf_decal/tile/dark_red/diagonal_edge,
+/obj/effect/turf_decal/tile/brown/diagonal_centre,
+/obj/item/food/pizza/energy,
+/obj/item/food/pizza/flatbread/italic{
+	pixel_x = 14;
+	pixel_y = 13
+	},
 /turf/open/floor/iron/diagonal,
 /area/lavaland/surface/outdoors/virtual_domain)
 "If" = (
@@ -1692,8 +1737,9 @@
 /obj/effect/turf_decal/siding/wideplating_new/terracotta{
 	dir = 8
 	},
-/obj/structure/platform/gold,
 /obj/item/melee/curator_whip/fattening,
+/obj/structure/window/calorite/spawner/directional/east,
+/obj/structure/table/wood/fancy/orange,
 /turf/open/floor/mineral/calorite/strong,
 /area/lavaland/surface/outdoors/virtual_domain)
 "Kx" = (
@@ -1764,11 +1810,9 @@
 /turf/open/floor/iron/diagonal,
 /area/lavaland/surface/outdoors/virtual_domain)
 "Lt" = (
-/obj/structure/window/calorite{
-	dir = 4
-	},
 /obj/structure/marker_beacon/bronze,
-/obj/structure/window/calorite,
+/obj/structure/window/calorite/spawner/directional/east,
+/obj/structure/window/calorite/spawner/directional/south,
 /turf/open/floor/mineral/calorite/dance,
 /area/lavaland/surface/outdoors/virtual_domain)
 "Lz" = (
@@ -1795,6 +1839,12 @@
 /obj/effect/turf_decal/tile/brown/diagonal_centre,
 /obj/effect/turf_decal/tile/dark_red/diagonal_edge,
 /turf/open/floor/iron/diagonal,
+/area/lavaland/surface/outdoors/virtual_domain)
+"LL" = (
+/obj/structure/window/calorite/spawner/directional/south,
+/obj/structure/window/calorite/spawner/directional/north,
+/obj/structure/window/calorite/spawner/directional/west,
+/turf/open/floor/mineral/calorite,
 /area/lavaland/surface/outdoors/virtual_domain)
 "LQ" = (
 /obj/effect/turf_decal/siding/wideplating_new/terracotta{
@@ -1857,6 +1907,11 @@
 /obj/structure/table/wood/fancy/orange,
 /obj/effect/turf_decal/tile/dark_red/diagonal_edge,
 /obj/effect/turf_decal/tile/brown/diagonal_centre,
+/obj/item/food/pizza/donkpocket,
+/obj/item/food/pizza/flatbread/imperial{
+	pixel_x = 16;
+	pixel_y = 13
+	},
 /turf/open/floor/iron/diagonal,
 /area/lavaland/surface/outdoors/virtual_domain)
 "Ns" = (
@@ -1891,6 +1946,7 @@
 /obj/effect/turf_decal/siding/brown{
 	dir = 1
 	},
+/obj/structure/window/calorite/spawner/directional/north,
 /turf/open/floor/mineral/calorite/strong,
 /area/lavaland/surface/outdoors/virtual_domain)
 "NV" = (
@@ -1959,8 +2015,9 @@
 /obj/effect/turf_decal/siding/wideplating_new/terracotta{
 	dir = 4
 	},
-/obj/structure/platform/gold,
 /obj/item/melee/curator_whip/permafattening,
+/obj/structure/window/calorite/spawner/directional/west,
+/obj/structure/table/wood/fancy/orange,
 /turf/open/floor/mineral/calorite/strong,
 /area/lavaland/surface/outdoors/virtual_domain)
 "PK" = (
@@ -2071,6 +2128,15 @@
 "RJ" = (
 /obj/structure/table/wood/fancy/orange,
 /obj/effect/turf_decal/siding/wideplating_new/terracotta,
+/obj/item/food/burger/greaseburger,
+/obj/item/food/burger/greaseburger{
+	pixel_x = 16;
+	pixel_y = 0
+	},
+/obj/item/food/burger/greaseburger{
+	pixel_x = -16;
+	pixel_y = 0
+	},
 /turf/open/floor/carpet/orange,
 /area/lavaland/surface/outdoors/virtual_domain)
 "RQ" = (
@@ -2122,16 +2188,12 @@
 /turf/open/floor/mineral/calorite/strong,
 /area/lavaland/surface/outdoors/virtual_domain)
 "SK" = (
-/obj/structure/window/calorite{
-	dir = 4
-	},
+/obj/structure/window/calorite/spawner/directional/east,
 /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins,
 /area/lavaland/surface/outdoors/virtual_domain)
 "SM" = (
-/obj/structure/window/calorite{
-	dir = 8
-	},
-/obj/structure/window/calorite,
+/obj/structure/window/calorite/spawner/directional/west,
+/obj/structure/window/calorite/spawner/directional/south,
 /turf/open/floor/mineral/calorite/strong,
 /area/lavaland/surface/outdoors/virtual_domain)
 "SQ" = (
@@ -2176,6 +2238,7 @@
 /area/lavaland/surface/outdoors/virtual_domain)
 "Ub" = (
 /obj/structure/marker_beacon/bronze,
+/obj/structure/window/calorite/spawner/directional/north,
 /turf/open/floor/mineral/calorite/dance,
 /area/lavaland/surface/outdoors/virtual_domain)
 "Uo" = (
@@ -2201,17 +2264,18 @@
 /turf/open/floor/iron/diagonal,
 /area/lavaland/surface/outdoors/virtual_domain)
 "Uu" = (
-/obj/structure/window/calorite{
-	dir = 8
-	},
 /obj/structure/marker_beacon/bronze{
 	pixel_x = 0;
 	pixel_y = -7
 	},
-/obj/structure/window/calorite{
-	dir = 1
-	},
+/obj/structure/window/calorite/spawner/directional/west,
+/obj/structure/window/calorite/spawner/directional/north,
 /turf/open/floor/mineral/calorite/dance,
+/area/lavaland/surface/outdoors/virtual_domain)
+"UD" = (
+/obj/structure/window/calorite/spawner/directional/south,
+/obj/structure/window/calorite/spawner/directional/north,
+/turf/open/floor/mineral/calorite,
 /area/lavaland/surface/outdoors/virtual_domain)
 "UR" = (
 /obj/effect/turf_decal/siding/wideplating_new/terracotta{
@@ -2303,18 +2367,16 @@
 /obj/effect/turf_decal/siding/wideplating_new/terracotta{
 	dir = 4
 	},
-/obj/structure/platform/gold,
 /obj/item/metal_food/mburger_calorite,
+/obj/structure/window/calorite/spawner/directional/south,
+/obj/structure/window/calorite/spawner/directional/west,
+/obj/structure/table/wood/fancy/orange,
 /turf/open/floor/mineral/calorite/strong,
 /area/lavaland/surface/outdoors/virtual_domain)
 "Wk" = (
-/obj/structure/window/calorite{
-	dir = 4
-	},
-/obj/structure/window/calorite{
-	dir = 1
-	},
 /obj/structure/marker_beacon/bronze,
+/obj/structure/window/calorite/spawner/directional/east,
+/obj/structure/window/calorite/spawner/directional/north,
 /turf/open/floor/mineral/calorite/strong,
 /area/lavaland/surface/outdoors/virtual_domain)
 "Wn" = (
@@ -2338,11 +2400,11 @@
 /area/lavaland/surface/outdoors/virtual_domain)
 "WC" = (
 /obj/structure/statue/calorite/fatty{
-	pixel_x = -16;
-	pixel_y = 7
+	pixel_x = -17;
+	pixel_y = 4
 	},
 /obj/structure/marker_beacon/bronze,
-/obj/structure/window/calorite,
+/obj/structure/window/calorite/spawner/directional/south,
 /turf/open/floor/mineral/calorite/dance,
 /area/lavaland/surface/outdoors/virtual_domain)
 "WU" = (
@@ -2367,9 +2429,7 @@
 /turf/open/floor/iron/diagonal,
 /area/lavaland/surface/outdoors/virtual_domain)
 "WZ" = (
-/obj/structure/window/calorite{
-	dir = 8
-	},
+/obj/structure/window/calorite/spawner/directional/west,
 /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins,
 /area/lavaland/surface/outdoors/virtual_domain)
 "Xo" = (
@@ -2383,11 +2443,11 @@
 /area/lavaland/surface/outdoors/virtual_domain)
 "Xp" = (
 /obj/structure/statue/calorite/fatty{
-	pixel_x = 16;
-	pixel_y = 6
+	pixel_x = 15;
+	pixel_y = 4
 	},
 /obj/structure/marker_beacon/bronze,
-/obj/structure/window/calorite,
+/obj/structure/window/calorite/spawner/directional/south,
 /turf/open/floor/mineral/calorite/dance,
 /area/lavaland/surface/outdoors/virtual_domain)
 "Xt" = (
@@ -2399,6 +2459,7 @@
 	dir = 4
 	},
 /obj/structure/table/wood/fancy/orange,
+/obj/structure/window/calorite/spawner/directional/east,
 /turf/open/floor/carpet/orange,
 /area/lavaland/surface/outdoors/virtual_domain)
 "Xw" = (
@@ -2414,8 +2475,10 @@
 /obj/effect/turf_decal/siding/wideplating_new/terracotta{
 	dir = 8
 	},
-/obj/structure/platform/gold,
 /obj/item/slime_extract/calorite,
+/obj/structure/window/calorite/spawner/directional/south,
+/obj/structure/window/calorite/spawner/directional/east,
+/obj/structure/table/wood/fancy/orange,
 /turf/open/floor/mineral/calorite/strong,
 /area/lavaland/surface/outdoors/virtual_domain)
 "XH" = (
@@ -2572,10 +2635,8 @@
 /turf/open/floor/iron/diagonal,
 /area/lavaland/surface/outdoors/virtual_domain)
 "Zg" = (
-/obj/structure/window/calorite{
-	dir = 8
-	},
 /mob/living/basic/skeleton,
+/obj/structure/window/calorite/spawner/directional/west,
 /turf/open/misc/asteroid/basalt/lava_land_surface/no_ruins,
 /area/lavaland/surface/outdoors/virtual_domain)
 "Zj" = (
@@ -3196,10 +3257,10 @@ cu
 IH
 yO
 Qr
-ze
+gp
 rS
 aS
-ze
+gp
 Qr
 yO
 fi
@@ -3399,14 +3460,14 @@ FQ
 yO
 ou
 ct
-pp
+Hy
 xm
 ax
 oF
 Mi
 BT
-ze
-ze
+FQ
+FQ
 NK
 si
 Yh
@@ -3414,10 +3475,10 @@ kj
 RJ
 Ub
 bJ
-Ub
+pe
 py
 Zj
-Np
+Ic
 yO
 FQ
 LW
@@ -3469,7 +3530,7 @@ hv
 yc
 FZ
 ou
-Np
+rj
 yO
 LW
 LW
@@ -3612,10 +3673,10 @@ NV
 hw
 yO
 Qr
-ze
+gp
 dj
 yz
-ze
+gp
 Qr
 yO
 YA
@@ -3710,9 +3771,9 @@ OM
 Gd
 yO
 Qr
-ze
+gp
 xO
-ze
+gp
 Qr
 yO
 Xp
@@ -3759,13 +3820,13 @@ qn
 xi
 yO
 ou
-Gd
+bq
 yO
-ze
+iN
 yO
 Ut
 yO
-ze
+iN
 yO
 Lt
 ND
@@ -3774,7 +3835,7 @@ rJ
 KL
 fu
 yO
-ze
+iN
 yO
 Zg
 LW
@@ -3869,7 +3930,7 @@ Kx
 KH
 Gd
 yO
-ze
+iN
 yO
 ND
 pK
@@ -3878,7 +3939,7 @@ SM
 QW
 KL
 yO
-ze
+iN
 yO
 SK
 LW
@@ -3973,7 +4034,7 @@ cm
 Kj
 Gd
 yO
-ze
+iN
 yO
 Xo
 yo
@@ -3982,7 +4043,7 @@ gr
 wm
 DZ
 yO
-ze
+iN
 yO
 WZ
 LW
@@ -4066,18 +4127,18 @@ yO
 UR
 DZ
 yO
-iN
+ja
 qn
 xi
 yO
 Hc
-Gd
+bq
 yO
-ze
+iN
 yO
 Ut
 yO
-ze
+iN
 yO
 um
 ND
@@ -4086,7 +4147,7 @@ rJ
 DZ
 Uu
 yO
-ze
+iN
 yO
 gB
 LW
@@ -4126,9 +4187,9 @@ KY
 Gd
 yO
 Qr
-ze
+gp
 xO
-ze
+gp
 Qr
 yO
 WC
@@ -4236,10 +4297,10 @@ qZ
 VK
 yO
 Qr
-ze
+gp
 Uo
 yz
-ze
+gp
 Qr
 yO
 Xw
@@ -4350,7 +4411,7 @@ ND
 dJ
 dJ
 DZ
-ze
+LL
 fB
 pE
 TY
@@ -4402,7 +4463,7 @@ it
 dJ
 dJ
 DZ
-ze
+UD
 DL
 ce
 Hs
@@ -4439,14 +4500,14 @@ FQ
 yO
 qZ
 Hf
-WV
+pM
 xm
 Ze
 Yh
 Yo
 BT
-ze
-ze
+FQ
+FQ
 NK
 Ze
 YY
@@ -4454,7 +4515,7 @@ Mi
 dJ
 dJ
 YD
-ze
+UD
 Sb
 Ao
 rx
@@ -4506,7 +4567,7 @@ gK
 dJ
 dJ
 DZ
-ze
+UD
 DL
 ce
 Hs
@@ -4558,7 +4619,7 @@ ND
 dJ
 dJ
 DZ
-ze
+so
 fB
 pm
 Ya
@@ -4652,10 +4713,10 @@ ak
 sA
 yO
 Qr
-ze
+gp
 fG
 BH
-ze
+gp
 Qr
 yO
 ag
