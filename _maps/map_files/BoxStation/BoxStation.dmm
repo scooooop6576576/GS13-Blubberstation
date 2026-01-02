@@ -5114,6 +5114,7 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
+/obj/machinery/vending/gato_merch,
 /turf/open/floor/iron/dark/side{
 	dir = 1
 	},
