@@ -32,11 +32,6 @@
 	cell = new /obj/item/stock_parts/power_store/cell/high
 	update_appearance()
 
-/obj/item/gun/medbeam/caloray/charged/Initialize(mapload)
-	. = ..()
-	cell = /obj/item/stock_parts/power_store/cell/high
-	update_appearance()
-
 /obj/item/gun/medbeam/caloray/examine(mob/user)
 	. = ..()
 
