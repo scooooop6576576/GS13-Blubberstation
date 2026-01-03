@@ -1,17 +1,18 @@
 // Ported from WG13, credit for the idea and the backbone of this weapon to M16nPregnant
 
 #define CALORAY_DEFAULT_INTENSITY 50
+#define MODE_FATTEN	"fatten"
+#define MODE_THIN	"thin"
 
 /obj/item/gun/medbeam/caloray
 	name = "Caloray"
 	desc = "A miniaturised and perfected combination of the adipoelectric generator and transformer, this device allows the user to convert energy into fat, and vice versa, at range."
 	icon = 'modular_gs/icons/obj/weapons/caloray.dmi'
 	icon_state = "caloray"
-	
-	var/mode = "fatten"
+
+	var/mode = MODE_FATTEN
 	var/beam_color = "#eb6e00"
 	var/beam_icon_state = "white_beam_reverse"
-	var/calgen = 0
 	var/opened = FALSE
 	var/intensity = CALORAY_DEFAULT_INTENSITY
 	var/power_use = STANDARD_CELL_CHARGE * 5 / (10 * CALORAY_DEFAULT_INTENSITY)	// value in joules, with 20 intensity, it will result in 10% of the capacity of the default cell
@@ -31,6 +32,11 @@
 	cell = new /obj/item/stock_parts/power_store/cell/high
 	update_appearance()
 
+/obj/item/gun/medbeam/caloray/charged/Initialize(mapload)
+	. = ..()
+	cell = /obj/item/stock_parts/power_store/cell/high
+	update_appearance()
+
 /obj/item/gun/medbeam/caloray/examine(mob/user)
 	. = ..()
 
@@ -40,43 +46,31 @@
 		. += span_notice("It's cell is [cell.percent()]% charged.")
 	else
 		. += span_notice("It has no power cell installed.")
-	
+
 	if (opened)
 		. += span_notice("It's battery compartment is currently open.")
 
-// /obj/item/gun/medbeam/caloray/update_icon_state()
-// 	. = ..()
-// 	if(!cell || cell.charge() == 0)
-// 		icon_state = "caloray_off"
-// 		return
-	
-// 	if(mode == "fatten")
-// 		icon_state = "caloray_push"
-	
-// 	if(mode == "thin")
-// 		icon_state = "caloray_pull"
-
 /obj/item/gun/medbeam/caloray/update_overlays()
 	. = ..()
-	if(mode == "fatten")
+	if(mode == MODE_FATTEN)
 		. += "caloray_fatten"
-	
-	if(mode == "thin")
+
+	if(mode == MODE_THIN)
 		. += "caloray_thin"
-	
+
 
 	if(!cell)
 		. += "caloray_handle_off"
 		. += "caloray_empty"
 		return
-	
+
 	if(cell.percent() <= 20)
 		. += "caloray_empty"
 	else if(cell.percent() <= 80)
 		. += "caloray_recharge"
 	else
 		. += "caloray_on"
-	
+
 	if(isnull(current_beam))
 		. += "caloray_handle_off"
 	else
@@ -86,16 +80,16 @@
 /obj/item/gun/medbeam/caloray/attack_self(mob/user)
 	if(opened == FALSE)
 		playsound(user, 'sound/items/weapons/gun/general/slide_lock_1.ogg', 60, 1)
-		if (mode == "fatten")
+		if (mode == MODE_FATTEN)
 			to_chat(user, span_notice("You change the setting on the beam to thin."))
 			beam_color = "#3b0ce7"
 			beam_icon_state = "white_beam"
-			mode = "thin"
+			mode = MODE_THIN
 		else
 			to_chat(user, span_notice("You change the setting on the beam to fatten."))
 			beam_color = "#eb6e00"
 			beam_icon_state = "white_beam_reverse"
-			mode = "fatten"
+			mode = MODE_FATTEN
 
 	if(opened == TRUE && cell)
 		user.visible_message("[user] removes [cell] from [src]!", span_notice("You remove [cell]."))
@@ -106,7 +100,7 @@
 
 	else if(opened == TRUE && isnull(cell))
 		user.visible_message(span_warning("The Caloray doesn't have a power cell installed."))
-	
+
 	update_appearance()
 	LoseTarget()
 
@@ -127,20 +121,20 @@
 		if(cell)
 			to_chat(user, span_notice("[src] already has \a [cell] installed!"))
 			return
-		
+
 		if(!user.transferItemToLoc(item, src))
 			return
-		
+
 		to_chat(user, span_notice("You insert [item] into [src]."))
 		cell = item
 
-		if(mode == "fatten")
+		if(mode == MODE_FATTEN)
 			beam_color = "#eb6e00"
 			beam_icon_state = "white_beam_reverse"
-		if(mode == "thin")
+		if(mode == MODE_THIN)
 			beam_color = "#3b0ce7"
 			beam_icon_state = "white_beam"
-		
+
 		update_appearance()
 
 /obj/item/gun/medbeam/caloray/LoseTarget()
@@ -153,14 +147,24 @@
 
 	if(current_target)
 		LoseTarget()
+
 	if(!isliving(target))
+		return
+
+	if(isnull(cell))
+		return
+
+	if(cell.charge() == 0 && mode != MODE_THIN)
+		return
+
+	if(cell.charge() == cell.max_charge() && mode != MODE_FATTEN)
 		return
 
 	current_target = target
 	active = TRUE
 	current_beam = user.Beam(current_target, beam_icon_state, 'modular_gs/icons/effects/beam.dmi', beam_type = /obj/effect/ebeam/caloray, maxdistance = max_range, beam_color = beam_color)
 	update_appearance()
-	// playsound(user, 'sound/items/weapons/gun/general/caloray.ogg', 60, 1)
+	playsound(user, 'sound/items/weapons/gun/general/slide_lock_1.ogg', 60, 1)
 	RegisterSignal(current_beam, COMSIG_QDELETING, PROC_REF(beam_died))//this is a WAY better rangecheck than what was done before (process check)
 	START_PROCESSING(SSobj, src)
 
@@ -168,7 +172,7 @@
 	return TRUE
 
 /obj/item/gun/medbeam/caloray/on_beam_tick(mob/living/carbon/target)
-	if(mode == "fatten")
+	if(mode == MODE_FATTEN)
 		if(cell.charge() > 0)
 			var/energy_used = cell.use(power_use * intensity, TRUE)
 			target.adjust_fatness(energy_used / 250, FATTENING_TYPE_ITEM)	// assuming energy_used = power_use, this will result in a maximum of [intensity] BFI
@@ -176,7 +180,7 @@
 			LoseTarget()
 			return
 
-	if(mode == "thin")
+	if(mode == MODE_THIN)
 		if(cell.charge() < cell.max_charge() && target.fatness_real > 0)
 			var/BFI_burned = min(target.fatness_real, intensity)
 			target.adjust_fatness(-BFI_burned, FATTENING_TYPE_ITEM)
@@ -198,3 +202,5 @@
 	STOP_PROCESSING(SSobj, src) //Mech mediguns do not process until installed, and are controlled by the holder obj
 
 #undef CALORAY_DEFAULT_INTENSITY
+#undef MODE_FATTEN
+#undef MODE_THIN
