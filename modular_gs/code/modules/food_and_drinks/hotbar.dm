@@ -5,7 +5,7 @@
 	icon_state = "hotbar-icon"
 	base_icon_state = "hotbar"
 	contents_overlay_icon = "food"
-	base_build_path = /obj/machinery/smartfridge/hotbar/hotbar
+	base_build_path = /obj/machinery/smartfridge/hotbar
 	has_emissive = FALSE
 	can_atmos_pass = ATMOS_PASS_YES
 
