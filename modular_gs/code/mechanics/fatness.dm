@@ -8,17 +8,17 @@
 	// -fatness_real is the value a mob is actually at, even if it's being hidden. For permanent changes, use this one
 	// PLEASE NOTE - If you add more fatness variables and you want them to show on scales, please add them to `modular_gs\code\modules\mob\living\carbon\weight_helpers.dm`!
 
-	//What level of fatness is the parent mob currently at?
+	///What level of fatness is the parent mob currently at?
 	var/fatness = 0
-	//The list of items/effects that are being added/subtracted from our real fatness
+	///The list of items/effects that are being added/subtracted from our real fatness
 	var/fat_hiders = list()
-	//The actual value a mob is at. Is equal to fatness if fat_hider is FALSE.
+	///The actual value a mob is at. Is equal to fatness if fat_hider is FALSE.
 	var/fatness_real = 0
-	//Permanent fatness, which sticks around between rounds
+	///Permanent fatness, which sticks around between rounds
 	var/fatness_perma = 0
 	///At what rate does the parent mob gain weight? 1 = 100%
 	var/weight_gain_rate = 1
-	//At what rate does the parent mob lose weight? 1 = 100%
+	///At what rate does the parent mob lose weight? 1 = 100%
 	var/weight_loss_rate = 1
 	/// modifier for weight gain rate. Don't modify this directly, instead use the set and add_weight_gain_modifier procs
 	var/list/weight_gain_modifiers = list()
@@ -225,7 +225,7 @@
 	var/local_loss_rate = weight_loss_rate
 
 	if (HAS_TRAIT(src, TRAIT_UNIVERSAL_GAINER))
-		local_loss_rate = max(0.2, local_loss_rate)
+		local_loss_rate = min(0.5, local_loss_rate)
 	
 	local_loss_rate += get_weight_loss_modifiers()
 	
@@ -240,7 +240,7 @@
 	return max(0, fullness - fullness_reduction)
 
 /mob/living/carbon/proc/fullness_reduction()
-	var/max_fullness_reduction = max(fullness * 2, 2000)
+	var/max_fullness_reduction = max(fullness + 500, 600)
 	fullness_reduction -= 15
 	fullness_reduction = clamp(fullness_reduction, 0, max_fullness_reduction)
 
