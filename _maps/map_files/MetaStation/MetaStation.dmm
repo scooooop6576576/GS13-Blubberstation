@@ -3871,11 +3871,6 @@
 	},
 /turf/open/floor/iron/white,
 /area/station/science/xenobiology)
-"bnX" = (
-/obj/machinery/firealarm/directional/east,
-/obj/effect/spawner/liquids_spawner,
-/turf/open/floor/iron/dark/small,
-/area/station/commons/fitness)
 "boc" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/storage/belt/utility,
@@ -4245,7 +4240,6 @@
 	id_tag = "FitnessShower";
 	name = "Sauna"
 	},
-/obj/machinery/door/firedoor,
 /turf/open/floor/iron/white/smooth_edge{
 	dir = 4
 	},
@@ -63919,7 +63913,6 @@
 	name = "Fitness Room Shower"
 	},
 /obj/machinery/duct,
-/obj/machinery/door/firedoor,
 /turf/open/floor/iron/freezer,
 /area/station/commons/fitness/recreation)
 "vwq" = (
@@ -109167,7 +109160,7 @@ aaa
 aag
 iKP
 iKP
-bnX
+iKP
 aag
 szp
 gEN
