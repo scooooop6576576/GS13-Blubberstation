@@ -138,7 +138,9 @@
 /obj/effect/turf_decal/siding/dark{
 	dir = 1
 	},
-/obj/machinery/byteforge,
+/obj/machinery/computer/quantum_console{
+	dir = 4
+	},
 /turf/open/floor/iron/dark/small,
 /area/station/cargo/bitrunning/den)
 "acp" = (
@@ -19604,21 +19606,10 @@
 /turf/open/floor/engine,
 /area/station/science/xenobiology)
 "gss" = (
-/obj/structure/rack/shelf{
-	name = "emergency snack shelf"
-	},
 /obj/effect/turf_decal/siding/dark{
 	dir = 9
 	},
-/obj/item/food/cornchips/random{
-	pixel_y = 2;
-	pixel_x = -2
-	},
-/obj/item/bitrunning_disk{
-	pixel_x = 6;
-	name = "generic disk";
-	pixel_y = -3
-	},
+/obj/machinery/byteforge,
 /turf/open/floor/iron/dark/small,
 /area/station/cargo/bitrunning/den)
 "gsu" = (
@@ -26943,9 +26934,8 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
 	dir = 4
 	},
-/obj/structure/chair/office/tactical{
-	dir = 8
-	},
+/obj/structure/table,
+/obj/item/flashlight/lamp,
 /turf/open/floor/wood/parquet,
 /area/station/cargo/bitrunning/den)
 "iTc" = (
@@ -29737,9 +29727,10 @@
 /area/station/commons/toilet)
 "jPq" = (
 /obj/machinery/light/red/dim/directional/south,
-/obj/machinery/computer/quantum_console{
-	dir = 4
+/obj/structure/rack/shelf{
+	name = "emergency snack shelf"
 	},
+/obj/item/clothing/suit/costume/wellworn_shirt/messy/graphic/gamer,
 /turf/open/floor/wood/parquet,
 /area/station/cargo/bitrunning/den)
 "jPA" = (
@@ -33578,7 +33569,18 @@
 /turf/open/floor/iron,
 /area/station/cargo/storage)
 "kYd" = (
-/obj/machinery/quantum_server,
+/obj/structure/rack/shelf{
+	name = "emergency snack shelf"
+	},
+/obj/item/food/cornchips/random{
+	pixel_y = 2;
+	pixel_x = -2
+	},
+/obj/item/bitrunning_disk{
+	pixel_x = 6;
+	name = "generic disk";
+	pixel_y = -3
+	},
 /turf/open/floor/wood/parquet,
 /area/station/cargo/bitrunning/den)
 "kYm" = (
@@ -45548,10 +45550,7 @@
 /obj/effect/turf_decal/siding/dark{
 	dir = 1
 	},
-/obj/structure/rack/shelf{
-	name = "emergency snack shelf"
-	},
-/obj/item/clothing/suit/costume/wellworn_shirt/messy/graphic/gamer,
+/obj/machinery/quantum_server,
 /turf/open/floor/iron/dark/small,
 /area/station/cargo/bitrunning/den)
 "oKR" = (
@@ -56066,7 +56065,9 @@
 /obj/effect/turf_decal/siding/dark{
 	dir = 5
 	},
-/obj/machinery/computer/order_console/bitrunning,
+/obj/structure/chair/office/tactical{
+	dir = 8
+	},
 /turf/open/floor/iron/dark/small,
 /area/station/cargo/bitrunning/den)
 "sfD" = (
@@ -72920,8 +72921,7 @@
 "xIV" = (
 /obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/cable,
-/obj/structure/table,
-/obj/item/flashlight/lamp,
+/obj/machinery/computer/order_console/bitrunning,
 /turf/open/floor/wood/parquet,
 /area/station/cargo/bitrunning/den)
 "xJc" = (
