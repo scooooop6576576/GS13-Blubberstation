@@ -11,6 +11,7 @@
 #define TRAIT_NO_FAT_SLOWDOWN "no_fat_slowdown"
 #define HELPLESSNESS_TRAIT "helplessness"
 #define TRAIT_NO_HELPLESSNESS "no_helplessness"
+#define TRAIT_NO_NECK "no_neck"
 
 #define TRAIT_RADRESONANCE "radresonance" //FIX THIS LATER
 #define COMSIG_MICRO_PICKUP_FEET "micro_force_grabbed"			//From /datum/element/mob_holder/micro
@@ -58,6 +59,7 @@
 #define TRAIT_HELPLESS_NO_BUCKLE		"no_buckle_helpless"
 #define TRAIT_HELPLESS_CHAIR_DESTROYER	"chair_breaking_helpless"
 #define TRAIT_HELPLESS_STUCKAGE			"stuckage_helpless"
+#define TRAIT_HELPLESS_THICK_NECK		"thick_neck"
 
 // GS13 positive quirks
 #define TRAIT_BLOB_BED					"blob_bed"

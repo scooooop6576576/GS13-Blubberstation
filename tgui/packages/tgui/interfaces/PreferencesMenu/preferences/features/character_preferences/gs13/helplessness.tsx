@@ -89,3 +89,9 @@ export const stuckage_custom: Feature<number> = {
   description: 'What chance do you want to get stuck in doors? Setting this to 0 will reset it to default.',
   component: FeatureNumberInput,
 };
+
+export const no_neck: Feature<number> = {
+  name: 'No neck items',
+  description: 'At what weight do you become unable to wear items around your neck? 0 disables this.',
+  component: FeatureNumberInput,
+};

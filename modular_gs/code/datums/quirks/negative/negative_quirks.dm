@@ -144,6 +144,17 @@
 	erp_quirk = FALSE		// this is a lie, however we do it because we want it always on
 	mob_trait = TRAIT_HELPLESS_STUCKAGE
 
+/datum/quirk/helplessness/thick_neck
+	name = "Thick neck"
+	desc = "Your neck is really thick. At 1840 BFI, you will be unable to wear anything around it."
+	medical_record_text = "Patiens has a very thick neck."
+	value = -1
+	gain_text = span_notice("You feel a tightness around your neck")
+	lose_text = span_notice("You no longer feel a tightness around your neck")
+	quirk_flags = 0
+	erp_quirk = 0
+	mob_trait = TRAIT_HELPLESS_THICK_NECK
+
 /datum/quirk/permaberry
 	name = "Permaberry"
 	desc = "For whichever reason, your body began producing blueberry juice and has not ever stopped. You produce juice over time and produce even more the longer you stay around."
