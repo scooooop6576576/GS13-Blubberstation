@@ -60,7 +60,6 @@
 	if(fatness >= 2 * trigger_weight)
 		if(!HAS_TRAIT(fatty, TRAIT_VERY_LOW_FOV))
 			to_chat(fatty, span_warning(gain_message))
-			// fatty.become_nearsighted(TRAIT_LOW_FOV)
 			ADD_TRAIT(fatty, TRAIT_VERY_LOW_FOV, HELPLESSNESS_TRAIT)
 			REMOVE_TRAIT(fatty, TRAIT_LOW_FOV, HELPLESSNESS_TRAIT)
 			fatty.add_fov_trait(TRAIT_LOW_FOV, FOV_270_DEGREES)
@@ -69,13 +68,11 @@
 	if(fatness >= trigger_weight)
 		if(!HAS_TRAIT(fatty, TRAIT_LOW_FOV))
 			to_chat(fatty, span_warning(gain_message))
-			// fatty.become_nearsighted(TRAIT_LOW_FOV)
 			ADD_TRAIT(fatty, TRAIT_LOW_FOV, HELPLESSNESS_TRAIT)
 			REMOVE_TRAIT(fatty, TRAIT_VERY_LOW_FOV, HELPLESSNESS_TRAIT)
 			fatty.add_fov_trait(TRAIT_LOW_FOV, FOV_180_DEGREES)
 		return TRUE
 
-	
 	fatty.remove_fov_trait(TRAIT_VERY_LOW_FOV, FOV_270_DEGREES)
 	fatty.remove_fov_trait(TRAIT_LOW_FOV, FOV_180_DEGREES)
 	REMOVE_TRAIT(fatty, TRAIT_VERY_LOW_FOV, HELPLESSNESS_TRAIT)
@@ -253,9 +250,9 @@
 	if (!should_be_active)
 		return should_be_active
 	
-	var/obj/item/clothing/neck/neckwear = fatty.w_uniform
+	var/obj/item/clothing/neck/neckwear = fatty.wear_neck
 	if(istype(neckwear))
-		to_chat(fatty, span_warning("[neckwear] can no longer contain your weight!"))
+		to_chat(fatty, span_warning("[neckwear] can no longer fit around your neck!"))
 		fatty.dropItemToGround(neckwear)
 	
 	return should_be_active

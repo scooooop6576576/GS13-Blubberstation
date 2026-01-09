@@ -19,8 +19,8 @@ export const clumsy: Feature<number> = {
 };
 
 export const nearsighted: Feature<number> = {
-  name: 'Nearsightedness from weight',
-  description: 'At what weight do you become nearsighted? 0 disables this.',
+  name: 'Reduced FOV from weight',
+  description: 'At what weight does your fat hinder your FOV? 0 disables this.',
   component: FeatureNumberInput,
 };
 
