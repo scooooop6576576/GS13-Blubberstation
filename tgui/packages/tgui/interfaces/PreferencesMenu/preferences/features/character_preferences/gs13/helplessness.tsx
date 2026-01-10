@@ -19,8 +19,8 @@ export const clumsy: Feature<number> = {
 };
 
 export const nearsighted: Feature<number> = {
-  name: 'Nearsightedness from weight',
-  description: 'At what weight do you become nearsighted? 0 disables this.',
+  name: 'Reduced FOV from weight',
+  description: 'At what weight does your fat hinder your FOV? 0 disables this.',
   component: FeatureNumberInput,
 };
 
@@ -100,5 +100,11 @@ export const blueberry_max_before_burst: Feature<number> = {
   name: 'Blueberry inflation bursting limit',
   description:
     'What is the maximum amount of blueberry juice your body can take before bursting. When your character reaches this amount of juice in their body, it will trigger a bursting pop up. You will not burst instantly, but will be given a choice how to handle it or even delay it all together.\nPut 0 to disable.',
+  component: FeatureNumberInput,
+};
+
+export const no_neck: Feature<number> = {
+  name: 'No neck items',
+  description: 'At what weight do you become unable to wear items around your neck? 0 disables this.',
   component: FeatureNumberInput,
 };
