@@ -20474,8 +20474,8 @@
 /obj/effect/turf_decal/siding{
 	dir = 5
 	},
-/obj/structure/closet/secure_closet/medical2,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/closet/secure_closet/medical3,
 /turf/open/floor/iron/white/smooth_large,
 /area/centcom/holding/cafe/park)
 "tNw" = (
@@ -62202,8 +62202,8 @@ ayI
 ayI
 ayI
 ayI
-ajj
-ajj
+ayI
+ayI
 ayI
 ajj
 ajj
