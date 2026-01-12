@@ -4776,9 +4776,6 @@
 /obj/machinery/door/firedoor,
 /turf/open/floor/iron/stairs/medium,
 /area/xenoarch/lavaland/foyer)
-"dZx" = (
-/turf/open/space/basic,
-/area/lavaland/underground)
 "eax" = (
 /obj/effect/turf_decal/siding/wideplating_new/terracotta/corner{
 	dir = 8
@@ -42027,8 +42024,8 @@ nEf
 "}
 (52,1,1) = {"
 nEf
-dZx
-dZx
+nEf
+nEf
 nEf
 nEf
 nEf
@@ -42285,8 +42282,8 @@ nEf
 "}
 (53,1,1) = {"
 nEf
-dZx
-dZx
+nEf
+nEf
 nEf
 nEf
 nEf
@@ -42543,8 +42540,8 @@ nEf
 "}
 (54,1,1) = {"
 nEf
-dZx
-dZx
+nEf
+nEf
 nEf
 nEf
 nEf
