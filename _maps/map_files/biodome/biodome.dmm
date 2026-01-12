@@ -22574,22 +22574,6 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/grass/fairy,
 /area/station/ai_monitored/turret_protected/aisat/foyer)
-"hpo" = (
-/obj/effect/turf_decal/tile/purple/half/contrasted{
-	dir = 1
-	},
-/obj/machinery/quantumpad{
-	map_pad_id = "station";
-	map_pad_link_id = "xenoarch";
-	mapped_quantum_pads = list("station","xenoarch");
-	name = "TO XENOARCH"
-	},
-/obj/structure/sign/warning/secure_area/directional/north{
-	name = "To Xenoarcheology"
-	},
-/obj/effect/turf_decal/bot,
-/turf/open/floor/iron/edge,
-/area/station/hallway/primary/central/fore)
 "hpv" = (
 /obj/structure/disposalpipe/segment,
 /obj/effect/turf_decal/siding/dark_green/corner{
@@ -28312,6 +28296,21 @@
 	},
 /turf/open/floor/iron,
 /area/station/cargo/miningdock)
+"joT" = (
+/obj/effect/turf_decal/tile/purple/half/contrasted{
+	dir = 1
+	},
+/obj/machinery/quantumpad{
+	map_pad_id = "station";
+	map_pad_link_id = "xenoarch";
+	mapped_quantum_pads = list("station","xenoarch");
+	name = "TO XENOARCH"
+	},
+/obj/structure/sign/warning/secure_area/directional/north{
+	name = "To Xenoarcheology"
+	},
+/turf/open/floor/iron/edge,
+/area/station/hallway/primary/central/fore)
 "joY" = (
 /obj/machinery/door/airlock/maintenance{
 	name = "Engineering Maintenance"
@@ -30064,7 +30063,6 @@
 	c_tag = "Engineering - Supermatter Aft";
 	network = list("ss13","engine")
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/orange/visible,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /turf/open/floor/engine,
 /area/station/engineering/supermatter/room)
@@ -58715,6 +58713,12 @@
 /obj/effect/turf_decal/tile/dark_green/opposingcorners,
 /turf/open/floor/iron/white,
 /area/station/service/kitchen)
+"sVy" = (
+/obj/machinery/atmospherics/components/binary/pump{
+	dir = 1
+	},
+/turf/open/floor/engine,
+/area/station/engineering/supermatter/room)
 "sVz" = (
 /obj/effect/landmark/start/hangover,
 /obj/effect/decal/cleanable/confetti,
@@ -112527,7 +112531,7 @@ pSY
 myo
 tIT
 ruy
-gXp
+sVy
 eHk
 nBy
 keR
@@ -112785,7 +112789,7 @@ eUT
 gsG
 ruy
 gXp
-eHk
+nlO
 siV
 cuF
 siV
@@ -113042,7 +113046,7 @@ hiO
 tIT
 tbB
 gXp
-eHk
+nlO
 jLf
 nYz
 siV
@@ -113813,7 +113817,7 @@ vlo
 gXp
 xlK
 tgU
-eHk
+nlO
 jLf
 dae
 vFo
@@ -176169,7 +176173,7 @@ lSi
 lSi
 lSi
 lSi
-hpo
+joT
 cwW
 sro
 jzd
