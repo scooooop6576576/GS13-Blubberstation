@@ -45,7 +45,7 @@
 
 /obj/item/organ/genital/butt/set_size(size)
 	genital_size = max(size, set_genital_size)
-	genital_size = min(genital_size, MAX_BUTT_SIZE)
+	genital_size = min(genital_size, max_genital_size, MAX_BUTT_SIZE)
 	update_sprite_suffix()
 
 
@@ -53,6 +53,7 @@
 	uses_skin_color = DNA.features["butt_uses_skincolor"]
 	set_size(DNA.features["butt_size"])
 	set_genital_size = DNA.features["butt_size"]
+	max_genital_size = DNA.features["max_butt_size"]
 
 	return ..()
 
@@ -98,7 +99,7 @@
 	
 	
 	genital_size = max(size, set_genital_size)
-	genital_size = min(genital_size, MAX_BELLY_SIZE)
+	genital_size = min(genital_size, max_genital_size, MAX_BELLY_SIZE)
 	update_sprite_suffix()
 
 
@@ -106,6 +107,7 @@
 	uses_skin_color = DNA.features["belly_uses_skincolor"]
 	set_size(DNA.features["belly_size"])
 	set_genital_size = DNA.features["belly_size"]
+	max_genital_size = DNA.features["max_belly_size"]
 
 	return ..()
 
@@ -147,7 +149,7 @@
 // The Tig Bitties.
 /obj/item/organ/genital/breasts/set_size(size)
 	genital_size = max(size, set_genital_size)		// mmmmmmm, they're getting so big~
-	genital_size = min(genital_size, MAX_BREASTS_SIZE)
+	genital_size = min(genital_size, max_genital_size, MAX_BREASTS_SIZE)
 	var/breasts_capacity = 1
 	switch(genital_type)
 		if("pair")

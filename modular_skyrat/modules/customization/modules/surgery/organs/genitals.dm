@@ -46,7 +46,7 @@
 	return
 
 /obj/item/organ/genital/proc/set_size(size)
-	genital_size = max(size, set_genital_size)	// GS13 edit - prevents the genitals from going below their minimum set size
+	genital_size = clamp(size, set_genital_size, max_genital_size)	// GS13 edit - prevents the genitals from going below their minimum set size, and above their maximum set size
 	update_sprite_suffix()
 
 /obj/item/organ/genital/Initialize(mapload)
@@ -498,6 +498,7 @@
 	set_size(DNA.features["breasts_size"])
 	// GS13 EDIT
 	set_genital_size = DNA.features["breasts_size"] // minimum size, so that it doesn't change when the weight lowers
+	max_genital_size = DNA.features["max_breast_size"]
 	internal_fluid_datum = DNA.features["breast_produce"]
 	// GS13 END EDIT
 

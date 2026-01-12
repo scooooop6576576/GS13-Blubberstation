@@ -70,7 +70,7 @@
 	savefile_key = "belly_size"
 	relevant_mutant_bodypart = ORGAN_SLOT_BELLY
 	minimum = BELLY_MIN_SIZE
-	maximum = BELLY_MAX_SIZE
+	maximum = MAX_BELLY_SIZE
 
 /datum/preference/numeric/belly_size/create_default_value()
 	return 1
@@ -147,4 +147,70 @@ GLOBAL_LIST_INIT(breast_produce, list(
 	"strawberry milk" = /datum/reagent/consumable/pinkmilk,
 	"chocolate milk" = /datum/reagent/consumable/milk/chocolate_milk,
 	"weak lipoifier" = /datum/reagent/consumable/lipoifier/weak,
+	"berry juice" = /datum/reagent/consumable/berryjuice,
+	"succubus milk" = /datum/reagent/drug/aphrodisiac/succubus_milk,
+	"incubus draft" = /datum/reagent/drug/aphrodisiac/incubus_draft,
 	))
+
+/datum/preference/numeric/max_belly_size
+	category = PREFERENCE_CATEGORY_SECONDARY_FEATURES
+	savefile_identifier = PREFERENCE_CHARACTER
+	savefile_key = "max_belly_size"
+	relevant_mutant_bodypart = ORGAN_SLOT_BELLY
+	minimum = BELLY_MIN_SIZE
+	maximum = MAX_BELLY_SIZE
+
+/datum/preference/numeric/max_belly_size/create_default_value()
+	return MAX_BELLY_SIZE
+
+/datum/preference/numeric/max_belly_size/is_accessible(datum/preferences/preferences)
+	var/passed_initial_check = ..(preferences)
+	var/allowed = preferences.read_preference(/datum/preference/toggle/allow_mismatched_parts)
+	var/erp_allowed = preferences.read_preference(/datum/preference/toggle/master_erp_preferences) && preferences.read_preference(/datum/preference/toggle/allow_genitals)
+	var/part_enabled = is_factual_sprite_accessory(relevant_mutant_bodypart, preferences.read_preference(/datum/preference/choiced/genital/belly))
+	return erp_allowed && part_enabled && (passed_initial_check || allowed)
+
+/datum/preference/numeric/max_belly_size/apply_to_human(mob/living/carbon/human/target, value, datum/preferences/preferences)
+	target.dna.features["max_belly_size"] = value
+
+/datum/preference/numeric/max_breast_size
+	category = PREFERENCE_CATEGORY_SECONDARY_FEATURES
+	savefile_identifier = PREFERENCE_CHARACTER
+	savefile_key = "max_breast_size"
+	relevant_mutant_bodypart = ORGAN_SLOT_BREASTS
+	minimum = 0
+	maximum = MAX_BREASTS_SIZE
+
+/datum/preference/numeric/max_breast_size/create_default_value()
+	return MAX_BREASTS_SIZE
+
+/datum/preference/numeric/max_breast_size/is_accessible(datum/preferences/preferences)
+	var/passed_initial_check = ..(preferences)
+	var/allowed = preferences.read_preference(/datum/preference/toggle/allow_mismatched_parts)
+	var/erp_allowed = preferences.read_preference(/datum/preference/toggle/master_erp_preferences) && preferences.read_preference(/datum/preference/toggle/allow_genitals)
+	var/part_enabled = is_factual_sprite_accessory(relevant_mutant_bodypart, preferences.read_preference(/datum/preference/choiced/genital/breast))
+	return erp_allowed && part_enabled && (passed_initial_check || allowed)
+
+/datum/preference/numeric/max_breast_size/apply_to_human(mob/living/carbon/human/target, value, datum/preferences/preferences)
+	target.dna.features["max_breast_size"] = value
+
+/datum/preference/numeric/max_butt_size
+	category = PREFERENCE_CATEGORY_SECONDARY_FEATURES
+	savefile_identifier = PREFERENCE_CHARACTER
+	savefile_key = "max_butt_size"
+	relevant_mutant_bodypart = ORGAN_SLOT_BUTT
+	minimum = 0
+	maximum = BUTT_MAX_SIZE
+
+/datum/preference/numeric/max_butt_size/create_default_value()
+	return BUTT_MAX_SIZE
+
+/datum/preference/numeric/max_butt_size/is_accessible(datum/preferences/preferences)
+	var/passed_initial_check = ..(preferences)
+	var/allowed = preferences.read_preference(/datum/preference/toggle/allow_mismatched_parts)
+	var/erp_allowed = preferences.read_preference(/datum/preference/toggle/master_erp_preferences) && preferences.read_preference(/datum/preference/toggle/allow_genitals)
+	var/part_enabled = is_factual_sprite_accessory(relevant_mutant_bodypart, preferences.read_preference(/datum/preference/choiced/genital/butt))
+	return erp_allowed && part_enabled && (passed_initial_check || allowed)
+
+/datum/preference/numeric/max_butt_size/apply_to_human(mob/living/carbon/human/target, value, datum/preferences/preferences)
+	target.dna.features["max_butt_size"] = value
