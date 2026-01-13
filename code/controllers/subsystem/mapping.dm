@@ -455,6 +455,7 @@ Used by the AI doomsday and the self-destruct nuke.
 	LoadGroup(FailedZs, "Station", current_map.map_path, current_map.map_file, current_map.traits, ZTRAITS_STATION, height_autosetup = current_map.height_autosetup)
 
 	// loading the GS13 Xenoarch level
+	station_start = world.maxz + 2
 	INIT_ANNOUNCE("Loading Lavaland_Xenoarch.dmm...")
 	LoadGroup(FailedZs, "Lavaland_Xenoarch", "map_files/GS_Xenoarch", "Lavaland_Xenoarch.dmm", default_traits = ZTRAITS_LAVALAND_XENOARCH) //GS13 EDIT
 
