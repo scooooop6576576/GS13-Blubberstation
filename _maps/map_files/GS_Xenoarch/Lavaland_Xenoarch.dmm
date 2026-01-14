@@ -2705,7 +2705,8 @@
 /obj/structure/window/calorite/spawner/directional/west,
 /obj/structure/window/calorite/spawner/directional/east,
 /obj/structure/marker_beacon/bronze,
-/turf/open/floor/mineral/calorite)
+/turf/open/floor/mineral/calorite,
+/area/lavaland/underground/xenoarch/calorite_temple)
 "cnY" = (
 /obj/structure/rack/shelf,
 /obj/item/storage/box/donkpockets,
@@ -3394,8 +3395,7 @@
 /obj/structure/lattice/catwalk,
 /obj/item/flashlight/lantern{
 	anchored = 1;
-	icon_state = "lantern-on";
-	on = 1
+	icon_state = "lantern-on"
 	},
 /turf/open/floor/plating/lavaland_baseturf,
 /area/lavaland/underground/xenoarch/caloriteresearch_unpowered)
@@ -4016,7 +4016,6 @@
 /obj/item/flashlight/lantern{
 	anchored = 1;
 	icon_state = "lantern-on";
-	on = 1;
 	pixel_x = 7;
 	pixel_y = -1
 	},
@@ -10265,7 +10264,6 @@
 /obj/item/flashlight/lantern{
 	anchored = 1;
 	icon_state = "lantern-on";
-	on = 1;
 	pixel_x = -6;
 	pixel_y = -1
 	},
@@ -16187,8 +16185,7 @@
 /area/lavaland/underground/xenoarch/donut_factory)
 "nuo" = (
 /obj/machinery/door/airlock/maintenance{
-	dir = 1;
-	req_one_access_txt = "48"
+	dir = 1
 	},
 /obj/structure/cable,
 /turf/open/floor/plating,
@@ -16377,8 +16374,7 @@
 /obj/machinery/door/airlock/research{
 	dir = 4;
 	name = "Xenobotany";
-	opacity = 0;
-	req_access_txt = "47"
+	opacity = 0
 	},
 /obj/machinery/door/firedoor,
 /obj/structure/cable,
@@ -18177,8 +18173,7 @@
 /obj/machinery/door/airlock/research{
 	dir = 4;
 	name = "Xenoarchaeology Office";
-	opacity = 0;
-	req_access_txt = "47"
+	opacity = 0
 	},
 /obj/machinery/door/firedoor,
 /obj/effect/turf_decal/tile/neutral/full,
@@ -20759,8 +20754,7 @@
 "rmY" = (
 /obj/item/flashlight/lantern{
 	anchored = 1;
-	icon_state = "lantern-on";
-	on = 1
+	icon_state = "lantern-on"
 	},
 /turf/open/misc/asteroid/basalt/lava_land_surface,
 /area/lavaland/underground)
@@ -20882,13 +20876,6 @@
 "rpu" = (
 /turf/open/floor/plating/lavaland_baseturf,
 /area/lavaland/underground)
-"rpx" = (
-/obj/effect/turf_decal/siding/wideplating_new/terracotta{
-	dir = 8
-	},
-/obj/effect/turf_decal/tile/brown/diagonal_centre,
-/obj/effect/turf_decal/tile/dark_red/diagonal_edge,
-/turf/open/misc/dirt/dark)
 "rpy" = (
 /turf/open/floor/iron/textured_edge{
 	dir = 4
@@ -22994,8 +22981,7 @@
 /area/lavaland/underground/xenoarch/caloriteresearch_powered)
 "tdO" = (
 /obj/machinery/door/airlock/security{
-	name = "Mini Sec";
-	req_access_txt = "1"
+	name = "Mini Sec"
 	},
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
 	dir = 8
@@ -26976,7 +26962,6 @@
 /obj/item/flashlight/lantern{
 	anchored = 1;
 	icon_state = "lantern-on";
-	on = 1;
 	pixel_x = 7;
 	pixel_y = -1
 	},
@@ -27759,7 +27744,6 @@
 /obj/item/flashlight/lantern{
 	anchored = 1;
 	icon_state = "lantern-on";
-	on = 1;
 	pixel_x = 7;
 	pixel_y = -1
 	},
@@ -28490,8 +28474,7 @@
 /obj/machinery/door/airlock/research{
 	dir = 4;
 	name = "Xenoarch Mining Supplies";
-	opacity = 0;
-	req_access_txt = "47"
+	opacity = 0
 	},
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -150843,7 +150826,7 @@ nND
 seq
 kHZ
 kHZ
-gqo
+seq
 cmY
 kHZ
 kHZ
@@ -151360,7 +151343,7 @@ cll
 kHZ
 kHZ
 kHZ
-gqo
+seq
 kHZ
 kHZ
 kHZ
@@ -151618,7 +151601,7 @@ seq
 uNA
 kHZ
 kHZ
-gqo
+seq
 kHZ
 kHZ
 kHZ
@@ -151876,7 +151859,7 @@ ssm
 kHZ
 kHZ
 kHZ
-gqo
+seq
 kHZ
 kHZ
 kHZ
@@ -152354,7 +152337,7 @@ nRW
 bSN
 ltT
 cHA
-rpx
+skr
 cHA
 ltT
 rjR
@@ -152391,7 +152374,7 @@ nND
 seq
 msl
 kHZ
-gqo
+seq
 cmY
 kHZ
 kHZ
