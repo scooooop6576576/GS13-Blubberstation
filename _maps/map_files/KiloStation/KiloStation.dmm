@@ -60863,6 +60863,7 @@
 /obj/effect/turf_decal/trimline/purple/line{
 	dir = 1
 	},
+/obj/machinery/firealarm/directional/south,
 /turf/open/floor/iron,
 /area/station/maintenance/department/crew_quarters/bar)
 "tBR" = (
