@@ -7527,8 +7527,6 @@
 /obj/effect/turf_decal/siding/white,
 /turf/open/floor/iron/white/small,
 /area/lavaland/underground/xenoarch/caloriteresearch_powered)
-"gqo" = (
-/turf/closed/wall/mineral/calorite)
 "gqQ" = (
 /obj/effect/turf_decal/siding/wideplating_new/dark{
 	dir = 4
@@ -149754,7 +149752,7 @@ nRW
 nRW
 nRW
 nRW
-gqo
+seq
 seq
 seq
 seq
