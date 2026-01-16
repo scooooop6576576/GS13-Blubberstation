@@ -6400,6 +6400,10 @@
 	},
 /turf/open/floor/iron/small,
 /area/lavaland/underground/xenoarch/caloriteresearch_powered)
+"fsb" = (
+/obj/effect/decal/bigfatsigil,
+/turf/open/floor/carpet/orange,
+/area/lavaland/underground/xenoarch/calorite_temple)
 "fsc" = (
 /obj/item/chair/wood,
 /obj/structure/stone_tile/block{
@@ -151551,11 +151555,11 @@ uRf
 eeY
 cgi
 khv
-whN
+fsb
 eeY
 cgi
 khv
-whN
+fsb
 oFl
 cgi
 fDA
@@ -151563,11 +151567,11 @@ uuk
 eeY
 cgi
 khv
-whN
+fsb
 eeY
 cgi
 khv
-whN
+fsb
 whN
 seq
 nHF

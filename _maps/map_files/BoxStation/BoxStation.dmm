@@ -50033,6 +50033,10 @@
 	},
 /turf/open/floor/iron,
 /area/station/service/hydroponics/garden)
+"iII" = (
+/obj/item/banner/gato,
+/turf/open/floor/iron/dark/textured_large,
+/area/station/hallway/primary/central)
 "iIQ" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 1
@@ -61987,6 +61991,7 @@
 /area/station/security/holding_cell)
 "nTA" = (
 /obj/item/radio/intercom/directional/north,
+/obj/item/banner/gato,
 /turf/open/floor/iron/dark/textured_large,
 /area/station/hallway/primary/central)
 "nTG" = (
@@ -70551,6 +70556,7 @@
 /obj/machinery/camera/directional/west{
 	c_tag = "Vault Lobby"
 	},
+/obj/machinery/vending/gato_merch,
 /turf/open/floor/iron/dark/textured_large,
 /area/station/hallway/primary/central)
 "rKP" = (
@@ -71152,6 +71158,10 @@
 	},
 /turf/open/floor/plating,
 /area/station/hallway/secondary/entry)
+"rXs" = (
+/obj/item/kirbyplants/organic,
+/turf/open/floor/iron/dark/textured_large,
+/area/station/hallway/primary/central)
 "rXJ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
@@ -76873,8 +76883,8 @@
 	},
 /area/station/hallway/secondary/entry)
 "uzr" = (
-/obj/item/kirbyplants/random,
 /obj/machinery/firealarm/directional/south,
+/obj/item/kirbyplants/organic,
 /turf/open/floor/iron/dark/textured_large,
 /area/station/hallway/primary/central)
 "uzL" = (
@@ -113827,7 +113837,7 @@ cAl
 tUq
 gia
 xbg
-xkH
+iII
 vFR
 oFd
 dSx
@@ -114859,7 +114869,7 @@ nTA
 btG
 oFd
 gFS
-rTH
+rXs
 aJw
 bwb
 ova
@@ -115115,7 +115125,7 @@ xbg
 qaR
 klG
 iLJ
-xkH
+rTH
 aJw
 aJw
 oXx
