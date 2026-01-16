@@ -1886,6 +1886,9 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
+/obj/machinery/vending/games{
+	shut_up = 1
+	},
 /turf/open/indestructible/hoteltile{
 	icon_state = "floor"
 	},
@@ -1963,9 +1966,7 @@
 /obj/effect/turf_decal/trimline/purple/filled/line{
 	dir = 1
 	},
-/obj/machinery/vending/games{
-	shut_up = 1
-	},
+/obj/machinery/vending/gato_merch,
 /turf/open/indestructible/hoteltile{
 	icon_state = "floor"
 	},

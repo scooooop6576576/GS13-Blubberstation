@@ -46152,6 +46152,10 @@
 /obj/effect/turf_decal/tile/neutral/half/contrasted{
 	dir = 8
 	},
+/obj/item/book/lorebooks/welcome_to_gato{
+	pixel_x = 6;
+	pixel_y = -2
+	},
 /turf/open/floor/iron/dark,
 /area/station/hallway/secondary/exit/departure_lounge)
 "oTd" = (
@@ -51950,6 +51954,10 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/item/book/lorebooks/welcome_to_gato{
+	pixel_x = -6;
+	pixel_y = 0
+	},
 /turf/open/floor/iron/dark,
 /area/station/hallway/primary/fore)
 "qOd" = (
@@ -53412,6 +53420,10 @@
 	pixel_x = 7;
 	pixel_y = 2
 	},
+/obj/item/book/lorebooks/welcome_to_gato{
+	pixel_x = -11;
+	pixel_y = 5
+	},
 /turf/open/floor/iron/large,
 /area/station/commons/fitness/recreation)
 "rlx" = (
@@ -53826,15 +53838,26 @@
 "rrm" = (
 /obj/structure/table,
 /obj/item/paper_bin{
-	pixel_x = -4;
+	pixel_x = -7;
 	pixel_y = 4
 	},
-/obj/item/pen,
+/obj/item/pen{
+	pixel_x = -7;
+	pixel_y = 1
+	},
 /obj/effect/turf_decal/loading_area{
 	dir = 1
 	},
 /obj/effect/turf_decal/tile/neutral/half/contrasted{
 	dir = 1
+	},
+/obj/item/book/lorebooks/welcome_to_gato{
+	pixel_x = 8;
+	pixel_y = 6
+	},
+/obj/item/book/lorebooks/welcome_to_gato{
+	pixel_x = 8;
+	pixel_y = 0
 	},
 /turf/open/floor/iron/dark,
 /area/station/hallway/secondary/entry)
@@ -60350,6 +60373,7 @@
 /obj/effect/turf_decal/tile/neutral/half/contrasted{
 	dir = 8
 	},
+/mob/living/carbon/human/species/monkey/punpun,
 /turf/open/floor/iron/dark,
 /area/station/service/bar)
 "tmZ" = (
@@ -64794,12 +64818,7 @@
 /area/station/service/chapel/funeral)
 "uHN" = (
 /obj/structure/table/wood,
-/obj/item/reagent_containers/cup/glass/bottle/juice/orangejuice{
-	desc = "An emerald flask, from the Keeper's soul. High in vitamins!";
-	name = "estus flask";
-	pixel_x = 4;
-	pixel_y = 4
-	},
+/obj/item/book/lorebooks/welcome_to_gato,
 /turf/open/floor/carpet/black,
 /area/station/service/bar/atrium)
 "uHW" = (

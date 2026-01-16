@@ -102,15 +102,18 @@
 	icon_state = "caloritetemple"
 	power_light = TRUE
 
-/area/lavaland/underground/xenoarch/caloriteresearch_powered
+/area/lavaland/underground/xenoarch/caloriteresearch
 	name = "Research Facility Ruins"
 	icon_state = "caloriteresearch"
 	power_light = TRUE
+	power_equip = TRUE
+	power_environ = TRUE
+	requires_power = FALSE
 
-/area/lavaland/underground/xenoarch/caloriteresearch_unpowered
-	name = "Research Facility Ruins"
-	icon_state = "caloriteresearch"
+/area/lavaland/underground/xenoarch/caloriteresearch/unpowered
 	power_light = FALSE
+	power_equip = FALSE
+	power_environ = FALSE
 
 /area/lavaland/underground/xenoarch/donut_factory
 	name = "GATO Donut Factory"
