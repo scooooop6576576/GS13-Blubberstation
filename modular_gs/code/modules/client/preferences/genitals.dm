@@ -147,7 +147,7 @@ GLOBAL_LIST_INIT(breast_produce, list(
 	"strawberry milk" = /datum/reagent/consumable/pinkmilk,
 	"chocolate milk" = /datum/reagent/consumable/milk/chocolate_milk,
 	"weak lipoifier" = /datum/reagent/consumable/lipoifier/weak,
-	"berry juice" = /datum/reagent/consumable/berryjuice,
+	"blueberry juice" = /datum/reagent/blueberry_juice,
 	"succubus milk" = /datum/reagent/drug/aphrodisiac/succubus_milk,
 	"incubus draft" = /datum/reagent/drug/aphrodisiac/incubus_draft,
 	))
@@ -188,7 +188,7 @@ GLOBAL_LIST_INIT(breast_produce, list(
 	var/passed_initial_check = ..(preferences)
 	var/allowed = preferences.read_preference(/datum/preference/toggle/allow_mismatched_parts)
 	var/erp_allowed = preferences.read_preference(/datum/preference/toggle/master_erp_preferences) && preferences.read_preference(/datum/preference/toggle/allow_genitals)
-	var/part_enabled = is_factual_sprite_accessory(relevant_mutant_bodypart, preferences.read_preference(/datum/preference/choiced/genital/breast))
+	var/part_enabled = is_factual_sprite_accessory(relevant_mutant_bodypart, preferences.read_preference(/datum/preference/choiced/genital/breasts))
 	return erp_allowed && part_enabled && (passed_initial_check || allowed)
 
 /datum/preference/numeric/max_breast_size/apply_to_human(mob/living/carbon/human/target, value, datum/preferences/preferences)
