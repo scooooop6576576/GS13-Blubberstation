@@ -143,7 +143,7 @@ export const eye_emissives: FeatureToggle = {
 };
 
 export const mutant_colors_color: Feature<string[]> = {
-  name: 'Mutant Colors',
+  name: 'Body Colors',  // GS13 EDIT changes mutant colors name to body colors
   component: FeatureTriColorInput,
 };
 

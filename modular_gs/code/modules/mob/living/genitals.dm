@@ -105,9 +105,9 @@
 
 /obj/item/organ/genital/belly/build_from_dna(datum/dna/DNA, associated_key)
 	uses_skin_color = DNA.features["belly_uses_skincolor"]
-	set_size(DNA.features["belly_size"])
 	set_genital_size = DNA.features["belly_size"]
 	max_genital_size = DNA.features["max_belly_size"]
+	set_size(DNA.features["belly_size"])
 
 	return ..()
 

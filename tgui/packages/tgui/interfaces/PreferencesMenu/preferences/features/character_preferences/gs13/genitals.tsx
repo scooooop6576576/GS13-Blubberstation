@@ -108,16 +108,16 @@ export const breast_produce: FeatureChoiced = {
 }
 
 export const max_belly_size: FeatureNumeric = {
-  name: 'Belly Max Size',
+  name: 'Belly max size',
   component: FeatureNumberInput,
 };
 
 export const max_breast_size: FeatureNumeric = {
-  name: 'Breasts Max Size',
+  name: 'Breasts max size',
   component: FeatureNumberInput,
 };
 
 export const max_butt_size: FeatureNumeric = {
-  name: 'Butt Max Size',
+  name: 'Butt max size',
   component: FeatureNumberInput,
 };
