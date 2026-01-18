@@ -495,11 +495,11 @@
 /obj/item/organ/genital/breasts/build_from_dna(datum/dna/DNA, associated_key)
 	lactates = DNA.features["breasts_lactation"]
 	uses_skin_color = DNA.features["breasts_uses_skincolor"]
-	set_size(DNA.features["breasts_size"])
 	// GS13 EDIT
 	set_genital_size = DNA.features["breasts_size"] // minimum size, so that it doesn't change when the weight lowers
 	max_genital_size = DNA.features["max_breast_size"]
 	internal_fluid_datum = DNA.features["breast_produce"]
+	set_size(DNA.features["breasts_size"])
 	// GS13 END EDIT
 
 	return ..()
