@@ -246,20 +246,11 @@
 	if(pin_owner)
 		. += span_notice("This firing pin is currently authorized to pay into the account of [pin_owner.account_holder].")
 
-/obj/item/firing_pin/paywall/gun_insert(mob/living/user, obj/item/gun/new_gun)
-	if(!pin_owner)
-		if(isnull(user))
-			forceMove(new_gun.drop_location())
-		else
-			to_chat(user, span_warning("ERROR: Please swipe valid identification card before installing firing pin!"))
-			user.put_in_hands(src)
-		return FALSE
-	..()
-	if(multi_payment)
-		gun.desc += span_notice(" This [gun.name] has a per-shot cost of [payment_amount] credit[( payment_amount > 1 ) ? "s" : ""].")
-		return TRUE
-	gun.desc += span_notice(" This [gun.name] has a license permit cost of [payment_amount] credit[( payment_amount > 1 ) ? "s" : ""].")
-	return TRUE
+/obj/item/firing_pin/paywall/gun_insert(mob/living/user, obj/item/gun/new_gun, starting = FALSE)
+	if(pin_owner || starting)
+		. = ..()
+		gun.desc += span_notice("This [gun.name] has a [multi_payment ? "per-shot" : "license permit"] cost of [payment_amount] [MONEY_NAME_AUTOPURAL(payment_amount)].")
+		return
 
 
 /obj/item/firing_pin/paywall/gun_remove(mob/living/user)
@@ -311,7 +302,7 @@
 	if(active_prompt_user == user)
 		return FALSE
 	active_prompt_user = user
-	var/license_request = tgui_alert(user, "Do you wish to pay [payment_amount] credit[( payment_amount > 1 ) ? "s" : ""] for [( multi_payment ) ? "each shot of [gun.name]" : "usage license of [gun.name]"]?", "Weapon Purchase", list("Yes", "No"), 15 SECONDS)
+	var/license_request = tgui_alert(user, "Do you wish to pay [payment_amount] [MONEY_NAME_AUTOPURAL(payment_amount)] for [( multi_payment ) ? "each shot of [gun.name]" : "usage license of [gun.name]"]?", "Weapon Purchase", list("Yes", "No"), 15 SECONDS)
 	if(!user.can_perform_action(src))
 		active_prompt_user = null
 		return FALSE

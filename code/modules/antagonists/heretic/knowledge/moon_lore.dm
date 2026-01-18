@@ -134,7 +134,11 @@
 			"upgraded path of moon blades", \
 		)
 	target.emote(pick("giggle", "laugh"))
-	target.mob_mood.adjust_sanity(-10)
+	target.mob_mood?.adjust_sanity(-10)
+	if(target.stat == CONSCIOUS && target.mob_mood?.sanity >= SANITY_NEUTRAL)
+		target.adjust_organ_loss(ORGAN_SLOT_BRAIN, 10)
+		return
+	target.adjust_organ_loss(ORGAN_SLOT_BRAIN, 25)
 
 /datum/heretic_knowledge/spell/moon_ringleader
 	name = "Ringleaders Rise"

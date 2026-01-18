@@ -148,9 +148,10 @@ DEFINE_BITFIELD(smoothing_junction, list(
 
 #define SMOOTH_GROUP_MOONWATER S_TURF(66) //turf/open/water/moonstation
 
-//GS13 EDIT ADDITION
-#define SMOOTH_GROUP_CARPET_GATO S_TURF(67) ///turf/open/floor/carpet/gato
-//GS13 EDIT END
+#define SMOOTH_GROUP_EXPLORATION_FLOOR S_TURF(67) //turf/open/floor/iron/shuttle/exploration/smooth
+#define SMOOTH_GROUP_CARPET_GATO S_TURF(68) ///turf/open/floor/carpet/gato
+
+#define MAX_S_TURF 68 //Always match this value with the one above it. // GS13 EDIT: Original = 67
 
 #define MAX_S_TURF 67 //Always match this value with the one above it.
 //BUBBER EDIT END

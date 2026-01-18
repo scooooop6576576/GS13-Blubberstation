@@ -59,13 +59,15 @@
 			instantiated_med.reagent_removal_skip_list |= ALLERGIC_REMOVAL_SKIP
 		return //block damage so long as epinephrine exists
 
-	for(var/allergy in allergies)
-		var/datum/reagent/instantiated_med = carbon_quirk_holder.reagents.has_reagent(allergy)
-		if(!instantiated_med)
-			continue
-		instantiated_med.reagent_removal_skip_list -= ALLERGIC_REMOVAL_SKIP
-		carbon_quirk_holder.adjustToxLoss(3 * seconds_per_tick)
-		carbon_quirk_holder.reagents.add_reagent(/datum/reagent/toxin/histamine, 3 * seconds_per_tick)
-		if(SPT_PROB(10, seconds_per_tick))
-			carbon_quirk_holder.vomit(VOMIT_CATEGORY_DEFAULT)
-			carbon_quirk_holder.adjustOrganLoss(pick(ORGAN_SLOT_BRAIN,ORGAN_SLOT_APPENDIX,ORGAN_SLOT_LUNGS,ORGAN_SLOT_HEART,ORGAN_SLOT_LIVER,ORGAN_SLOT_STOMACH),10)
+	if(!is_type_in_list(chem, allergies))
+		return NONE
+	// Having epinephrine stops metabolization of an allergen, but doesn't remove it from the system
+	if(source.reagents.has_reagent(/datum/reagent/medicine/epinephrine))
+		return COMSIG_MOB_STOP_REAGENT_METABOLISM
+	// Otherwise the allergen causes a ton of damage though otherwise processes normally
+	source.apply_damage(3 * seconds_per_tick, TOX)
+	source.reagents.add_reagent(/datum/reagent/toxin/histamine, 3 * seconds_per_tick)
+	if(SPT_PROB(10, seconds_per_tick))
+		source.vomit(VOMIT_CATEGORY_DEFAULT)
+		source.adjust_organ_loss(pick(ORGAN_SLOT_BRAIN, ORGAN_SLOT_APPENDIX, ORGAN_SLOT_LUNGS, ORGAN_SLOT_HEART, ORGAN_SLOT_LIVER, ORGAN_SLOT_STOMACH), 10)
+	return NONE

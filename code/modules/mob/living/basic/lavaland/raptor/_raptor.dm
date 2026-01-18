@@ -183,9 +183,29 @@ GLOBAL_LIST_EMPTY(raptor_population)
 		return
 	return ..()
 
-/mob/living/basic/raptor/death(gibbed)
-	. = ..()
-	GLOB.raptor_population -= REF(src)
+/mob/living/basic/raptor/proc/add_breeding_component()
+	var/static/list/partner_types = typecacheof(list(/mob/living/basic/raptor))
+	var/static/list/baby_types = list(/obj/item/food/egg/raptor_egg = 1)
+	AddComponent(\
+		/datum/component/breed, \
+		can_breed_with = partner_types, \
+		baby_paths = baby_types, \
+		breed_timer = 3 MINUTES, \
+		post_birth = CALLBACK(src, PROC_REF(egg_inherit)), \
+	)
+
+/mob/living/basic/raptor/proc/add_happiness_component()
+	var/static/list/percentage_callbacks = list(0, 15, 25, 35, 50, 75, 90, 100)
+	// Higher happiness cap so it decays slower, about 15 minutes from full to zero
+	AddComponent(\
+		/datum/component/happiness, \
+		maximum_happiness = 900, \
+		on_petted_change = 50, \
+		on_groom_change = 200, \
+		on_eat_change = 150, \
+		callback_percentages = percentage_callbacks,\
+		happiness_callback = CALLBACK(src, PROC_REF(happiness_change)),\
+	)
 
 /mob/living/basic/raptor/proc/happiness_change(percent_value)
 	var/attack_boost = round(initial(melee_damage_lower) * percent_value * HAPPINESS_BOOST_DAMPENER, 1)

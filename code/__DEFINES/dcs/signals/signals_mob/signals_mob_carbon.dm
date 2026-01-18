@@ -182,3 +182,15 @@
 
 //from base of [/obj/effect/particle_effect/fluid/smoke/proc/smoke_mob]: (seconds_per_tick)
 #define COMSIG_CARBON_EXPOSED_TO_SMOKE "carbon_exposed_to_smoke"
+
+/// From /mob/living/carbon/human/proc/update_mob_height() : (old_height)
+#define COMSIG_HUMAN_HEIGHT_UPDATED "human_height_updated"
+
+/// From /mob/living/carbon/proc/can_defib() : ()
+/// Return a defib result flag to override default defib brain check
+#define COMSIG_CARBON_DEFIB_BRAIN_CHECK "carbon_defib_brain_check"
+
+/// From /mob/living/carbon/human/proc/smart_equip_targeted(): (mob/living/carbon/human/user, obj/item/possible_container)
+#define COMSIG_HUMAN_NON_STORAGE_HOTKEY "human_storage_hotkey"
+	/// Return to prevent the storage fail message
+	#define COMPONENT_STORAGE_HOTKEY_HANDLED (1<<0)

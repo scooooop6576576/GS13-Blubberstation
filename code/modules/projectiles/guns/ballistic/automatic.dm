@@ -329,7 +329,8 @@
 	inhand_icon_state = "arg"
 	accepted_magazine_type = /obj/item/ammo_box/magazine/recharge
 	empty_indicator = TRUE
-	fire_delay = 2
+	bolt_type = BOLT_TYPE_OPEN
+	fire_delay = 2 DECISECONDS
 	can_suppress = FALSE
 	burst_size = 0
 	actions_types = list()
@@ -358,7 +359,7 @@
 	mag_display = TRUE
 	projectile_damage_multiplier = 1.2
 	projectile_speed_multiplier = 1.2
-	fire_delay = 2
+	fire_delay = 2 DECISECONDS
 	burst_size = 1
 	actions_types = list()
 	fire_sound = 'sound/items/weapons/thermalpistol.ogg'

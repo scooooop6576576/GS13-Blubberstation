@@ -60,7 +60,7 @@
 	new /obj/item/clothing/under/rank/civilian/head_of_personnel/skirt(src)
 	new /obj/item/clothing/suit/armor/vest/hop(src)
 	new /obj/item/clothing/suit/hooded/wintercoat/hop(src)
-	new /obj/item/clothing/glasses/sunglasses(src)
+	//new /obj/item/clothing/glasses/sunglasses(src) //BUBBER REMOVAL - They get civhuds by override in modular file
 	new /obj/item/clothing/head/hats/hopcap(src)
 	new /obj/item/clothing/neck/cloak/hop(src)
 	new /obj/item/clothing/shoes/laceup(src)
@@ -71,12 +71,10 @@
 	new /obj/item/clothing/neck/tie/bunnytie/hop(src)
 	new /obj/item/clothing/head/hopcap/beret(src)
 	new /obj/item/clothing/head/hopcap/beret/alt(src)
-	new /obj/item/clothing/head/hats/imperial/hop(src)
 	new /obj/item/clothing/under/rank/civilian/head_of_personnel/skyrat/turtleneck(src)
 	new /obj/item/clothing/under/rank/civilian/head_of_personnel/skyrat/turtleneck/skirt(src)
 	new /obj/item/clothing/under/rank/civilian/head_of_personnel/skyrat/parade(src)
 	new /obj/item/clothing/under/rank/civilian/head_of_personnel/skyrat/parade/female(src)
-	new /obj/item/clothing/under/rank/civilian/head_of_personnel/skyrat/imperial(src)
 	new /obj/item/clothing/suit/armor/vest/hop/hop_formal(src)
 	new /obj/item/clothing/neck/mantle/hopmantle(src)
 
@@ -120,9 +118,7 @@
 	new	/obj/item/clothing/under/rank/security/head_of_security/bunnysuit(src)
 	new	/obj/item/clothing/suit/armor/hos_tailcoat(src)
 	new /obj/item/clothing/head/hats/hos/beret/navyhos(src)
-	new /obj/item/clothing/head/hats/imperial/hos(src)
 	new /obj/item/clothing/under/rank/security/head_of_security/peacekeeper(src)
-	new /obj/item/clothing/under/rank/security/head_of_security/skyrat/imperial(src)
 	new /obj/item/clothing/suit/jacket/hos/blue(src)
 	new /obj/item/clothing/neck/mantle/hosmantle(src)
 
@@ -157,7 +153,6 @@
 	new /obj/item/clothing/head/beret/science/rd/alt(src)
 	new /obj/item/clothing/under/rank/rnd/research_director/skyrat/jumpsuit(src)
 	new /obj/item/clothing/under/rank/rnd/research_director/skyrat/jumpsuit/skirt(src)
-	new /obj/item/clothing/under/rank/rnd/research_director/skyrat/imperial(src)
 	new /obj/item/clothing/neck/mantle/rdmantle(src)
 	new /obj/item/clothing/suit/toggle/labcoat(src)
 	new /obj/item/clothing/suit/toggle/labcoat/research_director(src)
@@ -182,8 +177,6 @@
 	new /obj/item/clothing/shoes/sneakers/blue (src)
 //Duplication from Commdrobe
 	new /obj/item/clothing/head/beret/medical/cmo/alt(src)
-	new /obj/item/clothing/head/hats/imperial/cmo(src)
-	new /obj/item/clothing/under/rank/medical/chief_medical_officer/skyrat/imperial(src)
 	new /obj/item/clothing/neck/mantle/cmomantle(src)
 	new /obj/item/clothing/head/playbunnyears/cmo(src)
 	new /obj/item/clothing/under/rank/medical/cmo_bunnysuit(src)
@@ -204,8 +197,6 @@
 	new /obj/item/clothing/shoes/sneakers/brown(src)
 //Duplication from Commdrobe
 	new /obj/item/clothing/head/beret/engi/ce(src)
-	new /obj/item/clothing/head/hats/imperial/ce(src)
-	new /obj/item/clothing/under/rank/engineering/chief_engineer/skyrat/imperial(src)
 	new /obj/item/clothing/neck/mantle/cemantle(src)
 	new /obj/item/clothing/head/playbunnyears/ce(src)
 	new /obj/item/clothing/under/rank/engineering/chief_engineer/bunnysuit(src)

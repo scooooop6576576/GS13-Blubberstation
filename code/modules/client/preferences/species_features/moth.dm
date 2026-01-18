@@ -15,8 +15,8 @@
 
 	if (isnull(moth_head))
 		moth_head = uni_icon('icons/mob/human/species/moth/bodyparts.dmi', "moth_head")
-		moth_head.blend_icon(uni_icon('icons/mob/human/human_face.dmi', "motheyes_l"), ICON_OVERLAY)
-		moth_head.blend_icon(uni_icon('icons/mob/human/human_face.dmi', "motheyes_r"), ICON_OVERLAY)
+		moth_head.blend_icon(uni_icon(/obj/item/organ/eyes/moth::eye_icon, "[/obj/item/organ/eyes/moth::eye_icon_state]_l"), ICON_OVERLAY)
+		moth_head.blend_icon(uni_icon(/obj/item/organ/eyes/moth::eye_icon, "[/obj/item/organ/eyes/moth::eye_icon_state]_r"), ICON_OVERLAY)
 
 	var/datum/sprite_accessory/antennae = SSaccessories.moth_antennae_list[value]
 
@@ -56,8 +56,8 @@
 		for (var/obj/item/bodypart/body_part as anything in body_parts)
 			moth_body.blend_icon(uni_icon('icons/mob/human/species/moth/bodyparts.dmi', initial(body_part.icon_state)), ICON_OVERLAY)
 
-		moth_body.blend_icon(uni_icon('icons/mob/human/human_face.dmi', "motheyes_l"), ICON_OVERLAY)
-		moth_body.blend_icon(uni_icon('icons/mob/human/human_face.dmi', "motheyes_r"), ICON_OVERLAY)
+		moth_body.blend_icon(uni_icon(/obj/item/organ/eyes/moth::eye_icon, "[/obj/item/organ/eyes/moth::eye_icon_state]_l"), ICON_OVERLAY)
+		moth_body.blend_icon(uni_icon(/obj/item/organ/eyes/moth::eye_icon, "[/obj/item/organ/eyes/moth::eye_icon_state]_r"), ICON_OVERLAY)
 
 	var/datum/sprite_accessory/markings = SSaccessories.moth_markings_list[value]
 	var/datum/universal_icon/icon_with_markings = moth_body.copy()

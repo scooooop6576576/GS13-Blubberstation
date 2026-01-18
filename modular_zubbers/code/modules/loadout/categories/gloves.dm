@@ -27,7 +27,6 @@
 	name = "Security Gloves"
 	item_path = /obj/item/clothing/gloves/color/black/security
 	restricted_roles = list(ALL_JOBS_SEC)
-	can_be_reskinned = TRUE
 
 /datum/loadout_item/gloves/combat/peacekeeper/armadyne
 	name = "Armadyne Combat Gloves"
@@ -41,3 +40,59 @@
 /datum/loadout_item/gloves/cat
 	name = "Cat Gloves"
 	item_path = /obj/item/clothing/gloves/cat
+
+/datum/loadout_item/gloves/blutigen_wraps
+	name = "Blutigen Wraps"
+	item_path = /obj/item/clothing/gloves/fingerless/blutigen_wraps
+	//ckeywhitelist = list("random516")
+
+/datum/loadout_item/gloves/netra_gloves
+	name = "Black and Silver Gloves"
+	item_path = /obj/item/clothing/gloves/netra
+	//ckeywhitelist = list("netrakyram")
+
+/datum/loadout_item/gloves/mikugloves
+	name = "Starlight Singer Gloves"
+	item_path = /obj/item/clothing/gloves/mikugloves
+	//ckeywhitelist = list("grandvegeta")
+
+/datum/loadout_item/gloves/elofy
+	name = "Solar Admiral Gloves"
+	item_path = /obj/item/clothing/gloves/elofy
+//	ckeywhitelist = list("october23")
+
+/datum/loadout_item/gloves/hypnoring_sharkenning
+	name = "Suspiciously Glossy Ring"
+	item_path = /obj/item/clothing/gloves/ring/hypno/sharkenning
+	ckeywhitelist = list("thesharkenning", "tecktonic")
+
+/datum/loadout_item/gloves/lt3_gloves
+	name = "Charcoal Fingerless Gloves"
+	item_path = /obj/item/clothing/gloves/skyy
+
+/*
+*	RINGS
+*/
+
+/datum/loadout_item/gloves/silverring
+	name = "Silver Ring"
+	item_path = /obj/item/clothing/gloves/ring/silver
+
+/datum/loadout_item/gloves/goldring
+	name = "Gold Ring"
+	item_path = /obj/item/clothing/gloves/ring
+
+/datum/loadout_item/gloves/diamondring
+	name = "Diamond Ring"
+	item_path = /obj/item/clothing/gloves/ring/diamond
+
+/datum/loadout_item/gloves/hypnoring_coffee
+	name = "Hypnodemon's Ring"
+	item_path = /obj/item/clothing/gloves/ring/hypno/coffeepot
+	//ckeywhitelist = list("coffeepot")
+
+/datum/loadout_item/gloves/hypnoring_bippy
+	name = "Hypnodemon's Ring"
+	item_path = /obj/item/clothing/gloves/ring/hypno/bippys
+	ckeywhitelist = list("bippys")
+

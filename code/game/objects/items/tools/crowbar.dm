@@ -148,6 +148,11 @@
 		inhand_icon_change = FALSE, \
 	)
 	RegisterSignal(src, COMSIG_TRANSFORMING_ON_TRANSFORM, PROC_REF(on_transform))
+	RegisterSignal(src, COMSIG_TOOL_FORCE_OPEN_AIRLOCK, PROC_REF(on_force_open))
+
+/obj/item/crowbar/power/examine()
+	. = ..()
+	. += "It's fitted with a [tool_behaviour == first_tool_behavior ? inactive_text : active_text] head."
 
 /*
  * Signal proc for [COMSIG_TRANSFORMING_ON_TRANSFORM].
@@ -193,6 +198,82 @@
 				target_bodypart.drop_limb()
 				playsound(loc, SFX_DESECRATION, 50, TRUE, -1)
 	return BRUTELOSS
+
+/obj/item/crowbar/power/syndicate
+	name = "jaws of death"
+	desc = "An improved, faster, and smaller copy of Nanotrasen's standard jaws of life. Can be used to force open airlocks in its crowbar configuration."
+	icon_state = "jaws_syndie"
+	w_class = WEIGHT_CLASS_SMALL
+	toolspeed = 0.5
+
+/obj/item/crowbar/power/paramedic
+	name = "jaws of recovery"
+	desc = "A specialized version of the jaws of life, primarily to be used by paramedics to recover the injured and the recently deceased. Rather than a cutting arm, this tool has a bonesetting apparatus. \
+		Cannot access certain high security areas due to safety concerns."
+	icon_state = "jaws_paramedic"
+	inhand_icon_state = "jawsparamedic"
+	worn_icon_state = "jawsparamedic"
+	w_class = WEIGHT_CLASS_BULKY
+	toolspeed = 1
+	slot_flags = null
+	active_text = "bonesetting"
+	second_tool_behavior = TOOL_BONESET
+	limit_jaws_access = TRUE
+	blacklisted_access = list(
+		ACCESS_COMMAND,
+		ACCESS_AI_UPLOAD,
+		ACCESS_CAPTAIN,
+		ACCESS_HOP,
+		ACCESS_SECURITY,
+		ACCESS_BRIG,
+		ACCESS_ARMORY,
+		ACCESS_HOS,
+		ACCESS_DETECTIVE,
+		ACCESS_CE,
+		ACCESS_CMO,
+		ACCESS_QM,
+		ACCESS_VAULT,
+		ACCESS_RD,
+		ACCESS_SYNDICATE,
+	)
+	custom_materials = list(
+		/datum/material/iron = SHEET_MATERIAL_AMOUNT * 4.75,
+		/datum/material/silver = SHEET_MATERIAL_AMOUNT * 2.50,
+		/datum/material/titanium = SHEET_MATERIAL_AMOUNT * 1.75,
+		/datum/material/glass = SHEET_MATERIAL_AMOUNT * 1.25,
+	)
+	radio_alert = TRUE
+
+/obj/item/crowbar/power/paramedic/sound_the_alarms(mob/user, obj/machinery/door/airlock/target)
+		aas_config_announce(/datum/aas_config_entry/jaws_entry_alert_paramedic, list(
+			"PERSON" = user.name,
+			"LOCATION" = get_area_name(target),
+			"TOOL" = name), src, list(RADIO_CHANNEL_SECURITY), RADIO_CHANNEL_SECURITY)
+
+		aas_config_announce(/datum/aas_config_entry/jaws_entry_alert_paramedic, list(
+			"PERSON" = user.name,
+			"LOCATION" = get_area_name(target),
+			"TOOL" = name), src, list(RADIO_CHANNEL_MEDICAL), RADIO_CHANNEL_MEDICAL)
+
+/datum/aas_config_entry/jaws_entry_alert_paramedic
+	// This tool screams into the radio whenever the user successfully pries open an airlock.
+	name = "Door Forced Entry Medical Alert"
+	announcement_lines_map = list(
+		RADIO_CHANNEL_SECURITY = "SECURITY ALERT: %PERSON has forced open a door at %LOCATION using %TOOL. Confirm that this was done during an emergency by authorized staff.",
+		RADIO_CHANNEL_MEDICAL = "MEDICAL ALERT: %PERSON has forced open a door at %LOCATION using %TOOL. Confirm that this was done during an emergency by authorized staff.",
+	)
+	vars_and_tooltips_map = list(
+		"PERSON" = "will be replaced with the name of the user",
+		"LOCATION" = "with the area of the door",
+		"TOOL" = "replaced with the tool used",
+	)
+
+/obj/item/crowbar/power/paramedic/silent
+	desc = "A specialized version of the jaws of life, primarily to be used by paramedics to recover the injured and the recently deceased. Rather than a cutting arm, this tool has a bonesetting apparatus. \
+		This one looks upgraded."
+	w_class = WEIGHT_CLASS_NORMAL // it's a modified, normal jaws
+	limit_jaws_access = FALSE
+	radio_alert = FALSE
 
 /obj/item/crowbar/cyborg
 	name = "hydraulic crowbar"

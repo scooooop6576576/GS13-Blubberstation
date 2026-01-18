@@ -82,8 +82,8 @@
 		return
 	to_chat(user, span_danger("[src] explodes into a shower of gore and blood, drenching your arm. You can feel the blood seeping into your skin. You inmediately feel better, but soon, the feeling turns hollow as your veins itch."))
 	new /obj/effect/gibspawner/generic(get_turf(src))
-	var/heal_amt = user.adjustBruteLoss(-50)
-	user.adjustFireLoss( -(50 - abs(heal_amt)) ) // no double dipping
+	var/heal_amt = user.adjust_brute_loss(-50)
+	user.adjust_fire_loss( -(50 - abs(heal_amt)) ) // no double dipping
 
 	// I want it to poison the user but I also think it'd be neat if they got their juice as well. But that cancels most of the damage out. So I dunno.
 	user.reagents?.add_reagent(/datum/reagent/fuel/unholywater, rand(6, 10))
@@ -165,7 +165,66 @@
 		user.mob_mood.adjust_sanity(-50)
 		return
 
-	if(hit.can_block_magic(MAGIC_RESISTANCE|MAGIC_RESISTANCE_MIND))
+/obj/item/clothing/neck/heretic_focus/moon_amulet/proc/blade_channel(mob/living/attacker, mob/living/victim)
+	SIGNAL_HANDLER
+	channel_amulet(attacker, victim)
+
+/// Makes whoever the target is a bit more insane. If they are insane enough, they will be zombified into a moon zombie
+/obj/item/clothing/neck/heretic_focus/moon_amulet/proc/channel_amulet(mob/user, atom/target)
+
+	if(!isliving(user))
+		return FALSE
+	var/mob/living/living_user = user
+	if(!IS_HERETIC_OR_MONSTER(living_user))
+		living_user.balloon_alert(living_user, "you feel a presence watching you")
+		living_user.add_mood_event("Moon Amulet Insanity", /datum/mood_event/amulet_insanity)
+		living_user.mob_mood.adjust_sanity(-50)
+		return FALSE
+	if(!isliving(target))
+		return FALSE
+	var/mob/living/living_target = target
+
+	if(!ishuman(target))
+		living_target.adjust_fire_loss(30)
+		return TRUE
+	var/mob/living/carbon/human/human_target = target
+	if(IS_HERETIC_OR_MONSTER(human_target))
+		living_user.balloon_alert(living_user, "resists effects!")
+		return FALSE
+	if(human_target.has_status_effect(/datum/status_effect/moon_slept) || human_target.has_status_effect(/datum/status_effect/moon_converted))
+		human_target.balloon_alert(living_user, "causing damage!")
+		human_target.adjust_organ_loss(ORGAN_SLOT_BRAIN, 25)
+		return FALSE
+	if(human_target.can_block_magic(MAGIC_RESISTANCE_MOON))
+		return FALSE
+	if(!human_target.mob_mood)
+		return FALSE
+	if(human_target.mob_mood.sanity_level < sanity_threshold)
+		human_target.balloon_alert(living_user, "their mind is too strong!")
+		human_target.add_mood_event("Moon Amulet Insanity", /datum/mood_event/amulet_insanity)
+		human_target.mob_mood.adjust_sanity(-sanity_damage)
+	else
+		if(HAS_TRAIT(target, TRAIT_MINDSHIELD))
+			human_target.balloon_alert(living_user, "their mind almost bends but something protects it!")
+			human_target.apply_status_effect(/datum/status_effect/moon_slept)
+			return TRUE
+		human_target.balloon_alert(living_user, "their mind bends to see the truth!")
+		human_target.apply_status_effect(/datum/status_effect/moon_converted)
+		living_user.log_message("made [human_target] insane.", LOG_GAME)
+		human_target.log_message("was driven insane by [living_user]", LOG_GAME)
+	return TRUE
+
+/// Modifies any blades that we equip while wearing the amulet
+/obj/item/clothing/neck/heretic_focus/moon_amulet/proc/on_equip_item(mob/user, obj/item/blade, slot)
+	SIGNAL_HANDLER
+	if(!istype(blade, valid_weapon_type))
+		return // We only care about modifying blades
+	if(slot & ITEM_SLOT_HANDS)
+		blade.force = 0
+		blade.wound_bonus = 0
+		blade.exposed_wound_bonus = 0
+		blade.armour_penetration = 200
+		RegisterSignal(blade, COMSIG_SEND_ITEM_ATTACK_MESSAGE_OBJECT, PROC_REF(modify_attack_message))
 		return
 
 	if(!hit.mob_mood)

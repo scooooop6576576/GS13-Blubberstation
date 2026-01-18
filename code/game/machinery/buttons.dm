@@ -64,8 +64,9 @@
 			board.one_access = 1
 			board.accesses = req_one_access
 
-	setup_device()
-	find_and_hang_on_wall()
+	setup_device(mapload)
+	if(mapload)
+		find_and_mount_on_atom()
 	register_context()
 
 /obj/machinery/button/Destroy()
@@ -523,3 +524,11 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/button/door, 24)
 	result_path = /obj/machinery/button
 	custom_materials = list(/datum/material/iron = SHEET_MATERIAL_AMOUNT)
 	pixel_shift = 24
+
+/obj/item/wallframe/button/find_support_structure(atom/structure)
+	return istype(structure, /obj/structure/table) ? structure : ..()
+
+/obj/item/wallframe/button/interact_with_atom(atom/interacting_with, mob/living/user, list/modifiers)
+	if(istype(interacting_with, /obj/structure/table))
+		return user.combat_mode ? ..() : NONE
+	return ..()

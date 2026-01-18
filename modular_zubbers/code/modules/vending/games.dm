@@ -128,6 +128,14 @@
 			),
 		),
 		list(
+			"name" = "Art",
+			"icon" = "palette",
+			"products" = list(
+				/obj/item/modular_computer/mini_painting_printer = 2,
+			)
+		),
+
+		list(
 			"name" = "Other",
 			"icon" = "star",
 			"products" = list(

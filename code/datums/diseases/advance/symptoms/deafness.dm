@@ -56,7 +56,7 @@
 				if(ears.damage < ears.maxHealth)
 					to_chat(infected_mob, span_userdanger("Your ears pop painfully and start bleeding!"))
 					// Just absolutely murder me man
-					ears.apply_organ_damage(ears.maxHealth)
+					infected_mob.adjust_organ_loss(ORGAN_SLOT_EARS, INFINITY)
 					infected_mob.emote("scream")
 					ADD_TRAIT(infected_mob, TRAIT_DEAF, DISEASE_TRAIT)
 			else

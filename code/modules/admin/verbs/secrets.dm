@@ -554,9 +554,9 @@ ADMIN_VERB(secrets, R_NONE, "Secrets", "Abuse harder than you ever have before w
 			if(!is_funmin)
 				return
 			SSblackbox.record_feedback("nested tally", "admin_secrets_fun_used", 1, list("Mass Braindamage"))
-			for(var/mob/living/carbon/human/H in GLOB.player_list)
-				to_chat(H, span_bolddanger("You suddenly feel stupid."), confidential = TRUE)
-				H.adjustOrganLoss(ORGAN_SLOT_BRAIN, 60, 80)
+			for(var/mob/living/carbon/human/human_mob in GLOB.player_list)
+				to_chat(human_mob, span_bolddanger("You suddenly feel stupid."), confidential = TRUE)
+				human_mob.adjust_organ_loss(ORGAN_SLOT_BRAIN, 60, 80)
 			message_admins("[key_name_admin(holder)] made everybody brain damaged")
 		if("floorlava")
 			SSweather.run_weather(/datum/weather/floor_is_lava)

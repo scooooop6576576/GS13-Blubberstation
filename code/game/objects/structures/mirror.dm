@@ -25,6 +25,7 @@
 	anchored = TRUE
 	integrity_failure = 0.5
 	max_integrity = 200
+	custom_materials = /obj/item/wallframe/mirror::custom_materials
 	///Can this mirror be removed from walls with tools?
 	var/deconstructable = TRUE
 	var/list/mirror_options = INERT_MIRROR_OPTIONS
@@ -58,6 +59,10 @@
 		update_signals = list(COMSIG_ATOM_BREAK), \
 		check_reflect_signals = list(SIGNAL_ADDTRAIT(TRAIT_NO_MIRROR_REFLECTION), SIGNAL_REMOVETRAIT(TRAIT_NO_MIRROR_REFLECTION)), \
 	)
+	if(mapload)
+		find_and_mount_on_atom()
+	update_choices()
+	register_context()
 
 /obj/structure/mirror/proc/can_reflect(atom/movable/target)
 	///I'm doing it this way too, because the signal is sent before the broken variable is set to TRUE.
@@ -341,10 +346,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/mirror/broken, 28)
 	desc = "An unmounted mirror. Attach it to a wall to use."
 	icon = 'icons/obj/watercloset.dmi'
 	icon_state = "mirror"
-	custom_materials = list(
-		/datum/material/glass = SHEET_MATERIAL_AMOUNT,
-		/datum/material/silver = SHEET_MATERIAL_AMOUNT,
-	)
+	custom_materials = list(/datum/material/glass = SHEET_MATERIAL_AMOUNT * 5, /datum/material/silver = SHEET_MATERIAL_AMOUNT * 2)
 	result_path = /obj/structure/mirror
 	pixel_shift = 28
 

@@ -9,7 +9,8 @@
 	pickup_sound = 'sound/items/handling/gun/gun_pick_up.ogg'
 	drop_sound = 'sound/items/handling/gun/gun_drop.ogg'
 	sound_vary = TRUE
-	unique_reskin_changes_base_icon_state = TRUE
+
+	min_recoil = 0.1
 
 	///sound when inserting magazine
 	var/load_sound = 'sound/items/weapons/gun/general/magazine_insert_full.ogg'
@@ -276,7 +277,7 @@
 	burst_fire_selection = !burst_fire_selection
 	if(!burst_fire_selection)
 		burst_size = 1
-		fire_delay = 0
+		fire_delay = 0 SECONDS
 		balloon_alert(user, "switched to semi-automatic")
 	else
 		burst_size = initial(burst_size)
@@ -594,18 +595,22 @@
 	return ..()
 
 ///Installs a new suppressor, assumes that the suppressor is already in the contents of src
-/obj/item/gun/ballistic/proc/install_suppressor(obj/item/suppressor/S)
-	suppressed = S
-	update_weight_class(w_class + S.w_class) //so pistols do not fit in pockets when suppressed
+/obj/item/gun/ballistic/proc/install_suppressor(obj/item/suppressor/new_suppressor)
+	suppressor = new_suppressor
+	suppressed = suppressor.suppression
+	update_weight_class(w_class + suppressor.w_class) //so pistols do not fit in pockets when suppressed
+	can_muzzle_flash = FALSE
 	update_appearance()
 
 /obj/item/gun/ballistic/clear_suppressor()
 	if(!can_unsuppress)
 		return
-	if(isitem(suppressed))
-		var/obj/item/I = suppressed
-		update_weight_class(w_class - I.w_class)
-	return ..()
+	suppressed = SUPPRESSED_NONE
+	if(suppressor)
+		update_weight_class(w_class - suppressor.w_class)
+		suppressor = null
+	can_muzzle_flash = initial(can_muzzle_flash)
+	update_appearance()
 
 /obj/item/gun/ballistic/click_alt(mob/user)
 	if(!suppressed || !can_unsuppress)

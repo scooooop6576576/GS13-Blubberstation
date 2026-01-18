@@ -8,6 +8,7 @@
 		/obj/structure/closet/crate/large,
 		/obj/structure/closet/crate/mail,
 		/obj/structure/closet/crate/wooden,
+		/obj/structure/closet/crate/cardboard,
 		)
 
 /datum/export/large/crate/total_printout(datum/export_report/ex, notes = TRUE) // That's why a goddamn metal crate costs that much.
@@ -36,7 +37,13 @@
 	unit_name = "coffin"
 	export_types = list(/obj/structure/closet/crate/coffin)
 
-/datum/export/large/reagent_dispenser
+/datum/export/crate/cardboard
+	cost = CARGO_CRATE_VALUE/5
+	unit_name = "cardboard box"
+	export_types = list(/obj/structure/closet/crate/cardboard, /obj/structure/closet/cardboard)
+
+/datum/export/reagent_dispenser
+	abstract_type = /datum/export/reagent_dispenser
 	cost = CARGO_CRATE_VALUE * 0.5 // +0-400 depending on amount of reagents left
 	var/contents_cost = CARGO_CRATE_VALUE * 0.8
 

@@ -42,16 +42,48 @@
 	return stuff
 
 /datum/action/cooldown/spell/aoe/moon_ringleader/cast_on_thing_in_aoe(mob/living/carbon/victim, mob/living/caster)
-	var/victim_sanity = victim.mob_mood.sanity
+	var/mob/living/basic/illusion/shover/shove_clone = new(pick(RANGE_TURFS(2, victim)))
+	shove_clone.full_setup(
+		caster,
+		target_mob = victim,
+		faction = caster.faction,
+		life = 30 SECONDS,
+		hp = caster.health,
+		damage = 1,
+		replicate = 0,
+	)
+	shove_clone.AddElement(/datum/element/relay_attackers)
+	RegisterSignal(shove_clone, COMSIG_ATOM_WAS_ATTACKED, PROC_REF(on_attacked))
 
-	victim.adjustOrganLoss(ORGAN_SLOT_BRAIN, 100 - victim_sanity, 160)
-	for(var/i in 1 to round((120 - victim_sanity) / 10))
-		victim.cause_hallucination(get_random_valid_hallucination_subtype(/datum/hallucination/body), name)
-	if(victim_sanity < 15)
-		victim.apply_status_effect(/datum/status_effect/moon_converted)
-		caster.log_message("made [victim] insane.", LOG_GAME)
-		victim.log_message("was driven insane by [caster]")
-	victim.mob_mood.adjust_sanity(victim_sanity * -0.5)
+/// Used by Ringleaders Rise, illusions created by this spell will explode when they are interacted with
+/datum/action/cooldown/spell/aoe/moon_ringleader/proc/on_attacked(mob/victim, atom/attacker)
+	SIGNAL_HANDLER
+	if(isliving(attacker))
+		var/mob/living/living_attacker = attacker
+		if(IS_HERETIC_OR_MONSTER(living_attacker)) // Heretics cant smack these guys to trigger their effects
+			return
+	playsound(victim, 'sound/items/party_horn.ogg', 30)
+	new /obj/effect/decal/cleanable/confetti(get_turf(victim))
+
+	for(var/mob/living/mob in range(3, victim))
+		if(IS_HERETIC_OR_MONSTER(mob))
+			continue
+		if(mob.can_block_magic(antimagic_flags))
+			continue
+
+		//If our moon heretic has their level 3 passive, we channel the amulet effect
+		var/mob/living/basic/illusion/fake_clone = victim
+		var/mob/living/living_owner = fake_clone.parent_mob_ref.resolve()
+		if(!living_owner)
+			continue
+		var/datum/status_effect/heretic_passive/moon/our_passive = living_owner.has_status_effect(/datum/status_effect/heretic_passive/moon)
+		// We channel the amulet before the "spell effects" so that people don't get converted after 1 clone goes off
+		our_passive?.amulet?.channel_amulet(living_owner, mob)
+
+		mob.AdjustStun(1 SECONDS)
+		mob.AdjustKnockdown(1 SECONDS)
+		mob.adjust_organ_loss(ORGAN_SLOT_BRAIN, 50, 150)
+		mob.mob_mood?.adjust_sanity(-50)
 
 
 /obj/effect/temp_visual/moon_ringleader

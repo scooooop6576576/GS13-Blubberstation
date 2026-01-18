@@ -153,7 +153,7 @@
 
 // This is where stun gets applied
 /obj/item/melee/baton/afterattack(atom/target, mob/user, list/modifiers, list/attack_modifiers)
-	if(!isliving(target) || !active || !COOLDOWN_FINISHED(src, cooldown_check) || HAS_TRAIT_FROM(target, TRAIT_IWASBATONED, REF(user)))
+	if(!isliving(target) || !active || !COOLDOWN_FINISHED(src, cooldown_check) || HAS_TRAIT_FROM(target, TRAIT_IWASBATONED, REF(user)) || QDELETED(target))
 		return
 	// worst check in the chain but - right click = harmbaton
 	if(LAZYACCESS(modifiers, RIGHT_CLICK) && !stun_on_harmbaton)
@@ -808,6 +808,56 @@
 /obj/item/melee/baton/security/loaded/hos
 	preload_cell_type = /obj/item/stock_parts/power_store/cell/super
 
+// Stunsword Skins
+/datum/atom_skin/stunsword
+	abstract_type = /datum/atom_skin/stunsword
+	change_inhand_icon_state = TRUE
+	change_base_icon_state = TRUE
+
+/datum/atom_skin/stunsword/default
+	preview_name = "Default"
+	new_icon_state = "stunsword"
+
+/datum/atom_skin/stunsword/energy
+	preview_name = "Energy"
+	new_icon_state = "stunsword_energy"
+
+///Stun Sword
+/obj/item/melee/baton/security/stunsword
+	name = "\improper NT-20 'Excalibur' Stunsword"
+	desc = "It's a sword. It stuns. What more could you want?"
+	icon_state = "stunsword"
+	inhand_icon_state = "stunsword"
+	base_icon_state = "stunsword"
+	lefthand_file = 'icons/mob/inhands/64x64_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/64x64_righthand.dmi'
+	hitsound = 'sound/items/weapons/bladeslice.ogg'
+	attack_verb_continuous = list("attacks", "slashes", "slices", "tears", "lacerates", "rips", "dices", "cuts")
+	attack_verb_simple = list("attack", "slash", "slice", "tear", "lacerate", "rip", "dice", "cut")
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	w_class = WEIGHT_CLASS_HUGE
+	sharpness = SHARP_EDGED
+	force = 30
+	throwforce = 10
+	wound_bonus = 0
+	exposed_wound_bonus = 30
+	stun_armour_penetration = 40
+	throw_stun_chance = 60
+	convertible = FALSE
+
+	obj_flags = UNIQUE_RENAME
+
+/obj/item/melee/baton/security/stunsword/Initialize(mapload)
+	. = ..()
+	AddComponent(/datum/component/reskinable_item, /datum/atom_skin/stunsword)
+
+/obj/item/melee/baton/security/stunsword/add_deep_lore()
+	return
+
+/obj/item/melee/baton/security/stunsword/loaded
+	preload_cell_type = /obj/item/stock_parts/power_store/cell/bluespace // 40% stun_armour_penetration
+
 //Makeshift stun baton. Replacement for stun gloves.
 /obj/item/melee/baton/security/cattleprod
 	name = "stunprod"
@@ -830,7 +880,7 @@
 	slot_flags = ITEM_SLOT_BACK
 	convertible = FALSE
 	active_changes_inhand = FALSE
-	tip_changes_color = FALSE
+	custom_materials = list(/datum/material/iron = SHEET_MATERIAL_AMOUNT * 1.15, /datum/material/glass = SMALL_MATERIAL_AMOUNT * 2)
 	var/obj/item/assembly/igniter/sparkler
 	///Determines whether or not we can improve the cattleprod into a new type. Prevents turning the cattleprod subtypes into different subtypes, or wasting materials on making it....another version of itself.
 	var/can_upgrade = TRUE
@@ -915,6 +965,7 @@
 	inhand_icon_state = "teleprod"
 	slot_flags = null
 	can_upgrade = FALSE
+	custom_materials = list(/datum/material/iron = SHEET_MATERIAL_AMOUNT * 1.15, /datum/material/bluespace = SHEET_MATERIAL_AMOUNT, /datum/material/glass = SMALL_MATERIAL_AMOUNT * 2)
 
 /obj/item/melee/baton/security/cattleprod/teleprod/clumsy_check(mob/living/carbon/human/user)
 	. = ..()
@@ -1000,7 +1051,7 @@
 	randomize_state()
 
 	// blocks any melee/throwable attacks
-	owner.adjustStaminaLoss(5)
+	owner.adjust_stamina_loss(5)
 	final_block_chance = 100
 
 	// counterattack at melee

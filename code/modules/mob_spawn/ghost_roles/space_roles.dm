@@ -14,9 +14,10 @@
 	important_text = "Work as a team with your fellow survivors and do not abandon them."
 	outfit = /datum/outfit/oldsec
 	spawner_job_path = /datum/job/ancient_crew
+	allow_custom_character = GHOSTROLE_TAKE_PREFS_APPEARANCE
 
-/obj/effect/mob_spawn/ghost_role/human/oldsec/Destroy()
-	new/obj/structure/showcase/machinery/oldpod/used(drop_location())
+/obj/effect/mob_spawn/ghost_role/human/oldstation/Destroy()
+	new /obj/structure/showcase/machinery/oldpod/used(drop_location())
 	return ..()
 
 /datum/outfit/oldsec
@@ -111,6 +112,7 @@
 	outfit = /datum/outfit/syndicate_empty/battlecruiser
 	spawner_job_path = /datum/job/battlecruiser_crew
 	uses = 4
+	allow_custom_character = ALL
 
 	/// The antag team to apply the player to
 	var/datum/team/antag_team
@@ -200,6 +202,7 @@
 	important_text = "Work as a team with your fellow actors and the director to make entertainment for the masses."
 	outfit = /datum/outfit/actor
 	spawner_job_path = /datum/job/ghost_role
+	allow_custom_character = ALL
 
 /datum/outfit/actor
 	name = "Actor"
@@ -224,6 +227,7 @@
 	important_text = "Work as a team with your fellow actors and the director to make entertainment for the masses."
 	outfit = /datum/outfit/actor/director
 	spawner_job_path = /datum/job/ghost_role
+	allow_custom_character = ALL
 
 /datum/outfit/actor/director
 	name = "Director"

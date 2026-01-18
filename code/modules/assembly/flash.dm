@@ -10,6 +10,7 @@
 	righthand_file = 'icons/mob/inhands/equipment/security_righthand.dmi'
 	throwforce = 0
 	w_class = WEIGHT_CLASS_TINY
+	assembly_flags = ASSEMBLY_NO_DUPLICATES
 	custom_materials = list(/datum/material/iron = SMALL_MATERIAL_AMOUNT*3, /datum/material/glass = SMALL_MATERIAL_AMOUNT*3)
 	light_system = OVERLAY_LIGHT //Used as a flash here.
 	light_range = FLASH_LIGHT_RANGE
@@ -170,13 +171,30 @@
 		if(flash_result == FLASH_COMPLETED)
 			return //Behavior was overwritten, so we just skip the flashy stunny part and go with the override behavior instead
 
-		if(flash_result)
-			flashed.set_confusion_if_lower(confusion_duration * CONFUSION_STACK_MAX_MULTIPLIER)
-			visible_message(span_danger("[user] blinds [flashed] with the flash!"), span_userdanger("[user] blinds you with the flash!"))
+	if(flash_result != FLASH_COMPLETED) //If the behavior was overwritten, we just skip the flashy stunny part and go with the override behavior instead
+		if(issilicon(flashed))
+			if(flashed.is_blind())
+				var/flash_duration = rand(8,12) SECONDS
+				flashed.Paralyze(flash_duration)
+				flashed.set_temp_blindness_if_lower(flash_duration)
+				if(user)
+					user.visible_message(span_warning("[user] overloads [flashed]'s sensors and computing with the flash!"), span_danger("You overload [flashed]'s sensors and computing with the flash!"))
+				else
+					to_chat(flashed, "[src] overloads your sensors and computing!")
+			else
+				flashed.set_temp_blindness_if_lower( (rand(5,15) SECONDS))
+				if(user)
+					user.visible_message(span_warning("[user] blinds [flashed] with the flash!"), span_danger("You blind [flashed] with the flash!"))
+				else
+					to_chat(flashed, "You're blinded by [src]!")
+		else
 			//easy way to make sure that you can only long stun someone who is facing in your direction
-			flashed.adjustStaminaLoss(rand(80, 120) * (1 - (deviation * 0.5)))
+			flashed.adjust_stamina_loss(rand(80, 120) * (1 - (deviation * 0.5)))
 			flashed.Knockdown(rand(25, 50) * (1 - (deviation * 0.5)))
-			SEND_SIGNAL(user, COMSIG_MOB_SUCCESSFUL_FLASHED_CARBON, flashed, src, deviation)
+			if(user)
+				visible_message(span_danger("[user] blinds [flashed] with the flash!"), span_userdanger("[user] blinds you with the flash!"))
+			else
+				to_chat(flashed, "You're blinded by [src]!")
 
 		else if(user)
 			visible_message(span_warning("[user] fails to blind [flashed] with the flash!"), span_danger("[user] fails to blind you with the flash!"))

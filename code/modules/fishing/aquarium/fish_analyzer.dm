@@ -69,9 +69,27 @@
 	ui_interact(user)
 	return ITEM_INTERACT_SUCCESS
 
-/obj/item/fish_analyzer/ui_interact(mob/user, datum/tgui/ui)
-	if(isnull(scanned_item?.resolve()))
+/obj/item/fish_analyzer/proc/register_scanned(atom/target)
+	scanned_object = target
+	RegisterSignal(target, COMSIG_QDELETING, PROC_REF(on_target_deleted))
+
+/obj/item/fish_analyzer/proc/unregister_scanned()
+	if(!scanned_object)
+		return
+	UnregisterSignal(scanned_object, COMSIG_QDELETING)
+	scanned_object = null
+
+/obj/item/fish_analyzer/proc/on_target_deleted()
+	SIGNAL_HANDLER
+	unregister_scanned()
+
+/obj/item/fish_analyzer/ui_interact(mob/living/user, datum/tgui/ui)
+	if(isnull(scanned_object))
 		balloon_alert(user, "no specimen data!")
+		return TRUE
+	if(istype(user) && !(scanned_object in (view(7, get_turf(src)) | user.get_equipped_items(INCLUDE_HELD))))
+		balloon_alert(user, "specimen data lost!")
+		unregister_scanned()
 		return TRUE
 
 	ui = SStgui.try_update_ui(user, src, ui)
@@ -79,7 +97,16 @@
 		ui = new(user, src, "FishAnalyzer")
 		ui.open()
 
-/obj/item/fish_analyzer/ui_static_data(mob/user)
+/obj/item/fish_analyzer/ui_status(mob/living/user, datum/ui_state/state)
+	if(!istype(user)) //observers shouldn't disrupt things.
+		return ..()
+	if(!scanned_object || !(scanned_object in (view(7, get_turf(src)) | user.get_equipped_items(INCLUDE_HELD))))
+		balloon_alert(user, "specimen data lost!")
+		unregister_scanned()
+		return UI_CLOSE
+	return ..()
+
+/obj/item/fish_analyzer/ui_data(mob/user)
 	var/list/data = list()
 	var/atom/scanned_object = scanned_item?.resolve()
 	data["fish_list"] = list()
