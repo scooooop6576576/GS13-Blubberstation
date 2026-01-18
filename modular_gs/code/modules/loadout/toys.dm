@@ -6,7 +6,7 @@
 /datum/loadout_item/toys/plush/metis_plush
 	name = "Nerdy Gote Plush"
 	item_path = /obj/item/toy/plush/gs13/metis
-	// ckeywhitelist = list("paraillegal", "Paraillegal") - made freely available at the owner's request awa
+	// ckeywhitelist = list("paraillegal", "Paraillegal") - made freely available at the owner's request
 
 /datum/loadout_item/toys/plush/rose_plush
 	name = "Plant Snake plush"
