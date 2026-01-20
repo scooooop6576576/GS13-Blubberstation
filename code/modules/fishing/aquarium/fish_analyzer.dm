@@ -21,8 +21,8 @@
 	greyscale_config_worn = /datum/greyscale_config/fish_analyzer_worn
 	///The color of the case. Used by grayscale configs and update_overlays()
 	var/case_color
-	///the item we have scanned
-	var/datum/weakref/scanned_item
+	///the atom (aquarium or fish) we have scanned
+	var/atom/scanned_object
 
 /obj/item/fish_analyzer/Initialize(mapload)
 	case_color = rgb(rand(16, 255), rand(16, 255), rand(16, 255))
@@ -42,6 +42,10 @@
 	register_item_context()
 	update_appearance()
 	AddComponent(/datum/component/adjust_fishing_difficulty, -3, ITEM_SLOT_HANDS)
+
+/obj/item/fish_analyzer/Destroy()
+	scanned_object = null
+	return ..()
 
 /obj/item/fish_analyzer/examine(mob/user)
 	. = ..()
@@ -64,8 +68,10 @@
 	if(!user.can_read(src) || user.is_blind())
 		return ITEM_INTERACT_BLOCKING
 
-	scanned_item = WEAKREF(target)
 	SEND_SIGNAL(src, COMSIG_FISH_ANALYZER_ANALYZE_STATUS, target, user)
+	if(target != scanned_object)
+		unregister_scanned()
+		register_scanned(target)
 	ui_interact(user)
 	return ITEM_INTERACT_SUCCESS
 
@@ -108,7 +114,6 @@
 
 /obj/item/fish_analyzer/ui_data(mob/user)
 	var/list/data = list()
-	var/atom/scanned_object = scanned_item?.resolve()
 	data["fish_list"] = list()
 	data["fish_scanned"] = FALSE
 
@@ -116,8 +121,7 @@
 		data["fish_scanned"] = TRUE
 		return extract_fish_info(data, scanned_object)
 
-	var/atom/movable/aquarium = scanned_object
-	for(var/obj/item/fish/fishie in aquarium)
+	for(var/obj/item/fish/fishie in scanned_object)
 		extract_fish_info(data, fishie)
 
 	return data
@@ -145,20 +149,20 @@
 		"fish_name" = fishie.name,
 		"fish_icon" = fishie.icon,
 		"fish_icon_state" = fishie.base_icon_state,
-		"fish_health" = fishie.status == FISH_DEAD ? 0 : PERCENT(fishie.get_health_percentage()),
-		"fish_size" = fishie.size,
-		"fish_weight" = fishie.weight,
 		"fish_food" = fishie.food.name,
 		"fish_food_color" = fishie.food::color,
 		"fish_min_temp" = fishie.required_temperature_min,
 		"fish_max_temp" = fishie.required_temperature_max,
-		"fish_hunger" = HAS_TRAIT(fishie, TRAIT_FISH_NO_HUNGER) ? 0 :  1 - fishie.get_hunger(),
 		"fish_fluid_compatible" = fishie.fish_flags & FISH_FLAG_SAFE_FLUID,
 		"fish_fluid_type" = fishie.required_fluid_type,
-		"fish_breed_timer" = round(max(fishie.breeding_wait - world.time, 0) / 10),
 		"fish_traits" = fish_traits,
 		"fish_evolutions" = fish_evolutions,
 		"fish_suitable_temp" = fishie.fish_flags & FISH_FLAG_SAFE_TEMPERATURE,
+		"fish_health" = fishie.status == FISH_DEAD ? 0 : PERCENT(fishie.get_health_percentage()),
+		"fish_size" = fishie.size,
+		"fish_weight" = fishie.weight,
+		"fish_hunger" = HAS_TRAIT(fishie, TRAIT_FISH_NO_HUNGER) ? 0 :  1 - fishie.get_hunger(),
+		"fish_breed_timer" = round(max(fishie.breeding_wait - world.time, 0) / 10),
 	))
 
 	return data

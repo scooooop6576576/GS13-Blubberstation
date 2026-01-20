@@ -82,9 +82,7 @@ There are several things that need to be remembered:
 
 	if(istype(w_uniform, /obj/item/clothing/under))
 		var/obj/item/clothing/under/uniform = w_uniform
-		// GS13 EDIT - force modular sprite update
-		w_uniform.update_modular_overlays(src, TRUE)
-		// GS13 END EDIT
+		w_uniform.update_modular_overlays(src, TRUE) 		// GS13 EDIT - force modular sprite update
 		update_hud_uniform(uniform)
 
 		if(HAS_TRAIT(uniform, TRAIT_NO_WORN_ICON) || (obscured_slots & HIDEJUMPSUIT))
@@ -367,7 +365,7 @@ There are several things that need to be remembered:
 		var/obj/item/bodypart/chest/my_chest = get_bodypart(BODY_ZONE_CHEST)
 		// SKYRAT EDIT ADDITION
 		if(!mutant_override)
-			my_chest?.worn_belt_offset?.apply_offset(neck_overlay)
+			my_chest?.worn_neck_offset?.apply_offset(neck_overlay)
 		// SKYRAT EDIT END
 		overlays_standing[NECK_LAYER] = neck_overlay
 
@@ -835,7 +833,7 @@ There are several things that need to be remembered:
 
 /// Modifies a sprite slightly to conform to female body shapes
 /proc/wear_female_version(icon_state, icon, type, greyscale_colors, mutant_styles) // BUBBER EDIT CHANGE - Digi female gender shaping
-	var/index = "[icon]-[icon_state]-[greyscale_colors][(mutant_styles & STYLE_DIGI) ? "-d" : ""]" // BUBBER EDIT CHANGE - Digi female gender shaping // GS13 EDIT CHANGE - added icon file to the index, so that icons for taur bodies don't get mixed with regular sprites
+	var/index = "[icon]-[icon_state]-[greyscale_colors][(mutant_styles & STYLE_DIGI) ? "-d" : ""]" // BUBBER EDIT CHANGE - Digi female gender shaping // GS13 EDIT CHANGE - added icon file to the index, so that icons for taur bodies don't get mixed with regular sprites	var/index = "[icon_state]-[greyscale_colors][(mutant_styles & STYLE_DIGI) ? "-d" : ""]" // BUBBER EDIT CHANGE - Digi female gender shaping
 	var/static/list/female_clothing_icons = list()
 	var/icon/female_clothing_icon = female_clothing_icons[index]
 	if(!female_clothing_icon) //Create standing/laying icons if they don't exist
@@ -1341,7 +1339,7 @@ mutant_styles: The mutant style - taur bodytype, STYLE_TESHARI, etc. // SKYRAT E
 	// hardcoding this here until bodypart updating is more sane
 	// we need to update clothing items that may have been affected by bodyshape updates
 	if(check_shapes & BODYSHAPE_DIGITIGRADE)
-		for(var/obj/item/thing as anything in get_equipped_items())
+		for(var/obj/item/thing as anything in get_equipped_items(INCLUDE_PROSTHETICS|INCLUDE_ABSTRACT))
 			if(thing.slot_flags & ignore_slots)
 				continue
 			if(thing.supports_variations_flags & DIGITIGRADE_VARIATIONS)

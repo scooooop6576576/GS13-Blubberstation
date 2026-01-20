@@ -13,9 +13,8 @@
 		TAG_DESTRUCTIVE = 0.2,
 		TAG_CHAOTIC = 0.2
 	)
-	storyteller_type = STORYTELLER_TYPE_CALM //GS edit: originally STORYTELLER_TYPE_ALWAYS_AVAILABLE
-	population_min = 60 //GS EDIT
-	
+	storyteller_type = STORYTELLER_TYPE_ALWAYS_AVAILABLE
+
 /datum/storyteller_data/tracks/fragile
 	threshold_mundane = 1200
 	threshold_moderate = 1800

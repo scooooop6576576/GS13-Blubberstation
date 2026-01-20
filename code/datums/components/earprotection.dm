@@ -1,6 +1,6 @@
 ///Whenever get_ear_protection() is called, this proc adds 'protection_value' to the wearer's natural ear protection.
 /datum/component/wearertargeting/earprotection
-	signals = list(COMSIG_CARBON_SOUNDBANG)
+	signals = list(COMSIG_LIVING_GET_EAR_PROTECTION)
 	mobtype = /mob/living/carbon
 	proctype = PROC_REF(reducebang)
 	//positive amount indicating how much protection this gives

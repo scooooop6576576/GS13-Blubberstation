@@ -16,9 +16,14 @@
 #define COMSIG_ORGAN_SURGICALLY_INSERTED "organ_surgically_inserted"
 /// Called when an organ finishes inserting into a bodypart (obj/item/bodypart/limb, movement_flags)
 #define COMSIG_ORGAN_BODYPART_INSERTED "organ_bodypart_inserted"
+/// Called when a organ's damage is adjusted apply_organ_damage (damage_amount, maximum, required_organ_flag)
+#define COMSIG_ORGAN_ADJUST_DAMAGE "organ_adjust_damage"
 
 ///Called when movement intent is toggled.
 #define COMSIG_MOVE_INTENT_TOGGLED "move_intent_toggled"
+
+/// Called when combat mode is toggled.
+#define COMSIG_COMBAT_MODE_TOGGLED "combat_mode_toggled"
 
 ///from base of mob/update_transform()
 #define COMSIG_LIVING_POST_UPDATE_TRANSFORM "living_post_update_transform"
@@ -315,6 +320,10 @@
 
 /// From /obj/machinery/gibber/startgibbing(): (mob/living/user, /obj/machinery/gibber, list/results)
 #define COMSIG_LIVING_GIBBER_ACT "living_gibber_act"
+
+/// From /mob/living/get_eye_protection() (list/reflist)
+#define COMSIG_LIVING_GET_EAR_PROTECTION "living_get_ear_protection"
+	#define EAR_PROTECTION_ARG 1
 
 /// Sent to the mob when their mind is slaved
 #define COMSIG_MOB_ENSLAVED_TO "mob_enslaved_to"

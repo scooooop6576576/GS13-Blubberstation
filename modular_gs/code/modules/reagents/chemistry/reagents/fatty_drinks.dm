@@ -117,7 +117,7 @@
 	M.adjust_jitter(-6 SECONDS * REM * seconds_per_tick)
 	M.AdjustSleeping(-20, FALSE)
 	if(M.getToxLoss() && prob(20))
-		M.adjustToxLoss(-1, 0)
+		M.adjust_tox_loss(-1, 0)
 	M.adjust_bodytemperature(20 * TEMPERATURE_DAMAGE_COEFFICIENT, 0, BODYTEMP_NORMAL)
 	if(M && M?.client?.prefs?.read_preference(/datum/preference/toggle/weight_gain_food)) // GS13
 		M.nutrition += 15 * REAGENTS_METABOLISM

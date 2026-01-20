@@ -4,7 +4,7 @@
 /obj/machinery/modular_computer
 	name = "modular computer"
 	desc = "The frame of an advanced computer" //This should only show up when building a computer, it should examine the processor instead
-	icon = 'modular_gs/icons/obj/machines/modular_console.dmi' //GS13 - GATOified some computer  icon states
+	icon = 'modular_gs/icons/obj/machines/modular_console.dmi' //GS13 - GATOified some computer  icon states	icon = 'icons/obj/machines/modular_console.dmi'
 	icon_state = "console"
 	idle_power_usage = BASE_MACHINE_IDLE_CONSUMPTION * 0.025
 	density = TRUE
@@ -202,7 +202,7 @@
 // "Stun" weapons can cause minor damage to components (short-circuits?)
 // "Burn" damage is equally strong against internal components and exterior casing
 // "Brute" damage mostly damages the casing.
-/obj/machinery/modular_computer/bullet_act(obj/projectile/proj)
-	return cpu?.projectile_hit(proj) || ..()
+/obj/machinery/modular_computer/projectile_hit(obj/projectile/hitting_projectile, def_zone, piercing_hit, blocked)
+	return cpu?.projectile_hit(hitting_projectile, def_zone, piercing_hit, blocked) || ..()
 
 #undef CPU_INTERACTABLE

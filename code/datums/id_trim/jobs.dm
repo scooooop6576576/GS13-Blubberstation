@@ -354,6 +354,7 @@
 		ACCESS_MORGUE,
 		ACCESS_SURGERY,
 		ACCESS_VIROLOGY,
+		ACCESS_PARAMEDIC,
 		)
 	template_access = list(
 		ACCESS_CAPTAIN,
@@ -435,6 +436,7 @@
 		ACCESS_RC_ANNOUNCE,
 		ACCESS_SURGERY,
 		ACCESS_VIROLOGY,
+		ACCESS_PARAMEDIC,
 	)
 	minimal_wildcard_access = list(
 		ACCESS_CMO,
@@ -470,7 +472,7 @@
 		ACCESS_HOP,
 		)
 	job = /datum/job/clown
-	honorifics = list("the Clown")
+	honorifics = list(" the Clown")
 	honorific_positions = HONORIFIC_POSITION_LAST_FULL | HONORIFIC_POSITION_NONE
 
 /datum/id_trim/job/cook
@@ -522,6 +524,7 @@
 		ACCESS_PSYCHOLOGY,
 		ACCESS_PHARMACY,
 		ACCESS_VIROLOGY,
+		ACCESS_PARAMEDIC,
 	)
 	template_access = list(
 		ACCESS_CAPTAIN,
@@ -802,6 +805,7 @@
 		ACCESS_PHARMACY,
 		ACCESS_SURGERY,
 		ACCESS_VIROLOGY,
+		ACCESS_PARAMEDIC,
 		)
 	template_access = list(
 		ACCESS_CAPTAIN,
@@ -830,7 +834,7 @@
 		ACCESS_HOP,
 		)
 	job = /datum/job/mime
-	honorifics = list("the Mime")
+	honorifics = list(" the Mime")
 	honorific_positions = HONORIFIC_POSITION_LAST_FULL | HONORIFIC_POSITION_NONE
 
 /datum/id_trim/job/paramedic
@@ -845,6 +849,7 @@
 		ACCESS_MAINT_TUNNELS,
 		ACCESS_MORGUE,
 		ACCESS_MECH_MEDICAL,
+		ACCESS_PARAMEDIC,
 		)
 	extra_access = list(
 		ACCESS_BIT_DEN,
@@ -1201,6 +1206,7 @@
 		ACCESS_PLUMBING,
 		ACCESS_SURGERY,
 		ACCESS_VIROLOGY,
+		ACCESS_PARAMEDIC,
 	)
 	honorifics = list("Orderly", "Officer")
 

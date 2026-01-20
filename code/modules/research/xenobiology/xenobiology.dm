@@ -18,7 +18,6 @@
 	///Which type of crossbred
 	var/crossbreed_modification
 	///Reagents required for activation
-	var/list/activate_reagents = list()
 	var/recurring = FALSE
 
 /obj/item/slime_extract/examine(mob/user)
@@ -89,11 +88,69 @@
 		target_slime.spawn_corecross()
 	return ITEM_INTERACT_SUCCESS
 
+/**
+* Effect when activated by selfsustaining crossbreed or rainbow slime
+*
+* * arg1 - The reaction being triggered. If null, a random reaction is picked
+*/
+/obj/item/slime_extract/proc/auto_activate_reaction(datum/chemical_reaction/slime/slime_reaction = null)
+	if(QDELETED(src))
+		return
+
+	if(isnull(slime_reaction))
+		var/list/slime_reactions = GLOB.slime_extract_auto_activate_reactions[type]
+		if(isnull(slime_reactions))
+			return
+		slime_reaction = pick(slime_reactions)
+
+	var/list/required_reagents = slime_reaction.required_reagents
+	for(var/datum/reagent/chem as anything in required_reagents)
+		reagents.add_reagent(chem, required_reagents[chem])
+
+/// An assoc list of slime extracts to their allowed recipes
+GLOBAL_LIST_INIT(slime_extract_auto_activate_reactions, init_slime_auto_activate_reaction_list())
+
+/proc/init_slime_auto_activate_reaction_list()
+	var/list/recipe_list = list()
+
+	// Only reactions with these reagent requirements are allowed to auto_activate
+	var/list/auto_activate_reagent_whistlist = list(
+		/datum/reagent/toxin/plasma,
+		/datum/reagent/water,
+		/datum/reagent/blood,
+		/datum/reagent/water/holywater,
+		/datum/reagent/uranium,
+		/datum/reagent/uranium/radium,
+		/datum/reagent/toxin/slimejelly
+	)
+
+	var/list/slime_extract_paths = subtypesof(/obj/item/slime_extract)
+	for(var/datum/chemical_reaction/slime/slime_reaction as anything in subtypesof(/datum/chemical_reaction/slime))
+		var/recipe_extract_type = slime_reaction.required_container
+		if(!(recipe_extract_type in slime_extract_paths))
+			continue
+
+		var/skip = FALSE
+		for(var/datum/reagent/chem as anything in slime_reaction.required_reagents)
+			if(!(chem in auto_activate_reagent_whistlist))
+				skip = TRUE
+				break
+		if(skip)
+			continue
+
+		var/list/recipes = recipe_list[recipe_extract_type]
+		if(!recipes)
+			recipes = list()
+			recipe_list[recipe_extract_type] = recipes
+		recipes.Add(new slime_reaction())
+
+	return recipe_list
+
+
 /obj/item/slime_extract/grey
 	name = "grey slime extract"
 	icon_state = "grey-core"
 	crossbreed_modification = "reproductive"
-	activate_reagents = list(/datum/reagent/blood,/datum/reagent/toxin/plasma,/datum/reagent/water)
 
 /obj/item/slime_extract/grey/activate(mob/living/carbon/human/user, datum/species/jelly/luminescent/species, activation_type)
 	switch(activation_type)
@@ -118,7 +175,6 @@
 	name = "gold slime extract"
 	icon_state = "gold-core"
 	crossbreed_modification = "symbiont"
-	activate_reagents = list(/datum/reagent/blood,/datum/reagent/toxin/plasma,/datum/reagent/water)
 
 
 
@@ -149,7 +205,6 @@
 	name = "silver slime extract"
 	icon_state = "silver-core"
 	crossbreed_modification = "consuming"
-	activate_reagents = list(/datum/reagent/toxin/plasma,/datum/reagent/water)
 
 
 
@@ -177,7 +232,6 @@
 	name = "metal slime extract"
 	icon_state = "metal-core"
 	crossbreed_modification = "industrial"
-	activate_reagents = list(/datum/reagent/toxin/plasma,/datum/reagent/water)
 
 /obj/item/slime_extract/metal/activate(mob/living/carbon/human/user, datum/species/jelly/luminescent/species, activation_type)
 	switch(activation_type)
@@ -201,7 +255,6 @@
 	name = "purple slime extract"
 	icon_state = "purple-core"
 	crossbreed_modification = "regenerative"
-	activate_reagents = list(/datum/reagent/blood,/datum/reagent/toxin/plasma)
 
 /obj/item/slime_extract/purple/activate(mob/living/carbon/human/user, datum/species/jelly/luminescent/species, activation_type)
 	switch(activation_type)
@@ -220,7 +273,6 @@
 	name = "dark purple slime extract"
 	icon_state = "dark-purple-core"
 	crossbreed_modification = "self-sustaining"
-	activate_reagents = list(/datum/reagent/toxin/plasma)
 
 /obj/item/slime_extract/darkpurple/activate(mob/living/carbon/human/user, datum/species/jelly/luminescent/species, activation_type)
 	switch(activation_type)
@@ -243,7 +295,6 @@
 	name = "orange slime extract"
 	icon_state = "orange-core"
 	crossbreed_modification = "burning"
-	activate_reagents = list(/datum/reagent/blood,/datum/reagent/toxin/plasma,/datum/reagent/water)
 
 /obj/item/slime_extract/orange/activate(mob/living/carbon/human/user, datum/species/jelly/luminescent/species, activation_type)
 	switch(activation_type)
@@ -263,7 +314,6 @@
 	name = "yellow slime extract"
 	icon_state = "yellow-core"
 	crossbreed_modification = "charged"
-	activate_reagents = list(/datum/reagent/blood,/datum/reagent/toxin/plasma,/datum/reagent/water)
 
 /obj/item/slime_extract/yellow/activate(mob/living/carbon/human/user, datum/species/jelly/luminescent/species, activation_type)
 	switch(activation_type)
@@ -278,7 +328,8 @@
 		if(SLIME_ACTIVATE_MAJOR)
 			user.visible_message(span_warning("[user]'s skin starts flashing intermittently..."), span_warning("Your skin starts flashing intermittently..."))
 			if(do_after(user, 2.5 SECONDS, target = user))
-				empulse(user, 1, 2)
+				empulse(user, 1, 2, emp_source = src)
+				user.log_message("triggered EMP using [src] in [AREACOORD(src)]", LOG_GAME)
 				user.visible_message(span_warning("[user]'s skin flashes!"), span_warning("Your skin flashes as you emit an electromagnetic pulse!"))
 				return 600
 
@@ -286,7 +337,6 @@
 	name = "red slime extract"
 	icon_state = "red-core"
 	crossbreed_modification = "sanguine"
-	activate_reagents = list(/datum/reagent/blood,/datum/reagent/toxin/plasma,/datum/reagent/water)
 
 /obj/item/slime_extract/red/activate(mob/living/carbon/human/user, datum/species/jelly/luminescent/species, activation_type)
 	switch(activation_type)
@@ -306,7 +356,6 @@
 	name = "blue slime extract"
 	icon_state = "blue-core"
 	crossbreed_modification = "stabilized"
-	activate_reagents = list(/datum/reagent/blood,/datum/reagent/toxin/plasma,/datum/reagent/water)
 
 /obj/item/slime_extract/blue/activate(mob/living/carbon/human/user, datum/species/jelly/luminescent/species, activation_type)
 	switch(activation_type)
@@ -325,7 +374,6 @@
 	name = "dark blue slime extract"
 	icon_state = "dark-blue-core"
 	crossbreed_modification = "chilling"
-	activate_reagents = list(/datum/reagent/toxin/plasma,/datum/reagent/water)
 
 /obj/item/slime_extract/darkblue/activate(mob/living/carbon/human/user, datum/species/jelly/luminescent/species, activation_type)
 	switch(activation_type)
@@ -348,7 +396,6 @@
 	name = "pink slime extract"
 	icon_state = "pink-core"
 	crossbreed_modification = "gentle"
-	activate_reagents = list(/datum/reagent/blood,/datum/reagent/toxin/plasma)
 
 /obj/item/slime_extract/pink/activate(mob/living/carbon/human/user, datum/species/jelly/luminescent/species, activation_type)
 	switch(activation_type)
@@ -376,7 +423,6 @@
 	name = "green slime extract"
 	icon_state = "green-core"
 	crossbreed_modification = "mutative"
-	activate_reagents = list(/datum/reagent/blood,/datum/reagent/toxin/plasma,/datum/reagent/uranium/radium)
 
 /obj/item/slime_extract/green/activate(mob/living/carbon/human/user, datum/species/jelly/luminescent/species, activation_type)
 	switch(activation_type)
@@ -400,7 +446,6 @@
 	name = "light pink slime extract"
 	icon_state = "light-pink-core"
 	crossbreed_modification = "loyal"
-	activate_reagents = list(/datum/reagent/toxin/plasma)
 
 /obj/item/slime_extract/lightpink/activate(mob/living/carbon/human/user, datum/species/jelly/luminescent/species, activation_type)
 	switch(activation_type)
@@ -424,7 +469,6 @@
 	name = "black slime extract"
 	icon_state = "black-core"
 	crossbreed_modification = "transformative"
-	activate_reagents = list(/datum/reagent/toxin/plasma)
 
 /obj/item/slime_extract/black/activate(mob/living/carbon/human/user, datum/species/jelly/luminescent/species, activation_type)
 	switch(activation_type)
@@ -445,7 +489,6 @@
 	name = "oil slime extract"
 	icon_state = "oil-core"
 	crossbreed_modification = "detonating"
-	activate_reagents = list(/datum/reagent/blood,/datum/reagent/toxin/plasma)
 
 /obj/item/slime_extract/oil/activate(mob/living/carbon/human/user, datum/species/jelly/luminescent/species, activation_type)
 	switch(activation_type)
@@ -469,7 +512,6 @@
 	name = "adamantine slime extract"
 	icon_state = "adamantine-core"
 	crossbreed_modification = "crystalline"
-	activate_reagents = list(/datum/reagent/toxin/plasma)
 
 /obj/item/slime_extract/adamantine/activate(mob/living/carbon/human/user, datum/species/jelly/luminescent/species, activation_type)
 	switch(activation_type)
@@ -499,7 +541,6 @@
 	name = "bluespace slime extract"
 	icon_state = "bluespace-core"
 	crossbreed_modification = "warping"
-	activate_reagents = list(/datum/reagent/blood,/datum/reagent/toxin/plasma)
 	var/teleport_ready = FALSE
 	var/teleport_x = 0
 	var/teleport_y = 0
@@ -535,7 +576,6 @@
 	name = "pyrite slime extract"
 	icon_state = "pyrite-core"
 	crossbreed_modification = "prismatic"
-	activate_reagents = list(/datum/reagent/blood,/datum/reagent/toxin/plasma)
 
 /obj/item/slime_extract/pyrite/activate(mob/living/carbon/human/user, datum/species/jelly/luminescent/species, activation_type)
 	switch(activation_type)
@@ -562,7 +602,6 @@
 	name = "cerulean slime extract"
 	icon_state = "cerulean-core"
 	crossbreed_modification = "recurring"
-	activate_reagents = list(/datum/reagent/blood,/datum/reagent/toxin/plasma)
 
 /obj/item/slime_extract/cerulean/activate(mob/living/carbon/human/user, datum/species/jelly/luminescent/species, activation_type)
 	switch(activation_type)
@@ -582,7 +621,6 @@
 	name = "sepia slime extract"
 	icon_state = "sepia-core"
 	crossbreed_modification = "lengthened"
-	activate_reagents = list(/datum/reagent/blood,/datum/reagent/toxin/plasma,/datum/reagent/water)
 
 /obj/item/slime_extract/sepia/activate(mob/living/carbon/human/user, datum/species/jelly/luminescent/species, activation_type)
 	switch(activation_type)
@@ -604,7 +642,6 @@
 	name = "rainbow slime extract"
 	icon_state = "rainbow-core"
 	crossbreed_modification = "hyperchromatic"
-	activate_reagents = list(/datum/reagent/blood,/datum/reagent/toxin/plasma,"lesser plasma",/datum/reagent/toxin/slimejelly,"holy water and uranium") //Curse this snowflake reagent list.
 
 /obj/item/slime_extract/rainbow/activate(mob/living/carbon/human/user, datum/species/jelly/luminescent/species, activation_type)
 	switch(activation_type)

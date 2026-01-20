@@ -66,8 +66,10 @@
 		give_return = tgui_alert(user, "Do you want to give them the power to return? Not recommended for non-admins.", "IC Quick Spawn", list("No", "Yes"))
 		if(!give_return)
 			return
-		var/initial_outfits = tgui_alert(usr, "Select outfit", "Quick Dress", list("Bluespace Tech", "Show All", "Cancel"))
-		if (initial_outfits == "Cancel")
+
+	if(character_option == character_options[1])
+		give_quirks_loadout = tgui_input_list(user, "Include quirks/loadout?", "IC Quick Spawn", quirk_loadout_options)
+		if(!give_quirks_loadout)
 			return
 
 	var/turf/current_turf = get_turf(target)
@@ -112,7 +114,7 @@
 		new /obj/effect/pod_landingzone(current_turf, empty_pod)
 
 /client/proc/robust_dress_shop_skyrat()
-	var/list/baseoutfits = list("Naked","Custom","As Job...", "As Plasmaman...")
+	var/list/baseoutfits = list("Custom","As Job...", "As Plasmaman...")
 	var/list/outfits = list()
 	var/list/paths = subtypesof(/datum/outfit) - typesof(/datum/outfit/job) - typesof(/datum/outfit/plasmaman)
 

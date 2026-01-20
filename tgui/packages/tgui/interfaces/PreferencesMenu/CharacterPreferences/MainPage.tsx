@@ -3,10 +3,8 @@ import { filter, map } from 'es-toolkit/compat';
 import { type ReactNode, useState } from 'react';
 import { type sendAct, useBackend } from 'tgui/backend';
 import {
-  BlockQuote,
   Box,
   Button,
-  Divider,
   Floating,
   Input,
   LabeledList,
@@ -26,7 +24,7 @@ import {
   type FeatureChoicedServerData,
   FeatureValueInput,
 } from '../preferences/features/base';
-import { GENDERS, Gender } from '../preferences/gender';
+import { Gender, GENDERS } from '../preferences/gender';
 import {
   createSetPreference,
   type PreferencesMenuData,
@@ -533,6 +531,7 @@ export function MainPage(props: MainPageProps) {
     ...data.character_preferences.gs13_examine_prefs,
   };
   // GS13 END EDIT
+
   // BUBBER EDIT ADDITION BEGIN: SWAPPABLE PREF MENUS
   enum PrefPage {
     Visual, // The visual parts
@@ -812,6 +811,8 @@ export function MainPage(props: MainPageProps) {
               <Stack.Item>{prefPageContents}</Stack.Item>
             </Stack>
             {/* GS13 END EDIT */}
+            </Stack>
+            {prefPageContents}
           </Stack>
         </Stack.Item>
         {/* BUBBER EDIT CHANGE END: Swappable pref menus */}

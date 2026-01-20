@@ -1,4 +1,3 @@
-//GS13 - removed donator plushies from Bubbermain
 //Title Capitalization for names please!!!
 
 /datum/loadout_category/toys
@@ -15,7 +14,6 @@
 	name = "Lovers Moth Plushie"
 	item_path = /obj/item/toy/plush/moth/lovers
 	donator_only = TRUE //Donor item for Basicguy20
-*/
 
 /datum/loadout_item/toys/plush/chirp_plush
 	name = "Chirpy Synth Plushie"
@@ -38,6 +36,7 @@
 /datum/loadout_item/toys/plush/headcrab
 	name = "Headcrab Plushie"
 	item_path = /obj/item/toy/plush/headcrab
+	donator_only = TRUE
 
 /datum/loadout_item/toys/plush/Bellybird
 	name = "Belly Bird Plushie"

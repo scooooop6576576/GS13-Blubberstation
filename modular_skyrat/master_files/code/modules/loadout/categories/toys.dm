@@ -1,5 +1,3 @@
-//GS13 - removed donator plushies irrelevant to GS13
-
 /datum/loadout_category/toys
 	category_name = "Toys"
 	category_ui_icon = FA_ICON_GOLF_BALL

@@ -1,8 +1,7 @@
 /datum/action/cooldown/spell/aoe/moon_ringleader
 	name = "Ringleaders Rise"
-	desc = "Big AoE spell that deals brain damage and causes hallucinations to everyone in the AoE. \
-			The worse their sanity, the stronger this spell becomes. \
-			If their sanity is low enough, they even snap and go insane, and the spell then further halves their sanity."
+	desc = "Big AoE spell that summons copies of you. \
+			If any copies are attacked, they cause brain damage, sanity damage, and will briefly stun everyone nearby."
 	background_icon_state = "bg_heretic"
 	overlay_icon_state = "bg_heretic_border"
 	button_icon = 'icons/mob/actions/actions_ecult.dmi'
@@ -11,7 +10,7 @@
 
 	school = SCHOOL_FORBIDDEN
 	cooldown_time = 1 MINUTES
-	antimagic_flags = MAGIC_RESISTANCE|MAGIC_RESISTANCE_MIND
+	antimagic_flags = MAGIC_RESISTANCE_MOON
 	invocation = "R'S 'E!"
 	invocation_type = INVOCATION_SHOUT
 	spell_requirements = NONE
@@ -22,6 +21,7 @@
 
 /datum/action/cooldown/spell/aoe/moon_ringleader/cast(mob/living/caster)
 	new moon_effect(get_turf(caster))
+	caster.faction |= "ringleader([REF(caster)])"
 	return ..()
 
 /datum/action/cooldown/spell/aoe/moon_ringleader/get_things_to_cast_on(atom/center, radius_override)
@@ -30,9 +30,9 @@
 	for(var/mob/living/carbon/nearby_mob in o_range)
 		if(nearby_mob.stat == DEAD)
 			continue
-		if(!nearby_mob.mob_mood)
-			continue
 		if(IS_HERETIC_OR_MONSTER(nearby_mob))
+			continue
+		if(issilicon(nearby_mob))
 			continue
 		if(nearby_mob.can_block_magic(antimagic_flags))
 			continue
@@ -85,6 +85,7 @@
 		mob.adjust_organ_loss(ORGAN_SLOT_BRAIN, 50, 150)
 		mob.mob_mood?.adjust_sanity(-50)
 
+	qdel(victim)
 
 /obj/effect/temp_visual/moon_ringleader
 	icon = 'icons/effects/eldritch.dmi'

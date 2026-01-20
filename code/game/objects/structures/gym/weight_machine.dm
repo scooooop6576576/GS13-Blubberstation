@@ -178,7 +178,6 @@
 			puncher.work_out(4, 0)
 			//GS13 EDIT END
 
-
 	end_workout()
 
 /obj/structure/weightmachine/proc/end_workout()

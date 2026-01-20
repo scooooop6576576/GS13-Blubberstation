@@ -1,3 +1,7 @@
+/*!
+ * Contains the eldritch robes for heretics, a suit of armor that they can make via a ritual
+ */
+
 // Eldritch armor. Looks cool, hood lets you cast heretic spells.
 /obj/item/clothing/suit/hooded/cultrobes/eldritch
 	name = "ominous armor"
@@ -69,33 +73,342 @@
 	worn_icon = 'icons/mob/clothing/head/helmet.dmi'
 	icon_state = "helmet"
 	desc = "A torn, dust-caked hood. Strange eyes line the inside."
-	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR|HIDESNOUT
-	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH | PEPPERPROOF
-	flash_protect = FLASH_PROTECTION_WELDER
+	flags_inv = HIDEMASK | HIDEEARS | HIDEEYES | HIDEFACE | HIDEHAIR | HIDEFACIALHAIR | HIDESNOUT
+	flags_cover = HEADCOVERSEYES | PEPPERPROOF
+	flash_protect = FLASH_PROTECTION_WELDER_HYPER_SENSITIVE
+	resistance_flags = FIRE_PROOF | UNACIDABLE | ACID_PROOF
+	clothing_flags = THICKMATERIAL | PLASMAMAN_PREVENT_IGNITION | SNUG_FIT
+	armor_type = /datum/armor/eldritch_armor
 
 /obj/item/clothing/head/hooded/cult_hoodie/eldritch/Initialize(mapload)
 	. = ..()
 	AddElement(/datum/element/heretic_focus)
 
-/obj/item/clothing/suit/hooded/cultrobes/eldritch
-	name = "ominous armor"
-	desc = "A ragged, dusty set of robes. Strange eyes line the inside."
-	icon_state = "eldritch_armor"
-	inhand_icon_state = null
-	flags_inv = HIDESHOES|HIDEJUMPSUIT
-	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
-	allowed = list(/obj/item/melee/sickly_blade, /obj/item/gun/ballistic/rifle/lionhunter)
-	hoodtype = /obj/item/clothing/head/hooded/cult_hoodie/eldritch
-	// Slightly better than normal cult robes
-	armor_type = /datum/armor/cultrobes_eldritch
-	/// Whether the hood is flipped up
-	var/hood_up = FALSE
-
-/datum/armor/cultrobes_eldritch
+/datum/armor/eldritch_armor
 	melee = 50
 	bullet = 50
 	laser = 50
 	energy = 50
+	bomb = 35
+	bio = 20
+	fire = 20
+	acid = 20
+	wound = 20
+
+//---- Path-Specific Eldritch Robes, First is robes, then is hood
+
+// Ash
+// Prevents fire from decaying while worn, also passively generates fire via the toggle
+/obj/item/clothing/suit/hooded/cultrobes/eldritch/ash
+	name = "\improper Scorched Mantle"
+	desc = "Left to burn to tatters, what remains is naught but a blackened echo of the mantle of the Watch. \
+		Yet the soot-choked folds turn blade and flame from the form within. A brief reprieve before its gaze turns inwards."
+	icon_state = "ash_armor"
+	hoodtype = /obj/item/clothing/head/hooded/cult_hoodie/eldritch/ash
+	armor_type = /datum/armor/eldritch_armor/ash
+	flags_inv = HIDEBELT
+	body_parts_covered = FULL_BODY
+	heat_protection = FULL_BODY
+	max_heat_protection_temperature = 50000
+	cold_protection = FULL_BODY
+	min_cold_protection_temperature = SPACE_HELM_MIN_TEMP_PROTECT
+	resistance_flags = FIRE_PROOF | UNACIDABLE | ACID_PROOF | LAVA_PROOF | FREEZE_PROOF
+	actions_types = list(/datum/action/item_action/toggle/flames)
+	/// If our robes are actively generating flames
+	var/flame_generation = FALSE
+	/// Cooldown before our robes will create new flames
+	COOLDOWN_DECLARE(flame_creation)
+
+/obj/item/clothing/suit/hooded/cultrobes/eldritch/ash/Initialize(mapload)
+	. = ..()
+	AddElement(/datum/element/radiation_protected_clothing)
+
+/obj/item/clothing/suit/hooded/cultrobes/eldritch/ash/on_robes_gained(mob/living/user)
+	if(!isliving(user))
+		return
+	var/mob/living/wearer = user
+	wearer.fire_stack_decay_rate = 0
+
+/obj/item/clothing/suit/hooded/cultrobes/eldritch/ash/on_robes_lost(mob/living/user)
+	if(!isliving(user))
+		return
+	var/mob/living/wearer = user
+	wearer.fire_stack_decay_rate = initial(wearer.fire_stack_decay_rate)
+	if(flame_generation)
+		toggle_flames(wearer)
+
+/obj/item/clothing/suit/hooded/cultrobes/eldritch/ash/robes_side_effect(mob/living/user)
+	if(!iscarbon(user))
+		return
+	var/mob/living/carbon/victim = user
+	var/iteration = 0
+	for(var/obj/item/bodypart/limb as anything in victim.bodyparts)
+		if(istype(limb, /obj/item/bodypart/head) || istype(limb, /obj/item/bodypart/chest))
+			continue
+		iteration++
+		addtimer(CALLBACK(src, PROC_REF(burn_limbs), limb), 1 SECONDS * iteration)
+
+/obj/item/clothing/suit/hooded/cultrobes/eldritch/ash/proc/burn_limbs(obj/item/bodypart/limb)
+	if(QDELETED(limb) || !limb.owner || !is_equipped(limb.owner))
+		return
+	limb.dismember(BURN)
+
+/datum/action/item_action/toggle/flames
+	button_icon = 'icons/effects/magic.dmi'
+	button_icon_state = "fireball"
+
+/datum/action/item_action/toggle/flames/do_effect(trigger_flags)
+	var/obj/item/clothing/suit/hooded/cultrobes/eldritch/ash/item_target = target
+	if(!item_target || !istype(item_target))
+		return FALSE
+	item_target.toggle_flames(owner)
+
+/// Starts/Stops the passive generation of fire stacks on our wearer
+/obj/item/clothing/suit/hooded/cultrobes/eldritch/ash/proc/toggle_flames(mob/living/user)
+	flame_generation = !flame_generation
+
+	if(flame_generation)
+		START_PROCESSING(SSobj, src)
+	else
+		user.extinguish()
+		STOP_PROCESSING(SSobj, src)
+
+	user.balloon_alert(user, flame_generation ? "enabled" : "disabled")
+	user.fire_stack_decay_rate = flame_generation ? 0 : initial(user.fire_stack_decay_rate)
+	// Extinguishes the wearer after they disable the flames
+
+/obj/item/clothing/suit/hooded/cultrobes/eldritch/ash/process(seconds_per_tick)
+	if(!COOLDOWN_FINISHED(src, flame_creation))
+		return
+	var/mob/living/wearer = loc
+	if(!isliving(wearer))
+		STOP_PROCESSING(SSobj, src)
+		flame_generation = FALSE
+		return
+	COOLDOWN_START(src, flame_creation, 5 SECONDS)
+	wearer.adjust_fire_stacks(1)
+	wearer.ignite_mob(TRUE)
+
+/obj/item/clothing/head/hooded/cult_hoodie/eldritch/ash
+	name = "\improper Scorched Mantle"
+	desc = "Left to burn to tatters, what remains is naught but a blackened echo of the mantle of the Watch. \
+		Yet the soot-choked folds turn blade and flame from the form within. A brief reprieve before its gaze turns inwards."
+	icon_state = "ash_armor"
+	armor_type = /datum/armor/eldritch_armor/ash
+
+/datum/armor/eldritch_armor/ash
+	melee = 40
+	bullet = 60
+	laser = 50
+	energy = 50
+	bomb = 100
+	bio = 20
+	fire = 100
+	acid = 20
+	wound = 20
+
+// Blade
+// Is shock-proof and gives you baton resistance
+/obj/item/clothing/suit/hooded/cultrobes/eldritch/blade
+	name = "\improper Shattered Panoply"
+	desc = "The sharpened edges of this ancient suit of armor assert a revelation known to aspirants of battle; \
+			a true warrior can not be distinguished from the blade they wield."
+	icon_state = "blade_armor"
+	hoodtype = /obj/item/clothing/head/hooded/cult_hoodie/eldritch/blade
+	armor_type = /datum/armor/eldritch_armor/blade
+	siemens_coefficient = 0
+	var/murdering_with_blades = FALSE
+
+/obj/item/clothing/suit/hooded/cultrobes/eldritch/blade/on_robes_gained(mob/living/user)
+	. = ..()
+	user.add_traits(list(TRAIT_SHOCKIMMUNE, TRAIT_BATON_RESISTANCE), REF(src))
+
+/obj/item/clothing/suit/hooded/cultrobes/eldritch/blade/on_robes_lost(mob/user, obj/item/clothing/suit/hooded/cultrobes/eldritch/robes)
+	. = ..()
+	if(.)
+		return
+	user.remove_traits(list(TRAIT_SHOCKIMMUNE, TRAIT_BATON_RESISTANCE), REF(src))
+
+/obj/item/clothing/suit/hooded/cultrobes/eldritch/blade/robes_side_effect(mob/living/user)
+	INVOKE_ASYNC(src, PROC_REF(start_throwing_blades), user)
+
+/obj/item/clothing/suit/hooded/cultrobes/eldritch/blade/proc/start_throwing_blades(mob/living/target)
+	if(murdering_with_blades)
+		return
+	murdering_with_blades = TRUE
+
+	var/delay = 2 SECONDS
+	var/knives = 100
+	for(var/knife in 1 to knives)
+		if(!should_keep_cutting(target))
+			break
+		addtimer(CALLBACK(src, PROC_REF(cut_em_good), target), delay * knife)
+		delay = max(0.5 SECONDS, delay - 0.1 SECONDS)
+
+	murdering_with_blades = FALSE
+
+/obj/item/clothing/suit/hooded/cultrobes/eldritch/blade/proc/should_keep_cutting(mob/living/target)
+	if(target.stat == DEAD || !is_equipped(target))
+		return FALSE
+	return TRUE
+
+/obj/item/clothing/suit/hooded/cultrobes/eldritch/blade/proc/cut_em_good(mob/living/target)
+	if(!should_keep_cutting(target))
+		return
+	var/list/turf/valid_turfs = get_blade_turfs(get_turf(target))
+	if(!length(valid_turfs))
+		var/mob/living/carbon/carbon_target = target
+		if(iscarbon(target))
+			var/obj/item/bodypart/limb = pick(carbon_target.bodyparts)
+			limb.force_wound_upwards(/datum/wound/slash/flesh/severe)
+		return
+	throw_blade(pick(valid_turfs), target)
+
+/obj/item/clothing/suit/hooded/cultrobes/eldritch/blade/proc/get_blade_turfs(mob/user)
+	var/list/turfs_around_us = get_perimeter(user, 4)
+	var/list/valid_turfs = list()
+	for(var/turf/open/valid_turf in turfs_around_us)
+		if(!valid_turf.is_blocked_turf() && get_angle(valid_turf, user) != 180)
+			valid_turfs |= valid_turf
+	return valid_turfs
+
+/obj/item/knife/kitchen/magic
+	icon = 'icons/effects/eldritch.dmi'
+	icon_state = "dio_knife"
+	name = "magic knife"
+	throwforce = 15
+	// most importantly, this ignores shields
+	armour_penetration = 200
+	pass_flags = ALL
+
+/obj/item/knife/kitchen/magic/Initialize(mapload)
+	. = ..()
+	AddElement(/datum/element/movetype_handler)
+	add_traits(list(TRAIT_MOVE_PHASING, TRAIT_MOVE_FLOATING, TRAIT_UNCATCHABLE), INNATE_TRAIT)
+	add_filter("dio_knife", 2, list("type" = "outline", "color" = "#ececff", "size" = 1))
+	set_embed(/datum/embedding/magic_knife)
+
+/obj/item/knife/kitchen/magic/get_demolition_modifier(obj/target)
+	if(!ismob(target))
+		return 100
+	return ..()
+
+/datum/embedding/magic_knife
+
+	embed_chance = 150
+	fall_chance = 0
+	impact_pain_mult = 0
+	ignore_throwspeed_threshold = TRUE
+
+/obj/item/clothing/suit/hooded/cultrobes/eldritch/blade/proc/throw_blade(turf/target_turf, mob/user)
+	var/obj/item/knife/kitchen/magic/knife = new(target_turf)
+	knife.alpha = 0
+	knife.throw_at()
+
+	var/matrix/transform = matrix(knife.transform)
+	var/angle = get_angle(target_turf, user)
+	transform.Turn(angle)
+	var/appear_delay = 0.5 SECONDS
+	var/throw_delay = 1 SECONDS
+	var/delete_delay = 10 SECONDS
+	addtimer(CALLBACK(knife, TYPE_PROC_REF(/atom/movable, throw_at), user, 50, 5, null, FALSE), throw_delay)
+	animate(knife, transform = transform, time = throw_delay, ANIMATION_PARALLEL)
+	animate(knife, alpha = 255, time = appear_delay, ANIMATION_PARALLEL)
+	animate(alpha = 0, time = delete_delay)
+	QDEL_IN(knife, delete_delay + appear_delay + throw_delay)
+
+/obj/item/clothing/head/hooded/cult_hoodie/eldritch/blade
+	name = "\improper Shattered Panoply"
+	desc = "The sharpened edges of this ancient suit of armor assert a revelation known to aspirants of battle; \
+			a true warrior can not be distinguished from the blade they wield."
+	icon_state = "blade_armor"
+	armor_type = /datum/armor/eldritch_armor/blade
+	siemens_coefficient = 0
+
+/datum/armor/eldritch_armor/blade
+	melee = 50
+	bullet = 50
+	laser = 50
+	energy = 50
+	bomb = 50
+	bio = 50
+	fire = 50
+	acid = 50
+	wound = 50
+
+// Cosmic
+// Allows you to toggle gravity for yourself at will
+/obj/item/clothing/suit/hooded/cultrobes/eldritch/cosmic
+	name = "\improper Starwoven Cloak"
+	desc = "Gleaming gems conjure forth wisps of power, turning about to illuminate the wearer in a dim radiance. \
+			Gazing upon the robe, you cannot help but feel noticed."
+	icon_state = "cosmic_armor"
+	hoodtype = /obj/item/clothing/head/hooded/cult_hoodie/eldritch/cosmic
+	armor_type = /datum/armor/eldritch_armor/cosmic
+	clothing_flags = THICKMATERIAL | PLASMAMAN_PREVENT_IGNITION | STOPSPRESSUREDAMAGE
+	cold_protection = CHEST | GROIN | LEGS | FEET | ARMS | HANDS
+	min_cold_protection_temperature = SPACE_HELM_MIN_TEMP_PROTECT
+	actions_types = list(/datum/action/item_action/toggle/gravity)
+	/// If our robes are making us weightless
+	var/weightless_enabled = FALSE
+
+/obj/item/clothing/suit/hooded/cultrobes/eldritch/cosmic/Initialize(mapload)
+	. = ..()
+	AddElement(/datum/element/radiation_protected_clothing)
+
+// Removes your antigravity if you lose the robes
+/obj/item/clothing/suit/hooded/cultrobes/eldritch/cosmic/on_robes_lost(mob/user, obj/item/clothing/suit/hooded/cultrobes/eldritch/robes)
+	if(.)
+		return
+	if(weightless_enabled)
+		toggle_gravity(user)
+
+/obj/item/clothing/suit/hooded/cultrobes/eldritch/cosmic/robes_side_effect(mob/living/user)
+	var/obj/item/organ/brain/victim_brain = user.get_organ_slot(ORGAN_SLOT_BRAIN)
+	if(!victim_brain)
+		return
+
+	victim_brain.gain_trauma(/datum/brain_trauma/magic/stalker/cosmic, TRAUMA_RESILIENCE_MAGIC)
+
+/datum/action/item_action/toggle/gravity
+	button_icon = 'icons/effects/magic.dmi'
+	button_icon_state = "magicm"
+
+/datum/action/item_action/toggle/gravity/do_effect(trigger_flags)
+	var/obj/item/clothing/suit/hooded/cultrobes/eldritch/cosmic/item_target = target
+	if(!item_target || !istype(item_target))
+		return FALSE
+	item_target.toggle_gravity(owner)
+
+/// Gives us free movement in 0 gravity when enabled
+/obj/item/clothing/suit/hooded/cultrobes/eldritch/cosmic/proc/toggle_gravity(mob/living/user)
+	if(!weightless_enabled)
+		user.add_traits(list(TRAIT_NEGATES_GRAVITY, TRAIT_MOVE_FLYING, TRAIT_FREE_HYPERSPACE_MOVEMENT), REF(src))
+		user.balloon_alert(user, "enabled")
+	else
+		user.remove_traits(list(TRAIT_NEGATES_GRAVITY, TRAIT_MOVE_FLYING, TRAIT_FREE_HYPERSPACE_MOVEMENT), REF(src))
+		user.balloon_alert(user, "disabled")
+	weightless_enabled = !weightless_enabled
+
+/obj/item/clothing/head/hooded/cult_hoodie/eldritch/cosmic
+	name = "\improper Starwoven Hood"
+	desc = "Gleaming gems conjure forth wisps of power, turning about to illuminate the wearer in a dim radiance. \
+			Gazing upon the robe, you cannot help but feel noticed."
+	icon_state = "cosmic_armor"
+	armor_type = /datum/armor/eldritch_armor/cosmic
+	clothing_flags = THICKMATERIAL | PLASMAMAN_PREVENT_IGNITION | STOPSPRESSUREDAMAGE
+	cold_protection = HEAD
+	min_cold_protection_temperature = SPACE_HELM_MIN_TEMP_PROTECT
+
+/obj/item/clothing/head/hooded/cult_hoodie/eldritch/cosmic/Initialize(mapload)
+	. = ..()
+	AddElement(/datum/element/radiation_protected_clothing)
+
+/datum/armor/eldritch_armor/cosmic
+	melee = 20
+	bullet = 30
+	laser = 60
+	energy = 60
 	bomb = 35
 	bio = 20
 	fire = 20
@@ -722,18 +1035,52 @@
 	/// Timer before our stealth runs out
 	var/stealth_timer
 
-/obj/item/clothing/suit/hooded/cultrobes/eldritch/on_hood_down(obj/item/clothing/head/hooded/hood)
-	hood_up = FALSE
-
-/obj/item/clothing/suit/hooded/cultrobes/eldritch/examine(mob/user)
+/obj/item/clothing/suit/hooded/cultrobes/eldritch/void/on_robes_lost(mob/user, obj/item/clothing/suit/hooded/cultrobes/eldritch/robes)
 	. = ..()
-	if(!IS_HERETIC(user))
+	if(. || !timeleft(stealth_timer))
 		return
-	if(hood_up)
-		return
+	// Remove from stealth when you lose the robes
+	deltimer(stealth_timer)
+	end_stealth(user)
 
-	// Our hood gains the heretic_focus element.
-	. += span_notice("Allows you to cast heretic spells while the hood is up.")
+/obj/item/clothing/suit/hooded/cultrobes/eldritch/void/robes_side_effect(mob/living/user)
+	. = ..()
+	user.adjust_bodytemperature(-INFINITY)
+	ADD_TRAIT(user, TRAIT_HYPOTHERMIC, REF(src))
+	if(!isliving(user))
+		return
+	var/mob/living/victim = user
+	victim.apply_status_effect(/datum/status_effect/frozenstasis/irresistable)
+
+/obj/item/clothing/suit/hooded/cultrobes/eldritch/void/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text, final_block_chance, damage, attack_type, damage_type)
+	. = ..()
+	if(!COOLDOWN_FINISHED(src, stealth_cooldown))
+		return
+	COOLDOWN_START(src, stealth_cooldown, 20 SECONDS)
+	stealth_timer = addtimer(CALLBACK(src, PROC_REF(end_stealth), owner), 5 SECONDS, TIMER_STOPPABLE)
+	owner.alpha = 0
+	return TRUE
+
+/obj/item/clothing/suit/hooded/cultrobes/eldritch/void/proc/end_stealth(mob/living/carbon/human/owner)
+	animate(owner, time = 1 SECONDS, alpha = initial(owner.alpha))
+
+/obj/item/clothing/head/hooded/cult_hoodie/eldritch/void
+	name = "\improper Hollow Weave"
+	desc = "At first, the empty canvas of this robe seems to shimmer with a faint, cold light. \
+			Yet upon tracking the shape of the folds more carefully, it is better to describe it as the absence of such a thing."
+	icon_state = "void_armor"
+	armor_type = /datum/armor/eldritch_armor/void
+
+/datum/armor/eldritch_armor/void
+	melee = 40
+	bullet = 40
+	laser = 50
+	energy = 50
+	bomb = 40
+	bio = 40
+	fire = 40
+	acid = 40
+	wound = 40
 
 // Void cloak. Turns invisible with the hood up, lets you hide stuff.
 /obj/item/clothing/head/hooded/cult_hoodie/void
@@ -789,6 +1136,12 @@
 	make_visible()
 	ADD_TRAIT(src, TRAIT_CONTRABAND_BLOCKER, INNATE_TRAIT)
 
+/obj/item/clothing/suit/hooded/cultrobes/void/on_hood_up(obj/item/clothing/head/hooded/hood)
+	hood_up = TRUE
+
+/obj/item/clothing/suit/hooded/cultrobes/void/on_hood_down(obj/item/clothing/head/hooded/hood)
+	hood_up = FALSE
+
 /obj/item/clothing/suit/hooded/cultrobes/void/equipped(mob/user, slot)
 	. = ..()
 	if(slot & ITEM_SLOT_OCLOTHING)
@@ -798,12 +1151,6 @@
 /obj/item/clothing/suit/hooded/cultrobes/void/dropped(mob/user)
 	. = ..()
 	UnregisterSignal(user, list(COMSIG_MOB_UNEQUIPPED_ITEM, COMSIG_MOB_EQUIPPED_ITEM))
-
-/obj/item/clothing/suit/hooded/cultrobes/void/on_hood_up(obj/item/clothing/head/hooded/hood)
-	hood_up = TRUE
-
-/obj/item/clothing/suit/hooded/cultrobes/void/on_hood_down(obj/item/clothing/head/hooded/hood)
-	hood_up = FALSE
 
 /obj/item/clothing/suit/hooded/cultrobes/void/proc/hide_item(datum/source, obj/item/item, slot)
 	SIGNAL_HANDLER
@@ -821,6 +1168,7 @@
 
 	// Let examiners know this works as a focus only if the hood is down
 	. += span_notice("Allows you to cast heretic spells while the hood is down.")
+	. += span_notice("Is space worthy as long as the hood is down.")
 
 /obj/item/clothing/suit/hooded/cultrobes/void/on_hood_down(obj/item/clothing/head/hooded/hood)
 	make_visible()
@@ -846,6 +1194,7 @@
 	RemoveElement(/datum/element/heretic_focus)
 
 	if(isliving(loc))
+		loc.remove_traits(list(TRAIT_RESISTLOWPRESSURE, TRAIT_RESISTCOLD), REF(src))
 		REMOVE_TRAIT(loc, TRAIT_RESISTLOWPRESSURE, REF(src))
 		loc.balloon_alert(loc, "cloak hidden")
 		loc.visible_message(span_notice("Light shifts around [loc], making the cloak around them invisible!"))
@@ -856,6 +1205,6 @@
 	AddElement(/datum/element/heretic_focus)
 
 	if(isliving(loc))
-		ADD_TRAIT(loc, TRAIT_RESISTLOWPRESSURE, REF(src))
+		loc.add_traits(list(TRAIT_RESISTLOWPRESSURE, TRAIT_RESISTCOLD), REF(src))
 		loc.balloon_alert(loc, "cloak revealed")
 		loc.visible_message(span_notice("A kaleidoscope of colours collapses around [loc], a cloak appearing suddenly around their person!"))

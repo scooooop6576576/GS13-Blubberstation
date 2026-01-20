@@ -52,6 +52,7 @@
 				/obj/item/clothing/accessory/waistcoat = 4,
 				/obj/item/clothing/suit/toggle/suspenders = 4,
 				/obj/item/clothing/neck/tie/horrible = 3,
+				/obj/item/clothing/neck/robe_cape = 3,
 				/obj/item/clothing/glasses/regular = 3,
 				/obj/item/clothing/glasses/regular/jamjar = 3,
 				/obj/item/clothing/glasses/orange = 3,
@@ -88,9 +89,7 @@
 				/obj/item/clothing/under/dress/eveninggown = 3,
 				/obj/item/clothing/under/misc/pj/blue = 3,
 				/obj/item/clothing/under/misc/pj/red = 3,
-				// GS13 EDIT START ADD CLOTHING
-				/obj/item/clothing/under/color/grey = 5,
-				// GS13 EDIT END SDD CLOTHING
+				/obj/item/clothing/under/color/grey = 5, //GS13 EDIT add modular jumpsuit to vendor.
 			),
 		),
 

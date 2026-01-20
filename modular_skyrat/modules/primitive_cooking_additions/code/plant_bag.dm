@@ -53,13 +53,7 @@
 	. = ..()
 	if(!isprimitivedemihuman(crafter) && !isashwalker(crafter))
 		return
-
-	if(!isprimitivedemihuman(builder) && !isashwalker(builder))
-		return
-
-	var/obj/item/storage/bag/plants/bag = created
-
-	bag.make_primitive()
+	make_primitive()
 
 /obj/item/storage/bag/plants/portaseeder/Initialize(mapload)
 	. = ..()

@@ -355,7 +355,7 @@ export const BubberChangelog = (props) => {
       const bubberResult = await links[1].text();
       const gs13Result = await links[2].text(); {/* GS13 EDIT */}
 
-      if (links[0].status !== 200 && links[1].status !== 200 && links[2].status !== 200) {  {/* GS13 EDIT */}
+      if (links[0].status !== 200 && links[1].status !== 200 && links[2].status !== 200) {  {/* GS13 EDIT Original:     if (links[0].status !== 200 && links[1].status !== 200) {*/}
         const timeout = 50 + attemptNumber * 50;
 
         setContents(`Loading changelog data${'.'.repeat(attemptNumber + 3)}`);

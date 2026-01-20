@@ -508,10 +508,8 @@
 
 /obj/machinery/hydroponics/update_name(updates)
 	. = ..()
-	if(myseed)
+	if(!GetComponent(/datum/component/rename) && myseed)
 		name = "[initial(name)] ([myseed.plantname])"
-	else
-		name = initial(name)
 
 /obj/machinery/hydroponics/update_overlays()
 	. = ..()
@@ -1042,7 +1040,6 @@
 			user.visible_message(span_notice("[user] digs out the plants in [src]!"), span_notice("You dig out all of [src]'s plants!"))
 			remove_plant()
 			return
-
 	else if(istype(O, /obj/item/gun/energy/floragun))
 		var/obj/item/gun/energy/floragun/flowergun = O
 		if(flowergun.cell.charge < flowergun.cell.maxcharge)

@@ -1,5 +1,6 @@
 /// Buffs and heals the target while standing on rust.
 /datum/element/leeching_walk
+	var/healing_multiplier = 1.0 // How much healing to do
 
 /datum/element/leeching_walk/Attach(datum/target)
 	. = ..()
@@ -50,9 +51,17 @@
 	need_mob_update += source.adjust_stamina_loss(-10 * delta_time * healing_multiplier, updating_stamina = FALSE)
 	if(need_mob_update)
 		source.updatehealth()
+		new /obj/effect/temp_visual/heal(get_turf(source), COLOR_BROWN)
 	// Reduces duration of stuns/etc
 	source.AdjustAllImmobility((-0.5 SECONDS) * delta_time)
 	// Heals blood loss
 	source.adjust_blood_volume(2.5 * delta_time, maximum = BLOOD_VOLUME_NORMAL)
 	// Slowly regulates your body temp
 	source.adjust_bodytemperature((source.get_body_temp_normal() - source.bodytemperature) / 5)
+
+/datum/element/leeching_walk/minor
+	healing_multiplier = 0.5
+
+// Minor variant which heals slightly less and no baton resistance
+/datum/element/leeching_walk/minor/on_move(mob/source, atom/old_loc, dir, forced, list/old_locs)
+	return

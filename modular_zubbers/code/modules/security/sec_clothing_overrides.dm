@@ -230,7 +230,7 @@
 		show_contents(user)
 		return
 
-	if(!user.CanReach(resolve_parent))
+	if(!resolve_parent.IsReachableBy(user))
 		resolve_parent.balloon_alert(user, "can't reach!")
 		return FALSE
 
@@ -884,7 +884,7 @@
 	preview_name = "Red Variant"
 	new_icon_state = "gorilla"
 
-/obj/item/clothing/gloves/krav_maga/sec
+/obj/item/clothing/gloves/kaza_ruk/sec
 	icon = 'modular_skyrat/master_files/icons/obj/clothing/gloves.dmi'
 	worn_icon = 'modular_skyrat/master_files/icons/mob/clothing/hands.dmi'
 	icon_state = "fightgloves_blue"
@@ -1015,6 +1015,30 @@
 /obj/item/clothing/suit/armor/riot/knight //This needs to be sent back to its original .dmis
 	icon = 'icons/obj/clothing/suits/armor.dmi'
 	worn_icon = 'icons/mob/clothing/suits/armor.dmi'
+
+//DETECTIVE
+
+/obj/item/clothing/suit/cowboyvest
+	name = "blonde cowboy vest"
+	desc = "A white cream vest lined with... fur, of all things, for desert weather. There's a small deer head logo sewn into the vest."
+	icon = 'modular_skyrat/master_files/icons/obj/clothing/suits.dmi'
+	worn_icon = 'modular_skyrat/master_files/icons/mob/clothing/suit.dmi'
+	icon_state = "cowboy_vest"
+	body_parts_covered = CHEST|ARMS
+	cold_protection = CHEST|ARMS
+	supports_variations_flags = CLOTHING_DIGITIGRADE_VARIATION_NO_NEW_ICON
+	heat_protection = CHEST|ARMS
+
+/obj/item/clothing/suit/jacket/det_suit/cowboyvest
+	name = "blonde cowboy vest"
+	desc = "A white cream vest lined with... fur, of all things, for desert weather. There's a small deer head logo sewn into the vest."
+	icon = 'modular_skyrat/master_files/icons/obj/clothing/suits.dmi'
+	worn_icon = 'modular_skyrat/master_files/icons/mob/clothing/suit.dmi'
+	icon_state = "cowboy_vest"
+	body_parts_covered = CHEST|ARMS
+	cold_protection = CHEST|ARMS
+	supports_variations_flags = CLOTHING_DIGITIGRADE_VARIATION_NO_NEW_ICON
+	heat_protection = CHEST|ARMS
 
 //Warden's Vest
 /obj/item/clothing/suit/armor/vest/warden/Initialize(mapload)

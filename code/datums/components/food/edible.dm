@@ -358,7 +358,7 @@ Behavior that's still missing from this component that original food items had t
 	return TRUE
 
 /// Normal time to forcefeed someone something
-#define EAT_TIME_FORCE_FEED (2 SECONDS)		// GS13 EDIT makes force feeding faster
+#define EAT_TIME_FORCE_FEED (2 SECONDS)		// GS13 EDIT makes force feeding faster Original : 3
 /// Multiplier for eat time if the eater has TRAIT_VORACIOUS
 #define EAT_TIME_VORACIOUS_MULT 0.65 // voracious folk eat 35% faster
 /// Multiplier for how much longer it takes a voracious folk to eat while full
@@ -406,7 +406,7 @@ Behavior that's still missing from this component that original food items had t
 		if(junkiness && eater.satiety < -150 && eater.nutrition > NUTRITION_LEVEL_STARVING + 50 && !HAS_TRAIT(eater, TRAIT_VORACIOUS) && !HAS_TRAIT(eater, TRAIT_GLUTTON))
 			to_chat(eater, span_warning("You don't feel like eating any more junk food at the moment!"))
 			return
-		else if(fullness > (1800 * (1 + eater.overeatduration / (4000 SECONDS)))) // The more you eat - the more you can eat //GS13 EDIT EAT MORE
+		else if(fullness > (1800 * (1 + eater.overeatduration / (4000 SECONDS)))) // The more you eat - the more you can eat //GS13 EDIT EAT MORE (replaces 600 with 1800)
 			if(HAS_TRAIT(eater, TRAIT_VORACIOUS) || HAS_TRAIT(eater, TRAIT_GLUTTON))
 				message_to_nearby_audience = span_notice("[eater] voraciously forces \the [parent] down [eater.p_their()] throat.")
 				message_to_consumer = span_notice("You voraciously force \the [parent] down your throat.")
@@ -444,7 +444,7 @@ Behavior that's still missing from this component that original food items had t
 		if(isbrain(eater))
 			to_chat(feeder, span_warning("[eater] doesn't seem to have a mouth!"))
 			return
-		if(fullness <= (1800 * (1 + eater.overeatduration / (4000 SECONDS))) || HAS_TRAIT(eater, TRAIT_VORACIOUS))	// GS13 EDIT - increases max fullness for feeding others
+		if(fullness <= (600 * (1 + eater.overeatduration / (2000 SECONDS))) || HAS_TRAIT(eater, TRAIT_VORACIOUS))
 			eater.visible_message(
 				span_danger("[feeder] attempts to [eater.get_bodypart(BODY_ZONE_HEAD) ? "feed [eater] [parent]." : "stuff [parent] down [eater]'s throat hole! Gross."]"),
 				span_userdanger("[feeder] attempts to [eater.get_bodypart(BODY_ZONE_HEAD) ? "feed you [parent]." : "stuff [parent] down your throat hole! Gross."]")
@@ -474,7 +474,7 @@ Behavior that's still missing from this component that original food items had t
 	TakeBite(eater, feeder)
 
 	//If we're not force-feeding and there's an eat delay, try take another bite
-	if(eat_time > 0)	// GS13 edit - makes it so feeding others can be queued
+	if(eat_time > 0)	// GS13 edit - makes it so feeding others can be queued. Original:	if(eater == feeder && eat_time > 0)
 		INVOKE_ASYNC(src, PROC_REF(TryToEat), eater, feeder)
 
 #undef EAT_TIME_FORCE_FEED
@@ -494,6 +494,7 @@ Behavior that's still missing from this component that original food items had t
 	playsound(eater.loc,'sound/items/eatfood.ogg', rand(10,50), TRUE)
 	if(!owner.reagents.total_volume)
 		return
+	SEND_SIGNAL(eater, COMSIG_LIVING_EAT_FOOD, owner)
 	var/sig_return = SEND_SIGNAL(parent, COMSIG_FOOD_EATEN, eater, feeder, bitecount, bite_consumption)
 	if(sig_return & DESTROY_FOOD)
 		qdel(owner)

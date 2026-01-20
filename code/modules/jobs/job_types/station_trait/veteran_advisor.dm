@@ -82,3 +82,4 @@
 	r_hand = /obj/item/cane
 
 	implants = list(/obj/item/implant/mindshield)
+	pda_slot = ITEM_SLOT_BACK

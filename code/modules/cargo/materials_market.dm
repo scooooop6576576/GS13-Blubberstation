@@ -17,16 +17,6 @@
 	idle_power_usage = BASE_MACHINE_IDLE_CONSUMPTION
 	light_power = 3
 	light_range = MINIMUM_USEFUL_LIGHT_RANGE
-	/// What items can be converted into a stock block? Must be a stack subtype based on current implementation.
-	var/static/list/exportable_material_items = list(
-		/obj/item/stack/sheet/iron, //God why are we like this
-		/obj/item/stack/sheet/glass, //No really, God why are we like this
-		/obj/item/stack/sheet/mineral,
-		/obj/item/stack/tile/mineral,
-		/obj/item/stack/ore,
-		/obj/item/stack/sheet/bluespace_crystal,
-		/obj/item/stack/rods
-	)
 	/// Are we ordering sheets from our own card balance or the cargo budget?
 	var/ordering_private = TRUE
 
@@ -89,7 +79,7 @@
 
 /obj/machinery/materials_market/power_change()
 	. = ..()
-	if(machine_stat & NOPOWER)
+	if(!is_operational)
 		set_light(0, 0)
 	else
 		set_light(initial(light_range), initial(light_power))
@@ -186,7 +176,7 @@
 		//Pulling elastic modifier into data.
 		for(var/datum/export/material/market/export_est in GLOB.exports_list)
 			if(export_est.material_id == traded_mat)
-				elastic_mult = (export_est.cost / export_est.init_cost) * 100
+				elastic_mult = export_est.k_elasticity * 100
 
 		material_data += list(list(
 			"name" = initial(traded_mat.name),
@@ -282,7 +272,6 @@
 			var/cost = SSstock_market.materials_prices[material_bought] * quantity
 
 			var/list/things_to_order = list()
-			things_to_order += (sheet_to_buy)
 			things_to_order[sheet_to_buy] = quantity
 
 			// We want to count how many stacks of all sheets we're ordering to make sure they don't exceed the limit of 10
@@ -293,14 +282,14 @@
 				var/prior_sheets = current_order.pack.contains[sheet_to_buy]
 				if(prior_sheets + quantity > SSstock_market.materials_quantity[material_bought] )
 					say("There aren't enough sheets on the market! Please wait for more sheets to be traded before adding more.")
-					playsound(usr, 'sound/machines/synth/synth_no.ogg', 35, FALSE)
+					playsound(living_user, 'sound/machines/synth/synth_no.ogg', 35, FALSE)
 					return
 
 				// Check if the order exceeded the purchase limit
 				var/prior_stacks = ROUND_UP(prior_sheets / MAX_STACK_SIZE)
 				if(prior_stacks >= MAX_STACK_LIMIT)
 					say("There are already 10 stacks of sheets on order! Please wait for them to arrive before ordering more.")
-					playsound(usr, 'sound/machines/synth/synth_no.ogg', 35, FALSE)
+					playsound(living_user, 'sound/machines/synth/synth_no.ogg', 35, FALSE)
 					return
 
 				// Prevents you from ordering more than the available budget
@@ -361,10 +350,6 @@
 	icon_state = "stock_block"
 	/// How many credits was this worth when created?
 	var/export_value = 0
-	/// What is the name of the material this was made from?
-	var/datum/material/export_mat
-	/// Quantity of export material
-	var/quantity = 0
 	/// Is this stock block currently updating its value with the market (aka fluid)?
 	var/fluid = FALSE
 
@@ -391,9 +376,7 @@
 	update_appearance(UPDATE_ICON_STATE)
 
 /obj/item/stock_block/proc/update_value()
-	if(!SSstock_market.materials_prices[export_mat])
-		return
-	export_value = quantity * SSstock_market.materials_prices[export_mat]
+	export_value = SSstock_market.materials_prices[custom_materials[1]]
 	icon_state = "stock_block_liquid"
 	update_appearance(UPDATE_ICON_STATE)
 	visible_message(span_warning("\The [src] becomes liquid!"))

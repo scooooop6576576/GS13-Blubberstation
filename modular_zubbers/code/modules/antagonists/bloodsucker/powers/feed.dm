@@ -9,6 +9,7 @@
 	power_explanation = list(
 		"Activate Feed while next to someone and you will begin to feed blood off of them.",
 		"The time needed before you start feeding speeds up the higher level you are.",
+		"Feeding off of someone next to you will not be noticed by the victim, but it will by nearby onlookers",
 		"Feeding off of someone while you have them aggressively grabbed will put them to sleep.",
 		"While feeding, you can't speak, as your mouth is covered.",
 		"Feeding while nearby (2 tiles away from) a mortal who is unaware of Bloodsuckers' existence, will cause a Masquerade Infraction",
@@ -100,7 +101,7 @@
 		to_chat(user, span_notice("You slowly release [feed_target]."))
 		if(feed_target.client && feed_target.stat == DEAD)
 			user.add_mood_event("drankkilled", /datum/mood_event/drankkilled)
-			bloodsuckerdatum_power.AddHumanityLost(5)
+			bloodsuckerdatum_power?.AddHumanityLost(5)
 
 	target_ref = null
 	warning_target_bloodvol = initial(warning_target_bloodvol)
@@ -117,11 +118,11 @@
 		return FALSE
 	if(istype(feed_target, /mob/living/basic/mouse))
 		to_chat(owner, span_notice("You recoil at the taste of a lesser lifeform."))
-		if(bloodsuckerdatum_power.my_clan && bloodsuckerdatum_power.my_clan.blood_drink_type != BLOODSUCKER_DRINK_INHUMANELY)
+		if(snobby_drinking_check())
 			var/mob/living/user = owner
 			user.add_mood_event("drankblood", /datum/mood_event/drankblood_bad)
-			bloodsuckerdatum_power.AddHumanityLost(1)
-		bloodsuckerdatum_power.AdjustBloodVolume(25)
+			bloodsuckerdatum_power?.AddHumanityLost(1)
+		bloodsuckerdatum_power?.AdjustBloodVolume(25)
 		feed_target.death()
 		StartCooldown()
 		return FALSE
@@ -144,7 +145,7 @@
 	else
 		aggressive_feed = FALSE
 		// Only people who AREN'T the target will notice this action.
-		var/dead_message = feed_target.stat != DEAD ? " <i>[feed_target.p_they(TRUE)] looks dazed, and will not remember this.</i>" : ""
+		var/dead_message = feed_target.stat != DEAD ? " <i>[feed_target.p_they(TRUE)] looks dazed, and will not notice this.</i>" : ""
 		owner.visible_message(
 			span_warning("[owner] puts [feed_target]'s wrist up to [owner.p_their()] mouth."),
 			span_notice("You slip your fangs into [feed_target]'s wrist.[dead_message]"),
@@ -171,7 +172,7 @@
 		if(IS_BLOODSUCKER(watchers) || IS_GHOUL(watchers) || HAS_TRAIT(watchers.mind, TRAIT_BLOODSUCKER_HUNTER))
 			continue
 		owner.balloon_alert(owner, "feed noticed!")
-		bloodsuckerdatum_power.give_masquerade_infraction()
+		bloodsuckerdatum_power?.give_masquerade_infraction()
 		break
 
 /datum/action/cooldown/bloodsucker/feed/process(seconds_per_tick)
@@ -209,11 +210,11 @@
 	var/feed_strength_mult = 0.3
 	if(aggressive_feed)
 		feed_strength_mult = 1
-	if(bloodsuckerdatum_power.frenzied)
+	if(bloodsuckerdatum_power?.frenzied)
 		feed_strength_mult *= 2
 
 	var/already_drunk = targets_and_blood[target_ref] || 0
-	var/blood_eaten = bloodsuckerdatum_power.handle_feeding(feed_target, feed_strength_mult, level_current, already_drunk)
+	var/blood_eaten = drink_blood(feed_target, feed_strength_mult, level_current, already_drunk)
 	blood_taken += blood_eaten
 	targets_and_blood[target_ref] += blood_eaten
 	modify_blood_drunk(blood_eaten * 0.5)
@@ -326,7 +327,7 @@
 		return TRUE
 	if(safe_set_target(owner.pulledby))
 		return TRUE
-	if(bloodsuckerdatum_power.frenzied)
+	if(bloodsuckerdatum_power?.frenzied)
 		owner.balloon_alert(owner, "beast active! must grab someone to feed!")
 		return FALSE
 	var/mob/living/carbon/carbon = owner
@@ -377,7 +378,7 @@
 
 /datum/action/cooldown/bloodsucker/feed/proc/can_feed_from(mob/living/target, give_warnings = FALSE)
 	if(istype(target, /mob/living/basic/mouse))
-		if(bloodsuckerdatum_power.my_clan && bloodsuckerdatum_power.my_clan.blood_drink_type == BLOODSUCKER_DRINK_SNOBBY)
+		if(snobby_drinking_check())
 			if(give_warnings)
 				owner.balloon_alert(owner, "too disgusting!")
 			return FALSE
@@ -409,13 +410,20 @@
 		return FALSE
 	return TRUE
 
+/datum/action/cooldown/bloodsucker/feed/proc/can_drink_from_mindless(mob/living/target)
+	if(!bloodsuckerdatum_power?.my_clan)
+		return TRUE
+	if(snobby_drinking_check() && !bloodsuckerdatum_power.frenzied)
+		return FALSE
+	return TRUE
+
 /datum/action/cooldown/bloodsucker/feed/proc/get_sleep_time()
 	return (5 + bloodsuckerdatum_power?.GetRank() || 1) SECONDS
 
 /datum/action/cooldown/bloodsucker/feed/proc/get_feed_start_time()
 	var/bloodsucker_level_divider = 1.25 * (bloodsuckerdatum_power?.GetRank() || 1)
 	var/feed_time = FEED_DEFAULT_TIMER / bloodsucker_level_divider
-	if(bloodsuckerdatum_power.frenzied)
+	if(bloodsuckerdatum_power?.frenzied)
 		feed_time *= 0.5
 	var/mob/living/carbon/carbon = owner
 	if(iscarbon(carbon) && carbon.handcuffed)

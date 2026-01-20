@@ -118,7 +118,7 @@
 				if(iscarbon(L))
 					L.adjustBruteLoss(-3)
 					L.adjustFireLoss(-3)
-					L.adjustToxLoss(-3, forced = TRUE) //Because Slime People are people too
+					L.adjust_tox_loss(-3, forced = TRUE) //Because Slime People are people too
 					L.adjustOxyLoss(-3)
 //					L.adjustStaminaLoss(-3)
 //					L.adjustOrganLoss(ORGAN_SLOT_BRAIN, -3)

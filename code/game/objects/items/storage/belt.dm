@@ -66,7 +66,6 @@
 	SSwardrobe.provide_type(/obj/item/extinguisher/mini, src)
 	SSwardrobe.provide_type(/obj/item/analyzer/ranged, src) //SKYRAT EDIT - Ranged Analyzer for CE - ORIGINAL: SSwardrobe.provide_type(/obj/item/analyzer, src)
 	//much roomier now that we've managed to remove two tools
-	// GS13 END EDIT
 
 /obj/item/storage/belt/utility/chief/full/get_types_to_preload()
 	// GS13 EDIT
@@ -80,8 +79,8 @@
 	to_preload += /obj/item/stack/cable_coil
 	to_preload += /obj/item/extinguisher/mini
 	to_preload += /obj/item/analyzer/ranged // SKYRAT EDIT - Ranged Analyzer for CE
-	return to_preload
 	// GS13 END EDIT
+	return to_preload
 
 /obj/item/storage/belt/utility/full/PopulateContents()
 	SSwardrobe.provide_type(/obj/item/screwdriver, src)
@@ -617,13 +616,13 @@
 		. += span_notice("Alt-click it to quickly draw the blade.")
 
 /obj/item/storage/belt/sheath/click_alt(mob/user)
-	if(length(contents))
-		var/obj/item/I = contents[1]
-		user.visible_message(span_notice("[user] takes [I] out of [src]."), span_notice("You take [I] out of [src]."))
-		user.put_in_hands(I)
-		update_appearance()
-	else
+	if(!length(contents))
 		balloon_alert(user, "it's empty!")
+		return CLICK_ACTION_BLOCKING
+	var/obj/item/stored_item = contents[1]
+	user.visible_message(span_notice("[user] takes [stored_item] out of [src]."), span_notice("You take [stored_item] out of [src]."))
+	user.put_in_hands(stored_item)
+	update_appearance()
 	return CLICK_ACTION_SUCCESS
 
 /obj/item/storage/belt/sheath/update_icon_state()
@@ -754,6 +753,15 @@
 	inhand_icon_state = "grass_sheath"
 	worn_icon_state = "grass_sheath"
 	storage_type = /datum/storage/green_sabre_belt
+
+/obj/item/storage/belt/sheath/gladius
+	name = "gladius scabbard"
+	desc = "A fun-sized sheath for a fun-sized sword."
+	icon_state = "gladius_sheath"
+	inhand_icon_state = "gladius_sheath"
+	worn_icon_state = "gladius_sheath"
+	storage_type = /datum/storage/gladius_belt
+	stored_blade = /obj/item/claymore/gladius
 
 /obj/item/storage/belt/plant
 	name = "botanical belt"

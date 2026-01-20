@@ -38,7 +38,6 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/detectiveboard, 32)
 		find_and_mount_on_atom()
 
 	register_context()
-	find_and_hang_on_wall()
 
 /// Attaching evidences: photo and papers
 

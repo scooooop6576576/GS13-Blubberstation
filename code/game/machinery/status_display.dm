@@ -14,7 +14,7 @@ GLOBAL_DATUM_INIT(status_font, /datum/font, new /datum/font/tiny_unicode/size_12
 /obj/machinery/status_display
 	name = "status display"
 	desc = null
-	icon = 'icons/obj/machines/status_display.dmi' //// GS13 EDIT CHANGE - ICON OVERRIDDEN IN gato.dm
+	icon = 'icons/obj/machines/status_display.dmi'//// GS13 EDIT CHANGE - ICON OVERRIDDEN IN gato.dm //// SKYRAT EDIT CHANGE - ICON OVERRIDDEN IN SKYRAT AESTHETICS - SEE MODULE
 	icon_state = "frame"
 	verb_say = "beeps"
 	verb_ask = "beeps"
@@ -51,7 +51,7 @@ GLOBAL_DATUM_INIT(status_font, /datum/font, new /datum/font/tiny_unicode/size_12
 	pixel_shift = 32
 
 //makes it go on the wall when built
-/obj/machinery/status_display/Initialize(mapload, ndir, building)
+/obj/machinery/status_display/Initialize(mapload)
 	. = ..()
 	update_appearance()
 
@@ -590,7 +590,8 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/status_display/evac, 32)
 				LAZYOR(active_displays, new_display)
 			set_display_with_priority(SD_GREENSCREEN, DISPLAY_PRIORITY_MESSAGE, force_override = TRUE)
 		if("friendcomputer")
-			friendc = !friendc
+			// Friend Computer should only affect AI displays, not evac displays
+			return
 	update()
 
 /obj/machinery/status_display/evac/vv_edit_var(vname, vval)
@@ -731,6 +732,9 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/status_display/evac, 32)
 	desc = "A small screen which the AI can use to present itself."
 	current_mode = SD_PICTURE
 	var/emotion = AI_DISPLAY_DONT_GLOW
+	var/frequency = FREQ_STATUS_DISPLAYS
+	var/friendc = FALSE      // track if Friend Computer mode
+	var/last_picture  // For when Friend Computer mode is undone
 
 MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/status_display/ai, 32)
 
@@ -748,17 +752,11 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/status_display/ai, 32)
 /obj/machinery/status_display/ai/attack_ai(mob/living/silicon/ai/user)
 	if(!isAI(user))
 		return
-	var/list/choices = list()
-	for(var/emotion_const in GLOB.ai_status_display_emotes)
-		var/icon_state = GLOB.ai_status_display_emotes[emotion_const]
-		choices[emotion_const] = image(icon = 'icons/obj/machines/status_display.dmi', icon_state = icon_state)
 
-	var/emotion_result = show_radial_menu(user, src, choices, tooltips = TRUE)
-	for(var/_emote in typesof(/datum/emote/ai/emotion_display))
-		var/datum/emote/ai/emotion_display/emote = _emote
-		if(initial(emote.emotion) == emotion_result)
-			user.emote(initial(emote.key))
-			break
+	// Open the TGUI interface for selecting status display options
+	if(!user.status_display_picker)
+		user.status_display_picker = new(user, src)
+	user.status_display_picker.ui_interact(user)
 
 /obj/machinery/status_display/ai/process()
 	if(machine_stat & NOPOWER)
@@ -781,6 +779,20 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/status_display/ai, 32)
 
 	set_picture(icon_state)
 	return PROCESS_KILL
+
+/obj/machinery/status_display/ai/receive_signal(datum/signal/signal)
+	switch(signal.data["command"])
+		if("friendcomputer")
+			friendc = !friendc
+			if(friendc)
+				last_picture = emotion  // Save current display
+				emotion = AI_EMOTION_FRIEND_COMPUTER
+			else
+				if(last_picture)
+					emotion = last_picture  // Restore previous display
+				else
+					emotion = AI_DISPLAY_DONT_GLOW
+			update_appearance()
 
 /obj/item/circuit_component/status_display
 	display_name = "Status Display"
@@ -870,7 +882,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/status_display/ai, 32)
 	/// list to pick the first line from
 	var/list/firstline_to_secondline = list()
 
-/obj/machinery/status_display/random_message/Initialize(mapload, ndir, building)
+/obj/machinery/status_display/random_message/Initialize(mapload)
 	if(firstline_to_secondline?.len)
 		message1 = pick(firstline_to_secondline)
 		message2 = firstline_to_secondline[message1]

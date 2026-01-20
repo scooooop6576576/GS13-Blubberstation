@@ -7,6 +7,7 @@
  */
 
 export const IMPL_HUB_STORAGE = 1;
+export const IMPL_IFRAME_INDEXED_DB = 2;
 
 type StorageImplementation =
   | typeof IMPL_HUB_STORAGE

@@ -1,7 +1,7 @@
-/obj/item/radio/intercom
+/obj/item/radio/intercom //ICON OVERRIDDEN IN SKYRAT AESTHETICS - SEE MODULE
 	name = "station intercom"
 	desc = "A trusty station intercom, ready to spring into action even when the headsets go silent."
-	icon = 'icons/obj/machines/wallmounts.dmi'  //icon overriden in gato.dm
+	icon = 'icons/obj/machines/wallmounts.dmi'
 	icon_state = "intercom"
 	anchored = TRUE
 	w_class = WEIGHT_CLASS_BULKY
@@ -28,11 +28,11 @@
 	icon_state = "intercom_prison"
 	icon_off = "intercom_prison-p"
 
-/obj/item/radio/intercom/prison/Initialize(mapload, ndir, building)
+/obj/item/radio/intercom/prison/Initialize(mapload)
 	. = ..()
 	wires?.cut(WIRE_TX)
 
-/obj/item/radio/intercom/Initialize(mapload, ndir, building)
+/obj/item/radio/intercom/Initialize(mapload)
 	. = ..()
 	var/area/current_area = get_area(src)
 	if(!current_area)
@@ -41,13 +41,10 @@
 	if(mapload)
 		find_and_mount_on_atom()
 	GLOB.intercoms_list += src
-	if(!unscrewed)
-		find_and_hang_on_wall(directional = TRUE, \
-			custom_drop_callback = CALLBACK(src, PROC_REF(knock_down)))
 
 /obj/item/radio/intercom/Destroy()
-	. = ..()
 	GLOB.intercoms_list -= src
+	return ..()
 
 /obj/item/radio/intercom/examine(mob/user)
 	. = ..()
@@ -89,7 +86,7 @@
 	if(tool.use_tool(src, user, 80))
 		user.visible_message(span_notice("[user] unsecures [src]!"), span_notice("You detach [src] from the wall."))
 		playsound(src, 'sound/items/deconstruct.ogg', 50, TRUE)
-		knock_down()
+		deconstruct(TRUE)
 
 /**
  * Override attack_tk_grab instead of attack_tk because we actually want attack_tk's
@@ -189,9 +186,8 @@
 /**
  * Called by the wall mount component and reused during the tool deconstruction proc.
  */
-/obj/item/radio/intercom/proc/knock_down()
+/obj/item/radio/intercom/atom_deconstruct(disassembled)
 	new/obj/item/wallframe/intercom(get_turf(src))
-	qdel(src)
 
 //Created through the autolathe or through deconstructing intercoms. Can be applied to wall to make a new intercom on it!
 /obj/item/wallframe/intercom
@@ -211,7 +207,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/item/radio/intercom, 27)
 	anonymize = TRUE
 	freqlock = RADIO_FREQENCY_EMAGGABLE_LOCK
 
-/obj/item/radio/intercom/chapel/Initialize(mapload, ndir, building)
+/obj/item/radio/intercom/chapel/Initialize(mapload)
 	. = ..()
 	set_frequency(1481)
 	set_broadcasting(TRUE)

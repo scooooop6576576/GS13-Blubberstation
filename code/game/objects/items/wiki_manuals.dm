@@ -83,7 +83,6 @@
 		</html>"}
 
 //GS13 EDIT END
-
 //BUBBER EDIT ADDITION BEGIN: READING SPACE LAW HAS A CHANCE TO TEACH YOU LEGALESE
 /obj/item/book/manual/wiki/security_space_law/attack_self(mob/user)
 	if(user.can_read(src) && prob(30))

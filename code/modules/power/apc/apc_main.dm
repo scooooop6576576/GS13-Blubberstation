@@ -173,7 +173,7 @@
 	//. += NAMEOF(src, locked)
 	return .
 
-/obj/machinery/power/apc/Initialize(mapload, ndir)
+/obj/machinery/power/apc/Initialize(mapload)
 	. = ..()
 
 	//APCs get added to their own processing tasks for the machines subsystem.

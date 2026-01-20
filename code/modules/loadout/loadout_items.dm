@@ -81,10 +81,18 @@ GLOBAL_LIST_INIT(all_loadout_categories, init_loadout_categories())
 /datum/loadout_item/New(category)
 	src.category = category
 
-	if(can_be_greyscale == DONT_GREYSCALE)
-		can_be_greyscale = FALSE
-	else if((item_path::flags_1 & IS_PLAYER_COLORABLE_1) && item_path::greyscale_config && item_path::greyscale_colors)
-		can_be_greyscale = TRUE
+	if(!(loadout_flags & LOADOUT_FLAG_BLOCK_GREYSCALING) && is_greyscale_item())
+		loadout_flags |= LOADOUT_FLAG_GREYSCALING_ALLOWED
+
+	if(loadout_flags & LOADOUT_FLAG_JOB_GREYSCALING)
+		var/default_colors = SSgreyscale.ParseColorString(item_path::greyscale_colors)
+		var/list/final_palette = LAZYLISTDUPLICATE(job_greyscale_palettes)
+		switch(length(default_colors))
+			if(1)
+				LAZYOR(final_palette, default_one_color_job_palette())
+			if(2 to INFINITY)
+				stack_trace("[length(default_colors)] color job palettes are not implemented yet, please do so.")
+		job_greyscale_palettes = final_palette
 
 	if(isnull(name))
 		name = item_path::name
@@ -101,12 +109,20 @@ GLOBAL_LIST_INIT(all_loadout_categories, init_loadout_categories())
 	// SKYRAT EDIT END
 
 /datum/loadout_item/Destroy(force, ...)
-	if(force)
+	if(!force)
 		stack_trace("QDEL called on loadout item [type]. This shouldn't ever happen. (Use FORCE if necessary.)")
 		return QDEL_HINT_LETMELIVE
 
 	GLOB.all_loadout_datums -= item_path
 	return ..()
+
+/// Checks if the item is capable of being recolored / is a GAGS item.
+/datum/loadout_item/proc/is_greyscale_item()
+	if(!(item_path::flags_1 & IS_PLAYER_COLORABLE_1))
+		return FALSE
+	if(!item_path::greyscale_config || !item_path::greyscale_colors)
+		return FALSE
+	return TRUE
 
 /**
  * Takes in an action from a loadout manager and applies it
@@ -120,18 +136,18 @@ GLOBAL_LIST_INIT(all_loadout_categories, init_loadout_categories())
 
 	switch(action)
 		if("select_color")
-			if(can_be_greyscale)
+			if((loadout_flags & LOADOUT_FLAG_GREYSCALING_ALLOWED) && !(loadout_flags & LOADOUT_FLAG_JOB_GREYSCALING))
 				return set_item_color(manager, user)
 
 		if("set_name")
-			if(can_be_named)
-		// SKYRAT EDIT BEGIN - Description
-				return set_name(manager, user, INFO_NAMED)
+			if(loadout_flags & LOADOUT_FLAG_ALLOW_NAMING)
+				return set_name(manager, user, INFO_NAMED) // BUBBER EDIT CHANGE - Original: return set_name(manager, user)
 
+		// BUBBER EDIT ADDITION BEGIN
 		if("set_desc")
-			if(can_be_named)
+			if(loadout_flags & LOADOUT_FLAG_ALLOW_NAMING)
 				return set_name(manager, user, INFO_DESCRIBED)
-		// SKYRAT EDIT END
+		// BUBBER EDIT ADDITION END
 
 		if("set_skin")
 			if(reskin_datum)
@@ -227,6 +243,26 @@ GLOBAL_LIST_INIT(all_loadout_categories, init_loadout_categories())
 	manager.save_current_loadout(loadout) // BUBBER EDIT: Multiple loadout presets: ORIGINAL: manager.preferences.update_preference(GLOB.preference_entries[/datum/preference/loadout], loadout)
 	return TRUE // always update UI
 
+/// When passed an outfit, attempts to select a job-appropriate color from job_greyscale_palettes
+/datum/loadout_item/proc/get_job_color(datum/outfit/base_outfit)
+	if(!istype(base_outfit, /datum/outfit/job))
+		return job_greyscale_palettes[/datum/job] // default color
+
+	var/datum/outfit/job/job_outfit = base_outfit
+	var/jobtype = job_outfit.jobtype
+	if(job_greyscale_palettes[jobtype])
+		return job_greyscale_palettes[jobtype]
+
+	var/datum/job/job = SSjob.get_job_type(jobtype)
+	if(job.department_for_prefs && job_greyscale_palettes[job.department_for_prefs])
+		return job_greyscale_palettes[job.department_for_prefs]
+
+	for(var/job_dept in job.departments_list)
+		if(job_greyscale_palettes[job_dept])
+			return job_greyscale_palettes[job_dept]
+
+	return job_greyscale_palettes[/datum/job] // default color
+
 /**
  * Place our [item_path] into the passed [outfit].
  *
@@ -248,46 +284,41 @@ GLOBAL_LIST_INIT(all_loadout_categories, init_loadout_categories())
  *
  * Arguments:
  * * preference_source - the datum/preferences our loadout item originated from - cannot be null
+ * * item_details - the details of the item in the loadout preferences, such as greyscale, name, reskin, etc
  * * equipper - the mob we're equipping this item onto
+ * * outfit - the rest of the outfit being equipped, may be null
  * * visuals_only - whether or not this is only concerned with visual things (not backpack, not renaming, etc)
- * * preference_list - what the raw loadout list looks like in the preferences
  *
  * Return a bitflag of slot flags to update
  */
-/datum/loadout_item/proc/on_equip_item(
-	obj/item/equipped_item,
-	datum/preferences/preference_source,
-	list/preference_list,
-	mob/living/carbon/human/equipper,
-	visuals_only = FALSE,
-)
+/datum/loadout_item/proc/on_equip_item(obj/item/equipped_item, list/item_details, mob/living/carbon/human/equipper, datum/outfit/outfit, visuals_only = FALSE)
 	if(isnull(equipped_item))
 		return NONE
 
 	if(!visuals_only)
 		ADD_TRAIT(equipped_item, TRAIT_ITEM_OBJECTIVE_BLOCKED, TRAIT_SOURCE_LOADOUT)
 
-	var/list/item_details = preference_list[item_path]
 	var/update_flag = NONE
 
-	if(can_be_greyscale && item_details?[INFO_GREYSCALE])
-		equipped_item.set_greyscale(item_details[INFO_GREYSCALE])
+	if((loadout_flags & LOADOUT_FLAG_GREYSCALING_ALLOWED) && ((loadout_flags & LOADOUT_FLAG_JOB_GREYSCALING) || item_details?[INFO_GREYSCALE]))
+		var/item_color = (loadout_flags & LOADOUT_FLAG_JOB_GREYSCALING) ? get_job_color(outfit) : item_details?[INFO_GREYSCALE]
+		equipped_item.set_greyscale(item_color)
 		update_flag |= equipped_item.slot_flags
 
-	// SKYRAT EDIT BEGIN - DESCRIPTIONS~
-	if(can_be_named && !visuals_only)
-		var/renamed = 0
+	// BUBBER EDIT CHANGE BEGIN - Descriptions
+	if((loadout_flags & LOADOUT_FLAG_ALLOW_NAMING) && !visuals_only)
+		var/renamed = FALSE
 		if(item_details?[INFO_NAMED])
 			equipped_item.name = trim(item_details[INFO_NAMED], PREVENT_CHARACTER_TRIM_LOSS(MAX_NAME_LEN))
-			renamed = 1
+			renamed = TRUE
 		if(item_details?[INFO_DESCRIBED])
 			equipped_item.desc = trim(item_details[INFO_DESCRIBED], PREVENT_CHARACTER_TRIM_LOSS(MAX_DESC_LEN))
-			renamed = 1
+			renamed = TRUE
 		if(renamed)
 			ADD_TRAIT(equipped_item, TRAIT_WAS_RENAMED, TRAIT_SOURCE_LOADOUT)
 			equipped_item.AddElement(/datum/element/examined_when_worn)
 			SEND_SIGNAL(equipped_item, COMSIG_NAME_CHANGED)
-	// SKYRAT EDIT END
+	// BUBBER EDIT CHANGE END - Descriptions
 
 	if(reskin_datum && item_details?[INFO_RESKIN])
 		var/skin_chosen = item_details[INFO_RESKIN]
@@ -305,11 +336,6 @@ GLOBAL_LIST_INIT(all_loadout_categories, init_loadout_categories())
 			else
 				update_flag |= equipped_item.slot_flags
 			break
-
-		else
-			// Not valid, update the preference
-			item_details -= INFO_RESKIN
-			preference_source.write_preference(GLOB.preference_entries[/datum/preference/loadout], preference_list)
 
 	return update_flag
 
@@ -361,7 +387,7 @@ GLOBAL_LIST_INIT(all_loadout_categories, init_loadout_categories())
 
 	// Mothblocks is hellbent on recolorable and reskinnable being only tooltips for items for visual clarity, so ask her before changing these
 	var/list/displayed_text = list()
-	if(can_be_greyscale)
+	if((loadout_flags & LOADOUT_FLAG_GREYSCALING_ALLOWED) && !(loadout_flags & LOADOUT_FLAG_JOB_GREYSCALING))
 		displayed_text[FA_ICON_PALETTE] = "Recolorable"
 
 	if(reskin_datum)
@@ -408,7 +434,7 @@ GLOBAL_LIST_INIT(all_loadout_categories, init_loadout_categories())
 
 	var/list/button_list = list()
 
-	if(can_be_greyscale)
+	if((loadout_flags & LOADOUT_FLAG_GREYSCALING_ALLOWED) && !(loadout_flags & LOADOUT_FLAG_JOB_GREYSCALING))
 		UNTYPED_LIST_ADD(button_list, list(
 			"label" = "Recolor",
 			"act_key" = "select_color",
@@ -416,7 +442,7 @@ GLOBAL_LIST_INIT(all_loadout_categories, init_loadout_categories())
 			"active_key" = INFO_GREYSCALE,
 		))
 
-	if(can_be_named)
+	if(loadout_flags & LOADOUT_FLAG_ALLOW_NAMING)
 		UNTYPED_LIST_ADD(button_list, list(
 			"label" = "Rename",
 			"act_key" = "set_name",
@@ -451,3 +477,33 @@ GLOBAL_LIST_INIT(all_loadout_categories, init_loadout_categories())
 		))
 
 	return reskins
+
+/// Default job gags colors for one color gags items
+/datum/loadout_item/proc/default_one_color_job_palette()
+	return list(
+		/datum/job/assistant = COLOR_JOB_ASSISTANT,
+		/datum/job/bitrunner = COLOR_JOB_DEFAULT,
+		/datum/job/botanist = COLOR_JOB_BOTANIST,
+		/datum/job/chemist = COLOR_JOB_CHEMIST,
+		/datum/job/chief_engineer = COLOR_JOB_CE,
+		/datum/job/chief_medical_officer = COLOR_JOB_CMO,
+		/datum/job/clown = COLOR_JOB_CLOWN,
+		/datum/job/cook = COLOR_JOB_CHEF,
+		/datum/job/coroner = COLOR_JOB_DEFAULT,
+		/datum/job/curator = COLOR_DRIED_TAN,
+		/datum/job/detective = COLOR_DRIED_TAN,
+		/datum/job/geneticist = COLOR_BLUE_GRAY,
+		/datum/job/janitor = COLOR_JOB_JANITOR,
+		/datum/job/lawyer = COLOR_JOB_LAWYER,
+		/datum/job/prisoner = COLOR_PRISONER_ORANGE,
+		/datum/job/psychologist = COLOR_DRIED_TAN,
+		/datum/job/roboticist = COLOR_JOB_DEFAULT,
+		/datum/job/shaft_miner = COLOR_DARK_BROWN,
+		/datum/job_department/command = COLOR_JOB_COMMAND_GENERIC,
+		/datum/job_department/engineering = COLOR_JOB_ENGI_GENERIC,
+		/datum/job_department/medical = COLOR_JOB_MED_GENERIC,
+		/datum/job_department/security = COLOR_JOB_SEC_GENERIC,
+		/datum/job_department/science = COLOR_JOB_SCI_GENERIC,
+		/datum/job_department/cargo = COLOR_JOB_CARGO_GENERIC,
+		/datum/job = COLOR_JOB_DEFAULT, // default for any job not listed above
+	)

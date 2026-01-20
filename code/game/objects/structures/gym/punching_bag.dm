@@ -58,6 +58,7 @@
 			stamina_exhaustion = 2
 
 		boxer.work_out(0.5, 0) //GS13 EDIT
+
 	if (is_heavy_gravity)
 		stamina_exhaustion *= 1.5
 

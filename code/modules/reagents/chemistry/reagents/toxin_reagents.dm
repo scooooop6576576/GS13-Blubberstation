@@ -979,7 +979,7 @@
 
 /datum/reagent/toxin/lipolicide/on_mob_life(mob/living/carbon/affected_mob, seconds_per_tick, times_fired)
 	. = ..()
-	/* GS13 EDIT, DON'T HURT PLS :(
+	/*GS13 EDIT - Lipolicide doesn't hurt anymore!
 	if(affected_mob.nutrition <= NUTRITION_LEVEL_STARVING)
 		if(affected_mob.adjust_tox_loss(1 * REM * seconds_per_tick, updating_health = FALSE, required_biotype = affected_biotype))
 			. = UPDATE_MOB_HEALTH
