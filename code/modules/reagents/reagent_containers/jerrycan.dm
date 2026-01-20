@@ -189,3 +189,5 @@
 #undef CAP_RED
 #undef CAP_GREEN
 #undef CAP_BLUE
+#undef LABEL_GT
+#undef LABEL_GT_MINI
