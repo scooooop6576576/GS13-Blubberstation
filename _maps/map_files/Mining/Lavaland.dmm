@@ -125,7 +125,7 @@
 /obj/machinery/door/airlock/external{
 	name = "Mining External Airlock"
 	},
-/obj/effect/mapping_helpers/airlock/unres/delayed,
+/obj/effect/mapping_helpers/airlock/unres,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/effect/mapping_helpers/airlock/access/any/engineering/maintenance,
 /obj/effect/decal/cleanable/dirt,
@@ -747,12 +747,6 @@
 	dir = 8
 	},
 /area/mine/laborcamp/production)
-"ep" = (
-/obj/structure/sign/directions/evac/directional/south{
-	pixel_y = 0
-	},
-/turf/closed/wall,
-/area/mine/production)
 "et" = (
 /obj/structure/stone_tile/block/cracked{
 	dir = 4
@@ -2329,7 +2323,7 @@
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 1
 	},
-/obj/effect/mapping_helpers/airlock/unres/delayed,
+/obj/effect/mapping_helpers/airlock/unres,
 /obj/machinery/door/airlock/external/glass{
 	name = "Mining Shuttle Airlock"
 	},
@@ -2551,7 +2545,7 @@
 /obj/structure/cable,
 /obj/structure/disposalpipe/segment,
 /obj/effect/mapping_helpers/airlock/access/any/engineering/maintenance/departmental,
-/obj/effect/mapping_helpers/airlock/unres/delayed{
+/obj/effect/mapping_helpers/airlock/unres{
 	dir = 1
 	},
 /turf/open/floor/plating,
@@ -5284,7 +5278,7 @@
 /obj/machinery/door/airlock/external{
 	name = "Mining External Airlock"
 	},
-/obj/effect/mapping_helpers/airlock/unres/delayed{
+/obj/effect/mapping_helpers/airlock/unres{
 	dir = 4
 	},
 /obj/effect/mapping_helpers/airlock/access/any/engineering/maintenance,
@@ -5428,8 +5422,7 @@
 /turf/open/floor/iron/edge{
 	dir = 1
 	},
-/turf/open/misc/hay/lavaland,
-/area/lavaland/surface/outdoors)
+/area/mine/living_quarters)
 "CM" = (
 /obj/effect/turf_decal/stripes/line,
 /turf/open/floor/iron/dark/textured_large,
@@ -5962,10 +5955,6 @@
 /obj/effect/turf_decal/trimline/green/filled/line,
 /turf/open/floor/iron/dark,
 /area/mine/laborcamp)
-"Gw" = (
-/obj/structure/sign/directions/supply/directional/east,
-/turf/closed/wall,
-/area/mine/living_quarters)
 "Gx" = (
 /obj/effect/turf_decal/sand/plating/volcanic,
 /obj/structure/marker_beacon/teal,
@@ -7203,11 +7192,19 @@
 /turf/open/floor/iron/checker,
 /area/mine/cafeteria)
 "MQ" = (
-/obj/structure/sign/directions/security/directional/west{
-	pixel_y = -7;
-	pixel_x = 0
+/obj/structure/railing/corner{
+	dir = 4
 	},
-/turf/closed/wall,
+/obj/structure/sign/directions/security/directional/west{
+	pixel_x = 32;
+	pixel_y = -8
+	},
+/obj/structure/sign/directions/lavaland/directional/north{
+	pixel_x = 32;
+	pixel_y = 8
+	},
+/obj/effect/turf_decal/sand/plating/volcanic,
+/turf/open/floor/plating/lavaland_atmos,
 /area/lavaland/surface/outdoors)
 "MS" = (
 /turf/open/floor/carpet/gato,
@@ -8065,11 +8062,20 @@
 /turf/closed/wall,
 /area/mine/maintenance/labor)
 "RF" = (
-/obj/structure/sign/directions/lavaland/directional/west{
-	pixel_x = 0
+/obj/structure/railing/corner{
+	dir = 1
 	},
-/turf/closed/wall,
-/area/mine/cafeteria)
+/obj/structure/sign/directions/security/directional/west{
+	pixel_x = 0;
+	pixel_y = 24
+	},
+/obj/structure/sign/directions/lavaland/directional/west{
+	pixel_x = 0;
+	pixel_y = 32
+	},
+/obj/effect/turf_decal/sand/plating/volcanic,
+/turf/open/floor/plating/lavaland_atmos,
+/area/lavaland/surface/outdoors)
 "RG" = (
 /obj/machinery/door/airlock/public/glass{
 	id_tag = "cellblock1";
@@ -8101,7 +8107,7 @@
 /area/mine/laborcamp/quarters)
 "RW" = (
 /obj/effect/mapping_helpers/airlock/cyclelink_helper,
-/obj/effect/mapping_helpers/airlock/unres/delayed,
+/obj/effect/mapping_helpers/airlock/unres,
 /obj/effect/turf_decal/trimline/brown/filled/line{
 	dir = 1
 	},
@@ -9412,11 +9418,6 @@
 	dir = 10
 	},
 /turf/open/floor/iron,
-/area/mine/lounge)
-"Zg" = (
-/obj/effect/spawner/structure/window/reinforced,
-/obj/structure/sign/directions/evac/directional/east,
-/turf/open/floor/plating,
 /area/mine/lounge)
 "Zh" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -35767,7 +35768,7 @@ VK
 VK
 VK
 Nf
-rG
+MQ
 BP
 ol
 pU
@@ -36024,8 +36025,8 @@ aj
 aj
 aj
 aj
-MQ
-ZC
+FH
+rG
 ol
 aj
 aj
@@ -37823,8 +37824,8 @@ zH
 kY
 kY
 Tc
+kY
 RF
-vd
 NL
 aj
 aj
@@ -38080,7 +38081,7 @@ te
 dz
 px
 DI
-Tv
+oS
 BP
 ol
 aj
@@ -42703,7 +42704,7 @@ iu
 iu
 iN
 ix
-Gw
+iu
 Zw
 UD
 iu
@@ -42959,7 +42960,7 @@ Nt
 pI
 zf
 Up
-ix
+CI
 iu
 iu
 iu
@@ -45527,6 +45528,7 @@ FX
 FX
 nm
 iY
+nm
 Zx
 bo
 ho
@@ -45553,7 +45555,7 @@ aj
 aj
 pU
 pU
-ad
+ze
 pU
 aj
 aj
@@ -47867,7 +47869,7 @@ pU
 pU
 NK
 BP
-ad
+ze
 pU
 pU
 aj
