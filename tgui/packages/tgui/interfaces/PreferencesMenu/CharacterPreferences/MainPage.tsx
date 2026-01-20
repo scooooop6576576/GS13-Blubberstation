@@ -3,8 +3,10 @@ import { filter, map } from 'es-toolkit/compat';
 import { type ReactNode, useState } from 'react';
 import { type sendAct, useBackend } from 'tgui/backend';
 import {
+  BlockQuote,
   Box,
   Button,
+  Divider,
   Floating,
   Input,
   LabeledList,
@@ -24,7 +26,7 @@ import {
   type FeatureChoicedServerData,
   FeatureValueInput,
 } from '../preferences/features/base';
-import { Gender, GENDERS } from '../preferences/gender';
+import { GENDERS, Gender } from '../preferences/gender';
 import {
   createSetPreference,
   type PreferencesMenuData,
@@ -810,8 +812,8 @@ export function MainPage(props: MainPageProps) {
               <Stack.Item>{BFI_stages}</Stack.Item>
               <Stack.Item>{prefPageContents}</Stack.Item>
               {/* GS13 END EDIT */}
-            {prefPageContents}
-          </Stack>
+              {prefPageContents}
+            </Stack>
           </Stack>
         </Stack.Item>
         {/* BUBBER EDIT CHANGE END: Swappable pref menus */}

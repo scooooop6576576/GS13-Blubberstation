@@ -5984,9 +5984,6 @@
 	dir = 4
 	},
 /obj/structure/table/glass,
-/obj/item/implanter/krav_maga{
-	pixel_x = 3
-	},
 /obj/item/implanter/mindshield{
 	pixel_y = 5;
 	pixel_x = 3
