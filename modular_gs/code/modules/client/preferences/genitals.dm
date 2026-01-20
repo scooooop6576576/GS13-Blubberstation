@@ -150,6 +150,7 @@ GLOBAL_LIST_INIT(breast_produce, list(
 	"blueberry juice" = /datum/reagent/blueberry_juice,
 	"succubus milk" = /datum/reagent/drug/aphrodisiac/succubus_milk,
 	"incubus draft" = /datum/reagent/drug/aphrodisiac/incubus_draft,
+	"cream" = /datum/reagent/consumable/cream,
 	))
 
 /datum/preference/numeric/max_belly_size
@@ -172,6 +173,9 @@ GLOBAL_LIST_INIT(breast_produce, list(
 
 /datum/preference/numeric/max_belly_size/apply_to_human(mob/living/carbon/human/target, value, datum/preferences/preferences)
 	target.dna.features["max_belly_size"] = value
+	var/obj/item/organ/genital/belly/belly = target.get_organ_slot(ORGAN_SLOT_BELLY)
+	if(!isnull(belly))
+		belly.max_genital_size = value
 
 /datum/preference/numeric/max_breast_size
 	category = PREFERENCE_CATEGORY_SECONDARY_FEATURES
@@ -193,6 +197,9 @@ GLOBAL_LIST_INIT(breast_produce, list(
 
 /datum/preference/numeric/max_breast_size/apply_to_human(mob/living/carbon/human/target, value, datum/preferences/preferences)
 	target.dna.features["max_breast_size"] = value
+	var/obj/item/organ/genital/breasts/breasts = target.get_organ_slot(ORGAN_SLOT_BREASTS)
+	if(!isnull(breasts))
+		breasts.max_genital_size = value
 
 /datum/preference/numeric/max_butt_size
 	category = PREFERENCE_CATEGORY_SECONDARY_FEATURES
@@ -214,3 +221,6 @@ GLOBAL_LIST_INIT(breast_produce, list(
 
 /datum/preference/numeric/max_butt_size/apply_to_human(mob/living/carbon/human/target, value, datum/preferences/preferences)
 	target.dna.features["max_butt_size"] = value
+	var/obj/item/organ/genital/butt/butt = target.get_organ_slot(ORGAN_SLOT_BUTT)
+	if(!isnull(butt))
+		butt.max_genital_size = value
