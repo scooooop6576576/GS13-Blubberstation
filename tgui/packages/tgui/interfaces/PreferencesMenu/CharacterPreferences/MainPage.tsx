@@ -809,10 +809,9 @@ export function MainPage(props: MainPageProps) {
             <Stack vertical fill>
               <Stack.Item>{BFI_stages}</Stack.Item>
               <Stack.Item>{prefPageContents}</Stack.Item>
-            </Stack>
-            {/* GS13 END EDIT */}
-            </Stack>
+              {/* GS13 END EDIT */}
             {prefPageContents}
+          </Stack>
           </Stack>
         </Stack.Item>
         {/* BUBBER EDIT CHANGE END: Swappable pref menus */}
