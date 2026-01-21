@@ -179,6 +179,7 @@
 		/obj/item/trash/vendor_trash/lizard_bag = 1,
 		/obj/item/trash/vendor_trash/lizard_box = 1,
 		// BUBBER EDIT ADDITION END
+		/obj/item/trash/blueberry_gum = 1,	// GS13 EDIT
 	)
 
 /obj/effect/spawner/random/trash/botanical_waste
