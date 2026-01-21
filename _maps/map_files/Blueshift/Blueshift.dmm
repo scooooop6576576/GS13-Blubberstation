@@ -59623,7 +59623,7 @@
 /obj/effect/decal/cleanable/dirt{
 	icon_state = "dirt-flat-1"
 	},
-/mob/living/simple_animal/hostile/blackmesa/xen/bullsquid,
+/mob/living/basic/blackmesa/xen/bullsquid,
 /obj/structure/alien/weeds/xen,
 /turf/open/misc/asteroid/airless,
 /area/space/nearstation)
