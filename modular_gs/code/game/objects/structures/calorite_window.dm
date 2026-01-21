@@ -38,6 +38,7 @@
 		laser.fat_added = fat_power_to_add
 
 /obj/structure/window/calorite/unanchored
+	custom_materials = list(/datum/material/calorite = SHEET_MATERIAL_AMOUNT, /datum/material/glass = HALF_SHEET_MATERIAL_AMOUNT)
 	anchored = FALSE
 
 MAPPING_DIRECTIONAL_HELPERS(/obj/structure/window/calorite/spawner, 0)
@@ -61,3 +62,4 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/window/calorite/unanchored/spawner, 0
 
 /obj/structure/window/calorite/fulltile/unanchored
 	anchored = FALSE
+	custom_materials = list(/datum/material/calorite = SHEET_MATERIAL_AMOUNT, /datum/material/glass = HALF_SHEET_MATERIAL_AMOUNT)
