@@ -2389,7 +2389,7 @@
 	dir = 1
 	},
 /obj/structure/decorative/fluff{
-	icon = 'modular_skyrat/modules/aesthetics/floors/icons/floors.dmi';
+	icon = 'icons/turf/floors.dmi';
 	base_icon_state = "stairs-old";
 	icon_state = "stairs-old";
 	anchored = 1;
@@ -16401,7 +16401,7 @@
 	pixel_y = 6
 	},
 /obj/structure/decorative/fluff{
-	icon = 'modular_skyrat/modules/aesthetics/floors/icons/floors.dmi';
+	icon = 'icons/turf/floors.dmi';
 	base_icon_state = "stairs-old";
 	icon_state = "stairs-old";
 	anchored = 1;

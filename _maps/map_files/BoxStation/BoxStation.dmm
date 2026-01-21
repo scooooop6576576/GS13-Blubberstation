@@ -37312,7 +37312,7 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/structure/fake_stairs/directional/north{
 	icon_state = "stairs-old";
-	icon = 'modular_skyrat/modules/aesthetics/floors/icons/floors.dmi';
+	icon = 'icons/turf/floors.dmi';
 	color = "#555555";
 	dir = 2;
 	pixel_y = 1
@@ -38150,7 +38150,7 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/structure/fake_stairs/directional/south{
 	icon_state = "stairs-old";
-	icon = 'modular_skyrat/modules/aesthetics/floors/icons/floors.dmi';
+	icon = 'icons/turf/floors.dmi';
 	color = "#555555";
 	dir = 1;
 	pixel_y = 1
@@ -49566,7 +49566,7 @@
 "iwu" = (
 /obj/structure/fake_stairs/directional/north{
 	icon_state = "stairs-old";
-	icon = 'modular_skyrat/modules/aesthetics/floors/icons/floors.dmi';
+	icon = 'icons/turf/floors.dmi';
 	color = "#555555";
 	dir = 1;
 	pixel_y = 1
@@ -54302,7 +54302,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/floor,
 /obj/structure/decorative/fluff{
-	icon = 'modular_skyrat/modules/aesthetics/floors/icons/floors.dmi';
+	icon = 'icons/turf/floors.dmi';
 	base_icon_state = "stairs-old";
 	icon_state = "stairs-old";
 	anchored = 1;
@@ -76889,7 +76889,7 @@
 "uzL" = (
 /obj/structure/fake_stairs/directional/north{
 	icon_state = "stairs-old";
-	icon = 'modular_skyrat/modules/aesthetics/floors/icons/floors.dmi';
+	icon = 'icons/turf/floors.dmi';
 	color = "#555555";
 	dir = 4;
 	pixel_y = 1
@@ -77318,7 +77318,7 @@
 	dir = 1
 	},
 /obj/structure/decorative/fluff{
-	icon = 'modular_skyrat/modules/aesthetics/floors/icons/floors.dmi';
+	icon = 'icons/turf/floors.dmi';
 	base_icon_state = "stairs-old";
 	icon_state = "stairs-old";
 	anchored = 1;
