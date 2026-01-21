@@ -324,7 +324,7 @@
 /turf/open/misc/dirt/planet/xen,
 /area/awaymission/black_mesa/xen/nihilanth_computer)
 "adL" = (
-/mob/living/simple_animal/hostile/blackmesa/xen/headcrab,
+/mob/living/basic/blackmesa/xen/headcrab,
 /turf/open/floor/mineral/titanium/white,
 /area/awaymission/black_mesa/entrance)
 "adM" = (
@@ -1800,7 +1800,7 @@
 /area/awaymission/black_mesa/security_outpost)
 "axm" = (
 /obj/structure/stone_tile/slab,
-/mob/living/simple_animal/hostile/blackmesa/xen/headcrab_zombie/gordon_freeman,
+/mob/living/basic/blackmesa/xen/headcrab_zombie/gordon_freeman,
 /turf/open/misc/xen,
 /area/awaymission/black_mesa/xen/freeman_arena)
 "axn" = (
@@ -9189,7 +9189,7 @@
 /turf/closed/wall/r_wall,
 /area/awaymission/black_mesa/genetics_sec)
 "kWX" = (
-/mob/living/basic/blackmesa/xen/bullsquid,
+/mob/living/simple_animal/hostile/blackmesa/xen/bullsquid,
 /turf/open/misc/xen,
 /area/awaymission/black_mesa/xen/acid_lake)
 "kXt" = (
@@ -9878,7 +9878,7 @@
 "mnn" = (
 /obj/structure/alien/weeds/xen,
 /obj/structure/cable,
-/mob/living/simple_animal/hostile/blackmesa/xen/headcrab_zombie/hev,
+/mob/living/basic/blackmesa/xen/headcrab_zombie/hev,
 /turf/open/floor/plating,
 /area/awaymission/black_mesa/resonant_chamber)
 "mnS" = (
@@ -14256,7 +14256,7 @@
 /area/awaymission/black_mesa/xen/acid_lake_hallway)
 "uWN" = (
 /obj/structure/alien/weeds/xen,
-/mob/living/simple_animal/hostile/blackmesa/xen/headcrab_zombie/scientist,
+/mob/living/basic/blackmesa/xen/headcrab_zombie/scientist,
 /turf/open/floor/iron/textured,
 /area/awaymission/black_mesa/science_labs)
 "uWO" = (
@@ -15282,7 +15282,7 @@
 	dir = 8
 	},
 /obj/structure/alien/weeds/xen,
-/mob/living/simple_animal/hostile/blackmesa/xen/headcrab_zombie/scientist,
+/mob/living/basic/blackmesa/xen/headcrab_zombie/scientist,
 /turf/open/floor/iron/textured,
 /area/awaymission/black_mesa/science_labs)
 "wUw" = (
@@ -15331,7 +15331,7 @@
 /turf/open/floor/iron/smooth,
 /area/awaymission/black_mesa/genetics_elevator)
 "wYo" = (
-/mob/living/basic/blackmesa/xen/bullsquid,
+/mob/living/simple_animal/hostile/blackmesa/xen/bullsquid,
 /turf/open/water/xen_acid,
 /area/awaymission/black_mesa/xen/acid_lake)
 "wYs" = (
