@@ -3,6 +3,7 @@
 	icon = 'modular_gs/icons/obj/structure/calorite_door.dmi'
 	icon_state = "calorite"
 	sheetType = /obj/item/stack/sheet/mineral/calorite
+	custom_materials = list(/datum/material/calorite = SHEET_MATERIAL_AMOUNT * 5)
 	max_integrity = 200
 	light_range = 1
 	// Sets it open by default

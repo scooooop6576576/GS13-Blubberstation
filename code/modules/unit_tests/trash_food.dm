@@ -35,6 +35,9 @@
 		/obj/item/stack/sheet/mineral/runescoopercore,
 		/obj/item/stack/sheet/mineral/bananiumberrycore,
 		// BUBBER EDIT ADDITION END
+		//GS13 EDIT START
+		/obj/item/food/blueberry_gum,
+		//GS13 EDIT END
 	)
 
 	for(var/path in subtypesof(/obj/item/food))
