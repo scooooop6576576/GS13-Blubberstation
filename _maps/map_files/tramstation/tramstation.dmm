@@ -70349,7 +70349,6 @@
 "xog" = (
 /obj/machinery/door/airlock/security/glass{
 	name = "Isolation Wing";
-	unres_sensor = 1;
 	unres_sides = 8
 	},
 /obj/machinery/door/firedoor,
