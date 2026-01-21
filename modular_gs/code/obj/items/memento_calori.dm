@@ -5,8 +5,7 @@
 	icon_state = "memento_mori"
 	worn_icon_state = "memento"
 	actions_types = list(/datum/action/item_action/hands_free/memento_mori/calori)
-	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
-	var/list/users = list()
+	var/list/past_users = list()
 
 /obj/item/clothing/neck/necklace/memento_mori/calori/memento(mob/living/carbon/human/user)
 	to_chat(user, span_warning("You feel your weight being drained by the pendant..."))
@@ -17,7 +16,7 @@
 	user.hider_add(src)
 	icon_state = "memento_mori_active"
 	active_owner = user
-	users.Add(user)
+	past_users.Add(user)
 
 /obj/item/clothing/neck/necklace/memento_mori/calori/mori()
 	icon_state = "memento_mori"
@@ -40,8 +39,10 @@
 
 /datum/action/item_action/hands_free/memento_mori/calori/do_effect(trigger_flags)
 	var/obj/item/clothing/neck/necklace/memento_mori/calori/memento = target
-	if(memento.active_owner || !ishuman(owner) || memento.users.Find(owner))
+	if(memento.active_owner || !ishuman(owner) || memento.past_users.Find(owner))
 		to_chat(owner, span_notice("The pendant doesn't react to your prodding..."))
 		return FALSE
-	
-	return ..()
+
+	memento.memento(owner)
+	Remove(memento.active_owner) //Remove the action button, since there's no real use in having it now.
+	return TRUE
