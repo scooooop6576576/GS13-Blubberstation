@@ -5012,10 +5012,6 @@
 "bEC" = (
 /turf/closed/wall,
 /area/station/security/checkpoint/escape)
-"bEG" = (
-/obj/machinery/light/small/blacklight/directional/east,
-/turf/closed/wall,
-/area/station/command/heads_quarters/qm)
 "bEJ" = (
 /obj/machinery/vending/boozeomat,
 /turf/closed/wall,
@@ -6343,7 +6339,7 @@
 /turf/open/floor/stone,
 /area/station/biodome)
 "cbX" = (
-/obj/machinery/light/small/directional/east,
+/obj/machinery/light/small/directional/south,
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -7185,6 +7181,11 @@
 /area/station/science/explab)
 "cqR" = (
 /obj/machinery/chem_master,
+/obj/machinery/button/door/directional/north{
+	id = "pharmacy_shutters";
+	name = "Pharmacy Shutter Controls";
+	req_access = list("pharmacy")
+	},
 /turf/open/floor/iron/white/small,
 /area/station/medical/pharmacy)
 "cqS" = (
@@ -13190,19 +13191,6 @@
 	dir = 1
 	},
 /area/station/medical/medbay/central)
-"eoF" = (
-/obj/machinery/button/door/directional/north{
-	id = "pharmacy_shutters";
-	name = "Pharmacy Shutter Controls";
-	pixel_y = 55;
-	req_access = list("pharmacy")
-	},
-/obj/structure/chair/office/light{
-	dir = 4
-	},
-/obj/effect/landmark/start/chemist,
-/turf/open/floor/iron/white/small,
-/area/station/medical/pharmacy)
 "eoI" = (
 /obj/effect/spawner/random/trash/graffiti,
 /turf/open/floor/plating,
@@ -17287,7 +17275,7 @@
 /obj/item/honey_frame,
 /obj/item/honey_frame,
 /obj/item/queen_bee/bought,
-/obj/machinery/camera/directional/west{
+/obj/machinery/camera/directional/north{
 	c_tag = "Service - Apiary"
 	},
 /obj/effect/turf_decal/trimline/dark_green/filled/line{
@@ -24682,10 +24670,10 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
 	},
-/obj/machinery/camera/directional/west{
+/obj/machinery/camera/directional/east{
 	c_tag = "Service - Hall Roof Port"
 	},
-/turf/open/floor/wood/large,
+/turf/open/floor/glass,
 /area/station/hallway/secondary/service)
 "ict" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/yellow/visible,
@@ -30236,6 +30224,9 @@
 /area/station/asteroid)
 "jVF" = (
 /mob/living/basic/crab/evil/kreb,
+/obj/machinery/camera/directional/west{
+	c_tag = "Biodome - Chapel Back Alley"
+	},
 /turf/open/misc/ashplanet/wateryrock/biodome,
 /area/station/maintenance/central/greater)
 "jVI" = (
@@ -33588,6 +33579,7 @@
 	department = "Quartermaster's Desk";
 	name = "Quartermaster's Desk Requests Console"
 	},
+/obj/machinery/light/small/blacklight/directional/west,
 /turf/open/floor/carpet,
 /area/station/command/heads_quarters/qm)
 "kUt" = (
@@ -42587,7 +42579,7 @@
 /area/station/security/detectives_office)
 "nKK" = (
 /obj/machinery/turretid{
-	control_area = "/area/station/ai_monitored/turret_protected/ai";
+	control_area = "/area/station/ai/satellite/chamber";
 	name = "AI Chamber turret control";
 	pixel_y = 25
 	},
@@ -49677,11 +49669,11 @@
 /turf/open/floor/iron/white,
 /area/station/medical/medbay/central)
 "qbc" = (
+/obj/structure/displaycase/curator,
 /obj/structure/sign/painting/large/library_private{
 	dir = 1;
 	pixel_x = -15
 	},
-/obj/structure/displaycase/curator,
 /turf/open/floor/engine/cult,
 /area/station/service/library)
 "qbe" = (
@@ -64500,7 +64492,6 @@
 "uTS" = (
 /obj/effect/landmark/start/research_director,
 /obj/structure/chair/office,
-/obj/machinery/light/directional/south,
 /turf/open/floor/iron/white,
 /area/station/command/heads_quarters/rd)
 "uTW" = (
@@ -65075,7 +65066,7 @@
 /turf/open/floor/iron/dark,
 /area/station/medical/storage)
 "vdm" = (
-/obj/machinery/computer/security/telescreen/prison,
+/obj/machinery/computer/security/telescreen/prison/directional/south,
 /obj/structure/chair/office{
 	dir = 1
 	},
@@ -71948,14 +71939,6 @@
 /obj/machinery/computer/security/telescreen/interrogation/directional/north,
 /turf/open/floor/iron/smooth_half,
 /area/station/security/brig)
-"xnx" = (
-/obj/effect/spawner/structure/window/reinforced,
-/obj/effect/mapping_helpers/damaged_window,
-/obj/machinery/camera/directional/north{
-	c_tag = "Biodome - Chapel Back Alley"
-	},
-/turf/open/floor/plating,
-/area/station/maintenance/central/greater)
 "xnz" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/effect/turf_decal/stripes/asteroid/line{
@@ -73379,6 +73362,7 @@
 	},
 /obj/item/folder/white,
 /obj/effect/turf_decal/tile/purple/half/contrasted,
+/obj/machinery/light/directional/south,
 /turf/open/floor/iron/dark,
 /area/station/command/heads_quarters/rd)
 "xKk" = (
@@ -116853,7 +116837,7 @@ gHr
 oAe
 csb
 jVF
-xnx
+lYC
 roR
 gRN
 gRN
@@ -165927,7 +165911,7 @@ epr
 epr
 nRf
 cqR
-eoF
+jXb
 iEt
 jtS
 gFM
@@ -168986,7 +168970,7 @@ fsz
 fgk
 aUs
 fkg
-icq
+aUs
 aUs
 aUs
 fkg
@@ -169243,7 +169227,7 @@ ggF
 xGC
 dUI
 ohP
-ohP
+icq
 ohP
 dQs
 dUI
@@ -184945,7 +184929,7 @@ fTd
 lqK
 vJH
 vJH
-bEG
+vJH
 vJH
 eZB
 eQc
