@@ -9,9 +9,11 @@
 	state_open = TRUE
 	circuit = /obj/item/circuitboard/machine/power/adipoelectric_generator
 	occupant_typecache = list(/mob/living/carbon)
-	var/laser_modifier
-	var/max_fat
-	var/obj/structure/cable/attached
+	/// multiplier to power gained from BFI
+	var/laser_modifier = 0
+	/// maximum BFI we can take per second
+	var/max_fat = 0
+	/// base amount of power in Watts (energy in joules?) gained from one BFI
 	var/conversion_rate = 10000
 	var/emp_timer = 0
 	var/active = FALSE
@@ -29,17 +31,23 @@
 	for(var/datum/stock_part/micro_laser/laser in component_parts)
 		laser_modifier += laser.tier
 	for(var/datum/stock_part/matter_bin/matter_bin in component_parts)
-		max_fat += matter_bin.tier * 2
+		max_fat += matter_bin.tier * 5
 
-/obj/machinery/power/adipoelectric_generator/process()
-	if(!occupant)
-		src.visible_message("<span class='alert'>The [src] buzzes. It needs someone inside.</span>")
+/obj/machinery/power/adipoelectric_generator/process(seconds_per_tick)
+	if(!is_operational)
+		return
+
+	var/mob/living/carbon/carbon = occupant
+
+	if(isnull(carbon) || !istype(carbon))
+		visible_message(span_alert("The [src] buzzes. It needs someone standing on it to work."))
 		playsound(src, 'sound/machines/buzz/buzz-two.ogg', 50)
 		return PROCESS_KILL
-	if(occupant:fatness_real > 0 && powernet && anchored && (emp_timer < world.time))
+	
+	if(carbon.fatness_real > 0 && powernet && anchored && (emp_timer < world.time))
 		active = TRUE
-		add_avail(conversion_rate * laser_modifier * max_fat)
-		occupant:adjust_fatness(-max_fat, FATTENING_TYPE_ITEM)
+		var/fat_burned = abs(carbon.adjust_fatness(-(max_fat * seconds_per_tick), FATTENING_TYPE_ITEM, TRUE))
+		add_avail(conversion_rate * laser_modifier * fat_burned)
 	else
 		active = FALSE
 	update_icon()
@@ -57,18 +65,18 @@
 			src.visible_message("<span class='alert'>The [src] buzzes and expels anyone inside!.</span>")
 			open_machine()
 
-/obj/machinery/power/adipoelectric_generator/attackby(obj/item/P, mob/user, params)
+/obj/machinery/power/adipoelectric_generator/attackby(obj/item/tool, mob/user, params)
 	if(state_open)
-		if(default_deconstruction_screwdriver(user, "state_open", "state_off", P))
+		if(default_deconstruction_screwdriver(user, "state_open", "state_off", tool))
 			return
 
-	if(default_pry_open(P))
+	if(default_pry_open(tool))
 		return
 
-	if(default_deconstruction_crowbar(P))
+	if(default_deconstruction_crowbar(tool))
 		return
 
-	if(P.tool_behaviour == TOOL_WRENCH && !active)
+	if(tool.tool_behaviour == TOOL_WRENCH && !active)
 		if(!anchored && !isinspace())
 			connect_to_network()
 			to_chat(user, "<span class='notice'>You secure the generator to the floor.</span>")
@@ -96,6 +104,7 @@
 
 /obj/machinery/power/adipoelectric_generator/open_machine(drop = TRUE, density_to_set = FALSE)
 	. = ..()
+	active = FALSE
 	STOP_PROCESSING(SSobj, src)
 
 /obj/machinery/power/adipoelectric_generator/close_machine(atom/movable/target, density_to_set = TRUE)
@@ -142,13 +151,10 @@
 	..()
 	update_icon()
 
-/obj/machinery/power/adipoelectric_generator/Destroy()
-	. = ..()
-
 /obj/machinery/power/adipoelectric_generator/examine(mob/user)
 	. = ..()
 	if(is_operational)
-		. += "<span class='notice'>[src]'s show it can produce <b>[conversion_rate * laser_modifier]W</b> per adipose unit, taking in <b>[max_fat]</b> max each time.</span>"
+		. += "<span class='notice'>[src]'s show it can produce <b>[conversion_rate * laser_modifier]W</b> per adipose unit, taking in <b>[max_fat]</b> max each second.</span>"
 	else
 		. += "<span class='notice'><b>[src]'s display is currently offline.</b></span>"
 
