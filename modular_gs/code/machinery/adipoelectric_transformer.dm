@@ -55,7 +55,7 @@ GLOBAL_LIST_EMPTY(adipoelectric_transformer)
 		active = FALSE
 		return PROCESS_KILL
 
-	power_available = surplus()
+	power_available = powernet.netexcess
 	if(power_available <= 0)
 		active = FALSE
 		update_icon()
@@ -94,7 +94,7 @@ GLOBAL_LIST_EMPTY(adipoelectric_transformer)
 	if(!state_open)
 		to_chat(user, span_warning("Turn \the [src] off first!"))
 		return FAILED_UNFASTEN
-	
+
 	return ..()
 
 /obj/machinery/power/adipoelectric_transformer/wrench_act(mob/living/user, obj/item/tool)
