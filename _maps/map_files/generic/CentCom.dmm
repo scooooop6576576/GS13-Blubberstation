@@ -4832,6 +4832,13 @@
 	},
 /turf/open/floor/iron/freezer,
 /area/centcom/central_command_areas/admin)
+"oA" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
+	},
+/obj/machinery/status_display/evac/directional/north,
+/turf/open/floor/iron,
+/area/centcom/central_command_areas/ferry)
 "oB" = (
 /obj/machinery/airalarm/directional/east,
 /obj/machinery/vending/wardrobe/cent_wardrobe,
@@ -10861,11 +10868,6 @@
 /obj/effect/turf_decal/stripes/line,
 /obj/effect/mapping_helpers/airlock/access/all/admin/captain,
 /turf/open/floor/iron,
-/area/centcom/central_command_areas/ferry)
-"GQ" = (
-/obj/machinery/status_display/evac,
-/obj/effect/spawner/structure/window/reinforced,
-/turf/open/floor/plating,
 /area/centcom/central_command_areas/ferry)
 "GR" = (
 /obj/effect/decal/big_gato,
@@ -51450,7 +51452,7 @@ QG
 Hz
 Hz
 iJ
-GQ
+oe
 aa
 aa
 aa
@@ -52217,7 +52219,7 @@ st
 tr
 um
 mD
-vD
+oA
 uO
 uO
 uO

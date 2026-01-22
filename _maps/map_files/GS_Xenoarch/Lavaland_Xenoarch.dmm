@@ -4827,11 +4827,6 @@
 	},
 /turf/open/floor/iron,
 /area/lavaland/underground/xenoarch/caloriteresearch)
-"dVG" = (
-/obj/structure/barricade/wooden,
-/obj/structure/sign/gato,
-/turf/open/indestructible/chocolate,
-/area/lavaland/underground/xenoarch/candyland)
 "dVQ" = (
 /obj/structure/cable,
 /turf/open/floor/iron/stairs{
@@ -4860,6 +4855,10 @@
 /obj/machinery/light,
 /turf/open/floor/plating/lavaland_baseturf,
 /area/xenoarch/lavaland/public)
+"dXd" = (
+/obj/structure/sign/gato,
+/turf/closed/indestructible/chocolate,
+/area/lavaland/underground/xenoarch/candyland)
 "dXC" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
@@ -6715,12 +6714,12 @@
 /obj/effect/turf_decal/tile/purple{
 	dir = 8
 	},
-/obj/machinery/light,
 /obj/machinery/suit_storage_unit/mining,
 /obj/effect/turf_decal/bot,
 /obj/effect/turf_decal/trimline/purple/corner{
 	dir = 1
 	},
+/obj/machinery/light/directional/south,
 /turf/open/floor/iron/white,
 /area/xenoarch/lavaland/arch)
 "fGQ" = (
@@ -9410,7 +9409,7 @@
 /turf/open/indestructible/chocolate,
 /area/lavaland/underground/xenoarch/candyland)
 "hOh" = (
-/obj/structure/sign/gatofull_1{
+/obj/effect/decal/gatofull_1{
 	pixel_x = 10;
 	pixel_y = 1
 	},
@@ -19894,7 +19893,7 @@
 /turf/open/floor/plating,
 /area/xenoarch/lavaland/sec)
 "qyc" = (
-/obj/structure/sign/gatofull_2{
+/obj/effect/decal/gatofull_2{
 	pixel_x = 10;
 	pixel_y = 1
 	},
@@ -22834,9 +22833,9 @@
 /turf/open/floor/iron,
 /area/lavaland/underground/xenoarch/caloriteresearch)
 "sRF" = (
-/obj/structure/sign/gatofull_3{
+/obj/effect/decal/gatofull_3{
 	pixel_x = 10;
-	pixel_y = 0
+	pixel_y = 1
 	},
 /obj/structure/marker_beacon/fuchsia{
 	pixel_x = 11;
@@ -25498,7 +25497,6 @@
 	dir = 8
 	},
 /obj/machinery/suit_storage_unit/mining,
-/obj/machinery/light,
 /obj/effect/turf_decal/bot,
 /obj/effect/turf_decal/trimline/purple/line{
 	dir = 1
@@ -25506,6 +25504,7 @@
 /obj/effect/turf_decal/trimline/purple/mid_joiner{
 	dir = 1
 	},
+/obj/machinery/light/directional/south,
 /turf/open/floor/iron/white/textured_edge{
 	dir = 1
 	},
@@ -25695,12 +25694,12 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/tile/purple,
-/obj/machinery/light,
 /obj/machinery/suit_storage_unit/mining,
 /obj/effect/turf_decal/bot,
 /obj/effect/turf_decal/trimline/purple/corner{
 	dir = 4
 	},
+/obj/machinery/light/directional/south,
 /turf/open/floor/iron/white,
 /area/xenoarch/lavaland/arch)
 "uXq" = (
@@ -28261,23 +28260,6 @@
 /obj/effect/turf_decal/delivery,
 /turf/open/floor/iron/smooth_large,
 /area/xenoarch/lavaland/lowerlevel)
-"xfM" = (
-/obj/effect/turf_decal/tile/purple,
-/obj/effect/turf_decal/tile/purple{
-	dir = 8
-	},
-/obj/machinery/suit_storage_unit/mining,
-/obj/effect/turf_decal/bot,
-/obj/effect/turf_decal/trimline/purple/line{
-	dir = 1
-	},
-/obj/effect/turf_decal/trimline/purple/mid_joiner{
-	dir = 1
-	},
-/turf/open/floor/iron/white/textured_edge{
-	dir = 1
-	},
-/area/xenoarch/lavaland/arch)
 "xga" = (
 /obj/item/trash/cnds{
 	pixel_x = 11;
@@ -46556,7 +46538,7 @@ hbo
 dLG
 sie
 sie
-sie
+dXd
 qcS
 dLG
 qcS
@@ -46814,7 +46796,7 @@ qcS
 dLG
 qcS
 qcS
-dVG
+tGC
 qcS
 dLG
 mLZ
@@ -102429,7 +102411,7 @@ smN
 uDA
 tVf
 pfo
-xfM
+uPv
 vjP
 jRu
 tqO

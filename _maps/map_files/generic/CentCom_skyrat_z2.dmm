@@ -2365,10 +2365,6 @@
 /obj/structure/railing/wooden_fencing,
 /turf/open/misc/grass/planet,
 /area/centcom/holding/cafe/park)
-"aCR" = (
-/obj/item/hilbertshotel/ghostdojo,
-/turf/open/indestructible/hotelwood,
-/area/centcom/holding/cafe)
 "aCS" = (
 /obj/machinery/light/directional/west,
 /turf/open/floor/plating/vox,
@@ -17451,6 +17447,16 @@
 "qyu" = (
 /turf/open/floor/iron/cafeteria,
 /area/centcom/interlink)
+"qyy" = (
+/obj/effect/turf_decal/tile/dark_blue/opposingcorners,
+/obj/effect/turf_decal/tile/neutral/opposingcorners{
+	dir = 1
+	},
+/obj/machinery/light/directional/east,
+/turf/open/indestructible/hoteltile{
+	icon_state = "darkfull"
+	},
+/area/centcom/holding/cafe)
 "qze" = (
 /obj/effect/turf_decal/trimline/yellow/filled/warning{
 	dir = 5
@@ -70674,7 +70680,7 @@ aaa
 aTb
 yeY
 iCw
-bhV
+iCw
 bYl
 iCw
 iCw
@@ -70931,7 +70937,7 @@ aaa
 aTb
 rQp
 iCw
-iCw
+qyy
 xBl
 iCw
 iCw
@@ -72260,7 +72266,7 @@ ajx
 aUo
 aUo
 aUo
-aCR
+aUo
 aqf
 vTT
 pqy

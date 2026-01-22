@@ -58,6 +58,24 @@
 	icon = 'modular_gs/icons/obj/signs.dmi'
 	icon_state = "gato_sign_3"
 
+/obj/effect/decal/gatofull_1
+	name = "GATO"
+	desc = "GATO - expand your horizons!"
+	icon = 'modular_gs/icons/obj/signs.dmi'
+	icon_state = "gato_sign_1"
+
+/obj/effect/decal/gatofull_2
+	name = "GATO"
+	desc = "GATO - expand your horizons!"
+	icon = 'modular_gs/icons/obj/signs.dmi'
+	icon_state = "gato_sign_2"
+
+/obj/effect/decal/gatofull_3
+	name = "GATO"
+	desc = "GATO - expand your horizons!"
+	icon = 'modular_gs/icons/obj/signs.dmi'
+	icon_state = "gato_sign_3"
+
 /obj/effect/decal/big_gato //96x96 px sprite
 	name = "GATO"
 	desc = "Your employer! Probably."
