@@ -23,6 +23,8 @@
 	if(anchored)
 		connect_to_network()
 	update_icon()
+	if(!anchored)
+		STOP_PROCESSING(SSobj, src)
 
 /obj/machinery/power/adipoelectric_generator/RefreshParts()
 	..()
@@ -65,31 +67,26 @@
 			src.visible_message("<span class='alert'>The [src] buzzes and expels anyone inside!.</span>")
 			open_machine()
 
-/obj/machinery/power/adipoelectric_generator/attackby(obj/item/tool, mob/user, params)
-	if(state_open)
-		if(default_deconstruction_screwdriver(user, "state_open", "state_off", tool))
-			return
-
-	if(default_pry_open(tool))
-		return
-
-	if(default_deconstruction_crowbar(tool))
-		return
-
-	if(tool.tool_behaviour == TOOL_WRENCH && !active)
-		if(!anchored && !isinspace())
-			connect_to_network()
-			to_chat(user, "<span class='notice'>You secure the generator to the floor.</span>")
-			anchored = TRUE
-			dir = SOUTH
-		else if(anchored)
-			disconnect_from_network()
-			to_chat(user, "<span class='notice'>You unsecure the generator from the floor.</span>")
-			anchored = FALSE
-		playsound(src.loc, 'sound/items/deconstruct.ogg', 50, 1)
-		return
-
+/obj/machinery/power/adipoelectric_generator/can_be_unfasten_wrench(mob/user, silent)
+	if(!state_open)
+		to_chat(user, span_warning("Turn \the [src] off first!"))
+		return FAILED_UNFASTEN
+	
 	return ..()
+
+/obj/machinery/power/adipoelectric_generator/wrench_act(mob/living/user, obj/item/tool)
+	default_unfasten_wrench(user, tool)
+	return ITEM_INTERACT_SUCCESS
+
+/obj/machinery/power/adipoelectric_generator/crowbar_act(mob/living/user, obj/item/tool)
+	default_deconstruction_crowbar(tool)
+	return ITEM_INTERACT_SUCCESS
+
+/obj/machinery/power/adipoelectric_generator/screwdriver_act(mob/living/user, obj/item/item)
+	if(!state_open)
+		return ITEM_INTERACT_BLOCKING
+	default_deconstruction_screwdriver(user, "state_open", "state_off", item)
+	return ITEM_INTERACT_SUCCESS
 
 /obj/machinery/power/adipoelectric_generator/interact(mob/user)
 	toggle_open()

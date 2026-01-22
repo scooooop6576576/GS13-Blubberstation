@@ -30,6 +30,8 @@ GLOBAL_LIST_EMPTY(adipoelectric_transformer)
 	if(anchored)
 		connect_to_network()
 	update_icon()
+	if(!anchored)
+		STOP_PROCESSING(SSobj, src)
 
 /obj/machinery/power/adipoelectric_transformer/RefreshParts()
 	..()
@@ -46,17 +48,23 @@ GLOBAL_LIST_EMPTY(adipoelectric_transformer)
 	if(isnull(carbon) || !istype(carbon))
 		visible_message(span_alert("The [src] buzzes. It needs someone standing on it to work."))
 		playsound(src, 'sound/machines/buzz/buzz-two.ogg', 50)
+		active = FALSE
 		return PROCESS_KILL
 
 	if(isnull(powernet))
 		visible_message(span_alert("[src] buzzes. Seems like it's not attached to a working power net."))
 		playsound(src, 'sound/machines/buzz/buzz-two.ogg', 50)
+		active = FALSE
 		return PROCESS_KILL
 
-	power_available = (powernet.avail - powernet.load) * 0.95	// taking 95% of remaining juice
-	update_icon()
+	power_available = surplus()
 	if(power_available <= 0)
+		active = FALSE
+		update_icon()
 		return
+
+	active = TRUE
+	update_icon()
 
 	if(power_available > drain_rate)
 		power_available = power_available - drain_rate
@@ -69,7 +77,7 @@ GLOBAL_LIST_EMPTY(adipoelectric_transformer)
 	if(!(world.time >= emp_timer + 600))
 		lastprocessed = lastprocessed * emp_multiplier
 
-	carbon.adjust_fatness(lastprocessed * recharge_speed, FATTENING_TYPE_ITEM)
+	carbon.adjust_fatness(lastprocessed * recharge_speed * seconds_per_tick, FATTENING_TYPE_ITEM)
 	return TRUE
 
 /obj/machinery/power/adipoelectric_transformer/relaymove(mob/user)
@@ -84,31 +92,26 @@ GLOBAL_LIST_EMPTY(adipoelectric_transformer)
 			src.visible_message("<span class='alert'>[src] emits ominous cracking noises!</span>")
 			emp_timer = world.time //stuck in for 600 ticks, about 60 seconds
 
-/obj/machinery/power/adipoelectric_transformer/attackby(obj/item/P, mob/user, params)
-	if(state_open)
-		if(default_deconstruction_screwdriver(user, "state_open", "state_off", P))
-			return
-
-	if(default_pry_open(P))
-		return
-
-	if(default_deconstruction_crowbar(P))
-		return
-
-	if(P.tool_behaviour == TOOL_WRENCH && !state_open)
-		if(!anchored && !isinspace())
-			connect_to_network()
-			to_chat(user, "<span class='notice'>You secure the generator to the floor.</span>")
-			anchored = TRUE
-			dir = SOUTH
-		else if(anchored)
-			disconnect_from_network()
-			to_chat(user, "<span class='notice'>You unsecure the generator from the floor.</span>")
-			anchored = FALSE
-		playsound(src.loc, 'sound/items/deconstruct.ogg', 50, 1)
-		return
-
+/obj/machinery/power/adipoelectric_transformer/can_be_unfasten_wrench(mob/user, silent)
+	if(!state_open)
+		to_chat(user, span_warning("Turn \the [src] off first!"))
+		return FAILED_UNFASTEN
+	
 	return ..()
+
+/obj/machinery/power/adipoelectric_transformer/wrench_act(mob/living/user, obj/item/tool)
+	default_unfasten_wrench(user, tool)
+	return ITEM_INTERACT_SUCCESS
+
+/obj/machinery/power/adipoelectric_transformer/crowbar_act(mob/living/user, obj/item/tool)
+	default_deconstruction_crowbar(tool)
+	return ITEM_INTERACT_SUCCESS
+
+/obj/machinery/power/adipoelectric_transformer/screwdriver_act(mob/living/user, obj/item/item)
+	if(!state_open)
+		return ITEM_INTERACT_BLOCKING
+	default_deconstruction_screwdriver(user, "state_open", "state_off", item)
+	return ITEM_INTERACT_SUCCESS
 
 /obj/machinery/power/adipoelectric_transformer/interact(mob/user)
 	toggle_open()
@@ -125,6 +128,7 @@ GLOBAL_LIST_EMPTY(adipoelectric_transformer)
 	if(!(world.time >= emp_timer + 600))
 		return
 	. = ..()
+	active = FALSE
 	GLOB.adipoelectric_transformer -= src
 	STOP_PROCESSING(SSobj, src)
 
@@ -134,7 +138,6 @@ GLOBAL_LIST_EMPTY(adipoelectric_transformer)
 		src.visible_message(span_alert("[src] needs to have an occupant to work."))
 		open_machine()
 		return
-
 
 	if(!anchored)
 		src.visible_message(span_alert("[src] needs to be anchored to the floor."))
@@ -160,7 +163,7 @@ GLOBAL_LIST_EMPTY(adipoelectric_transformer)
 		occupant_overlay.dir = SOUTH
 		occupant_overlay.pixel_y = 10
 		add_overlay(occupant_overlay)
-		if(power_available <= 0)
+		if(!active)
 			icon_state = "state_off"
 		else
 			if(!(world.time >= emp_timer + 600))
@@ -183,14 +186,7 @@ GLOBAL_LIST_EMPTY(adipoelectric_transformer)
 /obj/machinery/power/adipoelectric_transformer/examine(mob/user)
 	. = ..()
 	if(is_operational)
-		. += span_notice("[src]'s last reading on display was <b>NOT IMPLEMENTED</b> adipose units.")
-		// if(PN)
-		// 	if(lastprocessed)
-		// 		. += "<span class='notice'>[src]'s last reading on display was <b>[lastprocessed * recharge_speed]</b> adipose units.</span>"
-		// 	else
-		// 		. += "<span class='notice'>[src] has no last reading.</span>"
-		// else
-		// 	. += "<span class='notice'>[src]'s display states 'ERROR'. There must be something wrong with the power.</b></span>"
+		. += span_notice("[src]'s last reading on display was <b>[lastprocessed * recharge_speed]</b> adipose units.")
 	else
 		. += "<span class='notice'><b>[src]'s display is currently offline.</b></span>"
 
@@ -212,3 +208,6 @@ GLOBAL_LIST_EMPTY(adipoelectric_transformer)
 		RND_CATEGORY_MACHINE + RND_SUBCATEGORY_MACHINE_ENGINEERING
 	)
 	departmental_flags = DEPARTMENT_BITFLAG_ENGINEERING
+
+#undef KILO_WATT
+#undef MEGA_WATT
