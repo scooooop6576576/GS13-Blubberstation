@@ -69,8 +69,11 @@
 		else
 			amount_to_change = amount_to_change * lose_rate
 
+	if(fatness_real + amount_to_change < 0)
+		amount_to_change = -fatness_real
+
 	fatness_real += amount_to_change
-	fatness_real = max(fatness_real, MINIMUM_FATNESS_LEVEL) //It would be a little silly if someone got negative fat.
+	fatness_real = max(fatness_real, 0) //It would be a little silly if someone got negative fat. This is now redundant, but I'll leave this here for safety sake
 
 	if(max_weight && !HAS_TRAIT(src, TRAIT_UNIVERSAL_GAINER))
 		fatness_real = min(fatness_real, (max_weight - 1))
@@ -352,8 +355,11 @@
 		else
 			amount_to_change = amount_to_change * lose_rate
 
+	if(fatness_perma + amount_to_change < 0)
+		amount_to_change = -fatness_perma
+	
 	fatness_perma += amount_to_change
-	fatness_perma = max(fatness_perma, MINIMUM_FATNESS_LEVEL)
+	fatness_perma = max(fatness_perma, 0)
 
 	if(max_weight && !HAS_TRAIT(src, TRAIT_UNIVERSAL_GAINER))
 		fatness_perma = min(fatness_perma, (max_weight - 1))
