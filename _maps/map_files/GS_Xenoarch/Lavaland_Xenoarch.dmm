@@ -11421,6 +11421,13 @@
 /obj/structure/railing,
 /turf/open/floor/iron,
 /area/lavaland/underground/xenoarch/donut_factory)
+"jBB" = (
+/obj/effect/turf_decal/trimline/brown/line{
+	dir = 4
+	},
+/obj/machinery/light/directional/west,
+/turf/open/floor/iron/dark,
+/area/xenoarch/lavaland/public)
 "jBP" = (
 /obj/machinery/door/airlock/bathroom,
 /turf/open/floor/wood/large,
@@ -23795,9 +23802,6 @@
 /turf/open/floor/mineral/calorite/dance,
 /area/lavaland/underground/xenoarch/calorite_temple)
 "tIj" = (
-/obj/machinery/light{
-	dir = 8
-	},
 /obj/effect/turf_decal/loading_area{
 	dir = 4
 	},
@@ -103181,7 +103185,7 @@ fDM
 dOc
 mdJ
 tIj
-mdJ
+jBB
 iLM
 ezW
 nZm
