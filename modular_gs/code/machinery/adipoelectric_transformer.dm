@@ -16,11 +16,11 @@ GLOBAL_LIST_EMPTY(adipoelectric_transformer)
 	/// multiplier to fat gained from power
 	var/recharge_speed = 0
 	/// amount of power at which scaling slows down
-	var/drain_rate = 1 MEGA_WATT
+	var/drain_rate = 0.5 MEGA_WATT
 	var/lastprocessed = 0
 	var/power_available = 0
 	/// base amount of fat gained per Watt of power (Joule of energy?)
-	var/conversion_rate = 0.0001
+	var/conversion_rate = 0.000002
 	var/emp_timer = 0
 	var/emp_multiplier = 5
 	var/active = FALSE
@@ -30,8 +30,6 @@ GLOBAL_LIST_EMPTY(adipoelectric_transformer)
 	if(anchored)
 		connect_to_network()
 	update_icon()
-	if(!anchored)
-		STOP_PROCESSING(SSobj, src)
 
 /obj/machinery/power/adipoelectric_transformer/RefreshParts()
 	..()

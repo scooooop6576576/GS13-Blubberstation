@@ -23,8 +23,6 @@
 	if(anchored)
 		connect_to_network()
 	update_icon()
-	if(!anchored)
-		STOP_PROCESSING(SSobj, src)
 
 /obj/machinery/power/adipoelectric_generator/RefreshParts()
 	..()
@@ -44,8 +42,9 @@
 	if(isnull(carbon) || !istype(carbon))
 		visible_message(span_alert("The [src] buzzes. It needs someone standing on it to work."))
 		playsound(src, 'sound/machines/buzz/buzz-two.ogg', 50)
+		active = FALSE
 		return PROCESS_KILL
-	
+
 	if(carbon.fatness_real > 0 && powernet && anchored && (emp_timer < world.time))
 		active = TRUE
 		var/fat_burned = abs(carbon.adjust_fatness(-(max_fat * seconds_per_tick), FATTENING_TYPE_ITEM, TRUE))
@@ -71,7 +70,7 @@
 	if(!state_open)
 		to_chat(user, span_warning("Turn \the [src] off first!"))
 		return FAILED_UNFASTEN
-	
+
 	return ..()
 
 /obj/machinery/power/adipoelectric_generator/wrench_act(mob/living/user, obj/item/tool)
