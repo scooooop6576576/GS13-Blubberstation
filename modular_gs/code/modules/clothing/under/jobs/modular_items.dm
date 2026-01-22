@@ -116,7 +116,6 @@
 	for(G in genitals_list)
 		if(istype(G, /obj/item/organ/genital/belly))
 			add_modular_overlay(U, mod_belly_rec, MODULAR_BELLY_LAYER, greyscale_colors)
-			// add_modular_overlay(U, "[mod_belly_rec]_NORTH", BELLY_FRONT_LAYER, greyscale_colors)	// I'm sorry for this but I can't be bothered to re-arrange the defines again
 			add_modular_overlay(U, "[mod_belly_rec]_SOUTH", BELLY_FRONT_LAYER, greyscale_colors)
 		if(istype(G, /obj/item/organ/genital/butt))
 			add_modular_overlay(U, mod_butt_rec, MODULAR_BUTT_LAYER, greyscale_colors)
