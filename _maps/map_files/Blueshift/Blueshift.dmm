@@ -6199,17 +6199,15 @@
 /obj/effect/turf_decal/trimline/green/filled/line{
 	dir = 4
 	},
-/obj/machinery/camera{
-	c_tag = "Medbay - Virology";
-	dir = 10;
-	name = "medbay camera";
-	network = list("ss13","medbay")
-	},
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/duct,
 /obj/structure/cable,
 /obj/machinery/newscaster/directional/west,
+/obj/machinery/camera/directional/west{
+	network = list("ss13","medbay");
+	c_tag = "Medbay - Virology"
+	},
 /turf/open/floor/iron/white,
 /area/station/medical/virology)
 "blx" = (
@@ -7309,13 +7307,6 @@
 	},
 /turf/open/floor/iron/smooth,
 /area/station/engineering/atmos/pumproom)
-"buP" = (
-/obj/effect/decal/cleanable/dirt{
-	icon_state = "dirt-flat-1"
-	},
-/obj/machinery/light/small/directional/north,
-/turf/open/floor/plating,
-/area/station/maintenance/port/fore)
 "buS" = (
 /obj/structure/window/reinforced/fulltile,
 /turf/open/floor/grass,
@@ -13814,11 +13805,6 @@
 /obj/effect/spawner/random/maintenance,
 /turf/open/floor/plating,
 /area/station/maintenance/port/central)
-"cEl" = (
-/obj/structure/lattice,
-/obj/machinery/light/directional/west,
-/turf/open/openspace,
-/area/station/hallway/primary/upper)
 "cEo" = (
 /obj/machinery/light/directional/south,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -52128,6 +52114,11 @@
 	},
 /turf/open/floor/wood,
 /area/station/security/detectives_office/private_investigators_office)
+"jRA" = (
+/obj/structure/lattice,
+/obj/machinery/light/directional/west,
+/turf/open/openspace,
+/area/station/hallway/primary/upper)
 "jRB" = (
 /obj/structure/table/reinforced,
 /obj/item/stock_parts/scanning_module/adv,
@@ -58526,6 +58517,11 @@
 /obj/item/pneumatic_cannon/pie/selfcharge,
 /turf/open/floor/noslip,
 /area/station/maintenance/gag_room)
+"lbT" = (
+/obj/structure/lattice,
+/obj/machinery/light/directional/east,
+/turf/open/openspace,
+/area/station/hallway/primary/upper)
 "lbY" = (
 /obj/structure/flora/bush/flowers_br,
 /mob/living/carbon/human/species/monkey,
@@ -66163,10 +66159,12 @@
 /turf/open/floor/iron/dark,
 /area/station/science/robotics/mechbay)
 "mBM" = (
-/obj/structure/lattice,
-/obj/machinery/light/directional/east,
-/turf/open/openspace,
-/area/station/hallway/primary/upper)
+/obj/effect/decal/cleanable/dirt{
+	icon_state = "dirt-flat-1"
+	},
+/obj/machinery/light/small/directional/north,
+/turf/open/floor/plating,
+/area/station/maintenance/port/fore)
 "mBR" = (
 /obj/machinery/atmospherics/pipe/smart/simple/orange/hidden{
 	dir = 4
@@ -83171,15 +83169,13 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
 	},
-/obj/machinery/camera{
-	c_tag = "Dorm Hallway - Lower Aft Port";
-	dir = 10;
-	name = "hallway camera"
-	},
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/duct,
 /obj/structure/cable,
+/obj/machinery/camera/directional/west{
+	c_tag = "Dorm Hallway - Lower Aft Port"
+	},
 /turf/open/floor/iron,
 /area/station/commons/dorms)
 "pMR" = (
@@ -105063,10 +105059,8 @@
 	dir = 5
 	},
 /obj/machinery/newscaster/directional/east,
-/obj/machinery/camera{
+/obj/machinery/camera/directional/east{
 	c_tag = "Medbay - Viro Entrance";
-	dir = 6;
-	name = "medbay camera";
 	network = list("ss13","medbay")
 	},
 /turf/open/floor/iron/white,
@@ -150998,7 +150992,7 @@ aeP
 sgz
 qwg
 rKn
-buP
+mBM
 rKn
 rKn
 rKn
@@ -225070,7 +225064,7 @@ iqn
 cfl
 cfl
 cfl
-cEl
+jRA
 cfl
 cfl
 cfl
@@ -226098,7 +226092,7 @@ pKS
 cfl
 cfl
 cfl
-mBM
+lbT
 cfl
 cfl
 cfl
