@@ -63231,9 +63231,7 @@
 "vly" = (
 /obj/item/target/alien/anchored,
 /obj/effect/turf_decal/stripes/line,
-/obj/machinery/camera/preset/ordnance{
-	dir = 5
-	},
+/obj/machinery/camera/preset/ordnance,
 /turf/open/floor/plating/airless{
 	luminosity = 2
 	},
