@@ -29902,11 +29902,7 @@
 /area/station/hallway/secondary/entry)
 "iEJ" = (
 /obj/effect/turf_decal/weather/snow,
-/obj/machinery/camera/directional/west{
-	c_tag = "Service - Kitchen Coldroom";
-	dir = 5;
-	name = "service camera"
-	},
+/obj/machinery/camera/directional/south,
 /turf/open/floor/iron/kitchen_coldroom/freezerfloor,
 /area/station/service/kitchen/coldroom)
 "iEL" = (
@@ -35591,9 +35587,6 @@
 /obj/structure/cable,
 /obj/effect/turf_decal/trimline/yellow/filled/line,
 /obj/machinery/firealarm/directional/south,
-/obj/machinery/camera/directional/south{
-	dir = 5
-	},
 /turf/open/floor/iron/smooth_edge{
 	dir = 1
 	},
@@ -49830,6 +49823,7 @@
 /obj/item/storage/toolbox/electrical,
 /obj/item/clothing/gloves/color/yellow,
 /obj/effect/turf_decal/bot,
+/obj/machinery/camera/autoname/engineering/directional/south,
 /turf/open/floor/iron/smooth,
 /area/station/engineering/power_room)
 "nVc" = (

@@ -9620,11 +9620,6 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply,
 /turf/open/floor/iron/white,
 /area/station/medical/virology)
-"cyh" = (
-/obj/structure/cable,
-/obj/effect/spawner/structure/window/reinforced,
-/turf/open/floor/plating,
-/area/station/science/xenobiology)
 "cyo" = (
 /obj/effect/turf_decal/trimline/blue/filled/line{
 	dir = 9
@@ -65414,6 +65409,11 @@
 	},
 /turf/open/floor/iron/checker,
 /area/station/science/lab)
+"rQX" = (
+/obj/structure/cable,
+/turf/closed/wall/r_wall,
+/turf/open/floor/plating,
+/area/station/science/xenobiology)
 "rQZ" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -197547,19 +197547,19 @@ xti
 qLY
 hEW
 jAF
-fma
+rQX
 vdr
 roA
-fma
+rQX
 vdr
 iDG
-fma
+rQX
 maO
 xhv
-fma
+rQX
 maO
 rJe
-fma
+rQX
 ffe
 nPI
 ipw
@@ -198056,22 +198056,22 @@ niy
 gtF
 lqe
 qLY
-cyh
+rQX
 cXX
 bKI
-cyh
+rQX
 wXX
 bKI
-cyh
+rQX
 dQZ
 bKI
-cyh
+rQX
 izA
 bKI
-cyh
+rQX
 lBZ
 bKI
-cyh
+rQX
 odd
 iER
 ffe
