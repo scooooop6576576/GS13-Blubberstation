@@ -2,6 +2,9 @@ GLOBAL_LIST_EMPTY(adipoelectric_transformer)
 
 #define KILO_WATT *1000
 #define MEGA_WATT *1000000
+/// the base amount of power needed to bwomph someone up by one BFI.
+/// Also decides the point at which the scaling slows down.
+#define WATTS_PER_BFI	500 KILO_WATT
 
 /obj/machinery/power/adipoelectric_transformer
 	name = "adipoelectric transformer"
@@ -15,12 +18,8 @@ GLOBAL_LIST_EMPTY(adipoelectric_transformer)
 	occupant_typecache = list(/mob/living/carbon)
 	/// multiplier to fat gained from power
 	var/recharge_speed = 0
-	/// amount of power at which scaling slows down
-	var/drain_rate = 0.5 MEGA_WATT
 	var/lastprocessed = 0
 	var/power_available = 0
-	/// base amount of fat gained per Watt of power (Joule of energy?)
-	var/conversion_rate = 0.000002
 	var/emp_timer = 0
 	var/emp_multiplier = 5
 	var/active = FALSE
@@ -64,11 +63,11 @@ GLOBAL_LIST_EMPTY(adipoelectric_transformer)
 	active = TRUE
 	update_icon()
 
-	if(power_available > drain_rate)
-		power_available = power_available - drain_rate
-		lastprocessed = (power_available * (conversion_rate / 10)) + 1
+	if(power_available > WATTS_PER_BFI)
+		power_available = power_available - WATTS_PER_BFI
+		lastprocessed = (power_available / (WATTS_PER_BFI * 10)) + 1
 	else
-		lastprocessed = power_available * conversion_rate
+		lastprocessed = power_available / WATTS_PER_BFI
 
 	add_load(power_available)
 
@@ -209,3 +208,4 @@ GLOBAL_LIST_EMPTY(adipoelectric_transformer)
 
 #undef KILO_WATT
 #undef MEGA_WATT
+#undef WATTS_PER_BFI

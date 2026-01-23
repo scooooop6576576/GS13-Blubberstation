@@ -1,3 +1,8 @@
+#define KILO_WATT *1000
+#define MEGA_WATT *1000000
+/// base amount of power in Watts gained from one BFI
+#define WATTS_PER_BFI 10 KILO_WATT
+
 /obj/machinery/power/adipoelectric_generator
 	name = "adipoelectric generator"
 	desc = "This device uses calorite technology to transform excess blubber into power!"
@@ -13,8 +18,6 @@
 	var/laser_modifier = 0
 	/// maximum BFI we can take per second
 	var/max_fat = 0
-	/// base amount of power in Watts (energy in joules?) gained from one BFI
-	var/conversion_rate = 10000
 	var/emp_timer = 0
 	var/active = FALSE
 
@@ -48,7 +51,7 @@
 	if(carbon.fatness_real > 0 && powernet && anchored && (emp_timer < world.time))
 		active = TRUE
 		var/fat_burned = abs(carbon.adjust_fatness(-(max_fat * seconds_per_tick), FATTENING_TYPE_ITEM, TRUE))
-		add_avail(conversion_rate * laser_modifier * fat_burned)
+		add_avail(WATTS_PER_BFI * laser_modifier * fat_burned)
 	else
 		active = FALSE
 	update_icon()
@@ -150,7 +153,7 @@
 /obj/machinery/power/adipoelectric_generator/examine(mob/user)
 	. = ..()
 	if(is_operational)
-		. += "<span class='notice'>[src]'s show it can produce <b>[conversion_rate * laser_modifier]W</b> per adipose unit, taking in <b>[max_fat]</b> max each second.</span>"
+		. += "<span class='notice'>[src]'s show it can produce <b>[WATTS_PER_BFI * laser_modifier]W</b> per adipose unit, taking in <b>[max_fat]</b> max each second.</span>"
 	else
 		. += "<span class='notice'><b>[src]'s display is currently offline.</b></span>"
 
@@ -172,3 +175,7 @@
 		RND_CATEGORY_MACHINE + RND_SUBCATEGORY_MACHINE_ENGINEERING
 	)
 	departmental_flags = DEPARTMENT_BITFLAG_ENGINEERING
+
+#undef KILO_WATT
+#undef MEGA_WATT
+#undef WATTS_PER_BFI
