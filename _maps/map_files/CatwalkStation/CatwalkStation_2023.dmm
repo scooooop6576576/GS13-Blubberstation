@@ -54042,7 +54042,6 @@
 /turf/open/floor/iron/dark/smooth_large,
 /area/station/medical/pharmacy)
 "phc" = (
-/obj/machinery/light/small/directional/west,
 /obj/structure/guncase/ecase{
 	open = 0;
 	anchored = 1
