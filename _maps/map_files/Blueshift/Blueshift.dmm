@@ -13805,6 +13805,13 @@
 /obj/effect/spawner/random/maintenance,
 /turf/open/floor/plating,
 /area/station/maintenance/port/central)
+"cEl" = (
+/obj/effect/decal/cleanable/dirt{
+	icon_state = "dirt-flat-1"
+	},
+/obj/machinery/light/small/directional/north,
+/turf/open/floor/plating,
+/area/station/maintenance/port/fore)
 "cEo" = (
 /obj/machinery/light/directional/south,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -52114,11 +52121,6 @@
 	},
 /turf/open/floor/wood,
 /area/station/security/detectives_office/private_investigators_office)
-"jRA" = (
-/obj/structure/lattice,
-/obj/machinery/light/directional/west,
-/turf/open/openspace,
-/area/station/hallway/primary/upper)
 "jRB" = (
 /obj/structure/table/reinforced,
 /obj/item/stock_parts/scanning_module/adv,
@@ -58519,7 +58521,7 @@
 /area/station/maintenance/gag_room)
 "lbT" = (
 /obj/structure/lattice,
-/obj/machinery/light/directional/east,
+/obj/machinery/light/directional/west,
 /turf/open/openspace,
 /area/station/hallway/primary/upper)
 "lbY" = (
@@ -66159,12 +66161,10 @@
 /turf/open/floor/iron/dark,
 /area/station/science/robotics/mechbay)
 "mBM" = (
-/obj/effect/decal/cleanable/dirt{
-	icon_state = "dirt-flat-1"
-	},
-/obj/machinery/light/small/directional/north,
-/turf/open/floor/plating,
-/area/station/maintenance/port/fore)
+/obj/structure/lattice,
+/obj/machinery/light/directional/east,
+/turf/open/openspace,
+/area/station/hallway/primary/upper)
 "mBR" = (
 /obj/machinery/atmospherics/pipe/smart/simple/orange/hidden{
 	dir = 4
@@ -123251,6 +123251,7 @@
 	dir = 2
 	},
 /obj/structure/sign/painting/large/library_private{
+	pixel_x = -16;
 	pixel_y = 28
 	},
 /turf/open/floor/iron/dark,
@@ -150992,7 +150993,7 @@ aeP
 sgz
 qwg
 rKn
-mBM
+cEl
 rKn
 rKn
 rKn
@@ -225064,7 +225065,7 @@ iqn
 cfl
 cfl
 cfl
-jRA
+lbT
 cfl
 cfl
 cfl
@@ -226092,7 +226093,7 @@ pKS
 cfl
 cfl
 cfl
-lbT
+mBM
 cfl
 cfl
 cfl
