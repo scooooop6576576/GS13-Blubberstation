@@ -28744,13 +28744,6 @@
 /obj/machinery/atmospherics/pipe/smart/simple/scrubbers/visible,
 /turf/open/floor/iron,
 /area/station/engineering/atmos)
-"bVW" = (
-/obj/machinery/light/directional/west,
-/obj/effect/turf_decal/stripes/line{
-	dir = 8
-	},
-/turf/open/floor/engine,
-/area/station/engineering/atmos)
 "bVX" = (
 /obj/structure/reagent_dispensers/fueltank/large,
 /obj/machinery/light/directional/south,
@@ -47290,11 +47283,6 @@
 "hvP" = (
 /obj/structure/window/reinforced/tinted/spawner/directional/south,
 /obj/machinery/light/directional/east,
-/obj/machinery/camera/directional/south{
-	c_tag = "Prison - Library";
-	network = list("ss13","prison");
-	pixel_y = 8
-	},
 /obj/effect/turf_decal/siding/wood{
 	dir = 6
 	},
@@ -68540,10 +68528,6 @@
 	pixel_x = -5;
 	pixel_y = 7
 	},
-/obj/machinery/camera{
-	c_tag = "Cargo - Drone Bay";
-	dir = 6
-	},
 /turf/open/floor/iron/dark/textured_large,
 /area/station/cargo/drone_bay)
 "qTo" = (
@@ -83548,6 +83532,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 10
 	},
+/obj/machinery/camera/directional/west,
 /turf/open/floor/wood,
 /area/station/security/prison)
 "xux" = (
@@ -118470,7 +118455,7 @@ bRC
 bSK
 qlB
 cfn
-bVW
+lNr
 dtr
 bXS
 bZI
