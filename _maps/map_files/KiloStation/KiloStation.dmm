@@ -9180,7 +9180,7 @@
 /area/station/engineering/atmos)
 "ddp" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/sign/gatofull_2{
+/obj/effect/decal/gatofull_2{
 	pixel_x = 10;
 	pixel_y = 0
 	},
@@ -19076,7 +19076,7 @@
 	},
 /obj/effect/turf_decal/tile/red/half/contrasted,
 /obj/effect/turf_decal/tile/neutral,
-/obj/structure/sign/gatofull_3{
+/obj/effect/decal/gatofull_3{
 	pixel_y = -32
 	},
 /turf/open/floor/iron,
@@ -26076,6 +26076,10 @@
 /obj/effect/turf_decal/tile/neutral/half/contrasted{
 	dir = 4
 	},
+/obj/machinery/camera/directional/west{
+	c_tag = "Hydroponcis Fore";
+	name = "hydroponics camera"
+	},
 /turf/open/floor/iron/dark,
 /area/station/service/hydroponics)
 "ipA" = (
@@ -31052,7 +31056,7 @@
 /area/station/commons/locker)
 "jTk" = (
 /obj/structure/lattice/catwalk,
-/obj/structure/sign/gatofull_2{
+/obj/effect/decal/gatofull_2{
 	pixel_x = 10;
 	pixel_y = 0
 	},
@@ -33322,7 +33326,7 @@
 	},
 /obj/effect/turf_decal/tile/red/half/contrasted,
 /obj/effect/turf_decal/tile/neutral,
-/obj/structure/sign/gatofull_1{
+/obj/effect/decal/gatofull_1{
 	pixel_y = -32
 	},
 /turf/open/floor/iron,
@@ -40260,11 +40264,6 @@
 "mPE" = (
 /obj/structure/sink/directional/west,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/machinery/camera/directional/east{
-	c_tag = "Xenobiology Computers";
-	name = "xenobiology camera";
-	network = list("ss13","rd","xeno")
-	},
 /obj/effect/turf_decal/tile/purple,
 /obj/effect/turf_decal/tile/purple/half/contrasted{
 	dir = 4
@@ -42037,7 +42036,7 @@
 "nuL" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/lattice/catwalk,
-/obj/structure/sign/gatofull_1{
+/obj/effect/decal/gatofull_1{
 	pixel_x = 10;
 	pixel_y = 0
 	},
@@ -45423,10 +45422,6 @@
 	pixel_y = 6
 	},
 /obj/item/hand_labeler,
-/obj/machinery/camera/directional/west{
-	c_tag = "Hydroponcis Fore";
-	name = "hydroponics camera"
-	},
 /obj/effect/turf_decal/bot,
 /obj/effect/turf_decal/tile/neutral/anticorner/contrasted{
 	dir = 4
@@ -46264,7 +46259,7 @@
 /obj/effect/turf_decal/sand/plating,
 /obj/structure/cable,
 /obj/structure/lattice/catwalk,
-/obj/structure/sign/gatofull_3{
+/obj/effect/decal/gatofull_3{
 	pixel_x = 14;
 	pixel_y = 0
 	},
@@ -53718,7 +53713,7 @@
 	},
 /obj/effect/turf_decal/tile/red/half/contrasted,
 /obj/effect/turf_decal/tile/neutral,
-/obj/structure/sign/gatofull_2{
+/obj/effect/decal/gatofull_2{
 	pixel_y = -32
 	},
 /turf/open/floor/iron,
@@ -67372,6 +67367,11 @@
 /obj/effect/turf_decal/siding/purple/corner{
 	dir = 4
 	},
+/obj/machinery/camera/directional/east{
+	c_tag = "Xenobiology Computers";
+	name = "xenobiology camera";
+	network = list("ss13","rd","xeno")
+	},
 /turf/open/floor/iron/dark,
 /area/station/science/xenobiology)
 "vyD" = (
@@ -71570,7 +71570,7 @@
 /area/station/service/chapel/office)
 "wIu" = (
 /obj/effect/turf_decal/sand/plating,
-/obj/structure/sign/gatofull_1{
+/obj/effect/decal/gatofull_1{
 	pixel_x = 10;
 	pixel_y = 0
 	},
@@ -75227,7 +75227,7 @@
 /turf/open/floor/iron,
 /area/station/service/hydroponics)
 "xTY" = (
-/obj/structure/sign/gatofull_3{
+/obj/effect/decal/gatofull_3{
 	pixel_x = 10;
 	pixel_y = 0
 	},

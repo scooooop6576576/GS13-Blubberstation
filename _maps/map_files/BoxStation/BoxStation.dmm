@@ -9304,7 +9304,7 @@
 /obj/effect/turf_decal/trimline/yellow/mid_joiner{
 	dir = 1
 	},
-/obj/structure/sign/gatofull_1{
+/obj/effect/decal/gatofull_1{
 	pixel_y = 32
 	},
 /turf/open/floor/iron/edge{
@@ -12871,7 +12871,7 @@
 	dir = 6;
 	alpha = 200
 	},
-/obj/structure/sign/gatofull_2{
+/obj/effect/decal/gatofull_2{
 	pixel_y = -32
 	},
 /turf/open/floor/iron/corner{
@@ -39315,7 +39315,7 @@
 	},
 /area/station/hallway/primary/central)
 "dDw" = (
-/obj/structure/sign/gatofull_1{
+/obj/effect/decal/gatofull_1{
 	pixel_y = 32
 	},
 /turf/open/floor/iron/edge{
@@ -39329,7 +39329,7 @@
 /obj/effect/turf_decal/trimline/yellow/mid_joiner{
 	dir = 1
 	},
-/obj/structure/sign/gatofull_3{
+/obj/effect/decal/gatofull_3{
 	pixel_y = 32
 	},
 /turf/open/floor/iron/edge{
@@ -42531,7 +42531,7 @@
 	},
 /obj/structure/table/glass,
 /obj/item/book/lorebooks/welcome_to_gato,
-/obj/structure/sign/gatofull_1{
+/obj/effect/decal/gatofull_1{
 	pixel_y = 32
 	},
 /turf/open/floor/iron,
@@ -44675,7 +44675,7 @@
 "gfw" = (
 /obj/structure/closet/emcloset,
 /obj/effect/turf_decal/tile/red,
-/obj/structure/sign/gatofull_2{
+/obj/effect/decal/gatofull_2{
 	pixel_y = -32
 	},
 /turf/open/floor/iron/dark,
@@ -46749,7 +46749,7 @@
 	dir = 8
 	},
 /obj/structure/closet/firecloset,
-/obj/structure/sign/gatofull_1{
+/obj/effect/decal/gatofull_1{
 	pixel_y = -32
 	},
 /turf/open/floor/iron/dark,
@@ -47897,7 +47897,7 @@
 /turf/open/floor/iron/dark,
 /area/station/security/execution/transfer)
 "hIS" = (
-/obj/structure/sign/gatofull_2{
+/obj/effect/decal/gatofull_2{
 	pixel_y = 32
 	},
 /turf/open/floor/iron/corner{
@@ -51153,7 +51153,7 @@
 /obj/effect/turf_decal/trimline/blue/filled/line{
 	dir = 1
 	},
-/obj/structure/sign/gatofull_3{
+/obj/effect/decal/gatofull_3{
 	pixel_y = 32
 	},
 /turf/open/floor/iron/edge,
@@ -62164,7 +62164,7 @@
 "nXH" = (
 /obj/effect/landmark/start/hangover,
 /obj/machinery/door/firedoor,
-/obj/structure/sign/gatofull_3{
+/obj/effect/decal/gatofull_3{
 	pixel_y = 32
 	},
 /turf/open/floor/iron/large,
@@ -69078,7 +69078,7 @@
 /obj/effect/turf_decal/trimline/blue/mid_joiner{
 	alpha = 200
 	},
-/obj/structure/sign/gatofull_1{
+/obj/effect/decal/gatofull_1{
 	pixel_y = -32
 	},
 /turf/open/floor/iron/edge,
@@ -77963,7 +77963,7 @@
 /area/station/maintenance/port/aft)
 "vaa" = (
 /obj/effect/turf_decal/tile/red,
-/obj/structure/sign/gatofull_3{
+/obj/effect/decal/gatofull_3{
 	pixel_y = -32
 	},
 /obj/machinery/vending/hotdog,
@@ -78806,7 +78806,7 @@
 /obj/effect/turf_decal/trimline/yellow/mid_joiner{
 	dir = 1
 	},
-/obj/structure/sign/gatofull_2{
+/obj/effect/decal/gatofull_2{
 	pixel_y = 32
 	},
 /turf/open/floor/iron/edge{
@@ -79864,7 +79864,7 @@
 	dir = 1
 	},
 /obj/structure/closet/crate/bin,
-/obj/structure/sign/gatofull_2{
+/obj/effect/decal/gatofull_2{
 	pixel_y = 32
 	},
 /turf/open/floor/iron/edge,
@@ -81276,7 +81276,7 @@
 /area/station/maintenance/port)
 "wAi" = (
 /obj/machinery/door/firedoor,
-/obj/structure/sign/gatofull_3{
+/obj/effect/decal/gatofull_3{
 	pixel_y = -32
 	},
 /turf/open/floor/iron/large,

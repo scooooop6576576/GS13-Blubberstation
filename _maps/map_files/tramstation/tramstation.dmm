@@ -1935,7 +1935,7 @@
 /turf/open/floor/iron,
 /area/station/security/checkpoint/supply)
 "agK" = (
-/obj/structure/sign/gatofull_1,
+/obj/effect/decal/gatofull_1,
 /turf/closed/wall,
 /area/station/hallway/primary/tram/center)
 "agL" = (
@@ -21765,7 +21765,7 @@
 /turf/open/floor/iron,
 /area/station/commons/fitness)
 "gyl" = (
-/obj/structure/sign/gatofull_2,
+/obj/effect/decal/gatofull_2,
 /turf/closed/wall,
 /area/station/hallway/primary/tram/center)
 "gyn" = (
@@ -22682,7 +22682,7 @@
 /turf/open/floor/plating/airless,
 /area/station/solars/port/asteriod)
 "gPt" = (
-/obj/structure/sign/gatofull_1,
+/obj/effect/decal/gatofull_1,
 /turf/closed/wall,
 /area/station/hallway/primary/tram/right)
 "gPA" = (
@@ -23152,7 +23152,7 @@
 /turf/open/floor/iron,
 /area/station/security/prison)
 "gYm" = (
-/obj/structure/sign/gatofull_3,
+/obj/effect/decal/gatofull_3,
 /turf/closed/wall,
 /area/station/hallway/primary/tram/center)
 "gYp" = (
@@ -33282,7 +33282,7 @@
 /turf/open/floor/iron/cafeteria,
 /area/station/command/heads_quarters/rd)
 "kyh" = (
-/obj/structure/sign/gatofull_2,
+/obj/effect/decal/gatofull_2,
 /turf/closed/wall,
 /area/station/hallway/primary/tram/right)
 "kyq" = (
@@ -40135,7 +40135,7 @@
 /turf/open/floor/circuit/green,
 /area/station/science/robotics/mechbay)
 "mKn" = (
-/obj/structure/sign/gatofull_2,
+/obj/effect/decal/gatofull_2,
 /turf/closed/wall,
 /area/station/hallway/primary/tram/left)
 "mKq" = (
@@ -65500,7 +65500,7 @@
 /turf/open/floor/iron/dark,
 /area/station/commons/lounge)
 "vzt" = (
-/obj/structure/sign/gatofull_1,
+/obj/effect/decal/gatofull_1,
 /turf/closed/wall,
 /area/station/hallway/primary/tram/left)
 "vzx" = (
@@ -71247,7 +71247,7 @@
 /turf/open/floor/iron,
 /area/station/cargo/storage)
 "xHr" = (
-/obj/structure/sign/gatofull_3,
+/obj/effect/decal/gatofull_3,
 /turf/closed/wall,
 /area/station/hallway/primary/tram/right)
 "xHw" = (
@@ -72570,7 +72570,7 @@
 /turf/open/floor/iron/white,
 /area/station/medical/treatment_center)
 "yfE" = (
-/obj/structure/sign/gatofull_3,
+/obj/effect/decal/gatofull_3,
 /turf/closed/wall,
 /area/station/hallway/primary/tram/left)
 "yfH" = (

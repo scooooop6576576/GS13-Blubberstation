@@ -9935,7 +9935,7 @@
 /area/station/commons/storage/primary)
 "djP" = (
 /obj/machinery/light/directional/south,
-/obj/structure/sign/gatofull_3{
+/obj/effect/decal/gatofull_3{
 	pixel_x = -2;
 	pixel_y = -31
 	},
@@ -10457,7 +10457,7 @@
 /area/station/service/bar/backroom)
 "dtv" = (
 /obj/machinery/vending/cigarette,
-/obj/structure/sign/gatofull_2{
+/obj/effect/decal/gatofull_2{
 	pixel_x = -7;
 	pixel_y = -32
 	},
@@ -22761,7 +22761,7 @@
 /area/station/security/brig/entrance)
 "htC" = (
 /obj/machinery/door/firedoor,
-/obj/structure/sign/gatofull_2{
+/obj/effect/decal/gatofull_2{
 	pixel_x = -2;
 	pixel_y = -31
 	},
@@ -48545,7 +48545,7 @@
 /turf/open/floor/plating,
 /area/station/maintenance/starboard/central)
 "pGf" = (
-/obj/structure/sign/gatofull_3{
+/obj/effect/decal/gatofull_3{
 	pixel_x = -7;
 	pixel_y = -32
 	},
@@ -61144,7 +61144,7 @@
 /turf/open/floor/circuit/green,
 /area/station/ai/satellite/chamber)
 "tIF" = (
-/obj/structure/sign/gatofull_1{
+/obj/effect/decal/gatofull_1{
 	pixel_x = -2;
 	pixel_y = -31
 	},
@@ -62247,7 +62247,7 @@
 	dir = 1
 	},
 /obj/machinery/disposal/bin,
-/obj/structure/sign/gatofull_1{
+/obj/effect/decal/gatofull_1{
 	pixel_x = -7;
 	pixel_y = -32
 	},

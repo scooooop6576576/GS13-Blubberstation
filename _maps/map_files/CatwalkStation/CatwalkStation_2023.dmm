@@ -7187,7 +7187,7 @@
 /turf/open/floor/iron,
 /area/station/hallway/secondary/entry)
 "cbS" = (
-/obj/structure/sign/gatofull_2{
+/obj/effect/decal/gatofull_2{
 	pixel_x = 10;
 	pixel_y = 32
 	},
@@ -8855,7 +8855,7 @@
 /obj/machinery/light/floor,
 /obj/structure/cat_house,
 /obj/effect/turf_decal/tile/dark/half/contrasted,
-/obj/structure/sign/gatofull_2{
+/obj/effect/decal/gatofull_2{
 	pixel_x = 10;
 	pixel_y = 32
 	},
@@ -14921,7 +14921,7 @@
 /turf/open/floor/plating,
 /area/station/maintenance/starboard/aft)
 "ekB" = (
-/obj/structure/sign/gatofull_2{
+/obj/effect/decal/gatofull_2{
 	pixel_x = 11;
 	pixel_y = 32
 	},
@@ -21490,7 +21490,7 @@
 /turf/open/floor/iron/half,
 /area/station/hallway/primary/central)
 "gcm" = (
-/obj/structure/sign/gatofull_3{
+/obj/effect/decal/gatofull_3{
 	pixel_x = 11;
 	pixel_y = 32
 	},
@@ -29582,7 +29582,7 @@
 	pixel_y = -7
 	},
 /obj/effect/turf_decal/tile/dark/half/contrasted,
-/obj/structure/sign/gatofull_3{
+/obj/effect/decal/gatofull_3{
 	pixel_x = 10;
 	pixel_y = 32
 	},
@@ -33075,7 +33075,7 @@
 	dir = 9
 	},
 /obj/machinery/camera/autoname/directional/north,
-/obj/structure/sign/gatofull_3{
+/obj/effect/decal/gatofull_3{
 	pixel_x = 10;
 	pixel_y = 32
 	},
@@ -38617,7 +38617,7 @@
 /turf/open/floor/iron/freezer,
 /area/station/ai/satellite/foyer)
 "kQf" = (
-/obj/structure/sign/gatofull_1{
+/obj/effect/decal/gatofull_1{
 	pixel_x = 11;
 	pixel_y = 32
 	},
@@ -43052,7 +43052,7 @@
 	pixel_y = -3
 	},
 /obj/effect/turf_decal/tile/dark/half/contrasted,
-/obj/structure/sign/gatofull_1{
+/obj/effect/decal/gatofull_1{
 	pixel_x = 10;
 	pixel_y = 32
 	},
@@ -52599,7 +52599,7 @@
 /obj/effect/turf_decal/siding/brown/end{
 	dir = 1
 	},
-/obj/structure/sign/gatofull_1{
+/obj/effect/decal/gatofull_1{
 	pixel_x = 10;
 	pixel_y = 32
 	},

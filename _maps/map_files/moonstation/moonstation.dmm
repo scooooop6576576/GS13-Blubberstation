@@ -1088,7 +1088,7 @@
 	},
 /obj/structure/extinguisher_cabinet/directional/west,
 /obj/machinery/vending/mealdor,
-/obj/structure/sign/gatofull_1{
+/obj/effect/decal/gatofull_1{
 	pixel_y = 32
 	},
 /turf/open/floor/iron/checker,
@@ -6354,7 +6354,7 @@
 	dir = 5
 	},
 /obj/effect/turf_decal/tile/yellow/half/contrasted,
-/obj/structure/sign/gatofull_1{
+/obj/effect/decal/gatofull_1{
 	pixel_x = 0;
 	pixel_y = -31
 	},
@@ -6688,7 +6688,7 @@
 /turf/open/floor/iron/dark,
 /area/station/security/brig/entrance)
 "bPG" = (
-/obj/structure/sign/gatofull_3{
+/obj/effect/decal/gatofull_3{
 	pixel_y = 32
 	},
 /turf/closed/wall,
@@ -21664,7 +21664,7 @@
 	dir = 8
 	},
 /obj/machinery/vending/gato,
-/obj/structure/sign/gatofull_2{
+/obj/effect/decal/gatofull_2{
 	pixel_y = 32
 	},
 /turf/open/floor/iron/checker,
@@ -25902,7 +25902,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/structure/sign/gatofull_2{
+/obj/effect/decal/gatofull_2{
 	pixel_y = 32
 	},
 /turf/open/floor/iron/dark/corner{
@@ -26494,7 +26494,7 @@
 "hhq" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/effect/turf_decal/tile/blue/half/contrasted,
-/obj/structure/sign/gatofull_3{
+/obj/effect/decal/gatofull_3{
 	pixel_x = -1;
 	pixel_y = -31
 	},
@@ -35707,7 +35707,7 @@
 /area/station/service/hydroponics/garden)
 "jDu" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/structure/sign/gatofull_2{
+/obj/effect/decal/gatofull_2{
 	pixel_x = 11;
 	pixel_y = 32
 	},
@@ -36687,7 +36687,7 @@
 "jRe" = (
 /obj/effect/spawner/random/entertainment/money_small,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/structure/sign/gatofull_3{
+/obj/effect/decal/gatofull_3{
 	pixel_x = 11;
 	pixel_y = 32
 	},
@@ -51086,7 +51086,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/structure/sign/gatofull_1{
+/obj/effect/decal/gatofull_1{
 	pixel_y = 32
 	},
 /turf/open/floor/iron/dark/corner{
@@ -66817,7 +66817,7 @@
 "rNT" = (
 /obj/effect/spawner/random/entertainment/money_small,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/structure/sign/gatofull_1{
+/obj/effect/decal/gatofull_1{
 	pixel_x = 11;
 	pixel_y = 32
 	},
@@ -70310,7 +70310,7 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/tile/blue,
-/obj/structure/sign/gatofull_2{
+/obj/effect/decal/gatofull_2{
 	pixel_x = -1;
 	pixel_y = -31
 	},
@@ -74602,7 +74602,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/structure/sign/gatofull_3{
+/obj/effect/decal/gatofull_3{
 	pixel_y = 32
 	},
 /turf/open/floor/iron/dark/corner{

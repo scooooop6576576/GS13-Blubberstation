@@ -20110,7 +20110,7 @@
 /turf/open/floor/carpet/green,
 /area/station/commons/dorms)
 "fTq" = (
-/obj/structure/sign/gatofull_2{
+/obj/effect/decal/gatofull_2{
 	pixel_x = 10;
 	pixel_y = 0
 	},
@@ -30030,7 +30030,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/structure/sign/gatofull_2{
+/obj/effect/decal/gatofull_2{
 	pixel_x = 0;
 	pixel_y = 32
 	},
@@ -43190,7 +43190,7 @@
 /turf/open/floor/engine,
 /area/station/science/xenobiology)
 "meV" = (
-/obj/structure/sign/gatofull_1{
+/obj/effect/decal/gatofull_1{
 	pixel_x = 10;
 	pixel_y = 0
 	},
@@ -46041,7 +46041,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/structure/sign/gatofull_1{
+/obj/effect/decal/gatofull_1{
 	pixel_x = 0;
 	pixel_y = 32
 	},
@@ -71727,7 +71727,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/structure/sign/gatofull_3{
+/obj/effect/decal/gatofull_3{
 	pixel_x = 0;
 	pixel_y = 32
 	},
@@ -72138,7 +72138,7 @@
 /turf/open/floor/wood,
 /area/station/maintenance/department/science/xenobiology)
 "ubS" = (
-/obj/structure/sign/gatofull_3{
+/obj/effect/decal/gatofull_3{
 	pixel_x = 10;
 	pixel_y = 0
 	},

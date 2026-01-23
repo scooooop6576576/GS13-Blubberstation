@@ -1957,7 +1957,7 @@
 /area/lavaland/underground/xenoarch/caloriteresearch)
 "bDX" = (
 /obj/structure/filingcabinet/chestdrawer,
-/obj/structure/sign/gatofull_2{
+/obj/effect/decal/gatofull_2{
 	pixel_x = -5;
 	pixel_y = 31
 	},
@@ -9839,7 +9839,7 @@
 /turf/open/floor/iron/white/smooth_large,
 /area/lavaland/underground/xenoarch/donut_factory)
 "ied" = (
-/obj/structure/sign/gatofull_2{
+/obj/effect/decal/gatofull_2{
 	pixel_x = -1;
 	pixel_y = 33
 	},
@@ -10847,7 +10847,7 @@
 /area/lavaland/underground/xenoarch/calorite_temple)
 "iZt" = (
 /obj/structure/closet/wardrobe/pjs,
-/obj/structure/sign/gatofull_1{
+/obj/effect/decal/gatofull_1{
 	pixel_x = -1;
 	pixel_y = 33
 	},
@@ -12399,7 +12399,7 @@
 "ktX" = (
 /obj/machinery/cell_charger,
 /obj/structure/table,
-/obj/structure/sign/gatofull_3{
+/obj/effect/decal/gatofull_3{
 	pixel_x = -1;
 	pixel_y = 33
 	},
@@ -24397,7 +24397,7 @@
 	},
 /area/xenoarch/lavaland/lowerlevel)
 "ucp" = (
-/obj/structure/sign/gatofull_3{
+/obj/effect/decal/gatofull_3{
 	pixel_x = -5;
 	pixel_y = 31
 	},
@@ -29211,7 +29211,7 @@
 /area/xenoarch/lavaland/med)
 "xTp" = (
 /obj/structure/filingcabinet/chestdrawer,
-/obj/structure/sign/gatofull_1{
+/obj/effect/decal/gatofull_1{
 	pixel_x = -5;
 	pixel_y = 31
 	},

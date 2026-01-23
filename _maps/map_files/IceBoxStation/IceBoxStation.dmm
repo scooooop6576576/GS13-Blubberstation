@@ -36181,7 +36181,7 @@
 /turf/open/floor/iron/smooth_half,
 /area/station/security/brig/upper)
 "jSw" = (
-/obj/structure/sign/gatofull_3{
+/obj/effect/decal/gatofull_3{
 	pixel_x = 0;
 	pixel_y = 31
 	},
@@ -36910,7 +36910,7 @@
 /turf/open/floor/iron,
 /area/station/maintenance/disposal/incinerator)
 "kdF" = (
-/obj/structure/sign/gatofull_1{
+/obj/effect/decal/gatofull_1{
 	pixel_x = 10;
 	pixel_y = 32
 	},
@@ -41647,7 +41647,7 @@
 /turf/open/floor/iron/smooth,
 /area/station/maintenance/port/lesser)
 "lrA" = (
-/obj/structure/sign/gatofull_1{
+/obj/effect/decal/gatofull_1{
 	pixel_x = 0;
 	pixel_y = 31
 	},
@@ -46173,7 +46173,7 @@
 /turf/open/floor/iron/white,
 /area/station/medical/medbay/aft)
 "mGX" = (
-/obj/structure/sign/gatofull_2{
+/obj/effect/decal/gatofull_2{
 	pixel_x = 0;
 	pixel_y = 31
 	},
@@ -56512,7 +56512,7 @@
 /area/station/ai/satellite/maintenance)
 "pua" = (
 /obj/machinery/light/directional/south,
-/obj/structure/sign/gatofull_1{
+/obj/effect/decal/gatofull_1{
 	pixel_x = 0;
 	pixel_y = -31
 	},
@@ -57622,7 +57622,7 @@
 /turf/open/floor/iron,
 /area/station/maintenance/starboard/upper)
 "pIJ" = (
-/obj/structure/sign/gatofull_3{
+/obj/effect/decal/gatofull_3{
 	pixel_x = 10;
 	pixel_y = 32
 	},
@@ -59145,7 +59145,7 @@
 /obj/effect/turf_decal/stripes/white/line{
 	dir = 8
 	},
-/obj/structure/sign/gatofull_3{
+/obj/effect/decal/gatofull_3{
 	pixel_x = 0;
 	pixel_y = -31
 	},
@@ -84028,7 +84028,7 @@
 /area/mine/laborcamp/security)
 "xcy" = (
 /obj/machinery/vending/gato,
-/obj/structure/sign/gatofull_2{
+/obj/effect/decal/gatofull_2{
 	pixel_x = 10;
 	pixel_y = 32
 	},
@@ -85814,7 +85814,7 @@
 /turf/open/floor/plating,
 /area/station/maintenance/starboard/lesser)
 "xzn" = (
-/obj/structure/sign/gatofull_2{
+/obj/effect/decal/gatofull_2{
 	pixel_x = 0;
 	pixel_y = -31
 	},
