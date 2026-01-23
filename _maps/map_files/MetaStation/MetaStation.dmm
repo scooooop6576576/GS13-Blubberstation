@@ -32734,9 +32734,7 @@
 /turf/open/floor/iron,
 /area/station/commons/toilet/auxiliary)
 "kXp" = (
-/obj/machinery/camera/autoname{
-	dir = 5
-	},
+/obj/machinery/camera/autoname/directional/south,
 /obj/structure/cable,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
 	dir = 1
@@ -37155,9 +37153,9 @@
 /turf/open/floor/iron/dark,
 /area/station/service/chapel)
 "mCj" = (
-/obj/machinery/camera{
+/obj/machinery/light/small/directional/south,
+/obj/machinery/camera/directional/south{
 	c_tag = "Xenobiology Lab - Pen #7";
-	dir = 5;
 	network = list("ss13","rd","xeno")
 	},
 /turf/open/floor/engine,
@@ -46263,16 +46261,15 @@
 "pHj" = (
 /obj/machinery/vending/cigarette,
 /obj/effect/turf_decal/bot,
-/obj/machinery/camera{
-	c_tag = "Engineering - Foyer - Starboard";
-	dir = 9
-	},
 /obj/effect/turf_decal/stripes/corner{
 	dir = 1
 	},
 /obj/structure/extinguisher_cabinet/directional/north,
 /obj/effect/turf_decal/tile/yellow/half/contrasted{
 	dir = 1
+	},
+/obj/machinery/camera/directional/north{
+	c_tag = "Engineering - Foyer - Starboard"
 	},
 /turf/open/floor/iron,
 /area/station/engineering/break_room)
@@ -63233,10 +63230,10 @@
 /area/station/engineering/atmos)
 "vly" = (
 /obj/item/target/alien/anchored,
+/obj/effect/turf_decal/stripes/line,
 /obj/machinery/camera/preset/ordnance{
 	dir = 5
 	},
-/obj/effect/turf_decal/stripes/line,
 /turf/open/floor/plating/airless{
 	luminosity = 2
 	},
@@ -117497,7 +117494,7 @@ jbk
 iWc
 oQJ
 xlH
-mCj
+mtu
 xiL
 lmn
 hbK
@@ -117754,7 +117751,7 @@ lVB
 iWc
 pDl
 uYP
-ljF
+mCj
 xiL
 lmn
 wrc
