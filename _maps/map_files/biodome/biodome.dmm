@@ -49661,8 +49661,7 @@
 "qbc" = (
 /obj/structure/displaycase/curator,
 /obj/structure/sign/painting/large/library_private{
-	dir = 1;
-	pixel_x = -16
+	dir = 1
 	},
 /turf/open/floor/engine/cult,
 /area/station/service/library)
