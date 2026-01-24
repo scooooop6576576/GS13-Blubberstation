@@ -16132,6 +16132,7 @@
 "fGr" = (
 /obj/machinery/airalarm/directional/east,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light/small/directional/north,
 /turf/open/floor/plating,
 /area/station/maintenance/disposal)
 "fGu" = (
@@ -23684,7 +23685,6 @@
 /area/station/maintenance/department/science)
 "ikc" = (
 /obj/structure/closet/crate/secure/loot{
-	codelen = 2;
 	name = "malfunctioning abandoned crate"
 	},
 /turf/open/misc/asteroid,
@@ -32813,7 +32813,6 @@
 /area/station/service/theater)
 "log" = (
 /obj/effect/decal/cleanable/blood/oil,
-/obj/machinery/light/small/directional/west,
 /obj/structure/disposalpipe/segment{
 	dir = 9
 	},
@@ -36082,6 +36081,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,
 /obj/machinery/firealarm/directional/west,
+/obj/machinery/camera/autoname/directional/west,
 /turf/open/floor/iron,
 /area/station/maintenance/disposal/incinerator)
 "mua" = (
@@ -46408,7 +46408,6 @@
 	name = "Port To Turbine"
 	},
 /obj/effect/turf_decal/delivery,
-/obj/machinery/camera/autoname/directional/west,
 /obj/structure/cable,
 /turf/open/floor/iron,
 /area/station/maintenance/disposal/incinerator)

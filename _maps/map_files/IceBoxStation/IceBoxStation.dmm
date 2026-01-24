@@ -35540,7 +35540,6 @@
 /obj/effect/landmark/event_spawn,
 /obj/structure/cable,
 /obj/effect/turf_decal/tile/green,
-/obj/structure/sign/plaques/kiddie,
 /turf/open/floor/iron/dark,
 /area/station/ai/upload/chamber)
 "jKN" = (
@@ -40285,7 +40284,6 @@
 /turf/open/floor/iron,
 /area/mine/laborcamp)
 "kYF" = (
-/obj/structure/light_construct/directional/west,
 /mob/living/basic/goose/vomit,
 /turf/open/floor/wood,
 /area/station/maintenance/port/aft)
@@ -79839,6 +79837,7 @@
 /obj/machinery/door/window/right/directional/east{
 	name = "Bar Access"
 	},
+/obj/structure/light_construct/directional/north,
 /turf/open/floor/wood,
 /area/station/maintenance/port/aft)
 "vSK" = (

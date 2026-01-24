@@ -102,7 +102,6 @@
 /area/station/commons/dorms)
 "s" = (
 /obj/structure/cable,
-/obj/machinery/light/cold/directional/west,
 /turf/open/floor/iron,
 /area/station/common/cryopods)
 "w" = (
@@ -243,6 +242,7 @@
 /turf/closed/wall/r_wall,
 /area/station/engineering/storage/tech)
 "Z" = (
+/obj/machinery/light/cold/directional/west,
 /turf/open/floor/iron,
 /area/station/common/cryopods)
 
