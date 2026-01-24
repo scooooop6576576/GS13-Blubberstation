@@ -4150,9 +4150,7 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/visible,
 /obj/effect/turf_decal/stripes/line,
 /obj/structure/cable,
-/obj/machinery/camera/directional/south{
-	dir = 5
-	},
+/obj/machinery/camera/directional/south,
 /turf/open/floor/engine,
 /area/station/engineering/supermatter/room)
 "bip" = (
@@ -4914,6 +4912,11 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/camera/directional/south{
+	c_tag = "Atmospherics - Project Room Fore";
+	dir = 5;
+	name = "atmospherics camera"
+	},
 /turf/open/floor/iron/dark/smooth_large,
 /area/station/engineering/atmos)
 "buX" = (
@@ -9553,11 +9556,6 @@
 /turf/open/floor/grass,
 /area/station/service/chapel)
 "cQn" = (
-/obj/machinery/camera/directional/south{
-	c_tag = "Atmospherics - Project Room Fore";
-	dir = 5;
-	name = "atmospherics camera"
-	},
 /obj/effect/turf_decal/bot,
 /obj/structure/table,
 /obj/item/multitool,
@@ -20110,9 +20108,8 @@
 /turf/open/floor/carpet/green,
 /area/station/commons/dorms)
 "fTq" = (
-/obj/effect/decal/gatofull_2{
-	pixel_x = 10;
-	pixel_y = 0
+/obj/structure/sign/gatofull_2{
+	pixel_x = 10
 	},
 /turf/closed/wall,
 /area/station/hallway/primary/central)
@@ -22228,6 +22225,7 @@
 /obj/item/flashlight,
 /obj/structure/rack,
 /obj/effect/turf_decal/bot,
+/obj/machinery/light/small/directional/east,
 /turf/open/floor/pod/dark,
 /area/station/engineering/storage/tech)
 "gxq" = (
@@ -32997,7 +32995,6 @@
 "jvB" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/rack,
-/obj/machinery/light/small/directional/west,
 /obj/item/stack/cable_coil{
 	pixel_y = 8
 	},
@@ -33954,6 +33951,7 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/effect/landmark/blobstart,
+/obj/machinery/light/small/directional/west,
 /turf/open/floor/catwalk_floor/iron_smooth,
 /area/station/maintenance/starboard/fore)
 "jIe" = (
@@ -38491,7 +38489,6 @@
 	},
 /obj/item/stack/cable_coil,
 /obj/item/stock_parts/power_store/battery/high,
-/obj/machinery/light/small/directional/east,
 /turf/open/floor/pod/dark,
 /area/station/engineering/storage/tech)
 "kUb" = (
@@ -43183,9 +43180,8 @@
 /turf/open/floor/engine,
 /area/station/science/xenobiology)
 "meV" = (
-/obj/effect/decal/gatofull_1{
-	pixel_x = 10;
-	pixel_y = 0
+/obj/structure/sign/gatofull_1{
+	pixel_x = 10
 	},
 /turf/closed/wall,
 /area/station/hallway/primary/central)
@@ -72132,9 +72128,8 @@
 /turf/open/floor/wood,
 /area/station/maintenance/department/science/xenobiology)
 "ubS" = (
-/obj/effect/decal/gatofull_3{
-	pixel_x = 10;
-	pixel_y = 0
+/obj/structure/sign/gatofull_3{
+	pixel_x = 10
 	},
 /turf/closed/wall,
 /area/station/hallway/primary/central)
@@ -76017,9 +76012,6 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/structure/sign/barber{
-	pixel_x = -13
-	},
 /obj/structure/sign/poster/official/random/directional/south,
 /obj/item/kirbyplants/random,
 /turf/open/floor/iron/white,
@@ -78733,6 +78725,7 @@
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/machinery/camera/directional/west,
 /turf/open/floor/iron/freezer,
 /area/station/medical/pharmacy)
 "vRB" = (
@@ -85853,9 +85846,6 @@
 /turf/open/floor/iron/dark/smooth_large,
 /area/station/science/auxlab/firing_range)
 "xSp" = (
-/obj/structure/sign/barber{
-	pixel_x = -13
-	},
 /obj/effect/turf_decal/trimline/green/filled/warning{
 	dir = 9
 	},
