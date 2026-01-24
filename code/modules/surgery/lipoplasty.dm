@@ -23,8 +23,13 @@
 	)
 
 /datum/surgery/lipoplasty/can_start(mob/user, mob/living/carbon/target)
+	/* GS13 EDIT
 	if(!HAS_TRAIT_FROM(target, TRAIT_FAT, OBESITY) || target.nutrition < NUTRITION_LEVEL_WELL_FED)
 		return FALSE
+	*/
+	if(target.fatness_real <= FATNESS_LEVEL_FATTER || HAS_TRAIT(target, TRAIT_WEIGHT_LOSS_IMMUNE))
+		return FALSE
+	// GS13 END EDIT
 	return ..()
 
 
@@ -120,10 +125,13 @@
 		span_notice("[user] extracts [target]'s fat!"),
 		span_notice("[user] extracts [target]'s fat!"),
 	)
-	target.overeatduration = 0 //patient is unfatted
-	var/removednutriment = target.nutrition
-	target.set_nutrition(NUTRITION_LEVEL_WELL_FED)
-	removednutriment -= NUTRITION_LEVEL_WELL_FED //whatever was removed goes into the meat
+	// GS13 EDIT
+	// target.overeatduration = 0 //patient is unfatted
+	// var/removednutriment = target.nutrition
+	// target.set_nutrition(NUTRITION_LEVEL_WELL_FED)
+	// removednutriment -= NUTRITION_LEVEL_WELL_FED //whatever was removed goes into the meat
+	target.adjust_fatness(-FATNESS_LEVEL_FATTER, FATTENING_TYPE_WEIGHT_LOSS, TRUE)
+	// GS13 END EDIT
 	var/mob/living/carbon/human/human = target
 	var/typeofmeat = /obj/item/food/meat/slab/human
 
@@ -138,6 +146,6 @@
 		newmeat.desc = "Extremely fatty tissue taken from a patient."
 		newmeat.subjectname = human.real_name
 		newmeat.subjectjob = human.job
-		newmeat.reagents.add_reagent (/datum/reagent/consumable/nutriment, (removednutriment / 15)) //To balance with nutriment_factor of nutriment
+		// newmeat.reagents.add_reagent (/datum/reagent/consumable/nutriment, (removednutriment / 15)) //To balance with nutriment_factor of nutriment	// GS13 EDIT
 		newmeat.forceMove(target.loc)
 	return ..()
