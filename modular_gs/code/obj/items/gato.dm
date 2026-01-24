@@ -58,6 +58,10 @@
 	icon = 'modular_gs/icons/obj/signs.dmi'
 	icon_state = "gato_sign_3"
 
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/sign/gatofull_1, 32)
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/sign/gatofull_2, 32)
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/sign/gatofull_3, 32)
+
 /obj/effect/decal/gatofull_1
 	name = "GATO"
 	desc = "GATO - expand your horizons!"
