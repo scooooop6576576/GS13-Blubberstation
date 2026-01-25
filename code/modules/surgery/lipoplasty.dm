@@ -92,7 +92,10 @@
 		TOOL_SCREWDRIVER = 45,
 		TOOL_WIRECUTTER = 35,
 	)
-	time = 3.2 SECONDS
+	// GS13 EDIT
+	repeatable = TRUE
+	time = 4.5 SECONDS
+	// GS13 END EDIT
 	preop_sound = 'sound/items/handling/surgery/retractor1.ogg'
 	success_sound = 'sound/items/handling/surgery/retractor2.ogg'
 
@@ -130,7 +133,9 @@
 	// var/removednutriment = target.nutrition
 	// target.set_nutrition(NUTRITION_LEVEL_WELL_FED)
 	// removednutriment -= NUTRITION_LEVEL_WELL_FED //whatever was removed goes into the meat
-	target.adjust_fatness(-FATNESS_LEVEL_FATTER, FATTENING_TYPE_WEIGHT_LOSS, TRUE)
+	var/removed_fat = target.adjust_fatness(-FATNESS_LEVEL_FATTER, FATTENING_TYPE_WEIGHT_LOSS, TRUE)
+	if(removed_fat < FATNESS_LEVEL_FATTER)
+		return ..()
 	// GS13 END EDIT
 	var/mob/living/carbon/human/human = target
 	var/typeofmeat = /obj/item/food/meat/slab/human
