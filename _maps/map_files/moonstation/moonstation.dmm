@@ -3677,9 +3677,7 @@
 	dir = 1
 	},
 /obj/machinery/firealarm/directional/west,
-/obj/machinery/camera/autoname/directional/west{
-	dir = 10
-	},
+/obj/machinery/camera/autoname/directional/west,
 /turf/open/floor/iron,
 /area/station/commons/storage/tools)
 "aVD" = (
@@ -6346,9 +6344,7 @@
 /turf/open/floor/iron/terracotta,
 /area/station/commons/storage/art)
 "bJT" = (
-/obj/machinery/camera/autoname/directional/south{
-	dir = 5
-	},
+/obj/machinery/camera/autoname/directional/south,
 /obj/effect/turf_decal/tile/yellow/half/contrasted,
 /obj/effect/decal/gatofull_1{
 	pixel_x = 0;
@@ -17449,9 +17445,7 @@
 	},
 /obj/structure/disposalpipe/segment,
 /obj/machinery/airalarm/directional/east,
-/obj/machinery/camera/autoname/directional/east{
-	dir = 6
-	},
+/obj/machinery/camera/autoname/directional/east,
 /turf/open/floor/iron/dark/herringbone,
 /area/station/medical/morgue/office)
 "eKF" = (
@@ -17548,9 +17542,7 @@
 	dir = 1
 	},
 /obj/machinery/shower/directional/north,
-/obj/machinery/camera/autoname/directional/south{
-	dir = 5
-	},
+/obj/machinery/camera/autoname/directional/south,
 /turf/open/floor/noslip,
 /area/station/medical/pharmacy)
 "eMH" = (
@@ -19400,6 +19392,7 @@
 "flB" = (
 /obj/structure/sign/flag/syndicate/directional/east,
 /obj/effect/spawner/random/burgerstation/loot,
+/obj/structure/light_construct/directional/east,
 /turf/open/floor/plating,
 /area/station/maintenance/abandon_office)
 "flE" = (
@@ -24375,6 +24368,7 @@
 	dir = 8
 	},
 /obj/structure/extinguisher_cabinet/directional/south,
+/obj/machinery/camera/autoname/directional/south,
 /turf/open/floor/carpet/red,
 /area/station/commons/lounge)
 "gDc" = (
@@ -25612,9 +25606,7 @@
 /obj/effect/turf_decal/tile/yellow/anticorner/contrasted{
 	dir = 4
 	},
-/obj/machinery/camera/autoname/directional/east{
-	dir = 6
-	},
+/obj/machinery/camera/autoname/directional/east,
 /turf/open/floor/iron/white,
 /area/station/medical/pharmacy)
 "gUO" = (
@@ -27826,9 +27818,7 @@
 /obj/effect/mapping_helpers/requests_console/assistance,
 /obj/effect/mapping_helpers/requests_console/supplies,
 /obj/effect/mapping_helpers/requests_console/information,
-/obj/machinery/camera/autoname/directional/west{
-	dir = 10
-	},
+/obj/machinery/camera/autoname/directional/west,
 /turf/open/floor/iron/dark/herringbone,
 /area/station/medical/morgue/office)
 "hAr" = (
@@ -35581,6 +35571,7 @@
 	dir = 10
 	},
 /obj/item/radio/intercom/directional/west,
+/obj/machinery/light/directional/west,
 /turf/open/floor/iron/dark/corner{
 	dir = 1
 	},
@@ -37367,7 +37358,6 @@
 /obj/effect/spawner/random/structure/chair_maintenance{
 	dir = 8
 	},
-/obj/structure/light_construct/directional/east,
 /obj/effect/spawner/random/trash/cigbutt,
 /obj/effect/spawner/random/trash/cigbutt,
 /obj/effect/spawner/random/trash/cigbutt,
@@ -46867,11 +46857,13 @@
 /turf/open/floor/engine,
 /area/station/engineering/supermatter/room)
 "mAd" = (
-/obj/structure/bodycontainer/morgue{
-	dir = 8
+/obj/effect/turf_decal/siding/yellow,
+/obj/effect/turf_decal/siding/yellow{
+	dir = 1
 	},
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/camera/autoname/directional/north,
-/turf/open/floor/engine,
+/turf/open/floor/iron/dark/herringbone,
 /area/station/medical/morgue)
 "mAy" = (
 /obj/structure/cable,
@@ -56910,9 +56902,7 @@
 /obj/effect/turf_decal/bot,
 /obj/machinery/portable_atmospherics/canister/air,
 /obj/effect/turf_decal/stripes/line,
-/obj/machinery/camera/autoname/engineering/directional/west{
-	dir = 10
-	},
+/obj/machinery/camera/autoname/engineering/directional/west,
 /turf/open/floor/iron/dark,
 /area/station/engineering/atmos/storage/gas)
 "phW" = (
@@ -59637,7 +59627,6 @@
 /turf/open/floor/iron/dark,
 /area/station/security/prison)
 "pUL" = (
-/obj/machinery/camera/autoname/directional/south,
 /obj/machinery/restaurant_portal/bar,
 /turf/open/floor/wood,
 /area/station/commons/lounge)
@@ -60161,7 +60150,6 @@
 /area/station/security/prison/upper)
 "qaq" = (
 /obj/structure/cable,
-/obj/machinery/light/small/dim/directional/west,
 /turf/open/floor/plating,
 /area/station/security/prison/safe)
 "qav" = (
@@ -75056,7 +75044,6 @@
 	dir = 1
 	},
 /obj/machinery/vending/sovietsoda,
-/obj/machinery/camera/autoname/directional/south,
 /obj/structure/sign/poster/random/directional/south,
 /obj/structure/sign/poster/random/directional/east,
 /turf/open/floor/iron/dark,
@@ -76410,9 +76397,7 @@
 /obj/structure/disposalpipe/trunk{
 	dir = 4
 	},
-/obj/machinery/camera/autoname/directional/south{
-	dir = 5
-	},
+/obj/machinery/camera/autoname/directional/south,
 /turf/open/floor/iron/dark,
 /area/station/engineering/atmos/hallway)
 "uuB" = (
@@ -88635,7 +88620,6 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/structure/cable,
-/obj/machinery/light/directional/east,
 /obj/effect/turf_decal/tile/bar/half/contrasted{
 	dir = 4
 	},
@@ -262554,8 +262538,8 @@ lxZ
 gzH
 hjM
 qNH
-bPV
 mAd
+luX
 luX
 luX
 luX
