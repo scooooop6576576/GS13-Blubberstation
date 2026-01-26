@@ -29303,7 +29303,6 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 10
 	},
-/obj/machinery/light/small/directional/south,
 /turf/open/floor/grass,
 /area/station/service/hydroponics/garden)
 "hSD" = (
@@ -47831,6 +47830,7 @@
 /area/station/security/evidence)
 "mMX" = (
 /obj/machinery/firealarm/directional/north,
+/obj/machinery/light/directional/north,
 /turf/open/floor/plating,
 /area/station/commons/vacant_room)
 "mNe" = (
@@ -50825,10 +50825,6 @@
 /obj/effect/turf_decal/tile/blue/opposingcorners,
 /turf/open/floor/iron,
 /area/station/engineering/atmos/pumproom)
-"nFz" = (
-/obj/machinery/light/directional/north,
-/turf/open/floor/plating,
-/area/station/commons/vacant_room)
 "nFB" = (
 /obj/machinery/computer/slot_machine,
 /obj/item/radio/intercom/directional/west,
@@ -65696,6 +65692,7 @@
 /obj/machinery/airalarm/directional/north,
 /obj/effect/turf_decal/siding/dark,
 /obj/structure/closet/firecloset,
+/obj/machinery/light/small/directional/north,
 /turf/open/floor/iron/dark,
 /area/station/science/ordnance)
 "rAD" = (
@@ -69033,7 +69030,6 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2,
-/obj/machinery/light/small/directional/north,
 /turf/open/floor/iron/dark,
 /area/station/science/ordnance)
 "swF" = (
@@ -75422,6 +75418,7 @@
 /turf/open/floor/plating,
 /area/station/maintenance/starboard/aft)
 "uhS" = (
+/obj/machinery/light/small/directional/west,
 /turf/open/water/no_planet_atmos,
 /area/station/service/hydroponics/garden)
 "uhT" = (
@@ -276116,7 +276113,7 @@ sVl
 sVl
 bcY
 pIp
-nFz
+pKP
 iup
 cuW
 pKP
