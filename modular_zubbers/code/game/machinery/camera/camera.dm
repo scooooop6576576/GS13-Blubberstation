@@ -122,5 +122,12 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/camera/autoname/turbine, 0)
 
 MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/camera/autoname/rbmk, 0)
 
+// GS13 EDIT
+// we should push this one to bubber
+// medbay cameras
 
+/obj/machinery/camera/autoname/medbay
+	network = list("ss13","medbay")
 
+MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/camera/autoname/medbay, 0)
+// GS13 END EDIT
