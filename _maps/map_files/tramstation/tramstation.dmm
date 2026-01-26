@@ -1935,9 +1935,9 @@
 /turf/open/floor/iron,
 /area/station/security/checkpoint/supply)
 "agK" = (
-/obj/effect/decal/gatofull_1,
-/turf/closed/wall,
-/area/station/hallway/primary/tram/center)
+/obj/structure/sign/gatofull_3/directional/north,
+/turf/open/openspace,
+/area/station/hallway/primary/tram/left)
 "agL" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/fluff/paper/stack,
@@ -5277,7 +5277,7 @@
 /turf/open/floor/iron,
 /area/station/commons/storage/art)
 "aMt" = (
-/obj/structure/sign/warning/electric_shock,
+/obj/structure/sign/warning/electric_shock/directional/west,
 /obj/effect/turf_decal/stripes/end{
 	dir = 4
 	},
@@ -7790,6 +7790,10 @@
 	},
 /turf/open/floor/catwalk_floor,
 /area/station/maintenance/department/cargo)
+"bGd" = (
+/obj/structure/sign/gatofull_1/directional/south,
+/turf/open/openspace,
+/area/station/hallway/primary/tram/left)
 "bGh" = (
 /obj/machinery/camera/motion{
 	dir = 6;
@@ -11770,6 +11774,10 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /turf/open/floor/iron,
 /area/station/security/prison)
+"cSY" = (
+/obj/structure/sign/gatofull_2/directional/north,
+/turf/open/openspace,
+/area/station/hallway/primary/tram/left)
 "cTa" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/public/glass{
@@ -20620,6 +20628,10 @@
 /obj/effect/turf_decal/tile/purple/fourcorners,
 /turf/open/floor/iron/white,
 /area/station/science/auxlab/firing_range)
+"gcB" = (
+/obj/structure/sign/gatofull_2/directional/north,
+/turf/open/openspace,
+/area/station/hallway/primary/tram/right)
 "gcE" = (
 /obj/effect/turf_decal/trimline/green/filled/line{
 	dir = 5
@@ -21765,8 +21777,8 @@
 /turf/open/floor/iron,
 /area/station/commons/fitness)
 "gyl" = (
-/obj/effect/decal/gatofull_2,
-/turf/closed/wall,
+/obj/structure/sign/gatofull_3/directional/south,
+/turf/open/openspace,
 /area/station/hallway/primary/tram/center)
 "gyn" = (
 /obj/effect/turf_decal/siding/thinplating/dark,
@@ -22444,6 +22456,10 @@
 	},
 /turf/open/floor/iron/dark,
 /area/station/command/teleporter)
+"gKH" = (
+/obj/structure/sign/gatofull_1/directional/north,
+/turf/open/openspace,
+/area/station/hallway/primary/tram/right)
 "gKJ" = (
 /obj/machinery/suit_storage_unit/ce,
 /obj/machinery/airalarm/directional/north,
@@ -22682,8 +22698,8 @@
 /turf/open/floor/plating/airless,
 /area/station/solars/port/asteriod)
 "gPt" = (
-/obj/effect/decal/gatofull_1,
-/turf/closed/wall,
+/obj/structure/sign/gatofull_3/directional/south,
+/turf/open/openspace,
 /area/station/hallway/primary/tram/right)
 "gPA" = (
 /obj/effect/turf_decal/trimline/blue/filled/line{
@@ -23152,9 +23168,9 @@
 /turf/open/floor/iron,
 /area/station/security/prison)
 "gYm" = (
-/obj/effect/decal/gatofull_3,
-/turf/closed/wall,
-/area/station/hallway/primary/tram/center)
+/obj/structure/sign/gatofull_2/directional/south,
+/turf/open/openspace,
+/area/station/hallway/primary/tram/left)
 "gYp" = (
 /obj/machinery/recharge_station,
 /obj/effect/turf_decal/box,
@@ -23304,9 +23320,7 @@
 /turf/open/floor/iron,
 /area/station/commons/storage/primary)
 "hbQ" = (
-/obj/machinery/camera/directional/north{
-	c_tag = "Civilian - Holodeck Controls"
-	},
+/obj/machinery/camera/autoname/directional/north,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
 	dir = 8
 	},
@@ -33282,9 +33296,9 @@
 /turf/open/floor/iron/cafeteria,
 /area/station/command/heads_quarters/rd)
 "kyh" = (
-/obj/effect/decal/gatofull_2,
-/turf/closed/wall,
-/area/station/hallway/primary/tram/right)
+/obj/structure/sign/gatofull_1/directional/south,
+/turf/open/openspace,
+/area/station/hallway/primary/tram/center)
 "kyq" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
@@ -40135,9 +40149,9 @@
 /turf/open/floor/circuit/green,
 /area/station/science/robotics/mechbay)
 "mKn" = (
-/obj/effect/decal/gatofull_2,
-/turf/closed/wall,
-/area/station/hallway/primary/tram/left)
+/obj/structure/sign/gatofull_2/directional/north,
+/turf/open/openspace,
+/area/station/hallway/primary/tram/center)
 "mKq" = (
 /obj/effect/turf_decal/trimline/red/filled/line{
 	dir = 1
@@ -49883,6 +49897,10 @@
 	},
 /turf/open/floor/iron/white,
 /area/station/science/xenobiology)
+"qlJ" = (
+/obj/structure/sign/gatofull_1/directional/north,
+/turf/open/openspace,
+/area/station/hallway/primary/tram/left)
 "qlK" = (
 /obj/machinery/camera/directional/west{
 	network = list("ss13","Security","cargo");
@@ -51598,6 +51616,10 @@
 /obj/structure/disposalpipe/segment,
 /turf/open/floor/plating,
 /area/station/science/xenobiology)
+"qTj" = (
+/obj/structure/sign/gatofull_2/directional/south,
+/turf/open/openspace,
+/area/station/hallway/primary/tram/right)
 "qTp" = (
 /obj/machinery/door/airlock{
 	name = "Private Quarters B";
@@ -51677,10 +51699,7 @@
 /turf/open/indestructible/tram/plate,
 /area/station/hallway/primary/tram/center)
 "qUy" = (
-/obj/machinery/camera/directional/south{
-	name = "holodeck camera";
-	c_tag = "Civilian - Holodeck South"
-	},
+/obj/machinery/camera/autoname/directional/south,
 /turf/open/floor/engine{
 	name = "Holodeck Projector Floor"
 	},
@@ -58023,6 +58042,10 @@
 "tdx" = (
 /turf/closed/wall,
 /area/station/maintenance/port/aft)
+"tdP" = (
+/obj/structure/sign/gatofull_3/directional/north,
+/turf/open/openspace,
+/area/station/hallway/primary/tram/center)
 "tdR" = (
 /obj/machinery/vending/autodrobe,
 /obj/effect/turf_decal/tile/blue/opposingcorners{
@@ -58183,6 +58206,10 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2,
 /turf/open/floor/iron,
 /area/station/commons/dorms)
+"tgv" = (
+/obj/structure/sign/gatofull_3/directional/north,
+/turf/open/openspace,
+/area/station/hallway/primary/tram/right)
 "tgB" = (
 /obj/structure/toilet{
 	pixel_y = 13
@@ -58530,10 +58557,7 @@
 /turf/open/floor/engine/co2,
 /area/station/engineering/atmos)
 "tnu" = (
-/obj/machinery/camera/directional/north{
-	name = "holodeck camera";
-	c_tag = "Civilian - Holodeck North"
-	},
+/obj/machinery/camera/autoname/directional/north,
 /turf/open/floor/engine{
 	name = "Holodeck Projector Floor"
 	},
@@ -60536,9 +60560,7 @@
 /obj/effect/turf_decal/trimline/neutral/filled/line{
 	dir = 1
 	},
-/obj/machinery/camera/directional/north{
-	c_tag = "Civilian - Recreational Area North-East"
-	},
+/obj/machinery/camera/autoname/directional/north,
 /obj/structure/sign/poster/official/random/directional/north,
 /turf/open/floor/iron,
 /area/station/commons/fitness/recreation)
@@ -64708,10 +64730,7 @@
 /area/station/maintenance/disposal/incinerator)
 "vlb" = (
 /obj/effect/turf_decal/trimline/neutral/filled/corner,
-/obj/machinery/camera{
-	dir = 6;
-	c_tag = "Hallway - Port Tram Platform South-East"
-	},
+/obj/machinery/camera/autoname/directional/east,
 /obj/machinery/firealarm/directional/east,
 /obj/effect/turf_decal/stripes/white/line{
 	dir = 1
@@ -65500,9 +65519,9 @@
 /turf/open/floor/iron/dark,
 /area/station/commons/lounge)
 "vzt" = (
-/obj/effect/decal/gatofull_1,
-/turf/closed/wall,
-/area/station/hallway/primary/tram/left)
+/obj/structure/sign/gatofull_2/directional/south,
+/turf/open/openspace,
+/area/station/hallway/primary/tram/center)
 "vzx" = (
 /obj/machinery/atmospherics/components/binary/valve{
 	name = "Output to Waste";
@@ -69436,6 +69455,10 @@
 /obj/effect/turf_decal/tile/neutral/fourcorners,
 /turf/open/floor/iron/dark,
 /area/station/hallway/secondary/exit)
+"wWl" = (
+/obj/structure/sign/gatofull_1/directional/south,
+/turf/open/openspace,
+/area/station/hallway/primary/tram/right)
 "wWn" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door_buttons/airlock_controller{
@@ -71247,9 +71270,9 @@
 /turf/open/floor/iron,
 /area/station/cargo/storage)
 "xHr" = (
-/obj/effect/decal/gatofull_3,
-/turf/closed/wall,
-/area/station/hallway/primary/tram/right)
+/obj/structure/sign/gatofull_1/directional/north,
+/turf/open/openspace,
+/area/station/hallway/primary/tram/center)
 "xHw" = (
 /turf/open/floor/iron/freezer,
 /area/station/science/lower)
@@ -72570,8 +72593,8 @@
 /turf/open/floor/iron/white,
 /area/station/medical/treatment_center)
 "yfE" = (
-/obj/effect/decal/gatofull_3,
-/turf/closed/wall,
+/obj/structure/sign/gatofull_3/directional/south,
+/turf/open/openspace,
 /area/station/hallway/primary/tram/left)
 "yfH" = (
 /obj/structure/window/reinforced/spawner/directional/east,
@@ -72625,9 +72648,7 @@
 /area/station/science/ordnance/storage)
 "ygH" = (
 /obj/effect/turf_decal/trimline/neutral/filled/line,
-/obj/machinery/camera/directional/south{
-	c_tag = "Civilian - Recreational Area South-East"
-	},
+/obj/machinery/camera/autoname/directional/south,
 /obj/structure/sign/poster/official/random/directional/south,
 /turf/open/floor/iron,
 /area/station/commons/fitness/recreation)
@@ -159716,13 +159737,13 @@ sDe
 yiM
 tkv
 qUg
-vzt
-cFs
+yiM
+qlJ
 nVr
 laU
 jGG
-cFs
-vzt
+bGd
+yiM
 rnR
 tkv
 yiM
@@ -159973,13 +159994,13 @@ gdF
 yiM
 yiM
 lIQ
-mKn
-cFs
+yiM
+cSY
 nVr
 laU
 jGG
-cFs
-mKn
+gYm
+yiM
 aGL
 yiM
 yiM
@@ -160230,13 +160251,13 @@ dUl
 yiM
 iYd
 ifS
-yfE
-cFs
+yiM
+agK
 nVr
 laU
 jGG
-cFs
 yfE
+yiM
 aEP
 qSQ
 yiM
@@ -167169,13 +167190,13 @@ eSz
 izU
 vYA
 kSI
-agK
-eSz
+izU
+xHr
 nSP
 fXy
 lwN
-eSz
-agK
+kyh
+izU
 ccU
 ghg
 jyH
@@ -167426,13 +167447,13 @@ eSz
 izU
 dEH
 izU
-gyl
-eSz
+izU
+mKn
 nSP
 fXy
 lwN
-eSz
-gyl
+vzt
+izU
 izU
 nAT
 jyH
@@ -167683,13 +167704,13 @@ fnb
 izU
 vYA
 seG
-gYm
-eSz
+izU
+tdP
 nSP
 fXy
 lwN
-eSz
-gYm
+gyl
+izU
 seG
 tHj
 jyH
@@ -173337,13 +173358,13 @@ aaa
 izU
 clO
 pbC
-agK
-eSz
+izU
+xHr
 nSP
 fXy
 lwN
-eSz
-agK
+kyh
+izU
 seG
 dCJ
 izU
@@ -173594,13 +173615,13 @@ aaa
 izU
 krh
 izU
-gyl
-eSz
+izU
+mKn
 nSP
 fXy
 lwN
-eSz
-gyl
+vzt
+izU
 izU
 roH
 izU
@@ -173851,13 +173872,13 @@ aaa
 izU
 jrz
 wYw
-gYm
-eSz
+izU
+tdP
 nSP
 fXy
 lwN
-eSz
-gYm
+gyl
+izU
 ghg
 xlZ
 izU
@@ -180790,13 +180811,13 @@ abM
 lZW
 qIt
 mzf
-gPt
-brm
+bMb
+gKH
 gay
 lZj
 jwH
-brm
-gPt
+wWl
+bMb
 gaH
 bly
 lVi
@@ -181047,13 +181068,13 @@ abM
 lZW
 bMb
 qHo
-kyh
-brm
+bMb
+gcB
 gay
 lZj
 jwH
-brm
-kyh
+qTj
+bMb
 aHo
 bMb
 lVi
@@ -181304,13 +181325,13 @@ abM
 skT
 lRs
 lVe
-xHr
-brm
+bMb
+tgv
 gay
 lZj
 jwH
-brm
-xHr
+gPt
+bMb
 aEv
 lRs
 lVi
