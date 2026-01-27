@@ -34613,7 +34613,7 @@
 /turf/open/floor/engine/air,
 /area/station/engineering/atmos)
 "llH" = (
-/obj/machinery/computer/rdconsole{
+/obj/machinery/computer/rdconsole/unlocked{
 	dir = 8
 	},
 /obj/effect/turf_decal/tile/purple/opposingcorners,

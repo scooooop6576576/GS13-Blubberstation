@@ -21112,7 +21112,7 @@
 /area/station/medical/medbay/central)
 "gPy" = (
 /obj/effect/turf_decal/bot,
-/obj/machinery/computer/rdconsole{
+/obj/machinery/computer/rdconsole/unlocked{
 	dir = 4
 	},
 /obj/effect/turf_decal/tile/neutral/anticorner/contrasted{

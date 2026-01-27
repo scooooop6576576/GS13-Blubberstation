@@ -10243,9 +10243,8 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/tile/purple,
-/obj/machinery/computer/rdconsole{
-	dir = 1;
-	pixel_x = -2
+/obj/machinery/computer/rdconsole/unlocked{
+	dir = 1
 	},
 /obj/effect/turf_decal/bot,
 /obj/effect/turf_decal/trimline/purple/line{

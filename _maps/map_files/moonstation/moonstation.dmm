@@ -35927,7 +35927,7 @@
 /turf/open/misc/beach/sand,
 /area/station/common/pool)
 "jIz" = (
-/obj/machinery/computer/rdconsole{
+/obj/machinery/computer/rdconsole/unlocked{
 	dir = 4
 	},
 /obj/effect/turf_decal/siding/dark{

@@ -43244,7 +43244,7 @@
 /turf/open/floor/iron,
 /area/station/science/explab)
 "fut" = (
-/obj/machinery/computer/rdconsole{
+/obj/machinery/computer/rdconsole/unlocked{
 	dir = 4
 	},
 /obj/machinery/requests_console/directional/west{
