@@ -46,7 +46,7 @@
 	return
 
 /obj/item/organ/genital/proc/set_size(size)
-	genital_size = clamp(size, set_genital_size, max_genital_size)	// GS13 edit - prevents the genitals from going below their minimum set size, and above their maximum set size
+	genital_size = clamp(size, set_genital_size, max_genital_size)	// GS13 edit - prevents the genitals from going below their minimum set size, and above their maximum set size. original: genital_size = size
 	update_sprite_suffix()
 
 /obj/item/organ/genital/Initialize(mapload)
