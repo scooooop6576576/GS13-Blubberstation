@@ -14044,7 +14044,7 @@
 /turf/open/floor/carpet/green,
 /area/xenoarch/lavaland/maint_east)
 "lFg" = (
-/obj/item/clothing/neck/necklace/memento_mori/calori,
+/obj/item/clothing/neck/necklace/memento_mori/calori/sprinkled,
 /turf/open/chocolateriver,
 /area/lavaland/underground/xenoarch/candyland)
 "lFA" = (
