@@ -1,11 +1,16 @@
 /obj/item/clothing/neck/necklace/memento_mori/calori
 	name = "Memento Calori"
 	desc = "A mysterious pendant. An inscription on it says: \"Certain obesity tomorrow means certain fitness today.\""
-	icon = 'icons/obj/mining_zones/artefacts.dmi'
-	icon_state = "memento_mori"
-	worn_icon_state = "memento"
+	icon = 'modular_gs/icons/obj/clothing/neck.dmi'
+	worn_icon = 'modular_gs/icons/mob/clothing/neck.dmi'
+	icon_state = "memento_calori"
+	worn_icon_state = "memento_calori"
 	actions_types = list(/datum/action/item_action/hands_free/memento_mori/calori)
 	var/list/past_users = list()
+
+/obj/item/clothing/neck/necklace/memento_mori/calori/sprinkled
+	icon_state = "memento_calori_sprinkled"
+	worn_icon_state = "memento_calori"
 
 /obj/item/clothing/neck/necklace/memento_mori/calori/memento(mob/living/carbon/human/user)
 	to_chat(user, span_warning("You feel your weight being drained by the pendant..."))
@@ -14,12 +19,14 @@
 
 	to_chat(user, span_notice("Your weight is now linked to the pendant! You feel like removing it would make your weight skyrocket, and yet you instinctively know that until then, you won't gain weight."))
 	user.hider_add(src)
-	icon_state = "memento_mori_active"
+	icon_state = initial(icon_state) + "_active"
+	worn_icon_state = initial(worn_icon_state) + "_active"
 	active_owner = user
 	past_users.Add(user)
 
 /obj/item/clothing/neck/necklace/memento_mori/calori/mori()
-	icon_state = "memento_mori"
+	icon_state = initial(icon_state)
+	worn_icon_state = initial(worn_icon_state)
 	if (!active_owner)
 		return
 	var/mob/living/carbon/human/stored_owner = active_owner //to avoid infinite looping when dust unequips the pendant
