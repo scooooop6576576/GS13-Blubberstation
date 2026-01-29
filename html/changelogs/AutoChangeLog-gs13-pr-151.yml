@@ -1,0 +1,6 @@
+author: "sheepishgoat"
+delete-after: True
+changes:
+  - rscadd: "re-enables plushies from Skyrat and Bubber"
+  - bugfix: "updates maps to match with upstream changes. This should lead to less floating cameras and other oddities."
+  - rscdel: "(hopefully) removes a few quadraped borg models."
