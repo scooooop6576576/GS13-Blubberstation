@@ -178,3 +178,8 @@
 	desc = "It looks like this was someones first time making a toy, and it's shoddily made. There is a lot of heart put into it, so much that it feels warm when you hug it! But that could be the uranium..."
 	icon_state = "isaac_hyper"
 	can_eat_food = TRUE
+
+/obj/item/toy/plush/gs13/mako
+	name = "Makoling plush"
+	desc = "Soda cans not included. She liters enough as is..."
+	icon_state = "mako"
