@@ -38,6 +38,8 @@
 	name = "\improper CentCom official's turtleneck"
 	desc = "A formal suit, with an added comfortable and warm turtleneck worn by CentCom's paper pushers, a generic uniform usually used by Inspectors. The silver belt buckle denotes their rank with ease."
 	icon_state = "official_turtleneck"// Sprites by Ebin-Halcyon
+	icon = 'modular_zubbers/icons/obj/clothing/under/centcom.dmi'	// GS13 EDIT we don't have sprites for this one
+	worn_icon = 'modular_zubbers/icons/mob/clothing/under/centcom.dmi'	// GS13 EDIT
 
 /obj/item/clothing/under/rank/centcom/intern
 	name = "\improper CentCom intern's uniform"
@@ -82,8 +84,8 @@
 /obj/item/clothing/suit/hooded/wintercoat/centcom
 	name = "CentCom winter coat"
 	desc = "A luxurious winter coat woven in the bright green and gold colours of Central Command. It has a small pin in the shape of the Nanotrasen logo for a zipper."
-	icon = 'modular_zubbers/icons/obj/clothing/suits/wintercoat.dmi'
-	worn_icon = 'modular_zubbers/icons/mob/clothing/suits/wintercoat.dmi'
+	icon = 'modular_gs/icons/obj/clothing/suits/centcom.dmi'	//GS13 EDIT, original: 'modular_zubbers/icons/obj/clothing/suits/wintercoat.dmi'
+	worn_icon = 'modular_gs/icons/mob/clothing/suits/centcom.dmi'	//GS13 EDIT, original: 'modular_zubbers/icons/mob/clothing/suits/wintercoat.dmi'
 
 /obj/item/clothing/suit/space/officer
 	name = "CentCom officer's coat"
@@ -141,8 +143,8 @@
 
 /obj/item/clothing/head/hooded/winterhood/centcom
 	name = "\improper CentCom winter hood"
-	icon = 'modular_zubbers/icons/obj/clothing/head/winterhood.dmi'
-	worn_icon = 'modular_zubbers/icons/mob/clothing/head/winterhood.dmi'
+	icon = 'modular_gs/icons/obj/clothing/head/centcom.dmi'	//GS13 EDIT 'modular_zubbers/icons/obj/clothing/head/winterhood.dmi'
+	worn_icon = 'modular_gs/icons/mob/clothing/head/centcom.dmi'	//GS13 EDIT 'modular_zubbers/icons/mob/clothing/head/winterhood.dmi'
 
 /*
 * GLOVES
