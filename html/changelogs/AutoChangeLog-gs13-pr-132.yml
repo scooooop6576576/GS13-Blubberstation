@@ -1,7 +1,0 @@
-author: "Swan"
-delete-after: True
-changes:
-  - rscadd: "adds cream, blueberry juice, succubus milk and incubus draft as selectable breast produce"
-  - rscadd: "adds a pref for maximum breasts, belly and butt sizes. They can be updated mid round by using the SAD."
-  - qol: "changes the mutant colors trait name to body colors"
-  - bugfix: "fixes max weight pref being capped between 0-100"
