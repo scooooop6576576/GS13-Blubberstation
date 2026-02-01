@@ -5,7 +5,7 @@
 	var/genital_size = 1
 	// GS13 EDIT
 	// maximum allowed size of the genital
-	var/max_genital_size = 0
+	var/max_genital_size = 80
 	// set size, AKA the minimum size
 	var/set_genital_size = 0
 	// GS13 END EDIT
