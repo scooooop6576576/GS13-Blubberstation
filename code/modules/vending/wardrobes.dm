@@ -728,6 +728,7 @@ GLOBAL_VAR_INIT(roaches_deployed, FALSE)
 /obj/machinery/vending/wardrobe/cent_wardrobe
 	name = "\improper CentDrobe"
 	desc = "A one-of-a-kind vending machine for all your centcom aesthetic needs!"
+	icon = 'modular_gs/icons/obj/vending.dmi'	// GS13 EDIT
 	icon_state = "centdrobe"
 	product_ads = "Show those ERTs who's the most stylish in the briefing room!"
 	vend_reply = "Thank you for using the CentDrobe!"

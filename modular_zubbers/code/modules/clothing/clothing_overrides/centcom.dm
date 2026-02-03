@@ -112,8 +112,8 @@
 */
 /obj/item/clothing/head/hats/centcom_cap
 	desc = "A luxurious peaked cap, worn by only CentCom's finest commanders. Inside the lining of the cap, lies two faint initials."
-	icon = 'modular_zubbers/icons/obj/clothing/head/hats.dmi'
-	worn_icon = 'modular_zubbers/icons/mob/clothing/head/hats.dmi'
+	icon = 'modular_gs/icons/obj/clothing/head/centcom.dmi'			// GS13 EDIT
+	worn_icon = 'modular_gs/icons/mob/clothing/head/centcom.dmi'	// GS13 EDIT
 
 /obj/item/clothing/head/hats/consultant_cap
 	name = "\improper CentCom representative's cap"
@@ -124,12 +124,12 @@
 	armor_type = /datum/armor/head_nanotrasen_consultant
 
 /obj/item/clothing/head/hats/centhat
-	icon = 'modular_zubbers/icons/obj/clothing/head/hats.dmi'
-	worn_icon = 'modular_zubbers/icons/mob/clothing/head/hats.dmi'
+	icon = 'modular_gs/icons/obj/clothing/head/centcom.dmi'			// GS13 EDIT
+	worn_icon = 'modular_gs/icons/mob/clothing/head/centcom.dmi'	// GS13 EDIT
 
 /obj/item/clothing/head/hats/intern
-	icon = 'modular_zubbers/icons/obj/clothing/head/hats.dmi'
-	worn_icon = 'modular_zubbers/icons/mob/clothing/head/hats.dmi'
+	icon = 'modular_gs/icons/obj/clothing/head/centcom.dmi'			// GS13 EDIT
+	worn_icon = 'modular_gs/icons/mob/clothing/head/centcom.dmi'	// GS13 EDIT
 
 /obj/item/clothing/head/beret/centcom_formal
 	name = "\improper CentCom formal beret"
