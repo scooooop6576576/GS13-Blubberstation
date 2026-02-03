@@ -279,6 +279,8 @@
 	desc = "Some madman managed to create a weapon out of calorite... Luckily, it has a rubber handle for you to wield."
 	name = "Calorite Hammer"
 	icon = 'modular_gs/icons/obj/weapons/calorite_hammer.dmi'
+	// lefthand_file = 'modular_gs/icons/mob/inhands/melee_lefthand_64.dmi'	//files are in, but the sprites aren't aligned well at the time of writing this
+	// righthand_file = 'modular_gs/icons/mob/inhands/melee_righthand_64.dmi'
 	icon_state = "hammer"
 	damtype = FAT
 	throwforce = 40
