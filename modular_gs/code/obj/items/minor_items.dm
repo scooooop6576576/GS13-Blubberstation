@@ -282,6 +282,7 @@
 	// lefthand_file = 'modular_gs/icons/mob/inhands/melee_lefthand_64.dmi'	//files are in, but the sprites aren't aligned well at the time of writing this
 	// righthand_file = 'modular_gs/icons/mob/inhands/melee_righthand_64.dmi'
 	icon_state = "hammer"
+	icon_state = "calorite_hammer"
 	damtype = FAT
 	throwforce = 40
 	force = 60
@@ -290,7 +291,7 @@
 	desc = "Destroyer of waistlines."
 	name = "Permafat Hammer"
 	icon = 'modular_gs/icons/obj/weapons/calorite_hammer.dmi'
-	icon_state = "hammer"
+	icon_state = "permafat_hammer"
 	damtype = PERMA_FAT
 	throwforce = 10
 	force = 20
