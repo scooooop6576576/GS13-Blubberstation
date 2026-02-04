@@ -20,6 +20,7 @@
 - code/modules/vending/wardrobes.dm - GATOified centdrobe
 - code/modules/clothing/head/hat.dm - GATOified centcom hats
 - code/modules/clothing/spacesuits/_spacesuits.dm - replaced N on the back of a spacesuit with G
+- code/modules/clothing/under/jobs/centcom.dm - GATOified centcom uniforms
 - modular_zubbers/code/modules/clothing/clothing_overrides/centcom.dm - GATOified centcom uniforms
 - modular_zubbers/code/modules/clothing/clothing_overrides/centcom.dm - GATOified centcom hats
 
