@@ -341,6 +341,11 @@
 
 /datum/reagent/water/holywater/on_mob_add(mob/living/affected_mob, amount)
 	. = ..()
+	// GS13 EDIT
+	if(HAS_TRAIT(affected_mob, TRAIT_DEMONIC))
+		affected_mob.set_fire_stacks(3)
+		affected_mob.ignite_mob(FALSE)
+	// GS13 END EDIT
 	if(IS_CULTIST(affected_mob))
 		to_chat(affected_mob, span_userdanger("A vile holiness begins to spread its shining tendrils through your mind, purging the Geometer of Blood's influence!"))
 
