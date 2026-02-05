@@ -183,3 +183,29 @@
 	name = "Makoling plush"
 	desc = "Soda cans not included. She liters enough as is..."
 	icon_state = "mako"
+
+/obj/item/toy/plush/gs13/swan
+	name = "Swan plush"
+	desc = "An adorable plushie of everyone's beloved waterbird. It seems angry; either at it's holder not going to sleep at a reasonable hour, or them not reporting problems in the right places."
+	icon_state = "swan"
+	var/brim = FALSE
+
+/obj/item/toy/plush/gs13/swan/cowboy
+	name = "Cowboy Swan plush"
+	icon_state = "swan-brim"
+	brim = TRUE
+
+/obj/item/toy/plush/gs13/swan/examine(mob/user)
+	. = ..()
+	. += span_notice("You can alt-click it to toggle the brim.")
+
+/obj/item/toy/plush/gs13/swan/click_alt(mob/user)
+	if (brim)
+		name = "Swan plush"
+		icon_state = "swan"
+		brim = FALSE
+	else
+		name = "Cowboy Swan plush"
+		icon_state = "swan-brim"
+		brim = TRUE
+	return TRUE
