@@ -269,7 +269,7 @@
 
 /obj/item/clothing/head/hats/intern
 	name = "\improper CentCom Head Intern beancap"
-	desc = "A horrifying mix of beanie and softcap in CentCom green. You'd have to be pretty desperate for power over your peers to agree to wear this."
+	desc = "A horrifying mix of beanie and softcap in CentCom pink. You'd have to be pretty desperate for power over your peers to agree to wear this."	// GS13 EDIT, changed "green" to "pink"
 	icon_state = "intern_hat"
 	inhand_icon_state = null
 

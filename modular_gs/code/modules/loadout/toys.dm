@@ -73,3 +73,11 @@
 /datum/loadout_item/toys/plush/isaac_hyper_plush
 	name = "Weird Dragon Thingy Plush"
 	item_path = /obj/item/toy/plush/gs13/isaac_hyper
+
+/datum/loadout_item/toys/plush/mako_plush
+	name = "Makoling plush"
+	item_path = /obj/item/toy/plush/gs13/mako
+
+/datum/loadout_item/toys/plush/swan_plush
+	name = "Swan plush"
+	item_path = /obj/item/toy/plush/gs13/swan
